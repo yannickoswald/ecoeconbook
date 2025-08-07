@@ -3,117 +3,65 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Quantitative Ecological Economics – Order-of-Magnitude Thinking</title>
+<title>Quantitative Ecological Economics</title>
 
-<!-- Minimal, readable palette -->
+<!-- simple, pleasant styling -->
 <style>
-  body       {font-family: system-ui, sans-serif; line-height: 1.6; margin: 0; padding: 0 1rem; color:#222;}
-  main       {max-width: 60rem; margin: 2rem auto;}
-  header h1  {margin-top:0; font-size:2.5rem; border-bottom: 3px solid #4caf50; display:inline-block;}
-  h2         {color:#4caf50; margin-top:2rem;}
-  .concept, .definition, .example {
-      border-left: 4px solid #4caf50; background: #f4fdf4; padding: 0.75rem 1rem; margin:1rem 0;
-  }
-  code       {background:#eee; padding:0.15rem 0.25rem; border-radius:4px;}
-  footer     {margin:3rem 0 2rem; text-align:center; font-size:0.9rem; color:#666;}
+  :root { --accent:#4caf50; }
+  body   {font-family:system-ui, sans-serif; margin:0; padding:0 1rem; line-height:1.6;}
+  header {text-align:center; padding:3rem 0 2rem;}
+  header h1 {font-size:3rem; margin:0; color:var(--accent);}
+  main   {max-width:60rem; margin:0 auto; }
+  h2     {color:var(--accent);}
+  nav ul {list-style:none; padding-left:0;}
+  nav li {margin:0.5rem 0;}
+  nav a  {text-decoration:none; color:#0064c8;}
+  nav a:hover {text-decoration:underline;}
+  footer {margin:4rem 0 2rem; text-align:center; font-size:0.9rem; color:#666;}
 </style>
-
-<!-- MathJax for LaTeX rendering -->
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<!-- Plotly for the interactive scatter plot -->
-<script src="https://cdn.plot.ly/plotly-2.27.1.min.js"></script>
 </head>
 
 <body>
+<header>
+  <h1>Quantitative Ecological Economics</h1>
+  <p><em>Integrating biophysical scale with economic analysis</em></p>
+</header>
+
 <main>
-  <header>
-    <h1>Order-of-Magnitude Economics</h1>
-    <p><em>An introductory module in quantitative ecological economics</em></p>
-  </header>
-
-  <p>Ecological economists pay close attention to <strong>scale</strong>: the physical size of material and energy flows, the number of people involved, and the resources mobilised by the monetary economy.  A tonne versus a million tonnes, or a thousand transactions versus a trillion, is not just a quantitative distinction – it reshapes possibilities, pressures and planetary impacts.</p>
-
-  <p>In this chapter we practise the physicist’s habit of asking “What is the right order of magnitude?” before fine-grained modelling.  You will meet basic scaling laws, dimensional thinking, and worked examples ranging from global carbon fluxes to city-level energy budgets.</p>
 
   <!-- ————————————————————— -->
-  <h2>1 What do we mean by “order of magnitude”?</h2>
+  <h2>Welcome</h2>
+  <p>
+    This open-access book introduces the <strong>quantitative tools</strong> needed to study
+    how material and energy flows shape — and are shaped by — the monetary economy.
+    We combine ideas from ecological economics, physics and data science, moving
+    from back-of-the-envelope scaling to fully fledged empirical models.
+  </p>
 
-  <div class="concept">
-    <strong>Rule of thumb:</strong> moving one decimal place (×10) changes an order of magnitude.  
-    Tenfold jumps are therefore the natural yard-stick for comparing large and small.
-  </div>
-
-  <div class="definition">
-    <strong>Formal definition</strong><br>
-    Given a positive quantity \(Q\), write \(Q = a \times 10^{n}\) with \(1 \le a < 10\).
-    Then the <em>order of magnitude</em> of \(Q\) is \(n\):
-    \[
-      \operatorname{ord}(Q) \;=\; \left\lfloor \log_{10} Q \right\rfloor .
-    \]
-  </div>
-
-  <p>Examples:</p>
-  <ul>
-    <li>\(150 \Rightarrow \operatorname{ord}=2\)</li>
-    <li>\(0.05 \Rightarrow \operatorname{ord}=-2\)</li>
-  </ul>
+  <p>
+    The project is intentionally lean: each chapter is a self-contained lesson you
+    can read in a browser <em>or</em> launch as an interactive notebook.  Feel free to
+    fork the repository, add examples, or translate the text.
+  </p>
 
   <!-- ————————————————————— -->
-  <h2>2 Tiny demo – Population scale</h2>
-  <p>Doubling population while holding per-capita resource use constant multiplies total throughput by two orders of magnitude if the jump is from \(10^{6}\) to \(10^{8}\) inhabitants.</p>
+  <h2>Outline (Edition 0.1)</h2>
 
-  <!-- ————————————————————— -->
-  <h2>3 Interactive sample: GDP&nbsp;vs.&nbsp;CO₂</h2>
-  <p>The Plotly panel loads a handful of (fake) countries so you can check that everything works.  
-     Replace <code>gdpData</code> and <code>co2Data</code> with real numbers – for instance, the World Bank’s “GDP per capita (current US$)” and “CO₂ emissions (metric tons per capita)”.</p>
+  <nav>
+    <ul>
+      <li>1. <a href="order-of-magnitude.html">Order of Magnitude Economics</a></li>
+      <li>2. <a href="cross-sectional.html">Cross-Sectional Analysis of Economic Scale and Resource Use</a></li>
+      <li>3. <a href="time-series.html">Time-Series Analysis of Economic Scale and Resource Use</a></li>
+    </ul>
+  </nav>
 
-  <div id="plot" style="height:450px"></div>
-  <p id="corr" style="font-style:italic;"></p>
+  <p><small>
+    Chapters 2 & 3 are placeholders for now — check back soon or follow the GitHub
+    repo for updates.
+  </small></p>
 
-  <script>
-    // Dummy data — replace with CSV fetch or API calls
-    const countries = ["Alandia","Borland","Catalysis","Deltora","Epsilon"];
-    const gdpData   = [1200, 5400, 18000, 35000, 62000];  // USD per cap
-    const co2Data   = [0.8, 1.9, 4.1, 6.3, 14.2];         // t CO2 per cap
-
-    // Scatter plot
-    Plotly.newPlot('plot', [{
-      x: gdpData,
-      y: co2Data,
-      text: countries,
-      mode: 'markers',
-      marker: { size: 10, color: '#4caf50' }
-    }], {
-      title: 'GDP per capita vs. CO\u2082 per capita',
-      xaxis: { title: 'GDP per capita (USD)' },
-      yaxis: { title: 'CO\u2082 per capita (tonnes)' },
-      hovermode:'closest'
-    });
-
-    // Simple Pearson correlation
-    function pearson(x, y) {
-      const n = x.length;
-      const mean = arr => arr.reduce((a,b)=>a+b,0)/n;
-      const mx = mean(x), my = mean(y);
-      const num = x.reduce((s,xi,i)=>s + (xi-mx)*(y[i]-my), 0);
-      const den = Math.sqrt(
-        x.reduce((s,xi) => s + (xi-mx)**2,0) *
-        y.reduce((s,yi) => s + (yi-my)**2,0)
-      );
-      return num / den;
-    }
-    const r = pearson(gdpData, co2Data).toFixed(2);
-    document.getElementById('corr').textContent =
-      `Sample Pearson correlation r ≈ ${r}`;
-  </script>
-
-  <!-- ————————————————————— -->
-  <h2>4 Next steps</h2>
-  <p>• Replace the example arrays with real-world data.<br>
-     • Add sections on material throughput, energy return on investment, or scaling of market transactions.<br>
-     • Host this page on GitHub Pages and share the link with colleagues for feedback.</p>
-
-  <footer>© Copyright Yannick Oswald 2025 Quantitative Ecological Economics Project, Please cite</footer>
 </main>
+
+<footer>© 2025 Quantitative Ecological Economics Project</footer>
 </body>
 </html>
