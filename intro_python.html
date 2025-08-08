@@ -23,7 +23,11 @@
   /* code block styling */
   pre, code {font-family:ui-monospace, SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;}
   pre       {background:#272822; color:#f8f8f2; padding:1rem; overflow:auto; border-radius:4px;}
-  code      {background:#eee; padding:0.1rem 0.3rem; border-radius:3px;}
+  /* inline code remains light */
+  code                 { background:#eee; padding:.1rem .3rem; border-radius:3px; }
+
+  /* block code inherits the dark <pre> background */
+  pre > code           { background:none; color:inherit; padding:0; }
 </style>
 </head>
 
