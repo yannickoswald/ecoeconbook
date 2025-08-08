@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chapter 0 – Introduction to Python | Quantitative Ecological Economics</title>
+
+<!-- shared, pleasant styling -->
+<style>
+  :root { --accent:#4caf50; }
+  body   {font-family:system-ui, sans-serif; margin:0; padding:0 1rem; line-height:1.6; background:#fafafa;}
+  header {text-align:center; padding:3rem 0 2rem;}
+  header h1 {font-size:2.6rem; margin:0; color:var(--accent);}
+  header p  {margin-top:.3rem; font-size:1.1rem;}
+  main   {max-width:60rem; margin:0 auto;}
+  h2,h3  {color:var(--accent);}
+  nav ul {list-style:none; padding-left:0;}
+  nav li {margin:0.4rem 0;}
+  nav a  {text-decoration:none; color:#0064c8;}
+  nav a:hover {text-decoration:underline;}
+  footer {margin:4rem 0 2rem; text-align:center; font-size:0.9rem; color:#666;}
+
+  /* code block styling */
+  pre, code {font-family:ui-monospace, SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;}
+  pre       {background:#272822; color:#f8f8f2; padding:1rem; overflow:auto; border-radius:4px;}
+  code      {background:#eee; padding:0.1rem 0.3rem; border-radius:3px;}
+</style>
+</head>
+
+<body>
+<header>
+  <h1>Chapter 0 &mdash; Introduction to Python</h1>
+  <p>Up-and-running with the essentials you’ll use throughout the book</p>
+</header>
+
+<main>
+
+  <!-- ————————————————————— -->
+  <h2>Why Python?</h2>
+  <p>
+    Python is open-source, readable, and comes with a vast ecosystem of
+    scientific libraries (<code>NumPy</code>, <code>pandas</code>,
+    <code>matplotlib</code>, <code>scikit-learn</code>, <code>xarray</code>, …) that
+    we will rely on for data wrangling, modelling and visualisation. If you are
+    new to programming, Python’s gentle learning curve makes it an ideal first
+    language.
+  </p>
+
+  <!-- ————————————————————— -->
+  <h2>Getting Set Up</h2>
+  <nav>
+    <ul>
+      <li><a href="#install">1. Install Python</a></li>
+      <li><a href="#editors">2. Choose an Editor / IDE</a></li>
+      <li><a href="#run-code">3. Run Your First Script</a></li>
+    </ul>
+  </nav>
+
+  <h3 id="install">1&nbsp;· Install Python (&ge; 3.12)</h3>
+  <p>
+    The simplest route is to install the <strong>Anaconda</strong> distribution,
+    which bundles Python itself plus common data-science packages.
+    Alternatively, download the official installer from python.org and manage
+    packages with <code>pip</code> or <code>pipx</code>.
+  </p>
+
+  <h3 id="editors">2&nbsp;· Editors and Interactive Notebooks</h3>
+  <p>
+    You can write Python in any text editor, but modern IDEs such as
+    <em>VS Code</em>, <em>PyCharm Community</em>, or browser-based
+    <em>Jupyter Lab</em> (shipped with Anaconda) give you syntax highlighting,
+    auto-completion and an interactive console — all of which speed up learning.
+  </p>
+
+  <h3 id="run-code">3&nbsp;· Hello, World!</h3>
+  <p>Save the snippet below as <code>hello.py</code> and run it from a terminal:</p>
+
+  <pre><code>print("Hello, ecological economists!")</code></pre>
+
+  <p>Then execute:</p>
+  <pre><code>$ python hello.py
+Hello, ecological economists!
+</code></pre>
+
+  <!-- ————————————————————— -->
+  <h2>Core Language Concepts</h2>
+
+  <h3>Variables and Basic Types</h3>
+  <pre><code>year       = 2025            # int
+growth     = 3.2             # float
+descriptor = "biophysical"   # str
+renewables = True            # bool
+</code></pre>
+
+  <h3>Lists, Tuples, Dictionaries</h3>
+  <pre><code>countries   = ["CH", "DE", "FR"]                     # list
+coords      = (47.38, 8.54)                          # tuple
+gdp_musd    = {"CH": 907000, "DE": 4470000}          # dict
+</code></pre>
+
+  <h3>Control Flow</h3>
+  <pre><code>for c in countries:
+    if c in gdp_musd:
+        print(c, gdp_musd[c])</code></pre>
+
+  <h3>Functions</h3>
+  <pre><code>def petajoules_to_twh(pj):
+    """Convert energy from PJ to TWh"""
+    return pj * 0.277778
+
+print(petajoules_to_twh(1500))  # 416.7
+</code></pre>
+
+  <!-- ————————————————————— -->
+  <h2>Working with Packages</h2>
+  <p>
+    Use <code>pip install numpy pandas matplotlib</code>
+    (or <code>conda install …</code>) and then:
+  </p>
+  <pre><code>import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+</code></pre>
+
+  <p>
+    We will introduce each of these libraries as we progress, but for now make
+    sure you can import them without errors.
+  </p>
+
+  <!-- ————————————————————— -->
+  <h2>Next Steps</h2>
+  <ul>
+    <li>Create a virtual environment and activate it.</li>
+    <li>Re-create the examples above in a Jupyter notebook.</li>
+    <li>Skim Chapter 1 to see how simple code grows into quantitative insight.</li>
+  </ul>
+
+  <p style="margin-top:3rem"><a href="index.html">← Back to Book Outline</a></p>
+
+</main>
+
+<footer>© 2025 Quantitative Ecological Economics Project</footer>
+</body>
+</html>
