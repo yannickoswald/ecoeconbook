@@ -14,7 +14,7 @@ By the end, you’ll build a simple **carbon-emissions calculator** and try a fe
 - Variables, basic data types, and printing  
 - Lists & dictionaries (for small datasets)  
 - `if` statements and `for` loops  
-- Functions
+- Functions, arguments, outputs
 - A tiny EE project: compute national CO₂ emissions and per-capita values  
 :::
 
