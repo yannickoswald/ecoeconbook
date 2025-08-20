@@ -2,7 +2,7 @@
 # Introduction to Python and Programming
 
 Welcome!  
-This short chapter gets you writing and *running* Python code right away, then gently introduces core concepts—variables, data types, collections, control flow, and functions—using tiny examples from **ecological economics** (EE).  
+This short chapter gets you writing and *running* Python code right away, then introduces core concepts like variables, data types, collections, control flow, and functions—using tiny examples from **ecological economics** (EE).  
 
 By the end, you’ll build a simple **carbon-emissions calculator** and try a few practice exercises.
 
