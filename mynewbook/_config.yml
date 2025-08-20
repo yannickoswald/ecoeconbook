@@ -1,0 +1,45 @@
+# --- Basic book metadata ----------------------------------------------------
+title       : Quantitative Ecological Economics
+author      : Yannick Oswald
+copyright   : "2025"
+language    : en
+description : >-
+  Integrating biophysical scale with economic analysis — an open-access,
+  notebook-first textbook that moves from back-of-the-envelope scaling to
+  fully-fledged empirical models.
+
+# --- Launch-button & repository hooks ---------------------------------------
+repository:
+  url: https://github.com/<YOUR-ORG>/<YOUR-REPO>
+  path_to_book: .
+  branch: main
+html:
+  use_repository_button : true   # “GitHub” link
+  use_issues_button      : true   # “Open issue” link
+  use_edit_page_button   : true   # “Suggest edit” link
+  favicon                : images/favicon.ico   # optional
+  logo                   : images/logo.png      # optional
+
+launch_buttons:
+  notebook_interface : "jupyterlab"
+  binderhub_url      : "https://mybinder.org"
+  colab_url          : "https://colab.research.google.com"
+
+# --- Execution & parsing defaults ------------------------------------------
+execute:
+  execute_notebooks : auto          # run only if outputs missing / stale
+  timeout           : 240           # seconds
+
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - deflist
+    - dollarmath
+    - linkify
+    - substitution
+
+# --- Sphinx build tweaks ----------------------------------------------------
+sphinx:
+  config:
+    html_show_copyright : false     # already covered in the footer
+    nb_merge_streams    : true

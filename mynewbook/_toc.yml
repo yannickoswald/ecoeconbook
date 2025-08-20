@@ -1,0 +1,20 @@
+# Book structure for Jupyter Book
+# Each YAML entry corresponds to a markdown (`.md`) or notebook (`.ipynb`)
+# file in your repo (without the extension).
+
+format: jb-book
+root  : intro    # your landing page (formerly index.html → now index.md)
+
+chapters:
+  - file: preface
+    title: Preface
+  - file: intro_python
+    title: Introduction to Python
+  - file: order-of-magnitude
+    title: Order of Magnitude Economics
+  - file: cross-sectional
+    title: Cross-Sectional Analysis of Economic Scale & Resource Use
+  - file: time-series
+    title: Time-Series Analysis of Economic Scale & Resource Use
+  - file: test_file
+    title: My Markdown Test File
