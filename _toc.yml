@@ -16,5 +16,5 @@ chapters:
     title: Cross-Sectional Analysis of Economic Scale & Resource Use
   - file: time-series
     title: Time-Series Analysis of Economic Scale & Resource Use
-  - file: test_file
-    title: My Markdown Test File
+  - file: intro_python
+    title: My Intro Content test file

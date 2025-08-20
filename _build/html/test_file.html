@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Here’s my sample title &#8212; Quantitative Ecological Economics</title>
+    <title>Introduction to Python and Programming &#8212; Quantitative Ecological Economics</title>
   
   
   
@@ -377,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Here’s my sample title</h1>
+    <h1>Introduction to Python and Programming</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -387,7 +387,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#here-s-my-first-section">Here’s my first section</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-book">How to use this book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-python-code">Your first Python code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-as-a-calculator">Python as a calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-basic-data-types">Variables and basic data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collections-lists-and-dictionaries">Collections: lists and dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow-if-and-for">Control flow: <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-packaging-reusable-logic">Functions: packaging reusable logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-project-a-tiny-national-co2-calculator">Mini-project: A tiny national CO₂ calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercises-very-beginner-friendly">Practice exercises (very beginner-friendly)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-next">What’s next?</a></li>
 </ul>
             </nav>
         </div>
@@ -399,12 +408,126 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="here-s-my-sample-title">
-<h1>Here’s my sample title<a class="headerlink" href="#here-s-my-sample-title" title="Link to this heading">#</a></h1>
-<p>This is some sample text.</p>
-<section id="here-s-my-first-section">
-<span id="section-label"></span><h2>Here’s my first section<a class="headerlink" href="#here-s-my-first-section" title="Link to this heading">#</a></h2>
-<p>Here is a <a class="reference internal" href="intro.html"><span class="std std-doc">reference to the intro</span></a>. Here is a reference to <a class="reference internal" href="#section-label"><span class="std std-ref">Here’s my first section</span></a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python-and-programming">
+<span id="intro-python"></span><h1>Introduction to Python and Programming<a class="headerlink" href="#introduction-to-python-and-programming" title="Link to this heading">#</a></h1>
+<p>Welcome! This short chapter gets you writing and <em>running</em> Python code right away, then gently introduces core concepts—variables, data types, collections, control flow, and functions—using tiny examples from <strong>ecological economics</strong> (EE). By the end, you’ll build a simple <strong>carbon-emissions calculator</strong> and try a few practice exercises.</p>
+<div class="admonition-what-youll-learn admonition">
+<p class="admonition-title">What you’ll learn</p>
+<ul class="simple">
+<li><p>How to run code cells in this book</p></li>
+<li><p>Python as a calculator (numbers, operators)</p></li>
+<li><p>Variables, basic data types, and printing</p></li>
+<li><p>Lists &amp; dictionaries (for small datasets)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> statements and <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p></li>
+<li><p>A tiny EE project: compute national CO₂ emissions and per-capita values</p></li>
+</ul>
+</div>
+<section id="how-to-use-this-book">
+<h2>How to use this book<a class="headerlink" href="#how-to-use-this-book" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Press ▶️ (Run) on a code cell to execute it.</p></li>
+<li><p>Edit values, re-run, and observe how outputs change—<em>this is the learning loop</em>.</p></li>
+<li><p>Don’t worry about mistakes—errors are part of programming.</p></li>
+</ul>
+</section>
+<section id="your-first-python-code">
+<span id="section-hello"></span><h2>Your first Python code<a class="headerlink" href="#your-first-python-code" title="Link to this heading">#</a></h2>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">Try it</p>
+<p>Change the message to include your name or city and run the cell again.</p>
+</div>
+</section>
+<section id="python-as-a-calculator">
+<span id="basics-calculator"></span><h2>Python as a calculator<a class="headerlink" href="#python-as-a-calculator" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> = division (returns a float), <code class="docutils literal notranslate"><span class="pre">//</span></code> = floor division, <code class="docutils literal notranslate"><span class="pre">%</span></code> = remainder, <code class="docutils literal notranslate"><span class="pre">**</span></code> = exponent.</p></li>
+</ul>
+<div class="admonition-quick-check admonition">
+<p class="admonition-title">Quick check</p>
+<p>What’s the difference between <code class="docutils literal notranslate"><span class="pre">22/7</span></code> and <code class="docutils literal notranslate"><span class="pre">22//7</span></code>? Why is one of them an integer?</p>
+</div>
+</section>
+<section id="variables-and-basic-data-types">
+<span id="basics-variables"></span><h2>Variables and basic data types<a class="headerlink" href="#variables-and-basic-data-types" title="Link to this heading">#</a></h2>
+</section>
+<section id="collections-lists-and-dictionaries">
+<span id="basics-collections"></span><h2>Collections: lists and dictionaries<a class="headerlink" href="#collections-lists-and-dictionaries" title="Link to this heading">#</a></h2>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>The emission factors above are <strong>illustrative for learning</strong>. Real analyses require careful sourcing and documentation.</p>
+</div>
+</section>
+<section id="control-flow-if-and-for">
+<span id="control-flow"></span><h2>Control flow: <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#control-flow-if-and-for" title="Link to this heading">#</a></h2>
+</section>
+<section id="functions-packaging-reusable-logic">
+<span id="functions"></span><h2>Functions: packaging reusable logic<a class="headerlink" href="#functions-packaging-reusable-logic" title="Link to this heading">#</a></h2>
+</section>
+<section id="mini-project-a-tiny-national-co2-calculator">
+<span id="project-emissions"></span><h2>Mini-project: A tiny national CO₂ calculator<a class="headerlink" href="#mini-project-a-tiny-national-co2-calculator" title="Link to this heading">#</a></h2>
+<p>Let’s combine the pieces and compute <strong>total</strong> and <strong>per-capita</strong> emissions.</p>
+<div class="admonition-explore admonition">
+<p class="admonition-title">Explore</p>
+<ul class="simple">
+<li><p>Change <code class="docutils literal notranslate"><span class="pre">energy_TJ</span></code> values and see how totals respond.</p></li>
+<li><p>What happens to per-capita emissions if population changes?</p></li>
+<li><p>Add a new fuel (e.g., “biomass”) with its own (illustrative) factor and re-run.</p></li>
+</ul>
+</div>
+</section>
+<section id="practice-exercises-very-beginner-friendly">
+<span id="exercises"></span><h2>Practice exercises (very beginner-friendly)<a class="headerlink" href="#practice-exercises-very-beginner-friendly" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Per-capita emissions for multiple countries</strong></p>
+<p>Using the template below, compute total and per-capita emissions for each country and print a neat summary. (Use any illustrative numbers.)</p>
+</li>
+<li><p><strong>Unit conversion: electricity emissions</strong></p>
+<p>Suppose a household uses <strong>3,500 kWh</strong> of grid electricity per year. If the grid emission factor is <strong>0.25 tCO₂ per MWh</strong>, compute annual household emissions.</p>
+<p><em>Hints:</em> 1 MWh = 1,000 kWh.</p>
+</li>
+<li><p><strong>Add non-CO₂ gases (CO₂e)</strong></p>
+<p>Extend the calculator to include <strong>CH₄</strong> and <strong>N₂O</strong> using <strong>illustrative</strong> global warming potentials (e.g., CH₄: 28, N₂O: 265). Given small emissions in kt for each gas, compute <strong>total CO₂e</strong>.</p>
+</li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Example solution for Exercise 1 (click to reveal)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">ef</span><span class="p">):</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="n">compute_total_emissions_MtCO2</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;energy_TJ&quot;</span><span class="p">],</span> <span class="n">ef</span><span class="p">)</span>
+        <span class="n">percap</span> <span class="o">=</span> <span class="n">total</span> <span class="o">*</span> <span class="mi">1_000_000</span> <span class="o">/</span> <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;pop_million&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1_000_000</span><span class="p">)</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">total</span><span class="p">,</span> <span class="n">percap</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">percap</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">10s</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">total</span><span class="si">:</span><span class="s2">6.2f</span><span class="si">}</span><span class="s2"> MtCO2   </span><span class="si">{</span><span class="n">percap</span><span class="si">:</span><span class="s2">5.1f</span><span class="si">}</span><span class="s2"> tCO2/person&quot;</span><span class="p">)</span>
+
+<span class="n">summarize</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">emission_factor_tCO2_per_TJ</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```{admonition} Key takeaways
+- Programming is *experimentation*: edit → run → observe.
+- Start small: numbers, variables, and simple collections take you far.
+- Real EE work needs **good units** and **documented data sources**.
+</pre></div>
+</div>
+</section>
+<section id="whats-next">
+<span id="next-steps"></span><h2>What’s next?<a class="headerlink" href="#whats-next" title="Link to this heading">#</a></h2>
+<p>In the next chapters we’ll deepen each idea:</p>
+<ul class="simple">
+<li><p>Variables and types — more on numbers, strings, and booleans</p></li>
+<li><p>Working with lists and dicts — structuring small datasets</p></li>
+<li><p>Functions and modules — writing reusable code</p></li>
+<li><p>Basic plotting — visualizing data to reason about scale</p></li>
+</ul>
+<p>Here is a reference back to this intro: <a class="reference internal" href="#intro-python"><span class="std std-ref">Introduction to Python and Programming</span></a>. Here is a reference to the code section above: <a class="reference internal" href="#section-hello"><span class="std std-ref">Your first Python code</span></a>.</p>
+<hr class="docutils" />
+<div class="admonition-attribution-disclaimer admonition">
+<p class="admonition-title">Attribution &amp; disclaimer</p>
+<p>Emission factors and GWPs used here are <strong>illustrative</strong> for teaching. Replace with documented values for real analyses.</p>
+</div>
 </section>
 </section>
 
@@ -463,7 +586,16 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#here-s-my-first-section">Here’s my first section</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-book">How to use this book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-python-code">Your first Python code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-as-a-calculator">Python as a calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-basic-data-types">Variables and basic data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collections-lists-and-dictionaries">Collections: lists and dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow-if-and-for">Control flow: <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-packaging-reusable-logic">Functions: packaging reusable logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-project-a-tiny-national-co2-calculator">Mini-project: A tiny national CO₂ calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercises-very-beginner-friendly">Practice exercises (very beginner-friendly)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-next">What’s next?</a></li>
 </ul>
   </nav></div>
 
