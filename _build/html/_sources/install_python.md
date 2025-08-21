@@ -1,7 +1,10 @@
+---
+hide-toc: true
+---
 
-(setup-python)=
+# Installing and running Python   <!-- Add this -->
+
 ## Getting Python set up (3 easy paths)
-
 
 :::{tip}
 **What you’ll learn**
