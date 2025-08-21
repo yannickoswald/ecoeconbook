@@ -18,7 +18,7 @@ Only if you approach it this way, you will later on benefit from the synergies y
 
 ## Getting Python set up (3 easy paths)
 
-:::## {admonition} What you’ll learn
+:::{admonition} What you’ll learn
 - How to install and use Python
 - How to run code cells in this book  
 :::
