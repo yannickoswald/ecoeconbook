@@ -1,7 +1,6 @@
 
-
 (setup-python)=
-# Getting Python set up (3 easy paths)
+## Getting Python set up (3 easy paths)
 
 
 :::{tip}

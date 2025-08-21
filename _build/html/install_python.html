@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -175,7 +175,10 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Installing and running Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Python set up (3 easy paths)</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="intro_python.html">Introduction to Python and Programming</a></li>
 
 </ul>
@@ -390,16 +393,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-google-colab-browser-zero-install">Option A — Google Colab (browser, zero install)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-c-anaconda-vs-code-flexible-not-so-beginner">Option C — Anaconda + VS Code (flexible, not-so-beginner)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-prerequisites">1) Install prerequisites</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-select-your-conda-environment">2) Create/select your conda environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tell-vs-code-which-python-to-use">3) Tell VS Code which Python to use</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-python">4) Run Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Getting Python set up (3 easy paths)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-google-colab-browser-zero-install">Option A — Google Colab (browser, zero install)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#option-c-anaconda-vs-code-flexible-not-so-beginner">Option C — Anaconda + VS Code (flexible, not-so-beginner)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-prerequisites">1) Install prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-select-your-conda-environment">2) Create/select your conda environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tell-vs-code-which-python-to-use">3) Tell VS Code which Python to use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-python">4) Run Python</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-your-path">Choosing your path</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-your-path">Choosing your path</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -410,7 +415,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="getting-python-set-up-3-easy-paths">
+  <section id="getting-python-set-up-3-easy-paths">
 <span id="setup-python"></span><h1>Getting Python set up (3 easy paths)<a class="headerlink" href="#getting-python-set-up-3-easy-paths" title="Link to this heading">#</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -439,8 +444,9 @@ document.write(`
 </div>
 </div>
 <hr class="docutils" />
+</section>
 <section id="option-a-google-colab-browser-zero-install">
-<h2>Option A — Google Colab (browser, zero install)<a class="headerlink" href="#option-a-google-colab-browser-zero-install" title="Link to this heading">#</a></h2>
+<h1>Option A — Google Colab (browser, zero install)<a class="headerlink" href="#option-a-google-colab-browser-zero-install" title="Link to this heading">#</a></h1>
 <div class="admonition-why-colab admonition">
 <p class="admonition-title">Why Colab?</p>
 <ul class="simple">
@@ -527,10 +533,10 @@ pip<span class="w"> </span>install<span class="w"> </span>plotnine<span class="w
 <p class="sd-card-text">In Spyder: <strong>Preferences</strong> ▸ <strong>Python interpreter</strong> ▸ <strong>Use the following interpreter</strong><br />
 Point it to your <code class="docutils literal notranslate"><span class="pre">ecoecon</span></code> env interpreter (Navigator usually handles this automatically).</p>
 </div>
-</details></section>
-<hr class="docutils" />
+</details><hr class="docutils" />
+</section>
 <section id="option-c-anaconda-vs-code-flexible-not-so-beginner">
-<h2>Option C — Anaconda + VS Code (flexible, not-so-beginner)<a class="headerlink" href="#option-c-anaconda-vs-code-flexible-not-so-beginner" title="Link to this heading">#</a></h2>
+<h1>Option C — Anaconda + VS Code (flexible, not-so-beginner)<a class="headerlink" href="#option-c-anaconda-vs-code-flexible-not-so-beginner" title="Link to this heading">#</a></h1>
 <div class="admonition-why-vs-code admonition">
 <p class="admonition-title">Why VS Code?</p>
 <ul class="simple">
@@ -539,7 +545,7 @@ Point it to your <code class="docutils literal notranslate"><span class="pre">ec
 </ul>
 </div>
 <section id="install-prerequisites">
-<h3>1) Install prerequisites<a class="headerlink" href="#install-prerequisites" title="Link to this heading">#</a></h3>
+<h2>1) Install prerequisites<a class="headerlink" href="#install-prerequisites" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Install <strong>Anaconda</strong> (as above).</p></li>
 <li><p>Install <strong>VS Code</strong> from <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>.</p></li>
@@ -552,7 +558,7 @@ Point it to your <code class="docutils literal notranslate"><span class="pre">ec
 </ul>
 </section>
 <section id="create-select-your-conda-environment">
-<h3>2) Create/select your conda environment<a class="headerlink" href="#create-select-your-conda-environment" title="Link to this heading">#</a></h3>
+<h2>2) Create/select your conda environment<a class="headerlink" href="#create-select-your-conda-environment" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ecoecon<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>-y
 conda<span class="w"> </span>activate<span class="w"> </span>ecoecon
 conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyterlab<span class="w"> </span>-y
@@ -560,7 +566,7 @@ conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"
 </div>
 </section>
 <section id="tell-vs-code-which-python-to-use">
-<h3>3) Tell VS Code which Python to use<a class="headerlink" href="#tell-vs-code-which-python-to-use" title="Link to this heading">#</a></h3>
+<h2>3) Tell VS Code which Python to use<a class="headerlink" href="#tell-vs-code-which-python-to-use" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Open your project folder in VS Code.</p></li>
 <li><p><strong>Command Palette</strong> (Ctrl/Cmd+Shift+P) ▸ <strong>Python: Select Interpreter</strong> ▸ choose the <code class="docutils literal notranslate"><span class="pre">ecoecon</span></code> env.</p></li>
@@ -568,7 +574,7 @@ conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"
 </ul>
 </section>
 <section id="run-python">
-<h3>4) Run Python<a class="headerlink" href="#run-python" title="Link to this heading">#</a></h3>
+<h2>4) Run Python<a class="headerlink" href="#run-python" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Script</strong>: create <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, run with the <strong>▶ Run</strong> button or right‑click ▸ <strong>Run Python File</strong>.</p></li>
 <li><p><strong>Notebook</strong>: create a new <strong>Jupyter Notebook</strong> (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) and run cells.</p></li>
@@ -596,11 +602,11 @@ conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"
 <p>Common fix: If VS Code doesn’t “see” conda, set<br />
 <strong>Settings ▸ Python › Conda Path</strong> to your <code class="docutils literal notranslate"><span class="pre">conda</span></code> executable, or launch VS Code from an <strong>Anaconda Prompt</strong>.</p>
 </div>
-</section>
-</section>
 <hr class="docutils" />
+</section>
+</section>
 <section id="choosing-your-path">
-<h2>Choosing your path<a class="headerlink" href="#choosing-your-path" title="Link to this heading">#</a></h2>
+<h1>Choosing your path<a class="headerlink" href="#choosing-your-path" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Colab</strong>: zero setup, great for quick labs and sharing; requires internet.</p></li>
 <li><p><strong>Spyder</strong>: gentle desktop start; good for learning and small analyses.</p></li>
@@ -610,7 +616,6 @@ conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"
 <p class="admonition-title">Pro tip</p>
 <p>Whichever path you pick, keep your work in <strong>project folders</strong> and use <strong>environments</strong> (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">…</span></code>) to avoid dependency conflicts.</p>
 </div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -677,16 +682,18 @@ conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-google-colab-browser-zero-install">Option A — Google Colab (browser, zero install)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-c-anaconda-vs-code-flexible-not-so-beginner">Option C — Anaconda + VS Code (flexible, not-so-beginner)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-prerequisites">1) Install prerequisites</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-select-your-conda-environment">2) Create/select your conda environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tell-vs-code-which-python-to-use">3) Tell VS Code which Python to use</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-python">4) Run Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Getting Python set up (3 easy paths)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-google-colab-browser-zero-install">Option A — Google Colab (browser, zero install)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#option-c-anaconda-vs-code-flexible-not-so-beginner">Option C — Anaconda + VS Code (flexible, not-so-beginner)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-prerequisites">1) Install prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-select-your-conda-environment">2) Create/select your conda environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tell-vs-code-which-python-to-use">3) Tell VS Code which Python to use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-python">4) Run Python</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-your-path">Choosing your path</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-your-path">Choosing your path</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>

@@ -12,9 +12,3 @@ chapters:
     title: Installing and running Python
   - file: intro_python
     title: Introduction to Python and Programming
-  - file: order-of-magnitude
-    title: Order of Magnitude Economics
-  - file: cross-sectional
-    title: Cross-Sectional Analysis of Economic Scale & Resource Use
-  - file: time-series
-    title: Time-Series Analysis of Economic Scale & Resource Use
