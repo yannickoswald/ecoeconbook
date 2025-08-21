@@ -18,8 +18,7 @@ Only if you approach it this way, you will later on benefit from the synergies y
 
 ## Getting Python set up (3 easy paths)
 
-:::{Learning goals}
-**What you’ll learn**
+:::## {admonition} What you’ll learn
 - How to install and use Python
 - How to run code cells in this book  
 :::
@@ -57,25 +56,22 @@ print("NumPy:", np.__version__)
 2. Click **New Notebook** (top left).
 3. In the first cell, paste the test code above and press **Shift+Enter**.
 
-```{dropdown} Upload data or notebooks
-- **Upload a local `.ipynb`**: File ▸ Upload notebook…
-- **Mount Google Drive** to access files:
-  ```python
-  from google.colab import drive
-  drive.mount('/content/drive')
-  ```
-```
+
 
 ```{dropdown} Install extra packages
 Colab comes with many packages preinstalled. For others:
-```python
-!pip install plotnine openpyxl
-```
+python
+!pip install yourpackage
 ```
 
-:::{important}
-Colab sessions are temporary. Save your work to **Drive** or **download** important files.
-:::
+
+
+IMPORTANT! Colab sessions are temporary. Save your work to **Drive** or **download** important files.
+
+
+```{dropdown} Upload data or notebooks
+- **Upload a local `.ipynb`**: File ▸ Upload notebook…
+```
 
 ---
 
