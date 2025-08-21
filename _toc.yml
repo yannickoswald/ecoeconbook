@@ -3,7 +3,7 @@
 # file in your repo (without the extension).
 
 format: jb-book
-root  : intro    # your landing page (formerly index.html → now index.md)
+root  : intro    # your landing page
 
 chapters:
   - file: preface
