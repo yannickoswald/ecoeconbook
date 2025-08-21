@@ -8,8 +8,10 @@ root  : intro    # your landing page (formerly index.html → now index.md)
 chapters:
   - file: preface
     title: Preface
+  - file: install_python
+    title: Installing and running Python
   - file: intro_python
-    title: Introduction to Python
+    title: Introduction to Python and Programming
   - file: order-of-magnitude
     title: Order of Magnitude Economics
   - file: cross-sectional
