@@ -4,9 +4,21 @@ hide-toc: true
 
 # Installing and running Python   <!-- Add this -->
 
+
+## A note on learning to code/programming
+
+Coding is omnipresent in today's world. Computer code runs your phones, laptops and every AI you ever interact with.
+But coding is even more than that. Coding is a tool to find efficient solutions to problems and to build 'artificial' models of the world around us that can be explored. Learning to code is an excellent pathway to shape your own thinking: It combines logic and creativity like few other activities. 
+
+Therefore please note the following.
+
+At all times in this ebook and course that you follow - try to really understand things that you learn and do everything yourself. Do not use Generative AI to come up with coding solutions for you during exercises, as then the entire course will be a complete waste of your time. For your future success and capability it is absolutely essential that you build your own thinking and scienitific abilities, as if Generative AI and even the Internet would not exist. 
+
+Only if you approach it this way, you will later on benefit from the synergies you can generate with these advanced technologies. 
+
 ## Getting Python set up (3 easy paths)
 
-:::{tip}
+:::{Learning goals}
 **What you’ll learn**
 - How to install and use Python
 - How to run code cells in this book  
@@ -15,8 +27,8 @@ hide-toc: true
 
 
 :::{admonition} TL;DR — pick one
-- **No install**: Use **Google Colab** in the browser.
-- **Beginner desktop**: Install **Anaconda** and use **Spyder** (MATLAB‑like).
+- **No install**: Use **Google Colab** in the browser. But requires google account.
+- **Beginner desktop**: Install **Anaconda** and use **Spyder** as an integrated development environment (IDE).
 - **Power users**: Install **Anaconda** and use **VS Code** (flexible, extensible).
 :::
 
