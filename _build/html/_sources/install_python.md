@@ -179,13 +179,10 @@ Common fix: If VS Code doesn’t “see” conda, set
 
 :::{tip}
 **For detailed tutorials to install Python and get started with programming**
-
 - You can also have a look at Prof. Tom Beucler’s ebooks (who teaches environmental machine learning at UNIL).  
 - However, we will dive into everything we need in the next chapter, too.  
-
 - Here is [Tom’s intro to running Python scripts](https://tbeucler.github.io/2024_MLEES_Ebook/Milton/00_Running_Python_Scripts.html)  
 - Here is [an introduction to Python](https://tbeucler.github.io/2024_MLEES_Ebook/IP/intro_python.html)  
-
 :::
 
 :::{admonition} Pro tip
