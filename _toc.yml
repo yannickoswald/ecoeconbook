@@ -10,5 +10,9 @@ chapters:
     title: Preface
   - file: install_python
     title: Installing and running Python
-  - file: intro_python
+  - file: intro_python/index
     title: Introduction to Python and Programming
+    sections:
+      - file: intro_python/calculator
+      - file: intro_python/variables
+    

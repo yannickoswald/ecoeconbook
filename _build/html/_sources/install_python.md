@@ -4,10 +4,21 @@ hide-toc: true
 
 # Installing and running Python   <!-- Add this -->
 
+
+## A note on learning to code/programming
+
+Coding is omnipresent in today's world. Computer code runs your phones, laptops and every AI you ever interact with.
+But coding is even more than that. Coding is a tool to find efficient solutions to problems and to build 'artificial' models of the world around us that can be explored. Learning to code is an excellent pathway to shape your own thinking: It combines logic and creativity like few other activities. 
+
+Therefore please note the following.
+
+At all times in this ebook and course that you follow - try to really understand things that you learn and do everything yourself. Do not use Generative AI to come up with coding solutions for you during exercises, as then the entire course will be a complete waste of your time. For your future success and capability it is absolutely essential that you build your own thinking and scienitific abilities, as if Generative AI and even the Internet would not exist. 
+
+Only if you approach it this way, you will later on benefit from the synergies you can generate with these advanced technologies. 
+
 ## Getting Python set up (3 easy paths)
 
-:::{tip}
-**What you’ll learn**
+:::{admonition} What you’ll learn
 - How to install and use Python
 - How to run code cells in this book  
 :::
@@ -15,9 +26,9 @@ hide-toc: true
 
 
 :::{admonition} TL;DR — pick one
-- **No install**: Use **Google Colab** in the browser.
-- **Beginner desktop**: Install **Anaconda** and use **Spyder** (MATLAB‑like).
-- **Power users**: Install **Anaconda** and use **VS Code** (flexible, extensible).
+- **OPTION A No install**: Use **Google Colab** in the browser. But requires google account.
+- **OPTION B Beginner desktop**: Install **Anaconda** and use **Spyder** as an integrated development environment (IDE).
+- **OPTION C Power users**: Install **Anaconda** and use **VS Code** (flexible, extensible).
 :::
 
 :::{tip}
@@ -45,25 +56,22 @@ print("NumPy:", np.__version__)
 2. Click **New Notebook** (top left).
 3. In the first cell, paste the test code above and press **Shift+Enter**.
 
-```{dropdown} Upload data or notebooks
-- **Upload a local `.ipynb`**: File ▸ Upload notebook…
-- **Mount Google Drive** to access files:
-  ```python
-  from google.colab import drive
-  drive.mount('/content/drive')
-  ```
-```
+
 
 ```{dropdown} Install extra packages
 Colab comes with many packages preinstalled. For others:
-```python
-!pip install plotnine openpyxl
-```
+python
+!pip install yourpackage
 ```
 
-:::{important}
-Colab sessions are temporary. Save your work to **Drive** or **download** important files.
-:::
+
+
+IMPORTANT! Colab sessions are temporary. Save your work to **Drive** or **download** important files.
+
+
+```{dropdown} Upload data or notebooks
+- **Upload a local `.ipynb`**: File ▸ Upload notebook…
+```
 
 ---
 
@@ -168,6 +176,17 @@ Common fix: If VS Code doesn’t “see” conda, set
 - **Colab**: zero setup, great for quick labs and sharing; requires internet.
 - **Spyder**: gentle desktop start; good for learning and small analyses.
 - **VS Code**: most powerful and extensible; ideal as you scale up.
+
+:::{tip}
+**For detailed tutorials to install Python and get started with programming**
+
+- You can also have a look at Prof. Tom Beucler’s ebooks (who teaches environmental machine learning at UNIL).  
+- However, we will dive into everything we need in the next chapter, too.  
+
+- Here is [Tom’s intro to running Python scripts](https://tbeucler.github.io/2024_MLEES_Ebook/Milton/00_Running_Python_Scripts.html)  
+- Here is [an introduction to Python](https://tbeucler.github.io/2024_MLEES_Ebook/IP/intro_python.html)  
+
+:::
 
 :::{admonition} Pro tip
 Whichever path you pick, keep your work in **project folders** and use **environments** (`conda create -n …`) to avoid dependency conflicts.

@@ -26,9 +26,9 @@ Only if you approach it this way, you will later on benefit from the synergies y
 
 
 :::{admonition} TL;DR — pick one
-- **No install**: Use **Google Colab** in the browser. But requires google account.
-- **Beginner desktop**: Install **Anaconda** and use **Spyder** as an integrated development environment (IDE).
-- **Power users**: Install **Anaconda** and use **VS Code** (flexible, extensible).
+- **OPTION A No install**: Use **Google Colab** in the browser. But requires google account.
+- **OPTION B Beginner desktop**: Install **Anaconda** and use **Spyder** as an integrated development environment (IDE).
+- **OPTION C Power users**: Install **Anaconda** and use **VS Code** (flexible, extensible).
 :::
 
 :::{tip}
@@ -176,6 +176,17 @@ Common fix: If VS Code doesn’t “see” conda, set
 - **Colab**: zero setup, great for quick labs and sharing; requires internet.
 - **Spyder**: gentle desktop start; good for learning and small analyses.
 - **VS Code**: most powerful and extensible; ideal as you scale up.
+
+:::{tip}
+**For detailed tutorials to install Python and get started with programming**
+
+- You can also have a look at Prof. Tom Beucler’s ebooks (who teaches environmental machine learning at UNIL).  
+- However, we will dive into everything we need in the next chapter, too.  
+
+- Here is [Tom’s intro to running Python scripts](https://tbeucler.github.io/2024_MLEES_Ebook/Milton/00_Running_Python_Scripts.html)  
+- Here is [an introduction to Python](https://tbeucler.github.io/2024_MLEES_Ebook/IP/intro_python.html)  
+
+:::
 
 :::{admonition} Pro tip
 Whichever path you pick, keep your work in **project folders** and use **environments** (`conda create -n …`) to avoid dependency conflicts.
