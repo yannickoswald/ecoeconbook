@@ -61,10 +61,10 @@ So, the full calculation is `(EJ per person) * (Gigajoules per Exajoule)`, which
 
 ```
 
-So for the next exercises you conduct a few interesting thought experiments:
+So for the next exercises you conduct simple thought experiments:
 
-1. How much larger would be the total global primary consumption, if everyone lived an American livestyle?
-2. How much larger would total CO_2 emissions be assuming current average co2 intensity of energy?
+1. How much larger would be the total yearly global primary consumption, if everyone lived an American livestyle?
+2. How much larger would total yearly $CO_2$ emissions be assuming current average $CO_2$ - intensity of energy (that is the quantity of $CO_2$ emitted per unit of energy - more on this later)?
 
 ```{dropdown} Solutions
 
