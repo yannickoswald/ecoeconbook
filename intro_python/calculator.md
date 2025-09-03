@@ -14,8 +14,9 @@ multiplication *
 
 you can multiply numbers like in the following code box. 
 
-```{code-cell} python
+```python
 2 + 2, 10 - 3, 6 * 7, 22 / 7, 22 // 7, 22 % 7, 2 ** 10
+```
 
 The ** is raising a number to a power.  So 2*2 = 4 could also be 2**2 because 2 squared is 4. Got it? With this one you need to become really familiar.
 
@@ -25,30 +26,39 @@ The US has a approximately a total primary energy consumption of 100 Exajoule in
 
 We learn more about this letter. If the USA has 340 million inhabitants that same year we have
 
-```{code-cell} python
+```python
 100 / (340 * 10**6) 
+```
 
 Exajoule per person. Since this is a bit cumbersome to read let us convert to Gigajoule (same thing just smaller unit) for which we multiply by 10**9 
 
-```{code-cell} python
+```python
 100 / (340 * 10**6) * 10**9
+```
 
 Wow, the average American consumes roughly 300 GJ energy per person! The global average is only around
 
-```{code-cell} python
+```python
 592/(8.2*10**9) * 10**9 
+```
 
 ~72Gigajoule per person. 
 
 First exercise, clarify the calculation with its respective units. 
 ? Hint the denominator is global population.
 
+```{dropdown} Solution
+
+
+
+```
+
 So for the next exercises you conduct a few interesting thought experiments:
 
 1. How much larger would be the total global primary consumption, if everyone lived an American livestyle?
 2. How much larger would total CO_2 emissions be assuming current average co2 intensity of energy?
 
-Solution
+```{dropdown} Solutions
 
 **Exercise 1: Global Energy Consumption with American Lifestyle**
 
@@ -81,3 +91,4 @@ Ratio of Emissions = $\frac{\text{New } CO_2 \text{ Emissions}}{\text{Current } 
 
 Based on the calculation from Exercise 1, this ratio is approximately **4.1**. Therefore, total global $CO_2$ emissions would also be about **4.1 times larger**.
 
+```

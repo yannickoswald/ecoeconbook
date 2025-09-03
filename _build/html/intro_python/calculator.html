@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro_python/calculator';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -405,7 +407,64 @@ subtraction -
 divison /
 multiplication *</p>
 <p>you can multiply numbers like in the following code box.</p>
-</section>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span> <span class="o">/</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span> <span class="o">//</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span> <span class="o">%</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>The ** is raising a number to a power.  So 2*2 = 4 could also be 2**2 because 2 squared is 4. Got it? With this one you need to become really familiar.</p>
+<p>Instead of boring stuff like this, let us do some interesting thought experiments to get into the groove:</p>
+<p>The US has a approximately a total primary energy consumption of 100 Exajoule in 2024. This is a unit of energy. A very big unit of energy.</p>
+<p>We learn more about this letter. If the USA has 340 million inhabitants that same year we have</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">/</span> <span class="p">(</span><span class="mi">340</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>Exajoule per person. Since this is a bit cumbersome to read let us convert to Gigajoule (same thing just smaller unit) for which we multiply by 10**9</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">/</span> <span class="p">(</span><span class="mi">340</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span>
+</pre></div>
+</div>
+<p>Wow, the average American consumes roughly 300 GJ energy per person! The global average is only around</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">592</span><span class="o">/</span><span class="p">(</span><span class="mf">8.2</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span> 
+</pre></div>
+</div>
+<p>~72Gigajoule per person.</p>
+<p>First exercise, clarify the calculation with its respective units.
+? Hint the denominator is global population.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details><p>So for the next exercises you conduct a few interesting thought experiments:</p>
+<ol class="arabic simple">
+<li><p>How much larger would be the total global primary consumption, if everyone lived an American livestyle?</p></li>
+<li><p>How much larger would total CO_2 emissions be assuming current average co2 intensity of energy?</p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solutions</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Exercise 1: Global Energy Consumption with American Lifestyle</strong></p>
+<p class="sd-card-text">To solve this, we need to calculate the total energy if the entire global population had the US per capita energy consumption.</p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Global Population:</strong> <span class="math notranslate nohighlight">\(8.2 \times 10^9\)</span> people</p></li>
+<li><p class="sd-card-text"><strong>US Energy Consumption per capita:</strong> The average American consumes about <span class="math notranslate nohighlight">\(300\)</span> GJ of energy per year. This is equivalent to <span class="math notranslate nohighlight">\(\frac{100 \text{ EJ}}{340 \times 10^6 \text{ people}}\)</span>.</p></li>
+</ul>
+<p class="sd-card-text"><strong>Calculation:</strong>
+New Global Energy Consumption = (Global Population) <span class="math notranslate nohighlight">\(\times\)</span> (US Energy Consumption per capita)
+New Global Energy Consumption = <span class="math notranslate nohighlight">\((8.2 \times 10^9 \text{ people}) \times (\frac{100 \text{ EJ}}{340 \times 10^6 \text{ people}})\)</span>
+New Global Energy Consumption <span class="math notranslate nohighlight">\(\approx 2412\)</span> EJ</p>
+<p class="sd-card-text">To find out how much larger this is, we compare it to the current global consumption:
+Ratio = <span class="math notranslate nohighlight">\(\frac{\text{New Global Energy Consumption}}{\text{Current Global Energy Consumption}}\)</span>
+Ratio = <span class="math notranslate nohighlight">\(\frac{2412 \text{ EJ}}{592 \text{ EJ}} \approx 4.07\)</span></p>
+<p class="sd-card-text">So, the total global primary energy consumption would be about <strong>4.1 times larger</strong> if everyone lived an American lifestyle.</p>
+<p class="sd-card-text"><strong>Exercise 2: Global <span class="math notranslate nohighlight">\(CO_2\)</span> Emissions with American Lifestyle</strong></p>
+<p class="sd-card-text">This problem assumes a constant <span class="math notranslate nohighlight">\(CO_2\)</span> intensity of energy, which means the amount of <span class="math notranslate nohighlight">\(CO_2\)</span> emitted per unit of energy consumed remains the same.</p>
+<ul class="simple">
+<li><p class="sd-card-text">Current <span class="math notranslate nohighlight">\(CO_2\)</span> Emissions = (Current Energy Consumption) <span class="math notranslate nohighlight">\(\times\)</span> (<span class="math notranslate nohighlight">\(CO_2\)</span> Intensity)</p></li>
+<li><p class="sd-card-text">New <span class="math notranslate nohighlight">\(CO_2\)</span> Emissions = (New Energy Consumption) <span class="math notranslate nohighlight">\(\times\)</span> (<span class="math notranslate nohighlight">\(CO_2\)</span> Intensity)</p></li>
+</ul>
+<p class="sd-card-text">Since the <span class="math notranslate nohighlight">\(CO_2\)</span> intensity is a constant value in this thought experiment, the ratio of emissions will be the same as the ratio of energy consumption.</p>
+<p class="sd-card-text">Ratio of Emissions = <span class="math notranslate nohighlight">\(\frac{\text{New } CO_2 \text{ Emissions}}{\text{Current } CO_2 \text{ Emissions}} = \frac{\text{New Energy Consumption}}{\text{Current Energy Consumption}}\)</span></p>
+<p class="sd-card-text">Based on the calculation from Exercise 1, this ratio is approximately <strong>4.1</strong>. Therefore, total global <span class="math notranslate nohighlight">\(CO_2\)</span> emissions would also be about <strong>4.1 times larger</strong>.</p>
+</div>
+</details></section>
 
     <script type="text/x-thebe-config">
     {
