@@ -2,5 +2,3 @@
 # Planetary constraints
 
 content loading
-
-```
