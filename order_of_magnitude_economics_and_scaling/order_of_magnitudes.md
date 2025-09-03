@@ -1,6 +1,4 @@
 (basics-order_of_magnitudes)=
-# Order of magnitude basics
+# Order of magnitudes
 
 Content loading 
-
-```
