@@ -3,14 +3,17 @@
 
 The first thing we learn is just that you can use a programming language like a pocket calculator. 
 
-This however is more important than you think in ecological economics as there is lots of multiplications throughout.
+This is more important than you think, as there are lots of multiplications throughout all of ecological economics.
 
-In brief python as all the standard operations that you know since primary school
+In brief, python as all the standard operations that you know since primary school
 
+:::{admonition} Basic operations
 addition +
 subtraction -
 divison /
 multiplication *
+raising a number to an exponent **
+:::
 
 you can multiply numbers like in the following code box. 
 
@@ -44,12 +47,17 @@ Wow, the average American consumes roughly 300 GJ energy per person! The global 
 
 ~72Gigajoule per person. 
 
-First exercise, clarify the calculation with its respective units. 
-? Hint the denominator is global population.
+First exercise, clarify the above calculation with its respective units. Hint the denominator is global population.
 
 ```{dropdown} Solution
 
+The numerator, `592`, represents the total global primary energy consumption in Exajoules (EJ). The denominator, `8.2 * 10**9`, is the global population.
 
+So, the expression `592 / (8.2 * 10**9)` is calculating `(Total Global EJ) / (Global Population) = EJ per person`.
+
+To convert this result from Exajoules to Gigajoules, you multiply by $10^9$, because $1 \text{ Exajoule} = 10^9 \text{ Gigajoules}$.
+
+So, the full calculation is `(EJ per person) * (Gigajoules per Exajoule)`, which gives you the final unit of `Gigajoules per person`.
 
 ```
 
