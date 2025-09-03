@@ -27,7 +27,8 @@ Instead of boring stuff like this, let us do some interesting thought experiment
 
 The US has a approximately a total primary energy consumption of 100 Exajoule in 2024. This is a unit of energy. A very big unit of energy.
 
-We learn more about this letter. If the USA has 340 million inhabitants that same year we have (run the following in your Python environment or Notebook)
+We learn more about this letter. If the USA has 340 million inhabitants that same year we have
+(run the following in your Python environment or Notebook)
 
 ```python
 100 / (340 * 10**6) 
