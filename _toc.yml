@@ -25,6 +25,6 @@ chapters:
     sections:
       - file: order_of_magnitude_economics_and_scaling/order_of_magnitudes
       - file: order_of_magnitude_economics_and_scaling/planetary_constraints
-      - file: order_of_magnitude_economics_and_scaling/scaling_elasticities
-      - file: order_of_magnitude_economics_and_scaling/scaling_conventional
+      - file: order_of_magnitude_economics_and_scaling/static_scale
+      - file: order_of_magnitude_economics_and_scaling/dynamic_scale
     
