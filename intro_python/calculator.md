@@ -5,7 +5,7 @@ The first thing we learn is just that you can use a programming language like a 
 
 This is more important than you think, as there are lots of multiplications throughout all of ecological economics.
 
-In brief, python as all the standard operations that you know since primary school
+In brief, python has all the standard operations that you know since primary school
 
 :::{admonition} Basic operations
 - addition +
