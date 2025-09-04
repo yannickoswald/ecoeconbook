@@ -431,7 +431,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -447,6 +449,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units-quick-reference">Common energy units (quick reference)</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -463,7 +473,8 @@ document.write(`
 <p><strong>What you’ll learn</strong></p>
 <ul class="simple">
 <li><p>What variables and datatypes are</p></li>
-<li><p>variables and datatypes in Python</p></li>
+<li><p>Variables and datatypes in Python</p></li>
+<li><p>Basic data structures like lists and dictionaries</p></li>
 <li><p>Operations on datatypes and variables</p></li>
 </ul>
 </div>
@@ -558,10 +569,100 @@ document.write(`
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">average_energy_consumption</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average energy consumption USA 2010-2020:&quot;</span><span class="p">,</span> <span class="n">average_energy_consumption</span><span class="p">,</span> <span class="s2">&quot;EJ&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="c1">## second to last leaving the space after the : empty </span>
 </pre></div>
 </div>
 </div>
-</details></section>
+</details><p>Another very important data structure is the dictionary (often abbreviated dict). A dictionary is a bit like list but the key difference (you will see this is a pun) here is that its structure does not derive from the order of elements within but from the fact that every element can be found by its <em>key</em> which you can freely choose. Technically in a list also every element has a key but they are just the number indices of its position and you cannot define them. If you are interested in going a bit deeper into the differences and commonalities you always can find cool programming knowledge on <a class="reference external" href="https://www.geeksforgeeks.org/python/difference-between-list-and-dictionary-in-python/">geekforgeeks</a>.</p>
+<p>An example dictionary holding energy consumption per person could look like the following for example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dictionary: country → energy consumption per person (GJ/person, realistic illustrative data)</span>
+<span class="n">energy_per_capita</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Switzerland&quot;</span><span class="p">:</span> <span class="mf">120.0</span><span class="p">,</span>
+    <span class="s2">&quot;Austria&quot;</span><span class="p">:</span> <span class="mf">130.0</span><span class="p">,</span>
+    <span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="mf">150.0</span><span class="p">,</span>
+    <span class="s2">&quot;United States&quot;</span><span class="p">:</span> <span class="mf">300.0</span><span class="p">,</span>
+    <span class="s2">&quot;India&quot;</span><span class="p">:</span> <span class="mf">25.0</span>
+<span class="p">}</span>
+
+<span class="c1"># Example usage</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy per capita in Austria:&quot;</span><span class="p">,</span> <span class="n">energy_per_capita</span><span class="p">[</span><span class="s2">&quot;Austria&quot;</span><span class="p">],</span> <span class="s2">&quot;GJ/person&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy per capita in Austria: 130.0 GJ/person
+</pre></div>
+</div>
+</div>
+</div>
+<p>You cannot select element any longer in the familiar way like in a list. You can see in the following. This will throw an error message - another fact-of-life in programming you will have to become really familiar with.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_per_capita</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">energy_per_capita</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">KeyError</span>: 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>This error specifically tells you it could not find the key “0”. But you can do it this way by using an existing key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_per_capita</span><span class="p">[</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>So now we know already everything we wanted to know about variables, datatypes and structures. However non of this will stick or sink in if we do not create better understanding through plenty of exercises. So let us dive right in and learn some more interesting things alongside.</p>
+<p>A typology of energy units used in ecological economics and energy economics could be for example:</p>
+<section id="common-energy-units-quick-reference">
+<h2>Common energy units (quick reference)<a class="headerlink" href="#common-energy-units-quick-reference" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Joule (J)</strong>: SI base unit of energy.</p>
+<ul>
+<li><p>(1 ,\text{kJ} = 10^{3} ,\text{J}),<br />
+(1 ,\text{MJ} = 10^{6} ,\text{J}),<br />
+(1 ,\text{GJ} = 10^{9} ,\text{J}),<br />
+(1 ,\text{TJ} = 10^{12} ,\text{J}).</p></li>
+</ul>
+</li>
+<li><p><strong>Watt-hour (Wh)</strong>: convenient for electricity.</p>
+<ul>
+<li><p>(1 ,\text{Wh} = 3600 ,\text{J}) (because (1 ,\text{W} = 1 ,\text{J/s}) and (1 ,\text{h} = 3600 ,\text{s})).</p></li>
+<li><p>(1 ,\text{kWh} = 10^{3} ,\text{Wh} = 3.6 ,\text{MJ})</p></li>
+<li><p>(1 ,\text{MWh} = 10^{6} ,\text{Wh} = 3.6 ,\text{GJ})</p></li>
+</ul>
+</li>
+<li><p><strong>British thermal unit (BTU)</strong>: common in some datasets, especially for fuels.</p>
+<ul>
+<li><p>(1 ,\text{BTU} \approx 1055.056 ,\text{J})</p></li>
+<li><p>(1 ,\text{MMBtu} = 10^{6} ,\text{BTU} \approx 1.055056 ,\text{GJ})</p></li>
+</ul>
+</li>
+<li><p><strong>Tonne of oil equivalent (toe)</strong>: aggregate energy benchmark.</p>
+<ul>
+<li><p>(1 ,\text{toe} = 41.868 ,\text{GJ} \approx 11.63 ,\text{MWh})</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -617,6 +718,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units-quick-reference">Common energy units (quick reference)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
