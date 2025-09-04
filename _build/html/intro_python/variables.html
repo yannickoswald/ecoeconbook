@@ -467,7 +467,7 @@ document.write(`
 <li><p>Operations on datatypes and variables</p></li>
 </ul>
 </div>
-<p>“In computer programming, a variable is an abstract storage location paired with an associated symbolic name, which contains some known or unknown quantity of data or object referred to as a value; or in simpler terms, a variable is a named container for a particular set of bits or type of data (like integer, float, string, etc…)”  - or so says <a class="reference external" href="https://en.wikipedia.org/wiki/Variable_(computer_science)">Wikipedia</a> cited from proper programming book.</p>
+<p>“In computer programming, a variable is an abstract storage location paired with an associated symbolic name, which contains some known or unknown quantity of data or object referred to as a value; or in simpler terms, a variable is a named container for a particular set of bits or type of data (like integer, float, string, etc…)”  - or so says <a class="reference external" href="https://en.wikipedia.org/wiki/Variable_(computer_science)">Wikipedia</a> cited from a proper programming book.</p>
 <p>For our purposes as scientists and ecological economists, it is important to understand that variables help you store quantities that represent something about the real-world and you can do computations with them that provide you useful insights.</p>
 <p>For example, in the previous sections we already encountered instances of variables. I say instance because they took on a concrete value - in our case the fact that the total primary energy consumption for the USA was 100 Exajoule.</p>
 <p>let us abbreviate total primary energy consumption to TPEC, then we can define a variable</p>
@@ -528,7 +528,7 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span> <span class="c1"># entries 3 to 5 of the list</span>
 <span class="nb">sum</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span> <span class="c1"># sum of all entries in the list</span>
 <span class="nb">min</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span> <span class="c1"># minimum value in the list</span>
-<span class="nb">max</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span> <span class="c1"># maximum value in the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">))</span> <span class="c1"># maximum value in the list</span>
 </pre></div>
 </div>
 </div>
@@ -538,15 +538,13 @@ document.write(`
 90
 [80, 82, 86]
 [87, 89, 75]
+90
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90
-</pre></div>
 </div>
 </div>
-</div>
-<div class="admonition-indexing-the-first admonition">
-<p class="admonition-title">indexing the first</p>
+<div class="admonition-indexing-the-first-element-in-a-list-or-any-data-structure admonition">
+<p class="admonition-title">Indexing the first element in a list (or any data structure)</p>
 <p>As noted from above the first element of a datastructure is always indexed 0 in Python. Be aware of this.</p>
 </div>
 <p>As noted from above the first element of a datastructure is always indexed 0 in Python. Be aware of this.</p>
