@@ -46,22 +46,23 @@ print("NumPy:", np.__version__)
 
 ## Option A — Google Colab (browser, zero install)
 
-:::{admonition} Why Colab?
+ Why Colab?
 - Runs in your browser; great for quick experiments or if you can’t install locally.
 - Easy sharing via Google Drive.
-:::
 
-**Steps**
+
+Steps
 1. Go to <https://colab.research.google.com>.
 2. Click **New Notebook** (top left).
 3. In the first cell, paste the test code above and press **Shift+Enter**.
 
 
 
-```{dropdown} Install extra packages
-Colab comes with many packages preinstalled. For others:
-python
-!pip install yourpackage
+Install extra packages
+Colab comes with many packages preinstalled. For others post the following in a code cell.
+
+```python
+python !pip install yourpackage
 ```
 
 
@@ -77,16 +78,16 @@ IMPORTANT! Colab sessions are temporary. Save your work to **Drive** or **downlo
 
 ## Option B — Anaconda + Spyder (beginner‑friendly)
 
-:::{admonition} Why Spyder?
+ Why Spyder?
 - Simple, MATLAB‑style interface: **editor + console + variable viewer**.
 - Great for learning basics without lots of tooling.
-:::
 
-### 1. Install Anaconda
+
+1. Install Anaconda
 - Download **Anaconda Individual Edition** from <https://www.anaconda.com/download>.
 - Install with defaults.
 
-### 2. Create a clean environment (recommended)
+2. Create a clean environment (recommended)
 ```bash
 # Windows (Anaconda Prompt) / macOS / Linux (Terminal)
 conda create -n ecoecon python=3.11 -y
@@ -102,7 +103,7 @@ pip install plotnine pyarrow
 ```
 ```
 
-### 3. Launch Spyder
+3. Launch Spyder
 - Open **Anaconda Navigator** ▸ **Spyder** (choose env `ecoecon` if asked),  
   **or** from terminal:
   ```bash
@@ -120,31 +121,32 @@ Point it to your `ecoecon` env interpreter (Navigator usually handles this autom
 
 ## Option C — Anaconda + VS Code (flexible, not-so-beginner)
 
-:::{admonition} Why VS Code?
+
+ Why VS Code?
 - Excellent editor, **Python** and **Jupyter** extensions, debugging, terminals, Git.
 - Works with both scripts (`.py`) and notebooks (`.ipynb`), and “cell” style `# %%`.
-:::
 
-### 1) Install prerequisites
+
+1) Install prerequisites
 - Install **Anaconda** (as above).
 - Install **VS Code** from <https://code.visualstudio.com/>.
 - In VS Code, install extensions:
   - **Python** (Microsoft)
   - **Jupyter** (Microsoft)
 
-### 2) Create/select your conda environment
+2) Create/select your conda environment
 ```bash
 conda create -n ecoecon python=3.11 -y
 conda activate ecoecon
 conda install numpy pandas matplotlib jupyterlab -y
 ```
 
-### 3) Tell VS Code which Python to use
+3) Tell VS Code which Python to use
 - Open your project folder in VS Code.
 - **Command Palette** (Ctrl/Cmd+Shift+P) ▸ **Python: Select Interpreter** ▸ choose the `ecoecon` env.
 - Open a terminal in VS Code (**Terminal ▸ New Terminal**) — it should show `(ecoecon)`.
 
-### 4) Run Python
+4) Run Python
 - **Script**: create `hello.py`, run with the **▶ Run** button or right‑click ▸ **Run Python File**.
 - **Notebook**: create a new **Jupyter Notebook** (`.ipynb`) and run cells.
 - **Cell mode in .py**: use `# %%` to define cells, then click **Run Cell** above each cell.
