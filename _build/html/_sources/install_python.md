@@ -101,7 +101,7 @@ conda install scipy seaborn xarray -y
 # or with pip (inside the env):
 pip install plotnine pyarrow
 ```
-```
+
 
 3. Launch Spyder
 - Open **Anaconda Navigator** ▸ **Spyder** (choose env `ecoecon` if asked),  
@@ -111,11 +111,6 @@ pip install plotnine pyarrow
   spyder
   ```
 - In the editor, open/create `hello.py`, paste the test code, press **Run** (▶).
-
-```{dropdown} Ensure Spyder uses the right environment
-In Spyder: **Preferences** ▸ **Python interpreter** ▸ **Use the following interpreter**  
-Point it to your `ecoecon` env interpreter (Navigator usually handles this automatically).
-```
 
 ---
 
