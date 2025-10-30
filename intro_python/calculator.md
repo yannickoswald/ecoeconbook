@@ -66,6 +66,11 @@ So for the next exercises you conduct simple thought experiments:
 1. How much larger would be the total yearly global primary consumption, if everyone lived an American livestyle?
 2. How much larger would total yearly $CO_2$ emissions be assuming current average $CO_2$ - intensity of energy (that is the quantity of $CO_2$ emitted per unit of energy - more on this later)?
 
+:::{admonition} Exercises notebook setup
+:class: important
+From now on for this and all following exercise you should create a Jupyter notebook entitled "exercises_intro" in which you will solve the exercises in the chapter "Introduction to Python and Programming" by yourself. You can also download the Jupyter notebooks in the chapter pressing the download button in the upper right corner. But please try to solve all exercises yourself and no use of AI.
+:::
+
 ```{dropdown} Solutions
 
 **Exercise 1: Global Energy Consumption with American Lifestyle**

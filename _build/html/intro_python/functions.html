@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Functions &#8212; Quantitative Ecological Economics</title>
+    <title>&lt;no title&gt; &#8212; Quantitative Ecological Economics</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -173,14 +173,13 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install_python.html">Installing and running Python</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Introduction to Python and Programming</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">Introduction to Python and Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="calculator.html">Python as a calculator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables and basic data types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ifs_and_loops.html">Control flow: <code class="docutils literal notranslate"><span class="pre">if</span></code> statements and loops</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ifs_and_loops.html">Control flow: if statements and loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="small_programming_project.html">Project 1 - Analysing a dataset in a pandas dataframe</a></li>
@@ -239,6 +238,55 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/<YOUR-ORG>/<YOUR-REPO>/main?urlpath=lab/tree/./intro_python/functions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/<YOUR-ORG>/<YOUR-REPO>/blob/main/./intro_python/functions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -264,7 +312,7 @@
       
       
       
-      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>/edit/main/./intro_python/functions.md" target="_blank"
+      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>/edit/main/./intro_python/functions.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -311,7 +359,7 @@
       
       
       
-      <li><a href="../_sources/intro_python/functions.md" target="_blank"
+      <li><a href="../_sources/intro_python/functions.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +369,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -382,7 +430,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -393,11 +443,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Functions</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -407,9 +465,244 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="functions">
-<span id="basics-functions"></span><h1>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
-</section>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">basics</span><span class="o">-</span><span class="n">functions</span><span class="p">)</span><span class="o">=</span>
+<span class="c1"># Functions: reusable building blocks of your code</span>
+
+<span class="p">:::{</span><span class="n">tip</span><span class="p">}</span>
+<span class="o">**</span><span class="n">What</span> <span class="n">you</span><span class="err">’</span><span class="n">ll</span> <span class="n">learn</span><span class="o">**</span>
+<span class="o">-</span> <span class="n">What</span> <span class="n">functions</span> <span class="n">are</span> <span class="ow">and</span> <span class="n">why</span> <span class="n">they</span> <span class="n">matter</span>  
+<span class="o">-</span> <span class="n">How</span> <span class="n">to</span> <span class="n">define</span> <span class="ow">and</span> <span class="n">call</span> <span class="n">functions</span> <span class="ow">in</span> <span class="n">Python</span>  
+<span class="o">-</span> <span class="n">How</span> <span class="n">to</span> <span class="k">pass</span> <span class="n">arguments</span> <span class="ow">and</span> <span class="k">return</span> <span class="n">values</span>  
+<span class="o">-</span> <span class="n">Why</span> <span class="n">functions</span> <span class="n">are</span> <span class="n">essential</span> <span class="k">for</span> <span class="n">structuring</span> <span class="n">simulations</span> <span class="ow">and</span> <span class="n">analyses</span>  
+<span class="p">:::</span>
+
+<span class="o">---</span>
+
+<span class="c1">### Introduction</span>
+
+<span class="n">So</span> <span class="n">far</span><span class="p">,</span> <span class="n">we</span> <span class="n">have</span> <span class="n">written</span> <span class="n">code</span> <span class="n">that</span> <span class="n">runs</span> <span class="n">line</span> <span class="n">by</span> <span class="n">line</span> <span class="err">—</span> <span class="n">but</span> <span class="n">what</span> <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="o">**</span><span class="n">reuse</span><span class="o">**</span> <span class="n">the</span> <span class="n">same</span> <span class="n">logic</span> <span class="n">many</span> times<span class="o">?</span>  
+<span class="n">Instead</span> <span class="n">of</span> <span class="n">copying</span> <span class="ow">and</span> <span class="n">pasting</span> <span class="n">code</span><span class="p">,</span> <span class="n">we</span> <span class="n">can</span> <span class="o">**</span><span class="n">wrap</span><span class="o">**</span> <span class="n">it</span> <span class="n">inside</span> <span class="n">a</span> <span class="o">*</span><span class="n">function</span><span class="o">*.</span>
+
+<span class="n">In</span> <span class="n">short</span><span class="p">:</span>  
+<span class="o">&gt;</span> <span class="n">A</span> <span class="o">**</span><span class="n">function</span><span class="o">**</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">named</span> <span class="n">block</span> <span class="n">of</span> <span class="n">code</span> <span class="n">that</span> <span class="n">performs</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">task</span> <span class="ow">and</span> <span class="n">can</span> <span class="n">be</span> <span class="n">reused</span> <span class="n">anywhere</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">program</span><span class="o">.</span>
+
+<span class="n">For</span> <span class="n">ecological</span> <span class="n">economists</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">particularly</span> <span class="n">useful</span><span class="o">.</span>  
+<span class="n">For</span> <span class="n">instance</span><span class="p">,</span> <span class="n">you</span> <span class="n">might</span> <span class="n">want</span> <span class="n">to</span> <span class="n">calculate</span> <span class="n">the</span> <span class="n">same</span> <span class="n">energy</span> <span class="n">intensity</span> <span class="ow">or</span> <span class="n">emissions</span> <span class="n">growth</span> <span class="n">across</span> <span class="n">many</span> <span class="n">datasets</span> <span class="ow">or</span> <span class="n">years</span><span class="o">.</span>
+
+<span class="o">---</span>
+
+<span class="c1">## 1. Your first function</span>
+
+<span class="n">Let</span><span class="err">’</span><span class="n">s</span> <span class="n">start</span> <span class="n">simple</span><span class="o">.</span> <span class="n">Suppose</span> <span class="n">we</span> <span class="n">repeatedly</span> <span class="n">need</span> <span class="n">to</span> <span class="n">convert</span> <span class="n">energy</span> <span class="kn">from</span> <span class="o">**</span><span class="n">Gigajoules</span> <span class="p">(</span><span class="n">GJ</span><span class="p">)</span><span class="o">**</span> <span class="n">to</span> <span class="o">**</span><span class="n">Megawatt</span><span class="o">-</span><span class="n">hours</span> <span class="p">(</span><span class="n">MWh</span><span class="p">)</span><span class="o">**.</span>
+
+<span class="n">Since</span> \<span class="p">(</span><span class="mi">1</span>\<span class="n">text</span><span class="p">{</span> <span class="n">MWh</span><span class="p">}</span> <span class="o">=</span> <span class="mf">3.6</span>\<span class="n">text</span><span class="p">{</span> <span class="n">GJ</span><span class="p">}</span>\<span class="p">),</span> <span class="n">we</span> <span class="n">can</span> <span class="n">define</span> <span class="n">a</span> <span class="n">function</span><span class="p">:</span>
+
+<span class="err">```</span><span class="n">python</span>
+<span class="k">def</span> <span class="nf">gj_to_mwh</span><span class="p">(</span><span class="n">energy_gj</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert energy from Gigajoules (GJ) to Megawatt-hours (MWh).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">energy_mwh</span> <span class="o">=</span> <span class="n">energy_gj</span> <span class="o">/</span> <span class="mf">3.6</span>
+    <span class="k">return</span> <span class="n">energy_mwh</span>
+<span class="err">```</span>
+
+<span class="n">Now</span> <span class="n">we</span> <span class="n">can</span> <span class="n">call</span> <span class="n">this</span> <span class="n">function</span> <span class="k">as</span> <span class="n">often</span> <span class="k">as</span> <span class="n">we</span> <span class="n">like</span><span class="p">:</span>
+
+<span class="err">```</span><span class="n">python</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gj_to_mwh</span><span class="p">(</span><span class="mi">180</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gj_to_mwh</span><span class="p">(</span><span class="mi">72</span><span class="p">))</span>
+<span class="err">```</span>
+
+<span class="n">Output</span><span class="p">:</span>
+<span class="err">```</span>
+<span class="mf">50.0</span>
+<span class="mf">20.0</span>
+<span class="err">```</span>
+
+<span class="err">✅</span> <span class="o">**</span><span class="n">Key</span> <span class="n">idea</span><span class="p">:</span><span class="o">**</span> <span class="n">a</span> <span class="n">function</span> <span class="n">saves</span> <span class="n">effort</span> <span class="ow">and</span> <span class="n">reduces</span> <span class="n">mistakes</span> <span class="n">when</span> <span class="n">repeating</span> <span class="n">the</span> <span class="n">same</span> <span class="n">calculation</span><span class="o">.</span>
+
+<span class="o">---</span>
+
+<span class="c1">## 2. Function arguments and return values</span>
+
+<span class="n">Every</span> <span class="n">function</span> <span class="n">can</span> <span class="n">take</span> <span class="o">**</span><span class="n">inputs</span><span class="o">**</span> <span class="p">(</span><span class="n">called</span> <span class="o">*</span><span class="n">arguments</span><span class="o">*</span><span class="p">)</span> <span class="ow">and</span> <span class="n">give</span> <span class="o">**</span><span class="n">outputs</span><span class="o">**</span> <span class="p">(</span><span class="n">via</span> <span class="n">the</span> <span class="err">`</span><span class="k">return</span><span class="err">`</span> <span class="n">keyword</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">Let</span><span class="err">’</span><span class="n">s</span> <span class="n">expand</span> <span class="n">our</span> <span class="n">example</span><span class="o">.</span> <span class="n">Suppose</span> <span class="n">we</span> <span class="n">want</span> <span class="n">to</span> <span class="n">compute</span> <span class="o">**</span><span class="n">energy</span> <span class="n">intensity</span><span class="o">**</span> <span class="p">(</span><span class="n">energy</span> <span class="n">per</span> <span class="n">GDP</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="n">country</span><span class="o">.</span>
+
+<span class="err">```</span><span class="n">python</span>
+<span class="k">def</span> <span class="nf">energy_intensity</span><span class="p">(</span><span class="n">energy_gj</span><span class="p">,</span> <span class="n">gdp_usd</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute energy intensity: energy per GDP (GJ per USD).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">energy_gj</span> <span class="o">/</span> <span class="n">gdp_usd</span>
+<span class="err">```</span>
+
+<span class="n">Now</span> <span class="n">we</span> <span class="n">can</span> <span class="n">reuse</span> <span class="n">it</span> <span class="n">easily</span> <span class="n">across</span> <span class="n">many</span> <span class="n">countries</span><span class="p">:</span>
+
+<span class="err">```</span><span class="n">python</span>
+<span class="n">energy_GJ</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Switzerland&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+    <span class="s2">&quot;Austria&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+    <span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="mi">180</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">gdp_per_capita</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Switzerland&quot;</span><span class="p">:</span> <span class="mi">95000</span><span class="p">,</span>
+    <span class="s2">&quot;Austria&quot;</span><span class="p">:</span> <span class="mi">70000</span><span class="p">,</span>
+    <span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="mi">80000</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">energy_GJ</span><span class="p">:</span>
+    <span class="n">ei</span> <span class="o">=</span> <span class="n">energy_intensity</span><span class="p">(</span><span class="n">energy_GJ</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">gdp_per_capita</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;→&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">ei</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="s2">&quot;GJ per $GDP&quot;</span><span class="p">)</span>
+<span class="err">```</span>
+
+<span class="n">This</span> <span class="ow">is</span> <span class="n">how</span> <span class="n">you</span> <span class="n">make</span> <span class="n">your</span> <span class="n">code</span> <span class="o">**</span><span class="n">modular</span><span class="o">**</span> <span class="err">—</span> <span class="n">small</span> <span class="n">building</span> <span class="n">blocks</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">combined</span> <span class="ow">in</span> <span class="n">larger</span> <span class="n">analyses</span><span class="o">.</span>
+
+<span class="o">---</span>
+
+<span class="c1">## 3. Functions with conditional logic</span>
+
+<span class="n">You</span> <span class="n">can</span> <span class="n">use</span> <span class="err">`</span><span class="k">if</span><span class="err">`</span> <span class="n">statements</span> <span class="o">*</span><span class="n">inside</span><span class="o">*</span> <span class="n">functions</span> <span class="n">too</span><span class="o">.</span>
+
+<span class="n">Suppose</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">classify</span> <span class="n">whether</span> <span class="n">a</span> <span class="n">country</span> <span class="ow">is</span> <span class="err">“</span><span class="n">low</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">medium</span><span class="err">”</span><span class="p">,</span> <span class="ow">or</span> <span class="err">“</span><span class="n">high</span><span class="err">”</span> <span class="n">energy</span> <span class="n">intensity</span><span class="p">:</span>
+
+<span class="err">```</span><span class="n">python</span>
+<span class="k">def</span> <span class="nf">classify_intensity</span><span class="p">(</span><span class="n">ei</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classify a country&#39;s energy intensity into categories.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">ei</span> <span class="o">&gt;</span> <span class="mf">0.0025</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;high&quot;</span>
+    <span class="k">elif</span> <span class="n">ei</span> <span class="o">&gt;</span> <span class="mf">0.0015</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;medium&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;low&quot;</span>
+<span class="err">```</span>
+
+<span class="n">Let</span><span class="err">’</span><span class="n">s</span> <span class="n">combine</span> <span class="n">it</span> <span class="k">with</span> <span class="n">our</span> <span class="n">earlier</span> <span class="n">loop</span><span class="p">:</span>
+
+<span class="err">```</span><span class="n">python</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">energy_GJ</span><span class="p">:</span>
+    <span class="n">ei</span> <span class="o">=</span> <span class="n">energy_intensity</span><span class="p">(</span><span class="n">energy_GJ</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">gdp_per_capita</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
+    <span class="n">category</span> <span class="o">=</span> <span class="n">classify_intensity</span><span class="p">(</span><span class="n">ei</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2"> → </span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2"> energy intensity&quot;</span><span class="p">)</span>
+<span class="err">```</span>
+
+<span class="n">Output</span><span class="p">:</span>
+<span class="err">```</span>
+<span class="n">Switzerland</span> <span class="err">→</span> <span class="n">low</span> <span class="n">energy</span> <span class="n">intensity</span>
+<span class="n">Austria</span> <span class="err">→</span> <span class="n">medium</span> <span class="n">energy</span> <span class="n">intensity</span>
+<span class="n">Germany</span> <span class="err">→</span> <span class="n">medium</span> <span class="n">energy</span> <span class="n">intensity</span>
+<span class="err">```</span>
+
+<span class="n">Notice</span> <span class="n">how</span> <span class="n">each</span> <span class="n">function</span> <span class="n">does</span> <span class="o">**</span><span class="n">one</span> <span class="n">thing</span> <span class="n">well</span><span class="o">**</span> <span class="err">—</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">essence</span> <span class="n">of</span> <span class="n">clean</span> <span class="n">code</span><span class="o">.</span>
+
+<span class="o">---</span>
+
+<span class="c1">## 4. Multiple arguments and default values</span>
+
+<span class="n">Sometimes</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">allow</span> <span class="n">flexibility</span> <span class="err">—</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">assume</span> <span class="n">a</span> <span class="n">different</span> <span class="n">energy</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">GDP</span> <span class="n">conversion</span> <span class="n">factor</span><span class="o">.</span>
+
+<span class="err">```</span><span class="n">python</span>
+<span class="k">def</span> <span class="nf">energy_intensity</span><span class="p">(</span><span class="n">energy_gj</span><span class="p">,</span> <span class="n">gdp_usd</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute energy intensity with an optional scaling factor.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">energy_gj</span> <span class="o">/</span> <span class="n">gdp_usd</span><span class="p">)</span> <span class="o">*</span> <span class="n">factor</span>
+<span class="err">```</span>
+
+<span class="n">Now</span> <span class="n">you</span> <span class="n">can</span> <span class="n">call</span> <span class="n">it</span> <span class="n">either</span> <span class="n">normally</span> <span class="ow">or</span> <span class="k">with</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">factor</span><span class="p">:</span>
+
+<span class="err">```</span><span class="n">python</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">energy_intensity</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">70000</span><span class="p">))</span>           <span class="c1"># normal</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">energy_intensity</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">70000</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># scaled</span>
+<span class="err">```</span>
+
+<span class="n">Default</span> <span class="n">arguments</span> <span class="n">make</span> <span class="n">your</span> <span class="n">functions</span> <span class="n">adaptable</span> <span class="n">without</span> <span class="n">requiring</span> <span class="n">you</span> <span class="n">to</span> <span class="n">rewrite</span> <span class="n">them</span><span class="o">.</span>
+
+<span class="o">---</span>
+
+<span class="c1">## 5. Why functions matter in ecological economics</span>
+
+<span class="n">Functions</span> <span class="n">are</span> <span class="n">crucial</span> <span class="k">for</span> <span class="n">structuring</span> <span class="n">quantitative</span> <span class="n">ecological</span><span class="o">-</span><span class="n">economic</span> <span class="n">models</span><span class="o">.</span>  
+<span class="n">They</span> <span class="n">allow</span> <span class="n">us</span> <span class="n">to</span><span class="p">:</span>
+
+<span class="o">-</span> <span class="n">Define</span> <span class="n">agent</span> <span class="n">behaviors</span> <span class="p">(</span><span class="err">`</span><span class="k">def</span> <span class="nf">decide_investment</span><span class="p">()</span><span class="err">`</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Update</span> <span class="n">environmental</span> <span class="n">states</span> <span class="p">(</span><span class="err">`</span><span class="k">def</span> <span class="nf">update_emissions</span><span class="p">()</span><span class="err">`</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Compute</span> <span class="n">aggregate</span> <span class="n">indicators</span> <span class="p">(</span><span class="err">`</span><span class="k">def</span> <span class="nf">total_emissions</span><span class="p">()</span><span class="err">`</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Test</span> <span class="n">policies</span> <span class="p">(</span><span class="err">`</span><span class="k">def</span> <span class="nf">apply_carbon_tax</span><span class="p">()</span><span class="err">`</span><span class="p">)</span>
+
+<span class="n">Think</span> <span class="n">of</span> <span class="n">functions</span> <span class="k">as</span> <span class="n">the</span> <span class="o">**</span><span class="n">organs</span><span class="o">**</span> <span class="n">of</span> <span class="n">your</span> <span class="n">code</span><span class="p">:</span> <span class="n">each</span> <span class="n">performs</span> <span class="n">one</span> <span class="n">vital</span> <span class="n">function</span><span class="p">,</span> <span class="n">but</span> <span class="n">together</span> <span class="n">they</span> <span class="n">make</span> <span class="n">the</span> <span class="n">whole</span> <span class="n">system</span> <span class="n">work</span><span class="o">.</span>
+
+<span class="n">In</span> <span class="n">your</span> <span class="n">later</span> <span class="n">models</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">when</span> <span class="n">we</span> <span class="n">simulate</span> <span class="n">inequality</span> <span class="ow">or</span> <span class="n">compute</span> <span class="n">Gini</span> <span class="n">coefficients</span><span class="p">),</span>  
+<span class="n">functions</span> <span class="n">will</span> <span class="n">handle</span> <span class="n">key</span> <span class="n">computations</span> <span class="n">like</span> <span class="n">income</span> <span class="n">updates</span><span class="p">,</span> <span class="n">taxation</span> <span class="n">rules</span><span class="p">,</span> <span class="ow">or</span> <span class="n">saving</span> <span class="n">decisions</span><span class="o">.</span>
+
+<span class="o">---</span>
+
+<span class="c1">### 🧩 Mini exercise</span>
+
+<span class="n">Define</span> <span class="n">a</span> <span class="n">function</span> <span class="n">that</span> <span class="n">computes</span> <span class="n">the</span> <span class="o">**</span><span class="n">percentage</span> <span class="n">change</span><span class="o">**</span> <span class="n">between</span> <span class="n">two</span> <span class="n">years</span> <span class="n">of</span> <span class="n">per</span><span class="o">-</span><span class="n">capita</span> <span class="n">emissions</span><span class="o">.</span>
+
+<span class="err">```</span><span class="n">python</span>
+<span class="k">def</span> <span class="nf">pct_change</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute percentage change between two values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">new</span> <span class="o">-</span> <span class="n">old</span><span class="p">)</span> <span class="o">/</span> <span class="n">old</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Example data</span>
+<span class="n">emissions_2020</span> <span class="o">=</span> <span class="mf">5.2</span>
+<span class="n">emissions_2024</span> <span class="o">=</span> <span class="mf">4.7</span>
+
+<span class="n">change</span> <span class="o">=</span> <span class="n">pct_change</span><span class="p">(</span><span class="n">emissions_2020</span><span class="p">,</span> <span class="n">emissions_2024</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Change:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">change</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+<span class="err">```</span>
+
+<span class="p">:::{</span><span class="n">dropdown</span><span class="p">}</span> <span class="err">💡</span> <span class="o">*</span><span class="n">Solution</span> <span class="n">explanation</span><span class="o">*</span>
+<span class="o">-</span> <span class="n">The</span> <span class="n">function</span> <span class="n">takes</span> <span class="n">two</span> <span class="n">arguments</span><span class="p">:</span> <span class="n">the</span> <span class="n">old</span> <span class="ow">and</span> <span class="n">new</span> <span class="n">values</span><span class="o">.</span>  
+<span class="o">-</span> <span class="n">It</span> <span class="n">computes</span> <span class="n">the</span> <span class="n">relative</span> <span class="n">change</span> <span class="ow">in</span> <span class="n">percent</span><span class="o">.</span>  
+<span class="o">-</span> <span class="n">Try</span> <span class="n">reversing</span> <span class="n">the</span> <span class="n">order</span> <span class="ow">or</span> <span class="n">testing</span> <span class="k">with</span> <span class="n">different</span> <span class="n">values</span><span class="err">!</span>
+<span class="p">:::</span>
+
+<span class="o">---</span>
+
+<span class="c1">### Summary</span>
+
+<span class="o">|</span> <span class="n">Concept</span> <span class="o">|</span> <span class="n">Description</span> <span class="o">|</span> <span class="n">Example</span> <span class="o">|</span>
+<span class="o">|----------|--------------|----------|</span>
+<span class="o">|</span> <span class="err">`</span><span class="n">def</span><span class="err">`</span> <span class="o">|</span> <span class="n">defines</span> <span class="n">a</span> <span class="n">function</span> <span class="o">|</span> <span class="err">`</span><span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span><span class="err">`</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">Arguments</span> <span class="o">|</span> <span class="n">inputs</span> <span class="n">to</span> <span class="n">the</span> <span class="n">function</span> <span class="o">|</span> <span class="err">`</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="err">`</span> <span class="o">|</span>
+<span class="o">|</span> <span class="err">`</span><span class="k">return</span><span class="err">`</span> <span class="o">|</span> <span class="n">outputs</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">function</span> <span class="o">|</span> <span class="err">`</span><span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="err">`</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">Default</span> <span class="n">argument</span> <span class="o">|</span> <span class="n">optional</span> <span class="n">value</span> <span class="o">|</span> <span class="err">`</span><span class="n">factor</span><span class="o">=</span><span class="mi">1</span><span class="err">`</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">Combining</span> <span class="n">functions</span> <span class="o">|</span> <span class="n">modular</span> <span class="n">design</span> <span class="o">|</span> <span class="n">use</span> <span class="err">`</span><span class="n">energy_intensity</span><span class="p">()</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">classify_intensity</span><span class="p">()</span><span class="err">`</span> <span class="n">together</span> <span class="o">|</span>
+
+<span class="o">---</span>
+
+<span class="err">✅</span> <span class="o">**</span><span class="n">Key</span> <span class="n">takeaway</span><span class="p">:</span><span class="o">**</span>  
+<span class="n">Functions</span> <span class="n">make</span> <span class="n">your</span> <span class="n">code</span> <span class="o">*</span><span class="n">reusable</span><span class="o">*</span><span class="p">,</span> <span class="o">*</span><span class="n">readable</span><span class="o">*</span><span class="p">,</span> <span class="ow">and</span> <span class="o">*</span><span class="n">modular</span><span class="o">*.</span>  
+<span class="n">They</span> <span class="n">are</span> <span class="n">the</span> <span class="n">foundation</span> <span class="k">for</span> <span class="nb">complex</span> <span class="n">models</span> <span class="err">—</span> <span class="kn">from</span> <span class="nn">computing</span> <span class="n">energy</span> <span class="n">intensities</span> <span class="n">to</span> <span class="n">building</span> <span class="n">agent</span><span class="o">-</span><span class="n">based</span> <span class="n">economies</span><span class="o">.</span>
+
+<span class="o">---</span>
+
+<span class="c1">### Next steps</span>
+
+<span class="n">Next</span><span class="p">,</span> <span class="n">we</span><span class="err">’</span><span class="n">ll</span> <span class="n">learn</span> <span class="n">how</span> <span class="n">to</span> <span class="n">use</span> <span class="o">**</span><span class="n">data</span> <span class="n">structures</span><span class="o">**</span> <span class="n">like</span> <span class="n">lists</span> <span class="ow">and</span> <span class="n">dictionaries</span> <span class="o">*</span><span class="n">together</span> <span class="k">with</span> <span class="n">functions</span><span class="o">*</span>  
+<span class="n">to</span> <span class="n">build</span> <span class="n">more</span> <span class="n">realistic</span> <span class="n">simulations</span> <span class="err">—</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">step</span> <span class="n">toward</span> <span class="n">ecological</span><span class="o">-</span><span class="n">economic</span> <span class="n">modeling</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+    <span class="o">**</span><span class="n">What</span> <span class="n">you</span><span class="err">’</span><span class="n">ll</span> <span class="n">learn</span><span class="o">**</span>
+              <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid character &#39;’&#39; (U+2019)
+</pre></div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -447,7 +740,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Control flow: <code class="docutils literal notranslate"><span class="pre">if</span></code> statements and loops</p>
+        <p class="prev-next-title">Control flow: if statements and loops</p>
       </div>
     </a>
     <a class="right-next"
@@ -465,6 +758,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

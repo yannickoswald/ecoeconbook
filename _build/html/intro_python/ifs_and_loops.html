@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro_python/ifs_and_loops';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Functions" href="functions.html" />
+    <link rel="next" title="&lt;no title&gt;" href="functions.html" />
     <link rel="prev" title="Variables and basic data types" href="variables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -179,8 +179,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Introduction to Python and Programming</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="calculator.html">Python as a calculator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables and basic data types</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Control flow: <code class="docutils literal notranslate"><span class="pre">if</span></code> statements and loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Control flow: if statements and loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="small_programming_project.html">Project 1 - Analysing a dataset in a pandas dataframe</a></li>
@@ -462,6 +461,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repetition-for-loops">2. Repetition: <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Explanation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-over-lists">Looping over lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-range">Looping with <code class="docutils literal notranslate"><span class="pre">range()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Explanation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-growth-of-energy-demand">Example: growth of energy demand</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Explanation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-looping-over-multiple-parameters">🧩 Exercise: looping over multiple parameters</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">3. While loops</a></li>
@@ -484,7 +492,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="control-flow-if-statements-and-loops">
-<span id="basics-controlflow"></span><h1>Control flow: <code class="docutils literal notranslate"><span class="pre">if</span></code> statements and loops<a class="headerlink" href="#control-flow-if-statements-and-loops" title="Link to this heading">#</a></h1>
+<span id="basics-controlflow"></span><h1>Control flow: if statements and loops<a class="headerlink" href="#control-flow-if-statements-and-loops" title="Link to this heading">#</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p><strong>What you’ll learn</strong></p>
@@ -615,8 +623,125 @@ Analyzing India
 </div>
 </div>
 </div>
-<p>This will print each country name — a simple but powerful idea.<br />
+<p>This will print each country name which is a simple but powerful idea.<br />
 Most data analyses, even large models, boil down to loops like this.</p>
+</section>
+<section id="looping-with-range">
+<h3>Looping with <code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#looping-with-range" title="Link to this heading">#</a></h3>
+<p>Before looping over lists or dictionaries in exercises, it’s important to understand the range-for-loop.</p>
+<p>The keyword <code class="docutils literal notranslate"><span class="pre">range()</span></code> generates a sequence of numbers.<br />
+By convention, Python loops count <strong>from 0 up to (but not including)</strong> the upper limit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Step&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step 0
+Step 1
+Step 2
+Step 3
+Step 4
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h4>Explanation<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The variable <code class="docutils literal notranslate"><span class="pre">i</span></code> is the <strong>loop index</strong> — it takes the values <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4</span></code> in turn.</p></li>
+<li><p>The line inside the loop runs once for each value of <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p></li>
+<li><p>By default, <code class="docutils literal notranslate"><span class="pre">range(5)</span></code> means “count from 0 to 4”.</p></li>
+</ul>
+<p>You can also specify a <strong>start</strong>, <strong>stop</strong>, and <strong>step</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i =&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i = 1
+i = 3
+i = 5
+i = 7
+i = 9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, the loop starts at 1, stops <em>before</em> 11, and increases by 2 each time.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="example-growth-of-energy-demand">
+<h3>Example: growth of energy demand<a class="headerlink" href="#example-growth-of-energy-demand" title="Link to this heading">#</a></h3>
+<p>Let’s simulate the growth of energy consumption over time using a loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tpec</span> <span class="o">=</span> <span class="mi">100</span>     <span class="c1"># total primary energy consumption (EJ)</span>
+<span class="n">growth</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># 2% per year</span>
+<span class="n">years</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">tpec</span> <span class="o">*=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">growth</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After year&quot;</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="s2">&quot;TPEC =&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">tpec</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;EJ&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>After year 1 TPEC = 102.0 EJ
+After year 2 TPEC = 104.04 EJ
+After year 3 TPEC = 106.12 EJ
+After year 4 TPEC = 108.24 EJ
+After year 5 TPEC = 110.41 EJ
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h4>Explanation<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The loop variable <code class="docutils literal notranslate"><span class="pre">year</span></code> counts from 1 to 5.</p></li>
+<li><p>Inside the loop, we multiply <code class="docutils literal notranslate"><span class="pre">tpec</span></code> by (1 + 0.02) each time.</p></li>
+<li><p>This mimics an <strong>iterative growth process</strong> — the same logic used in simple economic or energy models.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exercise-looping-over-multiple-parameters">
+<h3>🧩 Exercise: looping over multiple parameters<a class="headerlink" href="#exercise-looping-over-multiple-parameters" title="Link to this heading">#</a></h3>
+<p>Imagine we want to see how <strong>energy demand</strong> changes under different growth rates.<br />
+We start with a total energy consumption of 100 EJ and test several annual growth rates (from 1% to 5%). Program a for loop using range that implements this for one time step.</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tpec</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># starting value in Exajoules (EJ)</span>
+
+<span class="k">for</span> <span class="n">growth</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>   <span class="c1"># 1%, 2%, 3%, 4%, 5%</span>
+    <span class="n">new_tpec</span> <span class="o">=</span> <span class="n">tpec</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">growth</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Growth rate:&quot;</span><span class="p">,</span> <span class="n">growth</span><span class="p">,</span> <span class="s2">&quot;%  →  New TPEC:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">new_tpec</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;EJ&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Growth rate: 1 %  →  New TPEC: 101.0 EJ
+Growth rate: 2 %  →  New TPEC: 102.0 EJ
+Growth rate: 3 %  →  New TPEC: 103.0 EJ
+Growth rate: 4 %  →  New TPEC: 104.0 EJ
+Growth rate: 5 %  →  New TPEC: 105.0 EJ
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 </section>
 </section>
 <hr class="docutils" />
@@ -865,7 +990,7 @@ into <strong>functions</strong> — reusable building blocks that make your mode
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Functions</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -893,6 +1018,15 @@ into <strong>functions</strong> — reusable building blocks that make your mode
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repetition-for-loops">2. Repetition: <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Explanation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-over-lists">Looping over lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-range">Looping with <code class="docutils literal notranslate"><span class="pre">range()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Explanation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-growth-of-energy-demand">Example: growth of energy demand</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Explanation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-looping-over-multiple-parameters">🧩 Exercise: looping over multiple parameters</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">3. While loops</a></li>
