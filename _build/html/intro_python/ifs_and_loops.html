@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>If statements and loops &#8212; Quantitative Ecological Economics</title>
+    <title>Control flow: if statements and loops &#8212; Quantitative Ecological Economics</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro_python/ifs_and_loops';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Algorithms" href="algorithms.html" />
-    <link rel="prev" title="Functions" href="functions.html" />
+    <link rel="next" title="Functions" href="functions.html" />
+    <link rel="prev" title="Variables and basic data types" href="variables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,8 +179,8 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Introduction to Python and Programming</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="calculator.html">Python as a calculator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables and basic data types</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Control flow: <code class="docutils literal notranslate"><span class="pre">if</span></code> statements and loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">If statements and loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="small_programming_project.html">Project 1 - Analysing a dataset in a pandas dataframe</a></li>
@@ -239,6 +239,55 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/<YOUR-ORG>/<YOUR-REPO>/main?urlpath=lab/tree/./intro_python/ifs_and_loops.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/<YOUR-ORG>/<YOUR-REPO>/blob/main/./intro_python/ifs_and_loops.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -264,7 +313,7 @@
       
       
       
-      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>/edit/main/./intro_python/ifs_and_loops.md" target="_blank"
+      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>/edit/main/./intro_python/ifs_and_loops.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -311,7 +360,7 @@
       
       
       
-      <li><a href="../_sources/intro_python/ifs_and_loops.md" target="_blank"
+      <li><a href="../_sources/intro_python/ifs_and_loops.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +370,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -382,7 +431,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -393,11 +444,36 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>If statements and loops</h1>
+    <h1>Control flow: if statements and loops</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements-if-elif-else">1. Conditional statements: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation">Explanation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repetition-for-loops">2. Repetition: <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-over-lists">Looping over lists</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">3. While loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions-short-elegant-loops">4. List comprehensions (short, elegant loops)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-if-and-loops-simple-data-analysis">5. Combining <code class="docutils literal notranslate"><span class="pre">if</span></code> and loops: simple data analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">🧩 Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -407,8 +483,342 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="if-statements-and-loops">
-<span id="basics-ifs-and-loops"></span><h1>If statements and loops<a class="headerlink" href="#if-statements-and-loops" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="control-flow-if-statements-and-loops">
+<span id="basics-controlflow"></span><h1>Control flow: <code class="docutils literal notranslate"><span class="pre">if</span></code> statements and loops<a class="headerlink" href="#control-flow-if-statements-and-loops" title="Link to this heading">#</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>What you’ll learn</strong></p>
+<ul class="simple">
+<li><p>What control flow means in programming</p></li>
+<li><p>How to make decisions with <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+<li><p>How to repeat operations with <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops</p></li>
+<li><p>How to use list comprehensions for cleaner, faster code</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>In programming, <strong>control flow</strong> is the order in which instructions are executed.<br />
+Up to now, Python has simply followed your code line by line.<br />
+But real programs need to make <strong>decisions</strong> and <strong>repeat actions</strong> —<br />
+for example, checking which countries exceed a CO₂ threshold,<br />
+or calculating average growth for many countries at once.</p>
+</section>
+<hr class="docutils" />
+<section id="conditional-statements-if-elif-else">
+<h2>1. Conditional statements: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#conditional-statements-if-elif-else" title="Link to this heading">#</a></h2>
+<p>Sometimes, you only want certain code to run <em>if</em> a condition is true.</p>
+<p>Example — suppose we have data on per-capita energy use (in gigajoules per person):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_GJ</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Switzerland&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+    <span class="s2">&quot;Austria&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+    <span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="mi">180</span><span class="p">,</span>
+    <span class="s2">&quot;United States&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="s2">&quot;India&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We might want to categorize countries as <strong>high</strong>, <strong>medium</strong>, or <strong>low</strong> energy consumers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;Austria&quot;</span>
+<span class="n">energy</span> <span class="o">=</span> <span class="n">energy_GJ</span><span class="p">[</span><span class="n">country</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">energy</span> <span class="o">&gt;</span> <span class="mi">250</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="s2">&quot;is a high-energy economy.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">energy</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="s2">&quot;is a medium-energy economy.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="s2">&quot;is a low-energy economy.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Austria is a medium-energy economy.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="explanation">
+<h3>Explanation<a class="headerlink" href="#explanation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> block runs only if the condition after <code class="docutils literal notranslate"><span class="pre">if</span></code> is true.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> (“else if”) block tests another condition.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> block runs if none of the above conditions were met.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="repetition-for-loops">
+<h2>2. Repetition: <code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#repetition-for-loops" title="Link to this heading">#</a></h2>
+<p>In ecological-economic modeling, we often need to repeat calculations across many countries, sectors, or time steps.<br />
+For this we use loops — the simplest is the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<p>Let’s compute an estimated <strong>energy intensity</strong> (energy per GDP) for each country.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp_per_capita</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Switzerland&quot;</span><span class="p">:</span> <span class="mi">95000</span><span class="p">,</span>
+    <span class="s2">&quot;Austria&quot;</span><span class="p">:</span> <span class="mi">70000</span><span class="p">,</span>
+    <span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="mi">80000</span><span class="p">,</span>
+    <span class="s2">&quot;United States&quot;</span><span class="p">:</span> <span class="mi">85000</span><span class="p">,</span>
+    <span class="s2">&quot;India&quot;</span><span class="p">:</span> <span class="mi">12000</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">energy_GJ</span><span class="p">:</span>
+    <span class="n">ei</span> <span class="o">=</span> <span class="n">energy_GJ</span><span class="p">[</span><span class="n">country</span><span class="p">]</span> <span class="o">/</span> <span class="n">gdp_per_capita</span><span class="p">[</span><span class="n">country</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="s2">&quot;has energy intensity of&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">ei</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="s2">&quot;GJ per $GDP&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switzerland has energy intensity of 0.001 GJ per $GDP
+Austria has energy intensity of 0.002 GJ per $GDP
+Germany has energy intensity of 0.002 GJ per $GDP
+United States has energy intensity of 0.004 GJ per $GDP
+India has energy intensity of 0.003 GJ per $GDP
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>Explanation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> iterates <em>over</em> the keys of the dictionary <code class="docutils literal notranslate"><span class="pre">energy_GJ</span></code>.</p></li>
+<li><p>In each iteration, <code class="docutils literal notranslate"><span class="pre">country</span></code> takes one key.</p></li>
+<li><p>You can perform any computation inside the loop.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="looping-over-lists">
+<h3>Looping over lists<a class="headerlink" href="#looping-over-lists" title="Link to this heading">#</a></h3>
+<p>If you had a list of countries instead:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">,</span> <span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;India&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Analyzing&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Analyzing Switzerland
+Analyzing Austria
+Analyzing Germany
+Analyzing United States
+Analyzing India
+</pre></div>
+</div>
+</div>
+</div>
+<p>This will print each country name — a simple but powerful idea.<br />
+Most data analyses, even large models, boil down to loops like this.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="while-loops">
+<h2>3. While loops<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> loops repeat <strong>as long as</strong> a condition is true.</p>
+<p>Example: imagine simulating the effect of a carbon tax increasing yearly<br />
+until emissions fall below a certain threshold.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">emissions</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># MtCO2</span>
+<span class="n">tax_rate</span> <span class="o">=</span> <span class="mi">10</span>    <span class="c1"># $ per ton</span>
+<span class="n">target</span> <span class="o">=</span> <span class="mi">60</span>
+
+<span class="k">while</span> <span class="n">emissions</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
+    <span class="n">emissions</span> <span class="o">*=</span> <span class="mf">0.95</span>  <span class="c1"># assume emissions fall 5% per year</span>
+    <span class="n">tax_rate</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tax rate: $</span><span class="si">{</span><span class="n">tax_rate</span><span class="si">}</span><span class="s2">, Emissions: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">emissions</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> MtCO2&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Target reached.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tax rate: $12, Emissions: 95.0 MtCO2
+Tax rate: $14, Emissions: 90.25 MtCO2
+Tax rate: $16, Emissions: 85.74 MtCO2
+Tax rate: $18, Emissions: 81.45 MtCO2
+Tax rate: $20, Emissions: 77.38 MtCO2
+Tax rate: $22, Emissions: 73.51 MtCO2
+Tax rate: $24, Emissions: 69.83 MtCO2
+Tax rate: $26, Emissions: 66.34 MtCO2
+Tax rate: $28, Emissions: 63.02 MtCO2
+Tax rate: $30, Emissions: 59.87 MtCO2
+Target reached.
+</pre></div>
+</div>
+</div>
+</div>
+<p>This simulates policy adjustment — something often seen in climate policy modeling:
+<em>if the goal is not yet reached, continue strengthening the policy.</em></p>
+</section>
+<hr class="docutils" />
+<section id="list-comprehensions-short-elegant-loops">
+<h2>4. List comprehensions (short, elegant loops)<a class="headerlink" href="#list-comprehensions-short-elegant-loops" title="Link to this heading">#</a></h2>
+<p>List comprehensions are a concise way to build new lists from existing data.</p>
+<p>Suppose you want to list all <strong>high-energy</strong> countries (those above 150 GJ per capita):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">high_energy</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">energy_GJ</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">high_energy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Germany&#39;, &#39;United States&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This one-liner does the same as a full loop like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">high_energy</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">energy_GJ</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">:</span>
+        <span class="n">high_energy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>List comprehensions are not only shorter but often more efficient —<br />
+and they make your code more readable once you get used to them.</p>
+</section>
+<hr class="docutils" />
+<section id="combining-if-and-loops-simple-data-analysis">
+<h2>5. Combining <code class="docutils literal notranslate"><span class="pre">if</span></code> and loops: simple data analysis<a class="headerlink" href="#combining-if-and-loops-simple-data-analysis" title="Link to this heading">#</a></h2>
+<p>Let’s analyze how many countries in our small dataset fall into each category.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">high</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">medium</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">low</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">energy_GJ</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="mi">250</span><span class="p">:</span>
+        <span class="n">high</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">medium</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">low</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;High-energy:&quot;</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Medium-energy:&quot;</span><span class="p">,</span> <span class="n">medium</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Low-energy:&quot;</span><span class="p">,</span> <span class="n">low</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>High-energy: [&#39;United States&#39;]
+Medium-energy: [&#39;Switzerland&#39;, &#39;Austria&#39;, &#39;Germany&#39;]
+Low-energy: [&#39;India&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is already a <strong>mini data classification algorithm</strong> —<br />
+something often done in larger datasets, e.g., grouping countries<br />
+by carbon intensity or by income class in input–output models.</p>
+<section id="exercise">
+<h3>🧩 Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<p>Use the dataset below to compute which countries are <strong>above</strong> or <strong>below average</strong> in energy use.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_GJ</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Switzerland&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+    <span class="s2">&quot;Austria&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+    <span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="mi">180</span><span class="p">,</span>
+    <span class="s2">&quot;United States&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="s2">&quot;India&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_energy</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">energy_GJ</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">energy_GJ</span><span class="p">)</span>
+
+<span class="n">above</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">energy_GJ</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="n">avg_energy</span><span class="p">]</span>
+<span class="n">below</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">energy_GJ</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">e</span> <span class="o">&lt;=</span> <span class="n">avg_energy</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average energy per capita:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">avg_energy</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Above-average:&quot;</span><span class="p">,</span> <span class="n">above</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Below-average:&quot;</span><span class="p">,</span> <span class="n">below</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average energy per capita: 158.0
+Above-average: [&#39;Germany&#39;, &#39;United States&#39;]
+Below-average: [&#39;Switzerland&#39;, &#39;Austria&#39;, &#39;India&#39;]
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">💡 <em>Solution explanation</em></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">sum()</span></code> and <code class="docutils literal notranslate"><span class="pre">len()</span></code> functions compute the average.</p></li>
+<li><p class="sd-card-text">The list comprehensions classify countries efficiently.</p></li>
+<li><p class="sd-card-text">Try adding new countries to the dictionary and re-running the cell.</p></li>
+</ul>
+</div>
+</details></section>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concept</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">if</span></code> / <code class="docutils literal notranslate"><span class="pre">elif</span></code> / <code class="docutils literal notranslate"><span class="pre">else</span></code></p></td>
+<td><p>Conditional logic</p></td>
+<td><p>classify countries by energy use</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p></td>
+<td><p>Iterate over sequences</p></td>
+<td><p>compute energy intensity for all</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loop</p></td>
+<td><p>Repeat while condition holds</p></td>
+<td><p>increase carbon tax until target</p></td>
+</tr>
+<tr class="row-odd"><td><p>List comprehension</p></td>
+<td><p>Compact way to create lists</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[c</span> <span class="pre">for</span> <span class="pre">c,</span> <span class="pre">e</span> <span class="pre">in</span> <span class="pre">data.items()</span> <span class="pre">if</span> <span class="pre">e&gt;150]</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p>✅ <strong>Key takeaway:</strong><br />
+Control flow lets you tell your code <em>when</em> and <em>how often</em> to do something.</p>
+</section>
+<hr class="docutils" />
+<section id="next-steps">
+<h3>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h3>
+<p>In the next section, we’ll learn how to package these repetitive structures<br />
+into <strong>functions</strong> — reusable building blocks that make your models cleaner and easier to expand.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -442,20 +852,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="functions.html"
+       href="variables.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Functions</p>
+        <p class="prev-next-title">Variables and basic data types</p>
       </div>
     </a>
     <a class="right-next"
-       href="algorithms.html"
+       href="functions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Algorithms</p>
+        <p class="prev-next-title">Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -465,6 +875,38 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements-if-elif-else">1. Conditional statements: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation">Explanation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repetition-for-loops">2. Repetition: <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-over-lists">Looping over lists</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">3. While loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions-short-elegant-loops">4. List comprehensions (short, elegant loops)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-if-and-loops-simple-data-analysis">5. Combining <code class="docutils literal notranslate"><span class="pre">if</span></code> and loops: simple data analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">🧩 Exercise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

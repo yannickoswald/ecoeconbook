@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro_python/variables';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Functions" href="functions.html" />
+    <link rel="next" title="Control flow: if statements and loops" href="ifs_and_loops.html" />
     <link rel="prev" title="Python as a calculator" href="calculator.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -181,8 +181,8 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Introduction to Python and Programming</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="calculator.html">Python as a calculator</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Variables and basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ifs_and_loops.html">Control flow: <code class="docutils literal notranslate"><span class="pre">if</span></code> statements and loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ifs_and_loops.html">If statements and loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="small_programming_project.html">Project 1 - Analysing a dataset in a pandas dataframe</a></li>
@@ -456,7 +456,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units-quick-reference">Common energy units (quick reference)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excerise">Excerise</a></li>
 </ul>
             </nav>
         </div>
@@ -480,6 +482,8 @@ document.write(`
 <li><p>Operations on datatypes and variables</p></li>
 </ul>
 </div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>“In computer programming, a variable is an abstract storage location paired with an associated symbolic name, which contains some known or unknown quantity of data or object referred to as a value; or in simpler terms, a variable is a named container for a particular set of bits or type of data (like integer, float, string, etc…)”  - or so says <a class="reference external" href="https://en.wikipedia.org/wiki/Variable_(computer_science)">Wikipedia</a> cited from a proper programming book.</p>
 <p>For our purposes as scientists and ecological economists, it is important to understand that variables help you store quantities that represent something about the real-world and you can do computations with them that provide you useful insights.</p>
 <p>For example, in the previous sections we already encountered instances of variables. I say instance because they took on a concrete value - in our case the fact that the total primary energy consumption for the USA was 100 Exajoule.</p>
@@ -608,8 +612,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">----------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                 </span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">-------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">energy_per_capita</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
@@ -641,8 +645,9 @@ document.write(`
 </div>
 <p>So now we know already everything we wanted to know about variables, datatypes and structures. However, none of this will stick (in your minds) if we do not create better understanding through plenty of exercises. So let us dive right in and learn some more interesting things alongside.</p>
 <p>A typology of energy units used in ecological economics and energy economics could be for example:</p>
-<section id="common-energy-units-quick-reference">
-<h2>Common energy units (quick reference)<a class="headerlink" href="#common-energy-units-quick-reference" title="Link to this heading">#</a></h2>
+</section>
+<section id="common-energy-units">
+<h2>Common energy units<a class="headerlink" href="#common-energy-units" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Joule (J)</strong>: SI base unit of energy.</p>
 <ul>
@@ -671,13 +676,16 @@ document.write(`
 </ul>
 </li>
 </ul>
+</section>
+<section id="excerise">
+<h2>Excerise<a class="headerlink" href="#excerise" title="Link to this heading">#</a></h2>
 <p>Now given what you have learned in the previous two sections conduct the following exercises:</p>
 <ol class="arabic simple">
 <li><p>Transform 1 million kWH and 1000 MWh to Terajoule and store the conversion factors as variables.</p></li>
 <li><p>Make a dictionary that holds the conversion factors with appropriate keys.</p></li>
 <li><p>Print the entries from the dictionary and store the numeric values in a list instead.</p></li>
 </ol>
-<div class="cell tag_hide-cell tag_dropdown docutils container">
+<div class="cell tag_hide-cell docutils container">
 <details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
 <p class="collapsed admonition-title">Show code cell content</p>
@@ -723,6 +731,7 @@ Numeric values list: [0.0036, 0.0036]
 </div>
 </details>
 </div>
+<p>Superbly done so far. In the next lesson we will cover the concept of functions!</p>
 </section>
 </section>
 
@@ -766,11 +775,11 @@ Numeric values list: [0.0036, 0.0036]
       </div>
     </a>
     <a class="right-next"
-       href="functions.html"
+       href="ifs_and_loops.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Functions</p>
+        <p class="prev-next-title">Control flow: <code class="docutils literal notranslate"><span class="pre">if</span></code> statements and loops</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -790,7 +799,9 @@ Numeric values list: [0.0036, 0.0036]
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units-quick-reference">Common energy units (quick reference)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excerise">Excerise</a></li>
 </ul>
   </nav></div>
 

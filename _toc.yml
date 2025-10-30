@@ -15,8 +15,8 @@ chapters:
     sections:
       - file: intro_python/calculator
       - file: intro_python/variables
-      - file: intro_python/functions
       - file: intro_python/ifs_and_loops
+      - file: intro_python/functions
       - file: intro_python/algorithms
       - file: intro_python/classes
       - file: intro_python/small_programming_project
