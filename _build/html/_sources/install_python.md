@@ -95,15 +95,9 @@ conda activate ecoecon
 conda install numpy pandas matplotlib jupyterlab -y
 ```
 
-```{dropdown} (Optional) Add more packages
-```bash
-conda install scipy seaborn xarray -y
-# or with pip (inside the env):
-pip install plotnine pyarrow
-```
 
+Launch Spyder
 
-3. Launch Spyder
 - Open **Anaconda Navigator** ▸ **Spyder** (choose env `ecoecon` if asked),  
   **or** from terminal:
   ```bash
