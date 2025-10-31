@@ -239,6 +239,55 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/<YOUR-ORG>/<YOUR-REPO>/main?urlpath=lab/tree/./intro_python/algorithms.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/<YOUR-ORG>/<YOUR-REPO>/blob/main/./intro_python/algorithms.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -264,7 +313,7 @@
       
       
       
-      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>/edit/main/./intro_python/algorithms.md" target="_blank"
+      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>/edit/main/./intro_python/algorithms.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -311,7 +360,7 @@
       
       
       
-      <li><a href="../_sources/intro_python/algorithms.md" target="_blank"
+      <li><a href="../_sources/intro_python/algorithms.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +370,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -382,7 +431,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -398,6 +449,32 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms-as-recipes-the-big-o-intuition">1) Algorithms as recipes &amp; the Big-O intuition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-with-functions-you-know-linear-vs-quadratic-vs-logarithmic">Start with functions you know: linear vs. quadratic vs. logarithmic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tiny-table-of-growth-units-are-abstract-work">A tiny table of growth (units are abstract “work”)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#big-o-growth-shapes-overview">Big-O (growth shapes) overview</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#masks-the-swissarmy-knife-of-filtering">2) Masks: the Swiss‑army knife of filtering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#country-data-energy-emissions-per-capita">3) Country data: energy &amp; emissions per capita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3) Country data: energy &amp; emissions per capita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-concrete-task">2) One concrete task</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-loop-illustrative-baseline">2.1 Double loop (illustrative baseline)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-mask-recommended">2.2 Boolean mask (recommended)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-they-are-the-same-rows-sanity">2.3 Check they are the same rows (sanity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-timing">2.4 Quick timing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-mask-as-0-1">3) (Optional) Mask as 0/1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#short-exercise">4) Short exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiny-cheatsheet">5) Tiny cheat‑sheet</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -409,6 +486,599 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="algorithms">
 <span id="basics-algorithms"></span><h1>Algorithms<a class="headerlink" href="#algorithms" title="Link to this heading">#</a></h1>
+<p>Welcome! This chapter is substantially more advanced than the previous ones. It constitutes a rather big leap in difficulty too. But do not worry, we still will try to make it as accessible as possible. And if everything is not 100% chapter at first read it is no big deal, too. In this chapter we talk about <strong>algorithms</strong> - an absolutely essential topic to be aware when doing computational science and efficient data science. Indeed algorithms are everywhere. They are critical for science. For example, a lot of statistical methods rely on certain algorithms. But more on this later. One could even go so far to say they are every in real life!
+Think of an <strong>algorithm</strong> like a <strong>cooking recipe</strong>: clear steps, in the right order, that scale when you cook for more people (bigger datasets). In this chapter we keep it practical and beginner-friendly. We do not attempt to give a comprehensive introduction to algorithms like computer science majors would. We focus on <strong>searching</strong> and <strong>matching</strong> in <strong>country</strong> datasets (energy per capita, emissions per capita), and how to avoid slow nested loops. We only use the following libraries <strong>NumPy, pandas, and Matplotlib</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>You will learn</strong></p>
+<ul class="simple">
+<li><p>What an <em>algorithm</em> is (recipe for data tasks).</p></li>
+<li><p>Big-O complexity as <strong>growth shapes</strong> (not proofs).</p></li>
+<li><p>Why nested <code class="docutils literal notranslate"><span class="pre">for</span></code> loops get slow and how to avoid them.</p></li>
+<li><p>Faster patterns: <code class="docutils literal notranslate"><span class="pre">.isin</span></code>, boolean masks, <code class="docutils literal notranslate"><span class="pre">merge</span></code>, <code class="docutils literal notranslate"><span class="pre">groupby</span></code>.</p></li>
+<li><p>What <strong>masks</strong> are (boolean arrays) and how they relate to <strong>0/1 arrays</strong>.</p></li>
+<li><p>How to <strong>measure runtime</strong> and <strong>plot scaling</strong> with NumPy/Pandas/Matplotlib.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<section id="algorithms-as-recipes-the-big-o-intuition">
+<h2>1) Algorithms as recipes &amp; the Big-O intuition<a class="headerlink" href="#algorithms-as-recipes-the-big-o-intuition" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A <strong>good recipe</strong> is clear, repeatable, and scales for 4, 40, or 400 guests.</p></li>
+<li><p>A <strong>good algorithm</strong> is the same: clear steps, easy to check, and fast enough as your data grows.</p></li>
+</ul>
+<p>One important to thing about algorithms to learn is how fast, or slow, they run. In computer science, this is often introduced alongside the so called Big-O notation. Big-O stands here for “order of growth” and growth refers usually to the growth in time it takes for the algorithm to complete. We do not need to understand this very deeply, but the key point is that one can express how algorithms’ time to complete increases as a function of their input.</p>
+<section id="start-with-functions-you-know-linear-vs-quadratic-vs-logarithmic">
+<h3>Start with functions you know: linear vs. quadratic vs. logarithmic<a class="headerlink" href="#start-with-functions-you-know-linear-vs-quadratic-vs-logarithmic" title="Link to this heading">#</a></h3>
+<p>From high-school math, you’ve seen different <strong>growth functions</strong>:</p>
+<ul class="simple">
+<li><p><strong>Linear:</strong> (f(n)=an+b). If you double (n), the output roughly doubles.<br />
+Example: counting countries once → <strong>one pass</strong> through the table.</p></li>
+<li><p><strong>Quadratic:</strong> (g(n)=cn^2). If you double (n), output <strong>quadruples</strong>.<br />
+Example: comparing <strong>all pairs</strong> of countries (nested loop over the same list).</p></li>
+<li><p><strong>Logarithmic:</strong> (h(n)=d\log_2 n). If you double (n), output only grows by an <strong>additive constant</strong>.<br />
+Example: <strong>binary search</strong> that halves the search range each step.</p></li>
+</ul>
+<p>These functions explain <strong>why some algorithms stay fast</strong> as your dataset grows and others blow up quickly.</p>
+<div class="admonition-intuition-check admonition">
+<p class="admonition-title">Intuition check</p>
+<ul class="simple">
+<li><p>Linear work: cook 1 portion per guest → 4 guests ≈ 4 portions → <strong>manageable</strong>.</p></li>
+<li><p>Quadratic work: every guest shakes hands with every other guest → pairs explode as group grows → <strong>gets slow</strong>.</p></li>
+<li><p>Logarithmic work: halving the problem repeatedly → <strong>very efficient</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="a-tiny-table-of-growth-units-are-abstract-work">
+<h3>A tiny table of growth (units are abstract “work”)<a class="headerlink" href="#a-tiny-table-of-growth-units-are-abstract-work" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>n</p></th>
+<th class="head text-right"><p>(\log_2 n)</p></th>
+<th class="head text-right"><p>(n)</p></th>
+<th class="head text-right"><p>(n \log_2 n)</p></th>
+<th class="head text-right"><p>(n^2)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>100</p></td>
+<td class="text-right"><p>6.6</p></td>
+<td class="text-right"><p>100</p></td>
+<td class="text-right"><p>660</p></td>
+<td class="text-right"><p>10,000</p></td>
+</tr>
+<tr class="row-odd"><td><p>1k</p></td>
+<td class="text-right"><p>10</p></td>
+<td class="text-right"><p>1,000</p></td>
+<td class="text-right"><p>10,000</p></td>
+<td class="text-right"><p>1,000,000</p></td>
+</tr>
+<tr class="row-even"><td><p>10k</p></td>
+<td class="text-right"><p>13.3</p></td>
+<td class="text-right"><p>10,000</p></td>
+<td class="text-right"><p>133,000</p></td>
+<td class="text-right"><p>100,000,000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Going from 1k to 10k rows, <strong>linear</strong> work increases ×10, but <strong>quadratic</strong> work increases ×100. That is the heart of Big-O.</p>
+</section>
+<section id="big-o-growth-shapes-overview">
+<h3>Big-O (growth shapes) overview<a class="headerlink" href="#big-o-growth-shapes-overview" title="Link to this heading">#</a></h3>
+<p>You might see the following notation in the computer science or programming literature.</p>
+<ul class="simple">
+<li><p><strong>O(1)</strong> constant time (like picking a spice from a labeled jar)</p></li>
+<li><p><strong>O(log n)</strong> slow growth (binary search)</p></li>
+<li><p><strong>O(n)</strong> one pass (filtering rows)</p></li>
+<li><p><strong>O(n log n)</strong> efficient sorts/joins (common, scales well)</p></li>
+<li><p><strong>O(n²)</strong> all pairs; nested loops over the same data (gets costly)</p></li>
+<li><p><strong>O(n³)</strong> triple loops (usually too slow at scale)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optional: plot these growth shapes to &quot;see&quot; the difference</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>  <span class="c1"># 1e2 ... 1e4</span>
+<span class="n">f_log</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">f_lin</span> <span class="o">=</span> <span class="n">n</span>
+<span class="n">f_nlogn</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">f_quad</span> <span class="o">=</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">f_log</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;log2(n)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">f_lin</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">f_nlogn</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;n log2(n)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">f_quad</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;n^2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;n (log scale)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;work units (log scale)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Growth shapes you know: log, linear, n log n, quadratic&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b00eb070c58ab4afe22b9a438b8fab3c4710850959f82e8bd0e578ba9c5114eb.png" src="../_images/b00eb070c58ab4afe22b9a438b8fab3c4710850959f82e8bd0e578ba9c5114eb.png" />
+</div>
+</div>
+<div class="admonition-rule-of-thumb admonition">
+<p class="admonition-title">Rule of thumb</p>
+<p>Each extra nested loop over big data often <strong>multiplies</strong> your runtime. Prefer vectorization, hashing (sets/dicts), joins, and indexing.</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="masks-the-swissarmy-knife-of-filtering">
+<h2>2) Masks: the Swiss‑army knife of filtering<a class="headerlink" href="#masks-the-swissarmy-knife-of-filtering" title="Link to this heading">#</a></h2>
+<p>A <strong>mask</strong> is a boolean array (<code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">False</span></code>) that marks which rows you want. In NumPy/Pandas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> = keep the row</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> = drop the row</p></li>
+</ul>
+<p>Masks combine with <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (and), <code class="docutils literal notranslate"><span class="pre">|</span></code> (or), <code class="docutils literal notranslate"><span class="pre">~</span></code> (not). Booleans behave like <strong>0/1</strong> under the hood, and you can convert explicitly with <code class="docutils literal notranslate"><span class="pre">.astype(int)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">5</span>           <span class="c1"># boolean mask</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mask:&quot;</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+
+<span class="n">mask01</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># 1 for True, 0 for False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mask as 0/1:&quot;</span><span class="p">,</span> <span class="n">mask01</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;filtered:&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mask: [False  True False  True False]
+mask as 0/1: [0 1 0 1 0]
+filtered: [7 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Why masks matter:</strong> Many slow <code class="docutils literal notranslate"><span class="pre">for</span></code> loops can be replaced by building a smart mask once and applying it all in efficient, low‑level C code inside NumPy/Pandas.</p>
+</section>
+<hr class="docutils" />
+<section id="country-data-energy-emissions-per-capita">
+<h2>3) Country data: energy &amp; emissions per capita<a class="headerlink" href="#country-data-energy-emissions-per-capita" title="Link to this heading">#</a></h2>
+<p>We’ll synthesize simple country panel data. This is fake data! For training purposes.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">energy_pc_GJ</span></code> (GJ per person)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emiss_pc_tCO2</span></code> (tons CO₂ per person)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">region</span></code> and <code class="docutils literal notranslate"><span class="pre">year</span></code> for grouping and joining tasks</p></li>
+</ul>
+<p>Just run the following code.</p>
+<p><strong>Why masks matter:</strong> Many slow <code class="docutils literal notranslate"><span class="pre">for</span></code> loops can be replaced by building a smart mask once and applying it all in efficient, low‑level C code inside NumPy/Pandas.</p>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h2>3) Country data: energy &amp; emissions per capita<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>We’ll synthesize simple country panel data. This is fake data! For training purposes.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">energy_pc_GJ</span></code> (GJ per person)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emiss_pc_tCO2</span></code> (tons CO₂ per person)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">region</span></code> and <code class="docutils literal notranslate"><span class="pre">year</span></code> for grouping and joining tasks</p></li>
+</ul>
+<p>Just run the following code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">make_countries_panel</span><span class="p">(</span><span class="n">n_countries</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">2016</span><span class="p">)):</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;CTY</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">03d</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_countries</span><span class="p">)]</span>
+    <span class="n">regions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Europe&quot;</span><span class="p">,</span><span class="s2">&quot;Asia&quot;</span><span class="p">,</span><span class="s2">&quot;Africa&quot;</span><span class="p">,</span><span class="s2">&quot;Americas&quot;</span><span class="p">,</span><span class="s2">&quot;Oceania&quot;</span><span class="p">]</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+        <span class="n">region</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">regions</span><span class="p">)</span>
+        <span class="n">base_energy</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>  <span class="c1"># GJ per capita baseline</span>
+        <span class="n">base_emiss</span>  <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># tCO2 per capita baseline</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+            <span class="c1"># gentle trends/variation</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="n">base_energy</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.01</span><span class="o">*</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">years</span><span class="o">.</span><span class="n">start</span><span class="p">))</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">base_emiss</span>  <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.005</span><span class="o">*</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">years</span><span class="o">.</span><span class="n">start</span><span class="p">))</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="n">c</span><span class="p">,</span>
+                <span class="s2">&quot;region&quot;</span><span class="p">:</span> <span class="n">region</span><span class="p">,</span>
+                <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span>
+                <span class="s2">&quot;energy_pc_GJ&quot;</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">e</span><span class="p">),</span>
+                <span class="s2">&quot;emiss_pc_tCO2&quot;</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">m</span><span class="p">),</span>
+            <span class="p">})</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+
+<span class="n">countries</span> <span class="o">=</span> <span class="n">make_countries_panel</span><span class="p">(</span><span class="n">n_countries</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">2020</span><span class="p">))</span>
+<span class="n">countries</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>region</th>
+      <th>year</th>
+      <th>energy_pc_GJ</th>
+      <th>emiss_pc_tCO2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CTY000</td>
+      <td>Europe</td>
+      <td>2008</td>
+      <td>31.483936</td>
+      <td>7.060985</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CTY000</td>
+      <td>Europe</td>
+      <td>2009</td>
+      <td>36.361342</td>
+      <td>7.405342</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CTY000</td>
+      <td>Europe</td>
+      <td>2010</td>
+      <td>30.806253</td>
+      <td>6.497766</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CTY000</td>
+      <td>Europe</td>
+      <td>2011</td>
+      <td>30.577355</td>
+      <td>6.124139</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CTY000</td>
+      <td>Europe</td>
+      <td>2012</td>
+      <td>35.675454</td>
+      <td>5.772875</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="one-concrete-task">
+<h2>2) One concrete task<a class="headerlink" href="#one-concrete-task" title="Link to this heading">#</a></h2>
+<p><strong>Goal:</strong> Select countries in <code class="docutils literal notranslate"><span class="pre">[&quot;Europe&quot;,&quot;Americas&quot;]</span></code> <strong>with</strong> <code class="docutils literal notranslate"><span class="pre">energy_pc_GJ</span> <span class="pre">&gt;</span> <span class="pre">150</span></code> from the dataframe we created above.</p>
+<p>We’ll do it <strong>twice</strong>:</p>
+<ol class="arabic simple">
+<li><p>a <strong>double loop</strong> (slow/illustrative), and</p></li>
+<li><p>a <strong>single boolean mask</strong> (fast &amp; simple).</p></li>
+</ol>
+<section id="double-loop-illustrative-baseline">
+<h3>2.1 Double loop (illustrative baseline)<a class="headerlink" href="#double-loop-illustrative-baseline" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target_regions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Europe&quot;</span><span class="p">,</span> <span class="s2">&quot;Americas&quot;</span><span class="p">]</span>
+<span class="n">energy_threshold</span> <span class="o">=</span> <span class="mf">150.0</span>
+
+<span class="k">def</span> <span class="nf">slow_filter_double_loop</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">regions</span><span class="p">,</span> <span class="n">thr</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">countries</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="c1"># inner membership &quot;loop&quot; via &#39;in&#39; over a Python list (illustrative)</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">region</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">energy_pc_GJ</span> <span class="o">&gt;</span> <span class="n">thr</span><span class="p">):</span>
+                <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+                <span class="k">break</span>  <span class="c1"># found a match; stop scanning regions</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">countries</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="n">slow_result</span> <span class="o">=</span> <span class="n">slow_filter_double_loop</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">target_regions</span><span class="p">,</span> <span class="n">energy_threshold</span><span class="p">)</span>
+<span class="n">slow_result</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>region</th>
+      <th>year</th>
+      <th>energy_pc_GJ</th>
+      <th>emiss_pc_tCO2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CTY005</td>
+      <td>Europe</td>
+      <td>2008</td>
+      <td>159.204136</td>
+      <td>16.661843</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CTY005</td>
+      <td>Europe</td>
+      <td>2009</td>
+      <td>152.226139</td>
+      <td>16.998914</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CTY005</td>
+      <td>Europe</td>
+      <td>2010</td>
+      <td>161.981264</td>
+      <td>16.092648</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CTY005</td>
+      <td>Europe</td>
+      <td>2011</td>
+      <td>159.333758</td>
+      <td>17.058564</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CTY005</td>
+      <td>Europe</td>
+      <td>2012</td>
+      <td>165.244892</td>
+      <td>17.786186</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="boolean-mask-recommended">
+<h3>2.2 Boolean mask (recommended)<a class="headerlink" href="#boolean-mask-recommended" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fast_filter_mask</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">regions</span><span class="p">,</span> <span class="n">thr</span><span class="p">):</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">countries</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">regions</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s2">&quot;energy_pc_GJ&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">thr</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">countries</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+<span class="n">fast_result</span> <span class="o">=</span> <span class="n">fast_filter_mask</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">target_regions</span><span class="p">,</span> <span class="n">energy_threshold</span><span class="p">)</span>
+<span class="n">fast_result</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>region</th>
+      <th>year</th>
+      <th>energy_pc_GJ</th>
+      <th>emiss_pc_tCO2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>60</th>
+      <td>CTY005</td>
+      <td>Europe</td>
+      <td>2008</td>
+      <td>159.204136</td>
+      <td>16.661843</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>CTY005</td>
+      <td>Europe</td>
+      <td>2009</td>
+      <td>152.226139</td>
+      <td>16.998914</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>CTY005</td>
+      <td>Europe</td>
+      <td>2010</td>
+      <td>161.981264</td>
+      <td>16.092648</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>CTY005</td>
+      <td>Europe</td>
+      <td>2011</td>
+      <td>159.333758</td>
+      <td>17.058564</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>CTY005</td>
+      <td>Europe</td>
+      <td>2012</td>
+      <td>165.244892</td>
+      <td>17.786186</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="check-they-are-the-same-rows-sanity">
+<h3>2.3 Check they are the same rows (sanity)<a class="headerlink" href="#check-they-are-the-same-rows-sanity" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort and compare by a stable key (country, year) to avoid order effects</span>
+<span class="n">cmp_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span><span class="s2">&quot;year&quot;</span><span class="p">,</span><span class="s2">&quot;region&quot;</span><span class="p">,</span><span class="s2">&quot;energy_pc_GJ&quot;</span><span class="p">,</span><span class="s2">&quot;emiss_pc_tCO2&quot;</span><span class="p">]</span>
+<span class="n">same</span> <span class="o">=</span> <span class="n">slow_result</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">cmp_cols</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span>
+       <span class="n">fast_result</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">cmp_cols</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">same</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="quick-timing">
+<h3>2.4 Quick timing<a class="headerlink" href="#quick-timing" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> -n1 -r3 slow_filter_double_loop(countries, target_regions, energy_threshold)
+<span class="o">%</span><span class="k">timeit</span> -n1 -r3 fast_filter_mask(countries, target_regions, energy_threshold)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.02 ms ± 60.2 µs per loop (mean ± std. dev. of 3 runs, 1 loop each)
+323 µs ± 73.4 µs per loop (mean ± std. dev. of 3 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Takeaway:</strong> Replace “scan‑inside‑a‑scan” with <strong>one mask</strong>. It’s shorter, clearer, and usually much faster.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="optional-mask-as-0-1">
+<h2>3) (Optional) Mask as 0/1<a class="headerlink" href="#optional-mask-as-0-1" title="Link to this heading">#</a></h2>
+<p>Sometimes you want to <em>see</em> or aggregate the mask numerically.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">countries</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">target_regions</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s2">&quot;energy_pc_GJ&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">energy_threshold</span><span class="p">)</span>
+<span class="n">mask</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># 1 where row passes, 0 otherwise</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0
+1    0
+2    0
+3    0
+4    0
+dtype: int32
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="short-exercise">
+<h2>4) Short exercise<a class="headerlink" href="#short-exercise" title="Link to this heading">#</a></h2>
+<p><strong>Exercise.</strong> Modify the task so that <strong>both</strong> conditions must hold:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">region</span></code> is in <code class="docutils literal notranslate"><span class="pre">[&quot;Europe&quot;,&quot;Asia&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emiss_pc_tCO2</span> <span class="pre">&gt;</span> <span class="pre">8</span></code></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Write an <strong>(illustrative) double loop</strong> solution.</p></li>
+<li><p>Replace it with <strong>one mask</strong>.</p></li>
+<li><p>Confirm both results are identical (as in §2.3) and time them (as in §2.4).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># double loop</span>
+<span class="k">def</span> <span class="nf">slow_eu_asia_high_emiss</span><span class="p">(</span><span class="n">countries</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">targets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Europe&quot;</span><span class="p">,</span><span class="s2">&quot;Asia&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">countries</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">targets</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">region</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">emiss_pc_tCO2</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">):</span>
+                <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">);</span> <span class="k">break</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">countries</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># mask</span>
+<span class="n">fast</span> <span class="o">=</span> <span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;Europe&quot;</span><span class="p">,</span><span class="s2">&quot;Asia&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s2">&quot;emiss_pc_tCO2&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tiny-cheatsheet">
+<h2>5) Tiny cheat‑sheet<a class="headerlink" href="#tiny-cheatsheet" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Task</p></th>
+<th class="head"><p>Slow pattern</p></th>
+<th class="head"><p>Fast pattern</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Filter on conditions</p></td>
+<td><p>Double loop over rows &amp; targets</p></td>
+<td><p>One <strong>mask</strong> with <code class="docutils literal notranslate"><span class="pre">.isin</span></code> and comparisons</p></td>
+</tr>
+<tr class="row-odd"><td><p>Check results match</p></td>
+<td><p>—</p></td>
+<td><p>Sort on key columns and <code class="docutils literal notranslate"><span class="pre">.equals(...)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Compare speed</p></td>
+<td><p>Manual timing</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">%timeit</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -465,6 +1135,39 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms-as-recipes-the-big-o-intuition">1) Algorithms as recipes &amp; the Big-O intuition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-with-functions-you-know-linear-vs-quadratic-vs-logarithmic">Start with functions you know: linear vs. quadratic vs. logarithmic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tiny-table-of-growth-units-are-abstract-work">A tiny table of growth (units are abstract “work”)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#big-o-growth-shapes-overview">Big-O (growth shapes) overview</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#masks-the-swissarmy-knife-of-filtering">2) Masks: the Swiss‑army knife of filtering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#country-data-energy-emissions-per-capita">3) Country data: energy &amp; emissions per capita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3) Country data: energy &amp; emissions per capita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-concrete-task">2) One concrete task</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-loop-illustrative-baseline">2.1 Double loop (illustrative baseline)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-mask-recommended">2.2 Boolean mask (recommended)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-they-are-the-same-rows-sanity">2.3 Check they are the same rows (sanity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-timing">2.4 Quick timing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-mask-as-0-1">3) (Optional) Mask as 0/1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#short-exercise">4) Short exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiny-cheatsheet">5) Tiny cheat‑sheet</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

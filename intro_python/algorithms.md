@@ -1,2 +1,0 @@
-(basics-algorithms)=
-# Algorithms
