@@ -1,0 +1,1292 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Classes &#8212; Quantitative Ecological Economics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro_python/classes';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Project 1 - Analysing a dataset in a pandas dataframe" href="small_programming_project.html" />
+    <link rel="prev" title="Algorithms" href="algorithms.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantitative Ecological Economics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_python.html">Installing and running Python</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Introduction to Python and Programming</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="calculator.html">Python as a calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables and basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ifs_and_loops.html">Control flow: if statements and loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Classes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="small_programming_project.html">Project 1 - Analysing a dataset in a pandas dataframe</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../order_of_magnitude_economics_and_scaling/index.html">Order of Magnitude Economics and Scaling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../order_of_magnitude_economics_and_scaling/order_of_magnitudes.html">Order of magnitudes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../order_of_magnitude_economics_and_scaling/planetary_constraints.html">Planetary constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../order_of_magnitude_economics_and_scaling/static_scale.html">Static scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../order_of_magnitude_economics_and_scaling/dynamic_scale.html">Dynamic scale</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/<YOUR-ORG>/<YOUR-REPO>/main?urlpath=lab/tree/./intro_python/classes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/<YOUR-ORG>/<YOUR-REPO>/blob/main/./intro_python/classes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>/edit/main/./intro_python/classes.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>/issues/new?title=Issue%20on%20page%20%2Fintro_python/classes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/intro_python/classes.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Classes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Classes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-classes-and-object-oriented-programming-oop">Introduction to Classes and Object-Oriented Programming (OOP)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-object-oriented-programming-oop">1. Why Object-Oriented Programming (OOP)?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-mini-example-not-yet-ecological">2. A first mini-example (not yet ecological)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-did-we-just-do">2.1 What did we just do?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-for-ecological-economists-countries-as-objects">3. Classes for Ecological Economists: Countries as Objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-create-a-few-example-countries">Let’s create a few example countries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-this-useful">3.1 Why is this useful?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-class-attributes-and-methods">4. Anatomy of a Class: Attributes and Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-methods">4.1 Instance methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-attributes-and-class-methods-light-version">4.2 Class attributes and class methods (light version)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#static-methods-even-lighter-version">4.3 Static methods (even lighter version)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-small-workflow-list-of-countries-and-a-simple-model-loop">5. A small workflow: list of countries and a simple “model loop”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercises-for-you">6. Mini-exercises (for you)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-classes-and-objects-quick-reference">Summary: Classes and Objects (Quick Reference)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="classes">
+<span id="basics-classes"></span><h1>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-classes-and-object-oriented-programming-oop">
+<h1>Introduction to Classes and Object-Oriented Programming (OOP)<a class="headerlink" href="#introduction-to-classes-and-object-oriented-programming-oop" title="Link to this heading">#</a></h1>
+<p>In this notebook we take our <strong>first steps with classes in Python</strong>.</p>
+<p>We will:</p>
+<ul class="simple">
+<li><p>understand what <em>objects</em> and <em>classes</em> are,</p></li>
+<li><p>see why classes are useful for <strong>ecological economics</strong>,</p></li>
+<li><p>build a simple <code class="docutils literal notranslate"><span class="pre">Country</span></code> class to store country data,</p></li>
+<li><p>add a few useful <em>methods</em> (functions that belong to a class),</p></li>
+<li><p>briefly see different kinds of methods (instance, class, static).</p></li>
+</ul>
+<p>We keep everything <strong>very basic</strong>. The goal is not to become a software engineer,
+but to see how classes help us <strong>organise our code and data</strong> when we work with
+many objects (like countries in a model).</p>
+<section id="why-object-oriented-programming-oop">
+<h2>1. Why Object-Oriented Programming (OOP)?<a class="headerlink" href="#why-object-oriented-programming-oop" title="Link to this heading">#</a></h2>
+<p>So far, we may have used:</p>
+<ul class="simple">
+<li><p>variables (<code class="docutils literal notranslate"><span class="pre">gdp</span></code>, <code class="docutils literal notranslate"><span class="pre">energy</span> <span class="pre">per</span> <span class="pre">person</span></code>, …),</p></li>
+<li><p>lists and dictionaries,</p></li>
+<li><p>pandas DataFrames.</p></li>
+</ul>
+<p>This is great, but as soon as we work with <strong>many countries</strong>, <strong>many years</strong>,
+and later possibly <strong>agents</strong> in a model, it’s easy to lose track:</p>
+<ul class="simple">
+<li><p>Which GDP belongs to which country?</p></li>
+<li><p>Where did we store emissions per capita?</p></li>
+<li><p>How do we compute <em>derived</em> quantities like <strong>emissions intensity</strong>?</p></li>
+</ul>
+<p><strong>Object-Oriented Programming (OOP)</strong> is a way to organise code around <strong>objects</strong>.</p>
+<p>Think of:</p>
+<ul class="simple">
+<li><p>a <strong>country</strong> as an <em>object</em>,</p></li>
+<li><p>a <strong>class</strong> as the <em>blueprint</em> or <em>template</em> for those objects.</p></li>
+</ul>
+<blockquote>
+<div><p>A <strong>class</strong> defines what <em>data</em> an object has (attributes)<br />
+and what it can <em>do</em> (methods).</p>
+</div></blockquote>
+</section>
+<section id="a-first-mini-example-not-yet-ecological">
+<h2>2. A first mini-example (not yet ecological)<a class="headerlink" href="#a-first-mini-example-not-yet-ecological" title="Link to this heading">#</a></h2>
+<p>Let’s start with a very simple example: a <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class.</p>
+<p>This is not ecological economics yet – it’s just to see the structure.</p>
+<p>(This exercise is often used to introduce the concept.<a class="reference external" href="https://stackoverflow.com/questions/42382100/creating-a-dog-class-in-python">1</a>,<a class="reference external" href="https://realpython.com/videos/creating-dog-class-exercise/">2</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        __init__ is the *constructor*.</span>
+<span class="sd">        It runs every time we create a new Dog.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>   <span class="c1"># attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>     <span class="c1"># attribute</span>
+
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;An example of a *method*: a function that belongs to Dog.&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> says: Wuff!&quot;</span><span class="p">)</span>
+
+<span class="c1"># create two Dog objects</span>
+<span class="n">dog1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Luna&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">dog2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="n">dog1</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
+<span class="n">dog2</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dog1 age:&quot;</span><span class="p">,</span> <span class="n">dog1</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Luna says: Wuff!
+Max says: Wuff!
+Dog1 age: 3
+</pre></div>
+</div>
+</div>
+</div>
+<section id="what-did-we-just-do">
+<h3>2.1 What did we just do?<a class="headerlink" href="#what-did-we-just-do" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Dog:</span></code> defines a <strong>class</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__(self,</span> <span class="pre">name,</span> <span class="pre">age)</span></code> is the <strong>constructor</strong>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code> refers to <em>this particular object</em>.</p></li>
+<li><p>We assign attributes: <code class="docutils literal notranslate"><span class="pre">self.name</span></code>, <code class="docutils literal notranslate"><span class="pre">self.age</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bark(self)</span></code> is a <strong>method</strong>:</p>
+<ul>
+<li><p>It uses <code class="docutils literal notranslate"><span class="pre">self.name</span></code> to print something.</p></li>
+</ul>
+</li>
+</ul>
+<p>We then created two <strong>objects</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dog1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Luna&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">dog2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and called their method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dog1</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>So: a class is a blueprint; each object is one instance of that blueprint.</p>
+</section>
+</section>
+<section id="classes-for-ecological-economists-countries-as-objects">
+<h2>3. Classes for Ecological Economists: Countries as Objects<a class="headerlink" href="#classes-for-ecological-economists-countries-as-objects" title="Link to this heading">#</a></h2>
+<p>Now let’s move to something we actually care about:
+<strong>countries</strong> and their data.</p>
+<p>We often work with:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">country_name</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">region</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">population</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gdp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emissions</span></code></p></li>
+</ul>
+<p>Instead of juggling many separate variables or long dictionaries,<br />
+we can bundle everything into a <strong><code class="docutils literal notranslate"><span class="pre">Country</span></code> class</strong>.</p>
+<p>Benefits:</p>
+<ul class="simple">
+<li><p>Each <code class="docutils literal notranslate"><span class="pre">Country</span></code> keeps <em>its own</em> data.</p></li>
+<li><p>We can give countries <em>behaviour</em>: methods that <strong>compute indicators</strong>
+like GDP per capita, emissions per capita, emissions intensity, etc.</p></li>
+<li><p>Later in models, each country object can have methods like
+<code class="docutils literal notranslate"><span class="pre">update_emissions()</span></code>, <code class="docutils literal notranslate"><span class="pre">apply_policy()</span></code>, etc.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Country</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">gdp</span><span class="p">,</span> <span class="n">emissions</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Simple Country class.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            Country name, e.g. &quot;Austria&quot;.</span>
+<span class="sd">        region : str</span>
+<span class="sd">            Region label, e.g. &quot;Europe&quot;.</span>
+<span class="sd">        population : float</span>
+<span class="sd">            Population in millions (for example).</span>
+<span class="sd">        gdp : float</span>
+<span class="sd">            GDP in billion USD (for example).</span>
+<span class="sd">        emissions : float</span>
+<span class="sd">            CO2 emissions in million tonnes (for example).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">=</span> <span class="n">population</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span> <span class="o">=</span> <span class="n">gdp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">emissions</span> <span class="o">=</span> <span class="n">emissions</span>
+
+    <span class="k">def</span> <span class="nf">gdp_per_capita</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return GDP per capita (same units as given / population).&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>  <span class="c1"># avoid division by zero</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">population</span> 
+
+    <span class="k">def</span> <span class="nf">emissions_per_capita</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return emissions per capita.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">emissions</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">*</span> <span class="mf">1e6</span>
+
+    <span class="k">def</span> <span class="nf">emissions_intensity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return emissions per unit of GDP.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">emissions</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span>
+
+    <span class="k">def</span> <span class="nf">summary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print a short textual summary of the country.&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Country: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Population: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> million&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  GDP:        </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">gdp</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> billion USD&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Emissions:  </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">emissions</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> MtCO2&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Emissions intensity: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">emissions_intensity</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> tCO₂ per 1000 USD (approx.)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="let-s-create-a-few-example-countries">
+<h3>Let’s create a few example countries<a class="headerlink" href="#let-s-create-a-few-example-countries" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">austria</span> <span class="o">=</span> <span class="n">Country</span><span class="p">(</span><span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe&quot;</span><span class="p">,</span> <span class="n">population</span><span class="o">=</span><span class="mf">9.0</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span> <span class="n">gdp</span><span class="o">=</span><span class="mi">520</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="n">emissions</span><span class="o">=</span><span class="mi">60</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">india</span>   <span class="o">=</span> <span class="n">Country</span><span class="p">(</span><span class="s2">&quot;India&quot;</span><span class="p">,</span> <span class="s2">&quot;Asia&quot;</span><span class="p">,</span>   <span class="n">population</span><span class="o">=</span><span class="mf">1400.0</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span> <span class="n">gdp</span><span class="o">=</span><span class="mi">3400</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="n">emissions</span><span class="o">=</span><span class="mi">2600</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">austria</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">india</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Austria GDP per capita (USD):&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">austria</span><span class="o">.</span><span class="n">gdp_per_capita</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;India emissions per capita (tCO2):&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">india</span><span class="o">.</span><span class="n">emissions_per_capita</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Country: Austria (Europe)
+  Population: 9000000.00 million
+  GDP:        520000000000.00 billion USD
+  Emissions:  60000000.00 MtCO2
+  Emissions intensity: 0.000 tCO₂ per 1000 USD (approx.)
+
+Country: India (Asia)
+  Population: 1400000000.00 million
+  GDP:        3400000000000.00 billion USD
+  Emissions:  2600000000.00 MtCO2
+  Emissions intensity: 0.001 tCO₂ per 1000 USD (approx.)
+
+Austria GDP per capita (USD): 57777.78
+India emissions per capita (tCO2): 1857142.86
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="why-is-this-useful">
+<h3>3.1 Why is this useful?<a class="headerlink" href="#why-is-this-useful" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Each <code class="docutils literal notranslate"><span class="pre">Country</span></code> stores its own <strong>attributes</strong>.</p></li>
+<li><p>We have reusable <strong>methods</strong>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">gdp_per_capita()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emissions_per_capita()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emissions_intensity()</span></code></p></li>
+</ul>
+</li>
+<li><p>We don’t have to remember formulas or copy-paste code.</p></li>
+</ul>
+<p>This makes the code more <strong>structured</strong>, easier to <strong>read</strong>, and easier to <strong>extend</strong>.</p>
+<p>✅ <strong>Key takeaway:</strong><br />
+The important thing to learn here is that you can access <strong>instance attributes</strong> and <strong>instance methods</strong> directly from an object.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">austria</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>    <span class="c1"># calling a method</span>
+<span class="n">austria</span><span class="o">.</span><span class="n">population</span>    <span class="c1"># accessing an attribute</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="anatomy-of-a-class-attributes-and-methods">
+<h2>4. Anatomy of a Class: Attributes and Methods<a class="headerlink" href="#anatomy-of-a-class-attributes-and-methods" title="Link to this heading">#</a></h2>
+<p>In our <code class="docutils literal notranslate"><span class="pre">Country</span></code> class we already saw two basic concepts:</p>
+<ol class="arabic simple">
+<li><p><strong>Attributes</strong> (data stored on the object)</p>
+<ul class="simple">
+<li><p>example: <code class="docutils literal notranslate"><span class="pre">self.name</span></code>, <code class="docutils literal notranslate"><span class="pre">self.population</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Methods</strong> (functions attached to the class / object)</p>
+<ul class="simple">
+<li><p>example: <code class="docutils literal notranslate"><span class="pre">gdp_per_capita(self)</span></code>, <code class="docutils literal notranslate"><span class="pre">summary(self)</span></code></p></li>
+</ul>
+</li>
+</ol>
+<p>In OOP, we commonly use three kinds of methods:</p>
+<ol class="arabic simple">
+<li><p><strong>Instance methods</strong> (most common)</p></li>
+<li><p><strong>Class methods</strong></p></li>
+<li><p><strong>Static methods</strong></p></li>
+</ol>
+<p>We will only <strong>touch</strong> the last two briefly.
+The main workhorse for us for now are <strong>instance methods</strong>.</p>
+<section id="instance-methods">
+<h3>4.1 Instance methods<a class="headerlink" href="#instance-methods" title="Link to this heading">#</a></h3>
+<p><strong>Instance methods</strong> are the usual methods we define with <code class="docutils literal notranslate"><span class="pre">self</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">emissions_per_capita</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>They operate on one particular object (one country).</p>
+<p>They can access attributes via self.attribute.</p>
+<p>In our class, all the methods we wrote are instance methods.</p>
+</section>
+<section id="class-attributes-and-class-methods-light-version">
+<h3>4.2 Class attributes and class methods (light version)<a class="headerlink" href="#class-attributes-and-class-methods-light-version" title="Link to this heading">#</a></h3>
+<p>Sometimes we want data that is <strong>shared by all countries</strong>.</p>
+<p>Example: a rough carbon price, or a list of all created countries.</p>
+<p>We can store such data as a <strong>class attribute</strong> (belongs to the class, not to a single object),
+and we can write a <strong>class method</strong> that works with it.</p>
+<p>The decorator <code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code> is used for that.</p>
+<p>For example in the next code section we make a country class again but this time with a list that is called registry which is set up as a class-level attribute and not just as and attribute for class instance, that is a country.</p>
+<p>Then we also define a classmethod that makes use of this class attribute and computes the average carbon intensity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CountryWithRegistry</span><span class="p">:</span>
+    <span class="c1"># --- class attribute: shared by all instances ---</span>
+    <span class="n">registry</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># this will store all created countries</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">gdp</span><span class="p">,</span> <span class="n">emissions</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">=</span> <span class="n">population</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span> <span class="o">=</span> <span class="n">gdp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">emissions</span> <span class="o">=</span> <span class="n">emissions</span>
+
+        <span class="c1"># each time we create a new country, add it to the registry</span>
+        <span class="n">CountryWithRegistry</span><span class="o">.</span><span class="n">registry</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">emissions_intensity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">emissions</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">average_emissions_intensity</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Class method: works on the class (cls), not on a single instance.</span>
+<span class="sd">        Here we compute the average emissions intensity over all registered countries.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">cls</span><span class="o">.</span><span class="n">registry</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">intensities</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">emissions_intensity</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">registry</span>
+            <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">emissions_intensity</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">intensities</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">intensities</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">intensities</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a few example countries with registry</span>
+<span class="n">CountryWithRegistry</span><span class="o">.</span><span class="n">registry</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># reset, just to be safe</span>
+
+<span class="n">c1</span> <span class="o">=</span> <span class="n">CountryWithRegistry</span><span class="p">(</span><span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe&quot;</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mi">520</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">CountryWithRegistry</span><span class="p">(</span><span class="s2">&quot;India&quot;</span><span class="p">,</span> <span class="s2">&quot;Asia&quot;</span><span class="p">,</span> <span class="mf">1400.0</span><span class="p">,</span> <span class="mi">3400</span><span class="p">,</span> <span class="mi">2600</span><span class="p">)</span>
+<span class="n">c3</span> <span class="o">=</span> <span class="n">CountryWithRegistry</span><span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">,</span> <span class="s2">&quot;Americas&quot;</span><span class="p">,</span> <span class="mf">215.0</span><span class="p">,</span> <span class="mi">1800</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of registered countries:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">CountryWithRegistry</span><span class="o">.</span><span class="n">registry</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average emissions intensity (all countries):&quot;</span><span class="p">,</span>
+      <span class="nb">round</span><span class="p">(</span><span class="n">CountryWithRegistry</span><span class="o">.</span><span class="n">average_emissions_intensity</span><span class="p">(),</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of registered countries: 3
+Average emissions intensity (all countries): 0.386
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>What happened here?</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">registry</span></code> is a <strong>class attribute</strong>.</p>
+<ul>
+<li><p>It belongs to <code class="docutils literal notranslate"><span class="pre">CountryWithRegistry</span></code>, not to one specific country.</p></li>
+</ul>
+</li>
+<li><p>Every time we do <code class="docutils literal notranslate"><span class="pre">CountryWithRegistry(...)</span></code>, we add the new object to <code class="docutils literal notranslate"><span class="pre">registry</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code> defines a <strong>class method</strong>:</p>
+<ul>
+<li><p>It receives <code class="docutils literal notranslate"><span class="pre">cls</span></code> (the class itself) instead of <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cls.registry</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">CountryWithRegistry.registry</span></code>.</p></li>
+<li><p>We use it to compute an <strong>average over all countries</strong>.</p></li>
+</ul>
+</li>
+</ul>
+<p>You do <strong>not</strong> need class methods for basic work,
+but they are good to know exist.</p>
+</section>
+<section id="static-methods-even-lighter-version">
+<h3>4.3 Static methods (even lighter version)<a class="headerlink" href="#static-methods-even-lighter-version" title="Link to this heading">#</a></h3>
+<p>A <strong>static method</strong> is just a helper function that lives inside the class,
+but does <strong>not</strong> use <code class="docutils literal notranslate"><span class="pre">self</span></code> or <code class="docutils literal notranslate"><span class="pre">cls</span></code>.</p>
+<p>We mark it with <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code>.</p>
+<p>Example: a small helper to convert <em>per capita</em> values to <em>totals</em>.</p>
+<p>We could put this function outside the class, but sometimes it is nice to keep
+it grouped with the class where it is conceptually used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CountryWithHelpers</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">emissions_pc</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">=</span> <span class="n">population</span>  <span class="c1"># in millions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">emissions_pc</span> <span class="o">=</span> <span class="n">emissions_pc</span>  <span class="c1"># tCO2 per person</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">per_capita_to_total</span><span class="p">(</span><span class="n">per_capita</span><span class="p">,</span> <span class="n">population_millions</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert per capita value to total given population in millions.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">per_capita</span> <span class="o">*</span> <span class="n">population_millions</span> <span class="o">*</span> <span class="mf">1e6</span>
+
+    <span class="k">def</span> <span class="nf">total_emissions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">CountryWithHelpers</span><span class="o">.</span><span class="n">per_capita_to_total</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">emissions_pc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">population</span>
+        <span class="p">)</span>
+
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">CountryWithHelpers</span><span class="p">(</span><span class="s2">&quot;Exampleland&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">emissions_pc</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total emissions (tCO2):&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">total_emissions</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total emissions (tCO2): 50000000.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="a-small-workflow-list-of-countries-and-a-simple-model-loop">
+<h2>5. A small workflow: list of countries and a simple “model loop”<a class="headerlink" href="#a-small-workflow-list-of-countries-and-a-simple-model-loop" title="Link to this heading">#</a></h2>
+<p>Finally, let’s see how we might start using such a <code class="docutils literal notranslate"><span class="pre">Country</span></code> class
+in something <em>model-like</em>.</p>
+<p>We will:</p>
+<ul class="simple">
+<li><p>create a list of country objects,</p></li>
+<li><p>loop over them,</p></li>
+<li><p>compute some indicators.</p></li>
+</ul>
+<p>Later this can be extended into <strong>agent-based models</strong>,<br />
+where each country or agent updates its state in each time step.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reuse our simple Country class from before</span>
+<span class="k">class</span> <span class="nc">Country</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">gdp</span><span class="p">,</span> <span class="n">emissions</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">=</span> <span class="n">population</span>  <span class="c1"># in millions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span> <span class="o">=</span> <span class="n">gdp</span>                <span class="c1"># in billion USD</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">emissions</span> <span class="o">=</span> <span class="n">emissions</span>    <span class="c1"># in MtCO2</span>
+
+    <span class="k">def</span> <span class="nf">emissions_intensity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">emissions</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span>
+
+    <span class="k">def</span> <span class="nf">apply_simple_policy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reduction_factor</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Very simple &quot;policy&quot;:</span>
+<span class="sd">        reduce emissions by a certain fraction, e.g. 0.1 for 10%.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">emissions</span> <span class="o">*=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">reduction_factor</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">summary_short</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s2">10s</span><span class="si">}</span><span class="s2"> | Emissions: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">emissions</span><span class="si">:</span><span class="s2">7.1f</span><span class="si">}</span><span class="s2"> MtCO2 &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;| Intensity: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">emissions_intensity</span><span class="p">()</span><span class="si">:</span><span class="s2">6.3f</span><span class="si">}</span><span class="s2"> (Mt/bn USD)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a small &quot;world&quot;</span>
+<span class="n">countries</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Country</span><span class="p">(</span><span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe&quot;</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mi">520</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span>
+    <span class="n">Country</span><span class="p">(</span><span class="s2">&quot;India&quot;</span><span class="p">,</span>   <span class="s2">&quot;Asia&quot;</span><span class="p">,</span>   <span class="mf">1400.0</span><span class="p">,</span> <span class="mi">3400</span><span class="p">,</span> <span class="mi">2600</span><span class="p">),</span>
+    <span class="n">Country</span><span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">,</span>  <span class="s2">&quot;Americas&quot;</span><span class="p">,</span> <span class="mf">215.0</span><span class="p">,</span> <span class="mi">1800</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Before policy ===&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">summary_short</span><span class="p">()</span>
+
+<span class="c1"># apply a simple &quot;global policy&quot;: 10% emissions reduction everywhere</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">apply_simple_policy</span><span class="p">(</span><span class="n">reduction_factor</span><span class="o">=</span><span class="mf">0.10</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== After policy (10</span><span class="si">% r</span><span class="s2">eduction) ===&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">summary_short</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== Before policy ===
+Austria    | Emissions:    60.0 MtCO2 | Intensity:  0.115 (Mt/bn USD)
+India      | Emissions:  2600.0 MtCO2 | Intensity:  0.765 (Mt/bn USD)
+Brazil     | Emissions:   500.0 MtCO2 | Intensity:  0.278 (Mt/bn USD)
+
+=== After policy (10% reduction) ===
+Austria    | Emissions:    54.0 MtCO2 | Intensity:  0.104 (Mt/bn USD)
+India      | Emissions:  2340.0 MtCO2 | Intensity:  0.688 (Mt/bn USD)
+Brazil     | Emissions:   450.0 MtCO2 | Intensity:  0.250 (Mt/bn USD)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is obviously extremely simplistic, but the pattern is important:</p>
+<ul class="simple">
+<li><p>each <strong>country object</strong> has its own state (<code class="docutils literal notranslate"><span class="pre">emissions</span></code>, <code class="docutils literal notranslate"><span class="pre">gdp</span></code>, …),</p></li>
+<li><p>we can easily write methods like <code class="docutils literal notranslate"><span class="pre">apply_simple_policy</span></code>,</p></li>
+<li><p>we can loop over the list of objects to simulate a <strong>policy step</strong>.</p></li>
+</ul>
+<p>Later we can:</p>
+<ul class="simple">
+<li><p>add <strong>time steps</strong>,</p></li>
+<li><p>add <strong>stochastic shocks</strong>,</p></li>
+<li><p>add interactions between countries. Or things like this depending on what issue in ecological economics we want to study!</p></li>
+</ul>
+<p>Classes make it easier to <strong>scale up</strong> from simple scripts to small models.</p>
+</section>
+<section id="mini-exercises-for-you">
+<h2>6. Mini-exercises (for you)<a class="headerlink" href="#mini-exercises-for-you" title="Link to this heading">#</a></h2>
+<p>Try to modify the code above:</p>
+<ol class="arabic simple">
+<li><p><strong>Add a new attribute</strong> to <code class="docutils literal notranslate"><span class="pre">Country</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">renewables_share</span></code><br />
+(percentage of energy from renewables), and store it in <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.</p></li>
+<li><p>Add a method <code class="docutils literal notranslate"><span class="pre">fossil_energy_share()</span></code> that returns <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">renewables_share</span></code>.</p></li>
+</ol>
+<p>You don’t need perfect code. The goal is to get used to:</p>
+<ul class="simple">
+<li><p>reading class definitions,</p></li>
+<li><p>understanding <code class="docutils literal notranslate"><span class="pre">self</span></code>,</p></li>
+<li><p>attaching behaviour (methods) to data (attributes).</p></li>
+</ul>
+<p>Once this feels normal, we are ready to build more structured models.</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Country</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">gdp</span><span class="p">,</span> <span class="n">emissions</span><span class="p">,</span> <span class="n">renewables_share</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        renewables_share: fraction of energy from renewables, in [0, 1]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">=</span> <span class="n">population</span>  <span class="c1"># in millions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span> <span class="o">=</span> <span class="n">gdp</span>                <span class="c1"># in billion USD</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">emissions</span> <span class="o">=</span> <span class="n">emissions</span>    <span class="c1"># in MtCO2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">renewables_share</span> <span class="o">=</span> <span class="n">renewables_share</span>
+
+    <span class="k">def</span> <span class="nf">emissions_intensity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">emissions</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">gdp</span>
+
+    <span class="k">def</span> <span class="nf">fossil_energy_share</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the share of energy from fossil sources.</span>
+<span class="sd">        If renewables_share = 0.3 (30%), fossil share = 0.7 (70%).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">renewables_share</span>
+
+    <span class="k">def</span> <span class="nf">summary_short</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s2">10s</span><span class="si">}</span><span class="s2"> | Emissions: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">emissions</span><span class="si">:</span><span class="s2">7.1f</span><span class="si">}</span><span class="s2"> MtCO2 &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;| Intensity: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">emissions_intensity</span><span class="p">()</span><span class="si">:</span><span class="s2">6.3f</span><span class="si">}</span><span class="s2"> (Mt/bn USD) &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;| Renewables: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">renewables_share</span><span class="si">:</span><span class="s2">4.0%</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>As another exercise loop over all countries in the class and print their fossil-fuel share</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Country</span><span class="p">(</span><span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe&quot;</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mi">520</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">renewables_share</span><span class="o">=</span><span class="mf">0.35</span><span class="p">),</span>
+    <span class="n">Country</span><span class="p">(</span><span class="s2">&quot;India&quot;</span><span class="p">,</span>   <span class="s2">&quot;Asia&quot;</span><span class="p">,</span>   <span class="mf">1400.0</span><span class="p">,</span> <span class="mi">3400</span><span class="p">,</span> <span class="mi">2600</span><span class="p">,</span> <span class="n">renewables_share</span><span class="o">=</span><span class="mf">0.22</span><span class="p">),</span>
+    <span class="n">Country</span><span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">,</span>  <span class="s2">&quot;Americas&quot;</span><span class="p">,</span> <span class="mf">215.0</span><span class="p">,</span> <span class="mi">1800</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">renewables_share</span><span class="o">=</span><span class="mf">0.45</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loop over countries and print fossil fuel share</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+    <span class="n">fossil</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">fossil_energy_share</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s2">10s</span><span class="si">}</span><span class="s2"> → Fossil share: </span><span class="si">{</span><span class="n">fossil</span><span class="si">:</span><span class="s2">.0%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Austria    → Fossil share: 65%
+India      → Fossil share: 78%
+Brazil     → Fossil share: 55%
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<section id="summary-classes-and-objects-quick-reference">
+<h3>Summary: Classes and Objects (Quick Reference)<a class="headerlink" href="#summary-classes-and-objects-quick-reference" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concept</p></th>
+<th class="head"><p>What it means</p></th>
+<th class="head"><p>In our code example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Class</strong></p></td>
+<td><p>Blueprint/template for creating objects</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Country:</span> <span class="pre">...</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Object / Instance</strong></p></td>
+<td><p>Concrete realisation of a class</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">austria</span> <span class="pre">=</span> <span class="pre">Country(...)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Instance attribute</strong></p></td>
+<td><p>Data stored on one object</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">self.population</span></code>, <code class="docutils literal notranslate"><span class="pre">self.emissions</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Instance method</strong></p></td>
+<td><p>Function that acts on one object (<code class="docutils literal notranslate"><span class="pre">self</span></code>)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gdp_per_capita(self)</span></code>, <code class="docutils literal notranslate"><span class="pre">summary(self)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Class attribute</strong></p></td>
+<td><p>Data shared by all instances of a class</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">registry</span> <span class="pre">=</span> <span class="pre">[]</span></code> in <code class="docutils literal notranslate"><span class="pre">CountryWithRegistry</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Class method</strong></p></td>
+<td><p>Method that works on the class (<code class="docutils literal notranslate"><span class="pre">cls</span></code>), not one object</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span> <span class="pre">average_emissions_intensity(...)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Static method</strong></p></td>
+<td><p>Helper function stored in the class, no <code class="docutils literal notranslate"><span class="pre">self</span></code> / <code class="docutils literal notranslate"><span class="pre">cls</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span> <span class="pre">per_capita_to_total(...)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Accessing method</strong></p></td>
+<td><p>Call behaviour of an object</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">austria.summary()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Accessing attribute</strong></p></td>
+<td><p>Read data stored in an object</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">austria.population</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>List of objects</strong></p></td>
+<td><p>Collection of many instances</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">countries</span> <span class="pre">=</span> <span class="pre">[austria,</span> <span class="pre">india,</span> <span class="pre">brazil]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Model-like loop</strong></p></td>
+<td><p>Loop over objects to update or analyse them</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">c</span> <span class="pre">in</span> <span class="pre">countries:</span> <span class="pre">c.apply_simple_policy(...)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./intro_python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="algorithms.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Algorithms</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="small_programming_project.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Project 1 - Analysing a dataset in a pandas dataframe</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Classes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-classes-and-object-oriented-programming-oop">Introduction to Classes and Object-Oriented Programming (OOP)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-object-oriented-programming-oop">1. Why Object-Oriented Programming (OOP)?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-mini-example-not-yet-ecological">2. A first mini-example (not yet ecological)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-did-we-just-do">2.1 What did we just do?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-for-ecological-economists-countries-as-objects">3. Classes for Ecological Economists: Countries as Objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-create-a-few-example-countries">Let’s create a few example countries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-this-useful">3.1 Why is this useful?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-class-attributes-and-methods">4. Anatomy of a Class: Attributes and Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-methods">4.1 Instance methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-attributes-and-class-methods-light-version">4.2 Class attributes and class methods (light version)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#static-methods-even-lighter-version">4.3 Static methods (even lighter version)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-small-workflow-list-of-countries-and-a-simple-model-loop">5. A small workflow: list of countries and a simple “model loop”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercises-for-you">6. Mini-exercises (for you)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-classes-and-objects-quick-reference">Summary: Classes and Objects (Quick Reference)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yannick Oswald
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
