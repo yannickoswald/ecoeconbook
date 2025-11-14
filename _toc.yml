@@ -3,16 +3,16 @@
 # file in your repo (without the extension).
 
 format: jb-book
-root  : intro    # your landing page
+root: intro ## landing page
 
 chapters:
   - file: preface
     title: Preface
-  - file: install_python
-    title: Installing and running Python
+
   - file: intro_python/index
     title: Introduction to Python and Programming
     sections:
+      - file: intro_python/install_python
       - file: intro_python/calculator
       - file: intro_python/variables
       - file: intro_python/ifs_and_loops
@@ -20,8 +20,9 @@ chapters:
       - file: intro_python/algorithms
       - file: intro_python/classes
       - file: intro_python/small_programming_project
+
   - file: order_of_magnitude_economics_and_scaling/index
-    title: Order of Magnitude Economics and Scaling 
+    title: Order of Magnitude Economics and Scaling
     sections:
       - file: order_of_magnitude_economics_and_scaling/order_of_magnitudes
       - file: order_of_magnitude_economics_and_scaling/planetary_constraints

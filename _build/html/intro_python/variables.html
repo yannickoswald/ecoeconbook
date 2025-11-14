@@ -177,7 +177,6 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install_python.html">Installing and running Python</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Introduction to Python and Programming</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="calculator.html">Python as a calculator</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Variables and basic data types</a></li>
@@ -460,6 +459,16 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excerise">Excerise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-look-at-pandas-dataframes">A first look at <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrames</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-small-dataframe">1. Creating a small DataFrame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-column">2. Accessing a column</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-rows-with-loc-and-iloc">3. Accessing rows with <code class="docutils literal notranslate"><span class="pre">.loc</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-single-value">4. Accessing a single value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-rows-with-conditions">5. Filtering rows with conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-find-the-minimum-energy-user">🧩 Exercise: Find the minimum energy user</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">📝 Solution</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -732,7 +741,282 @@ Numeric values list: [0.0036, 0.0036]
 </div>
 </details>
 </div>
+</section>
+<section id="a-first-look-at-pandas-dataframes">
+<h2>A first look at <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrames<a class="headerlink" href="#a-first-look-at-pandas-dataframes" title="Link to this heading">#</a></h2>
+<p>So far we have mostly worked with <strong>single values</strong>, <strong>lists</strong>, and <strong>dictionaries</strong>.<br />
+In real data work, we often want to handle <strong>tables</strong>: rows and columns, similar to working in Excel.</p>
+<p>For this, we use the library <strong><code class="docutils literal notranslate"><span class="pre">pandas</span></code></strong>, and its main data type: the <strong>DataFrame</strong>. This dataframe is extremely important - it is basically the bread and butter of Python Data Scientist and of Quantitative Ecological Economists of course! This is also why the last chapter of this Introduction to Python will actually be about analysing a dataframe with actual data! But let us start easy and small.</p>
+<section id="creating-a-small-dataframe">
+<h3>1. Creating a small DataFrame<a class="headerlink" href="#creating-a-small-dataframe" title="Link to this heading">#</a></h3>
+<p>We start from your dictionary of energy use per person:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  <span class="c1"># standard shortcut: &quot;pd&quot;</span>
+
+<span class="n">energy_per_capita</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Switzerland&quot;</span><span class="p">:</span> <span class="mf">120.0</span><span class="p">,</span>
+    <span class="s2">&quot;Austria&quot;</span><span class="p">:</span> <span class="mf">130.0</span><span class="p">,</span>
+    <span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="mf">150.0</span><span class="p">,</span>
+    <span class="s2">&quot;United States&quot;</span><span class="p">:</span> <span class="mf">300.0</span><span class="p">,</span>
+    <span class="s2">&quot;India&quot;</span><span class="p">:</span> <span class="mf">25.0</span>
+<span class="p">}</span>
+
+<span class="c1"># Turn this into a DataFrame:</span>
+
+<span class="n">df_energy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">energy_per_capita</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
+    <span class="s2">&quot;energy_GJ_per_person&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">energy_per_capita</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_energy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         country  energy_GJ_per_person
+0    Switzerland                 120.0
+1        Austria                 130.0
+2        Germany                 150.0
+3  United States                 300.0
+4          India                  25.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each row is a country, each column is a variable.</p>
+<p>Now it is important that you understand that dataframes are efficient because you subset and slice data, that is find it and take it out - even when dataframes are very large. Later you might work with dataframes that have thousands or even millions of rows.</p>
+</section>
+<section id="accessing-a-column">
+<h3>2. Accessing a column<a class="headerlink" href="#accessing-a-column" title="Link to this heading">#</a></h3>
+<p>Columns are often accessed like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the whole column as a Series</span>
+<span class="n">col</span> <span class="o">=</span> <span class="n">df_energy</span><span class="p">[</span><span class="s2">&quot;energy_GJ_per_person&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    120.0
+1    130.0
+2    150.0
+3    300.0
+4     25.0
+Name: energy_GJ_per_person, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_energy</span><span class="o">.</span><span class="n">energy_GJ_per_person</span>  <span class="c1"># works if the column name has no spaces</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    120.0
+1    130.0
+2    150.0
+3    300.0
+4     25.0
+Name: energy_GJ_per_person, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want several columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span> <span class="o">=</span> <span class="n">df_energy</span><span class="p">[[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;energy_GJ_per_person&quot;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         country  energy_GJ_per_person
+0    Switzerland                 120.0
+1        Austria                 130.0
+2        Germany                 150.0
+3  United States                 300.0
+4          India                  25.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="accessing-rows-with-loc-and-iloc">
+<h3>3. Accessing rows with <code class="docutils literal notranslate"><span class="pre">.loc</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc</span></code><a class="headerlink" href="#accessing-rows-with-loc-and-iloc" title="Link to this heading">#</a></h3>
+<p>There are two common ways to select rows in a DataFrame:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.loc</span></code> → select rows <strong>by label</strong> (index name)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> → select rows <strong>by position</strong> (row number)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First row (position 0)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_energy</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># First three rows (positions 0, 1, 2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_energy</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country                 Switzerland
+energy_GJ_per_person          120.0
+Name: 0, dtype: object
+       country  energy_GJ_per_person
+0  Switzerland                 120.0
+1      Austria                 130.0
+2      Germany                 150.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want to use country names as row labels, set the index:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_energy</span> <span class="o">=</span> <span class="n">df_energy</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_energy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               energy_GJ_per_person
+country                            
+Switzerland                   120.0
+Austria                       130.0
+Germany                       150.0
+United States                 300.0
+India                          25.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can use <code class="docutils literal notranslate"><span class="pre">.loc</span></code>  with country names:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Single row by label</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_energy</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Austria&quot;</span><span class="p">])</span>
+
+<span class="c1"># Several rows by label</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_energy</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;India&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>energy_GJ_per_person    130.0
+Name: Austria, dtype: float64
+         energy_GJ_per_person
+country                      
+Austria                 130.0
+India                    25.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="accessing-a-single-value">
+<h3>4. Accessing a single value<a class="headerlink" href="#accessing-a-single-value" title="Link to this heading">#</a></h3>
+<p>Suppose we want the energy per person in Austria as a single number.</p>
+<p>We combine row label and column name:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">austria_energy</span> <span class="o">=</span> <span class="n">df_energy</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;energy_GJ_per_person&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy per capita in Austria:&quot;</span><span class="p">,</span> <span class="n">austria_energy</span><span class="p">,</span> <span class="s2">&quot;GJ/person&quot;</span><span class="p">)</span>
+
+<span class="c1"># Row 1 (Austria), column 0 (energy), by integer positions</span>
+<span class="n">austria_energy_pos</span> <span class="o">=</span> <span class="n">df_energy</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">austria_energy_pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy per capita in Austria: 130.0 GJ/person
+130.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lastly it is good to already briefly mention that one can use conditional subsets of dataframes.</p>
+</section>
+<section id="filtering-rows-with-conditions">
+<h3>5. Filtering rows with conditions<a class="headerlink" href="#filtering-rows-with-conditions" title="Link to this heading">#</a></h3>
+<p>We can also select only those countries above a certain energy use:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boolean mask: True where energy use &gt; 100</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">df_energy</span><span class="p">[</span><span class="s2">&quot;energy_GJ_per_person&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+Switzerland       True
+Austria           True
+Germany           True
+United States     True
+India            False
+Name: energy_GJ_per_person, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use this mask to filter:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">high_energy</span> <span class="o">=</span> <span class="n">df_energy</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">high_energy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               energy_GJ_per_person
+country                            
+Switzerland                   120.0
+Austria                       130.0
+Germany                       150.0
+United States                 300.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-find-the-minimum-energy-user">
+<h3>🧩 Exercise: Find the minimum energy user<a class="headerlink" href="#exercise-find-the-minimum-energy-user" title="Link to this heading">#</a></h3>
+<p>Select the country (or countries) with the <strong>minimum energy per person</strong>.</p>
+<p><strong>Hint:</strong><br />
+Use</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_energy</span><span class="p">[</span><span class="s2">&quot;energy_GJ_per_person&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="solution">
+<h3>📝 Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># smallest value</span>
+<span class="n">min_value</span> <span class="o">=</span> <span class="n">df_energy</span><span class="p">[</span><span class="s2">&quot;energy_GJ_per_person&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+<span class="c1"># filter rows with that value</span>
+<span class="n">df_energy</span><span class="p">[</span><span class="n">df_energy</span><span class="p">[</span><span class="s2">&quot;energy_GJ_per_person&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">min_value</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 <p>Superbly done so far. In the next lesson we will cover the concept of control flow, that is of if-else statements and loops!</p>
+</section>
 </section>
 </section>
 
@@ -803,6 +1087,16 @@ Numeric values list: [0.0036, 0.0036]
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excerise">Excerise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-look-at-pandas-dataframes">A first look at <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrames</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-small-dataframe">1. Creating a small DataFrame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-column">2. Accessing a column</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-rows-with-loc-and-iloc">3. Accessing rows with <code class="docutils literal notranslate"><span class="pre">.loc</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-single-value">4. Accessing a single value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-rows-with-conditions">5. Filtering rows with conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-find-the-minimum-energy-user">🧩 Exercise: Find the minimum energy user</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">📝 Solution</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
