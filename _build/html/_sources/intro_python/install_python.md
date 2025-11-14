@@ -1,3 +1,4 @@
+(basics-install)=
 ---
 hide-toc: true
 ---
