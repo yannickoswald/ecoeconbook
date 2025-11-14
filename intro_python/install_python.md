@@ -1,7 +1,5 @@
 (basics-install)=
----
-hide-toc: true
----
+
 
 # Installing and running Python   <!-- Add this -->
 
