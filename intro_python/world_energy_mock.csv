@@ -1,0 +1,9 @@
+country,primary_energy_GJ_per_capita,gdp_per_capita_USD,population_million,co2_tons_per_capita
+Switzerland,160.0,90000,8.8,4.5
+Austria,170.0,60000,9.0,5.0
+Germany,190.0,55000,84.0,7.5
+India,30.0,2500,1400.0,2.0
+United States,320.0,75000,333.0,14.0
+Brazil,90.0,15000,214.0,2.5
+Nigeria,25.0,2000,220.0,0.7
+China,120.0,12000,1410.0,7.0

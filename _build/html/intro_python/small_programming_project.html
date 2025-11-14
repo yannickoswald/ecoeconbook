@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project 1 - Analysing a dataset in a pandas dataframe &#8212; Quantitative Ecological Economics</title>
+    <title>Analysing a world energy CSV with pandas &#8212; Quantitative Ecological Economics</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -176,6 +176,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Introduction to Python and Programming</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="install_python.html">Installing and running Python   <!-- Add this --></a></li>
 <li class="toctree-l2"><a class="reference internal" href="calculator.html">Python as a calculator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables and basic data types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ifs_and_loops.html">Control flow: if statements and loops</a></li>
@@ -183,7 +184,7 @@
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a></li>
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Project 1 - Analysing a dataset in a pandas dataframe</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Analysing a world energy CSV with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../order_of_magnitude_economics_and_scaling/index.html">Order of Magnitude Economics and Scaling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -239,6 +240,55 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/<YOUR-ORG>/<YOUR-REPO>/main?urlpath=lab/tree/./intro_python/small_programming_project.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/<YOUR-ORG>/<YOUR-REPO>/blob/main/./intro_python/small_programming_project.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -264,7 +314,7 @@
       
       
       
-      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>/edit/main/./intro_python/small_programming_project.md" target="_blank"
+      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>/edit/main/./intro_python/small_programming_project.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -311,7 +361,7 @@
       
       
       
-      <li><a href="../_sources/intro_python/small_programming_project.md" target="_blank"
+      <li><a href="../_sources/intro_python/small_programming_project.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +371,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -382,7 +432,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -393,11 +445,38 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Project 1 - Analysing a dataset in a pandas dataframe</h1>
+    <h1>Analysing a world energy CSV with pandas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-import-libraries">1. Setup: import libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-csv-file">2. Loading the CSV file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-a-quick-overview">3. Getting a quick overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-the-dataframe-high-income-and-low-income-countries">4. Slicing the DataFrame: high-income and low-income countries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-statistics-mean-median-mode-standard-deviation">5. Summary statistics: mean, median, mode, standard deviation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whole-sample">5.1 Whole sample</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-income-vs-low-income">5.2 High-income vs low-income</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-distributions">6. Visualising distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-make-your-own-histogram">📝 Exercise: make your own histogram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-chart-of-mean-values">6.1 Bar chart of mean values</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-new-ecological-economic-indicators">7. Creating new ecological-economic indicators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outlook-regressions-and-distributions">8. Outlook: regressions and distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions">Distributions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercises">9. Mini-exercises</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -407,8 +486,1273 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="project-1-analysing-a-dataset-in-a-pandas-dataframe">
-<span id="basics-small-programming-project"></span><h1>Project 1 - Analysing a dataset in a pandas dataframe<a class="headerlink" href="#project-1-analysing-a-dataset-in-a-pandas-dataframe" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="analysing-a-world-energy-csv-with-pandas">
+<h1>Analysing a world energy CSV with <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#analysing-a-world-energy-csv-with-pandas" title="Link to this heading">#</a></h1>
+<p>In this tutorial we analyse a small dataset with information on countries in the world:</p>
+<ul class="simple">
+<li><p>primary energy use per person (GJ per capita)</p></li>
+<li><p>GDP per capita (in USD)</p></li>
+<li><p>population size (in millions)</p></li>
+<li><p>CO₂ emissions per person (tons per capita)</p></li>
+</ul>
+<p>We will:</p>
+<ol class="arabic simple">
+<li><p>Load the data from a CSV into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame.</p></li>
+<li><p>Get a quick overview of the dataset.</p></li>
+<li><p>Slice the DataFrame into <strong>high-income</strong> and <strong>low-income</strong> groups.</p></li>
+<li><p>Compute summary statistics: <strong>mean</strong>, <strong>median</strong>, <strong>mode</strong>, <strong>standard deviation</strong>.</p></li>
+<li><p>Visualise the data using histograms and simple bar charts.</p></li>
+<li><p>Create new columns such as <strong>energy per unit of GDP</strong> and <strong>emissions per unit of energy</strong>.</p></li>
+<li><p>Give a very short outlook on <strong>regressions</strong> and <strong>distributions</strong>.</p></li>
+</ol>
+<p>Later, you can replace the mock CSV with a full real-world dataset.</p>
+<section id="setup-import-libraries">
+<h2>1. Setup: import libraries<a class="headerlink" href="#setup-import-libraries" title="Link to this heading">#</a></h2>
+<p>We start by importing <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is the standard plotting library that works nicely inside Jupyter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2.2.0&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="loading-the-csv-file">
+<h2>2. Loading the CSV file<a class="headerlink" href="#loading-the-csv-file" title="Link to this heading">#</a></h2>
+<p>In this tutorial we work with a <strong>small mock CSV file</strong> called <code class="docutils literal notranslate"><span class="pre">world_energy_mock.csv</span></code>.</p>
+<p>In a real project you would:</p>
+<ul class="simple">
+<li><p>place a CSV file in your repository (for example: <code class="docutils literal notranslate"><span class="pre">data/world_energy_full.csv</span></code>)</p></li>
+<li><p>read it with <code class="docutils literal notranslate"><span class="pre">pd.read_csv(&quot;data/world_energy_full.csv&quot;)</span></code>.</p></li>
+</ul>
+<p>Below, the first cell shows how you would usually load a CSV. The second cell creates a mock CSV if it does not exist, so the notebook is fully self-contained.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usual pattern in your own project:</span>
+<span class="c1"># df = pd.read_csv(&quot;data/world_energy_full.csv&quot;)</span>
+
+<span class="c1"># For this tutorial we use a small mock file.</span>
+<span class="c1"># If you have your own CSV, replace the file name here.</span>
+<span class="n">csv_path</span> <span class="o">=</span> <span class="s2">&quot;world_energy_mock.csv&quot;</span>
+
+<span class="c1"># The next cell will create this file if it does not exist.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a small mock CSV if it is not present in the current folder.</span>
+<span class="c1"># (You can delete this cell when you work with a real dataset.)</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">csv_path</span><span class="p">):</span>
+    <span class="n">mock_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">,</span> <span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;India&quot;</span><span class="p">,</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Brazil&quot;</span><span class="p">,</span> <span class="s2">&quot;Nigeria&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;primary_energy_GJ_per_capita&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">160.0</span><span class="p">,</span> <span class="mf">170.0</span><span class="p">,</span> <span class="mf">190.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mf">320.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">,</span> <span class="mf">25.0</span><span class="p">,</span> <span class="mf">120.0</span><span class="p">],</span>
+        <span class="s2">&quot;gdp_per_capita_USD&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">90000</span><span class="p">,</span> <span class="mi">60000</span><span class="p">,</span> <span class="mi">55000</span><span class="p">,</span> <span class="mi">2500</span><span class="p">,</span> <span class="mi">75000</span><span class="p">,</span> <span class="mi">15000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">12000</span><span class="p">],</span>
+        <span class="s2">&quot;population_million&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">8.8</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">84.0</span><span class="p">,</span> <span class="mf">1400.0</span><span class="p">,</span> <span class="mf">333.0</span><span class="p">,</span> <span class="mf">214.0</span><span class="p">,</span> <span class="mf">220.0</span><span class="p">,</span> <span class="mf">1410.0</span><span class="p">],</span>
+        <span class="s2">&quot;co2_tons_per_capita&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">14.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span>
+    <span class="p">})</span>
+    <span class="n">mock_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">csv_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_path</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>primary_energy_GJ_per_capita</th>
+      <th>gdp_per_capita_USD</th>
+      <th>population_million</th>
+      <th>co2_tons_per_capita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Switzerland</td>
+      <td>160.0</td>
+      <td>90000</td>
+      <td>8.8</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Austria</td>
+      <td>170.0</td>
+      <td>60000</td>
+      <td>9.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Germany</td>
+      <td>190.0</td>
+      <td>55000</td>
+      <td>84.0</td>
+      <td>7.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>India</td>
+      <td>30.0</td>
+      <td>2500</td>
+      <td>1400.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>United States</td>
+      <td>320.0</td>
+      <td>75000</td>
+      <td>333.0</td>
+      <td>14.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="getting-a-quick-overview">
+<h2>3. Getting a quick overview<a class="headerlink" href="#getting-a-quick-overview" title="Link to this heading">#</a></h2>
+<p>A few very useful first steps when exploring any new dataset:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.shape</span></code> – how many rows and columns?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.columns</span></code> – what are the column names?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.info()</span></code> – what are the data types? Any missing values?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> – summary statistics for numerical columns.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Number of rows and columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(8, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Column names</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;country&#39;, &#39;primary_energy_GJ_per_capita&#39;, &#39;gdp_per_capita_USD&#39;,
+       &#39;population_million&#39;, &#39;co2_tons_per_capita&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data types and missing values</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 5 columns):
+ #   Column                        Non-Null Count  Dtype  
+---  ------                        --------------  -----  
+ 0   country                       8 non-null      object 
+ 1   primary_energy_GJ_per_capita  8 non-null      float64
+ 2   gdp_per_capita_USD            8 non-null      int64  
+ 3   population_million            8 non-null      float64
+ 4   co2_tons_per_capita           8 non-null      float64
+dtypes: float64(3), int64(1), object(1)
+memory usage: 452.0+ bytes
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic descriptive statistics for numerical columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>primary_energy_GJ_per_capita</th>
+      <th>gdp_per_capita_USD</th>
+      <th>population_million</th>
+      <th>co2_tons_per_capita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>8.000000</td>
+      <td>8.000000</td>
+      <td>8.000000</td>
+      <td>8.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>138.125000</td>
+      <td>38937.500000</td>
+      <td>459.850000</td>
+      <td>5.400000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>95.914303</td>
+      <td>35051.429052</td>
+      <td>593.861848</td>
+      <td>4.208155</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>25.000000</td>
+      <td>2000.000000</td>
+      <td>8.800000</td>
+      <td>0.700000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>75.000000</td>
+      <td>9625.000000</td>
+      <td>65.250000</td>
+      <td>2.375000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>140.000000</td>
+      <td>35000.000000</td>
+      <td>217.000000</td>
+      <td>4.750000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>175.000000</td>
+      <td>63750.000000</td>
+      <td>599.750000</td>
+      <td>7.125000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>320.000000</td>
+      <td>90000.000000</td>
+      <td>1410.000000</td>
+      <td>14.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="slicing-the-dataframe-high-income-and-low-income-countries">
+<h2>4. Slicing the DataFrame: high-income and low-income countries<a class="headerlink" href="#slicing-the-dataframe-high-income-and-low-income-countries" title="Link to this heading">#</a></h2>
+<p>We now create simple groups based on <strong>GDP per capita</strong>. These are not official categories, just illustrative thresholds:</p>
+<ul class="simple">
+<li><p><strong>High-income</strong>: GDP per capita &gt; 50,000 USD</p></li>
+<li><p><strong>Low-income</strong>: GDP per capita &lt; 10,000 USD</p></li>
+</ul>
+<p>We first keep the original DataFrame with a country index for easier reading.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use country names as index</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>primary_energy_GJ_per_capita</th>
+      <th>gdp_per_capita_USD</th>
+      <th>population_million</th>
+      <th>co2_tons_per_capita</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Switzerland</th>
+      <td>160.0</td>
+      <td>90000</td>
+      <td>8.8</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>170.0</td>
+      <td>60000</td>
+      <td>9.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>190.0</td>
+      <td>55000</td>
+      <td>84.0</td>
+      <td>7.5</td>
+    </tr>
+    <tr>
+      <th>India</th>
+      <td>30.0</td>
+      <td>2500</td>
+      <td>1400.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>320.0</td>
+      <td>75000</td>
+      <td>333.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>Brazil</th>
+      <td>90.0</td>
+      <td>15000</td>
+      <td>214.0</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>Nigeria</th>
+      <td>25.0</td>
+      <td>2000</td>
+      <td>220.0</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>China</th>
+      <td>120.0</td>
+      <td>12000</td>
+      <td>1410.0</td>
+      <td>7.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define boolean masks</span>
+<span class="n">high_income_mask</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_per_capita_USD&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50000</span>
+<span class="n">low_income_mask</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_per_capita_USD&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">10000</span>
+
+<span class="c1"># Apply masks to create slices</span>
+<span class="n">df_high_income</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">high_income_mask</span><span class="p">]</span>
+<span class="n">df_low_income</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">low_income_mask</span><span class="p">]</span>
+
+<span class="n">df_high_income</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>primary_energy_GJ_per_capita</th>
+      <th>gdp_per_capita_USD</th>
+      <th>population_million</th>
+      <th>co2_tons_per_capita</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Switzerland</th>
+      <td>160.0</td>
+      <td>90000</td>
+      <td>8.8</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>170.0</td>
+      <td>60000</td>
+      <td>9.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>190.0</td>
+      <td>55000</td>
+      <td>84.0</td>
+      <td>7.5</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>320.0</td>
+      <td>75000</td>
+      <td>333.0</td>
+      <td>14.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_low_income</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>primary_energy_GJ_per_capita</th>
+      <th>gdp_per_capita_USD</th>
+      <th>population_million</th>
+      <th>co2_tons_per_capita</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>India</th>
+      <td>30.0</td>
+      <td>2500</td>
+      <td>1400.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>Nigeria</th>
+      <td>25.0</td>
+      <td>2000</td>
+      <td>220.0</td>
+      <td>0.7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can also slice based on <strong>energy use</strong> or <strong>emissions</strong>. For example, countries with very high primary energy use (more than 150 GJ per capita):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">high_energy_mask</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;primary_energy_GJ_per_capita&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">150</span>
+<span class="n">df_high_energy</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">high_energy_mask</span><span class="p">]</span>
+<span class="n">df_high_energy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>primary_energy_GJ_per_capita</th>
+      <th>gdp_per_capita_USD</th>
+      <th>population_million</th>
+      <th>co2_tons_per_capita</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Switzerland</th>
+      <td>160.0</td>
+      <td>90000</td>
+      <td>8.8</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>170.0</td>
+      <td>60000</td>
+      <td>9.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>190.0</td>
+      <td>55000</td>
+      <td>84.0</td>
+      <td>7.5</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>320.0</td>
+      <td>75000</td>
+      <td>333.0</td>
+      <td>14.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>And we can combine conditions with the logical operators <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (and), <code class="docutils literal notranslate"><span class="pre">|</span></code> (or), <code class="docutils literal notranslate"><span class="pre">~</span></code> (not). For instance: countries that are high-income <strong>and</strong> high-energy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_high_income_high_energy</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">high_income_mask</span> <span class="o">&amp;</span> <span class="n">high_energy_mask</span><span class="p">]</span>
+<span class="n">df_high_income_high_energy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>primary_energy_GJ_per_capita</th>
+      <th>gdp_per_capita_USD</th>
+      <th>population_million</th>
+      <th>co2_tons_per_capita</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Switzerland</th>
+      <td>160.0</td>
+      <td>90000</td>
+      <td>8.8</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>170.0</td>
+      <td>60000</td>
+      <td>9.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>190.0</td>
+      <td>55000</td>
+      <td>84.0</td>
+      <td>7.5</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>320.0</td>
+      <td>75000</td>
+      <td>333.0</td>
+      <td>14.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="summary-statistics-mean-median-mode-standard-deviation">
+<h2>5. Summary statistics: mean, median, mode, standard deviation<a class="headerlink" href="#summary-statistics-mean-median-mode-standard-deviation" title="Link to this heading">#</a></h2>
+<p>We now look at classical summary statistics for a single column, for example <code class="docutils literal notranslate"><span class="pre">primary_energy_GJ_per_capita</span></code>.</p>
+<section id="whole-sample">
+<h3>5.1 Whole sample<a class="headerlink" href="#whole-sample" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;primary_energy_GJ_per_capita&quot;</span><span class="p">]</span>
+
+<span class="n">mean_energy</span> <span class="o">=</span> <span class="n">energy</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">median_energy</span> <span class="o">=</span> <span class="n">energy</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">mode_energy</span> <span class="o">=</span> <span class="n">energy</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>      <span class="c1"># can return multiple values</span>
+<span class="n">std_energy</span> <span class="o">=</span> <span class="n">energy</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="n">mean_energy</span><span class="p">,</span> <span class="n">median_energy</span><span class="p">,</span> <span class="n">mode_energy</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">std_energy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(138.125,
+ 140.0,
+ [25.0, 30.0, 90.0, 120.0, 160.0, 170.0, 190.0, 320.0],
+ 95.91430326822257)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this continuous setting, the <strong>mode</strong> is often not very informative because many countries may have distinct values. It is more useful when there are repeated or discrete values (e.g. binned income classes).</p>
+<p>We can also compute several statistics at once for multiple columns using <code class="docutils literal notranslate"><span class="pre">DataFrame.agg</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns_of_interest</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;primary_energy_GJ_per_capita&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;gdp_per_capita_USD&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;co2_tons_per_capita&quot;</span><span class="p">]</span>
+
+<span class="n">df</span><span class="p">[</span><span class="n">columns_of_interest</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;median&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>primary_energy_GJ_per_capita</th>
+      <th>gdp_per_capita_USD</th>
+      <th>co2_tons_per_capita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>138.125000</td>
+      <td>38937.500000</td>
+      <td>5.400000</td>
+    </tr>
+    <tr>
+      <th>median</th>
+      <td>140.000000</td>
+      <td>35000.000000</td>
+      <td>4.750000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>95.914303</td>
+      <td>35051.429052</td>
+      <td>4.208155</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="high-income-vs-low-income">
+<h3>5.2 High-income vs low-income<a class="headerlink" href="#high-income-vs-low-income" title="Link to this heading">#</a></h3>
+<p>Now we compare the same statistics between high-income and low-income groups.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_high_income</span><span class="p">[</span><span class="n">columns_of_interest</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;median&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>primary_energy_GJ_per_capita</th>
+      <th>gdp_per_capita_USD</th>
+      <th>co2_tons_per_capita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>210.000000</td>
+      <td>70000.000000</td>
+      <td>7.750000</td>
+    </tr>
+    <tr>
+      <th>median</th>
+      <td>180.000000</td>
+      <td>67500.000000</td>
+      <td>6.250000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>74.386379</td>
+      <td>15811.388301</td>
+      <td>4.368447</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_low_income</span><span class="p">[</span><span class="n">columns_of_interest</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;median&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>primary_energy_GJ_per_capita</th>
+      <th>gdp_per_capita_USD</th>
+      <th>co2_tons_per_capita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>27.500000</td>
+      <td>2250.000000</td>
+      <td>1.350000</td>
+    </tr>
+    <tr>
+      <th>median</th>
+      <td>27.500000</td>
+      <td>2250.000000</td>
+      <td>1.350000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.535534</td>
+      <td>353.553391</td>
+      <td>0.919239</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="visualising-distributions">
+<h2>6. Visualising distributions<a class="headerlink" href="#visualising-distributions" title="Link to this heading">#</a></h2>
+<p>We now create a few simple plots using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>:</p>
+<ul class="simple">
+<li><p>histograms for primary energy use, GDP per capita, and emissions</p></li>
+<li><p>a small bar chart comparing mean values</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram for primary energy use</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;primary_energy_GJ_per_capita&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Primary energy (GJ per capita)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Number of countries&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of primary energy use&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Distribution of primary energy use&#39;)
+</pre></div>
+</div>
+<img alt="../_images/97e959cc92b14648b0ed2b1cfda886fed35515a9117b3b2f60679f365b013443.png" src="../_images/97e959cc92b14648b0ed2b1cfda886fed35515a9117b3b2f60679f365b013443.png" />
+</div>
+</div>
+<section id="exercise-make-your-own-histogram">
+<h3>📝 Exercise: make your own histogram<a class="headerlink" href="#exercise-make-your-own-histogram" title="Link to this heading">#</a></h3>
+<p>Create a histogram for <strong>GDP per capita</strong> using the column <code class="docutils literal notranslate"><span class="pre">gdp_per_capita_USD</span></code>.</p>
+<p>Try to:</p>
+<ul class="simple">
+<li><p>choose a reasonable number of bins (for example 8 or 10),</p></li>
+<li><p>label the x-axis and y-axis,</p></li>
+<li><p>add a short title.</p></li>
+</ul>
+<p>Once you have tried it yourself, you can reveal the solution below (in a hidden code cell).</p>
+<div class="cell tag_hide-cell tag_solution docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram for GDP per capita</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_per_capita_USD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;GDP per capita (USD)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Number of countries&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of GDP per capita&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Distribution of GDP per capita&#39;)
+</pre></div>
+</div>
+<img alt="../_images/8906c77695cfb16e83c774ec4dafb61006314ccbd28f2d2349d3f5b6c5362344.png" src="../_images/8906c77695cfb16e83c774ec4dafb61006314ccbd28f2d2349d3f5b6c5362344.png" />
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram for CO2 emissions per capita</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;co2_tons_per_capita&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;CO2 emissions (tons per capita)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Number of countries&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of CO2 emissions per capita&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Distribution of CO2 emissions per capita&#39;)
+</pre></div>
+</div>
+<img alt="../_images/4969553990ee6a260177990ab0655246b14926e2c465df059c6cbeed5db0bb9b.png" src="../_images/4969553990ee6a260177990ab0655246b14926e2c465df059c6cbeed5db0bb9b.png" />
+</div>
+</div>
+</section>
+<section id="bar-chart-of-mean-values">
+<h3>6.1 Bar chart of mean values<a class="headerlink" href="#bar-chart-of-mean-values" title="Link to this heading">#</a></h3>
+<p>We can also compare mean values across variables in a simple bar chart.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">means</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">columns_of_interest</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">means</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">means</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mean value&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Mean of selected indicators&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/85cd2d4e575fa922300a906faaf4eb2072a715dca5c500760076cc749e780ba5.png" src="../_images/85cd2d4e575fa922300a906faaf4eb2072a715dca5c500760076cc749e780ba5.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="creating-new-ecological-economic-indicators">
+<h2>7. Creating new ecological-economic indicators<a class="headerlink" href="#creating-new-ecological-economic-indicators" title="Link to this heading">#</a></h2>
+<p>We now add some derived variables that are often interesting in ecological economics.</p>
+<ol class="arabic simple">
+<li><p><strong>Energy intensity of GDP</strong> (energy per 1,000 USD of GDP):
+[
+\text{energy_per_1000usd} = \frac{\text{primary_energy_GJ_per_capita}}{\text{gdp_per_capita_USD} / 1000}.
+]</p></li>
+<li><p><strong>Emissions per unit of energy</strong>:
+[
+\text{co2_per_GJ} = \frac{\text{CO₂ tons per capita}}{\text{primary_energy_GJ_per_capita}}.
+]</p></li>
+<li><p><strong>Total primary energy use per country</strong> (in GJ):
+[
+\text{total_energy_GJ} = \text{primary_energy_GJ_per_capita} \times \text{population_million} \times 10^6.
+]</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_per_1000usd&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;primary_energy_GJ_per_capita&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_per_capita_USD&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;co2_per_GJ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;co2_tons_per_capita&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;primary_energy_GJ_per_capita&quot;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;total_energy_GJ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;primary_energy_GJ_per_capita&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;population_million&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e6</span>
+
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;primary_energy_GJ_per_capita&quot;</span><span class="p">,</span> <span class="s2">&quot;gdp_per_capita_USD&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;energy_per_1000usd&quot;</span><span class="p">,</span> <span class="s2">&quot;co2_per_GJ&quot;</span><span class="p">,</span> <span class="s2">&quot;total_energy_GJ&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>primary_energy_GJ_per_capita</th>
+      <th>gdp_per_capita_USD</th>
+      <th>energy_per_1000usd</th>
+      <th>co2_per_GJ</th>
+      <th>total_energy_GJ</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Switzerland</th>
+      <td>160.0</td>
+      <td>90000</td>
+      <td>1.777778</td>
+      <td>0.028125</td>
+      <td>1.408000e+09</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>170.0</td>
+      <td>60000</td>
+      <td>2.833333</td>
+      <td>0.029412</td>
+      <td>1.530000e+09</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>190.0</td>
+      <td>55000</td>
+      <td>3.454545</td>
+      <td>0.039474</td>
+      <td>1.596000e+10</td>
+    </tr>
+    <tr>
+      <th>India</th>
+      <td>30.0</td>
+      <td>2500</td>
+      <td>12.000000</td>
+      <td>0.066667</td>
+      <td>4.200000e+10</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>320.0</td>
+      <td>75000</td>
+      <td>4.266667</td>
+      <td>0.043750</td>
+      <td>1.065600e+11</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can also look at the distribution of these new indicators.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_per_1000usd&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Energy per 1000 USD of GDP (GJ)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Number of countries&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Energy intensity of GDP&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Energy intensity of GDP&#39;)
+</pre></div>
+</div>
+<img alt="../_images/73808e253bb04be2fa72f20e771f95012bdd673826b3f98cc3e4e86b6de809b2.png" src="../_images/73808e253bb04be2fa72f20e771f95012bdd673826b3f98cc3e4e86b6de809b2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;co2_per_GJ&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;CO2 per GJ of energy (tons/GJ)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Number of countries&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Emissions intensity of energy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Emissions intensity of energy&#39;)
+</pre></div>
+</div>
+<img alt="../_images/db8c6e3eff1985f5f5de0dff212edc2040e5b48432d6e5edce04d5e1a22b5583.png" src="../_images/db8c6e3eff1985f5f5de0dff212edc2040e5b48432d6e5edce04d5e1a22b5583.png" />
+</div>
+</div>
+</section>
+<section id="outlook-regressions-and-distributions">
+<h2>8. Outlook: regressions and distributions<a class="headerlink" href="#outlook-regressions-and-distributions" title="Link to this heading">#</a></h2>
+<p>So far we have only looked at <strong>descriptive statistics</strong>. Often we want to know whether there is a
+<strong>systematic relationship</strong> between two variables. For example:</p>
+<ul class="simple">
+<li><p>Do countries with higher GDP per capita also use more energy?</p></li>
+<li><p>Is higher energy use associated with higher CO₂ emissions?</p></li>
+</ul>
+<p>A very common tool for this is a <strong>regression model</strong>, such as a simple linear regression:</p>
+<p>[
+\text{energy} = a + b \cdot \text{GDP} + \varepsilon,
+]</p>
+<p>where</p>
+<ul class="simple">
+<li><p>(a) is an intercept,</p></li>
+<li><p>(b) is a slope (how much energy increases when GDP increases),</p></li>
+<li><p>(\varepsilon) is an error term (everything we do not explain).</p></li>
+</ul>
+<p>We will study regressions more systematically later. For now we can at least look at a <strong>scatter plot</strong>
+to see whether there is a clear pattern.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_per_capita_USD&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;primary_energy_GJ_per_capita&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;GDP per capita (USD)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Primary energy (GJ per capita)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;GDP vs primary energy use&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;GDP vs primary energy use&#39;)
+</pre></div>
+</div>
+<img alt="../_images/6687567754d6102e8c87bfd0bb1dc81ef5e9a6345b776c2777bd9aaf2e41dab6.png" src="../_images/6687567754d6102e8c87bfd0bb1dc81ef5e9a6345b776c2777bd9aaf2e41dab6.png" />
+</div>
+</div>
+<section id="distributions">
+<h3>Distributions<a class="headerlink" href="#distributions" title="Link to this heading">#</a></h3>
+<p>Many real-world variables in ecological economics are <strong>not</strong> normally distributed. For example:</p>
+<ul class="simple">
+<li><p>income and wealth often have <strong>heavy tails</strong> (a few very high values),</p></li>
+<li><p>city sizes and firm sizes can follow approximate <strong>power-law</strong> or <strong>log-normal</strong> distributions,</p></li>
+<li><p>energy use per capita is often very skewed across countries.</p></li>
+</ul>
+<p>Looking at histograms and summary statistics is a first step towards understanding these distributions.
+Later in the course we will:</p>
+<ul class="simple">
+<li><p>study distribution shapes more carefully,</p></li>
+<li><p>connect them to underlying mechanisms (e.g. multiplicative growth, network effects),</p></li>
+<li><p>and use statistical tools to fit and compare different distributions.</p></li>
+</ul>
+</section>
+</section>
+<section id="mini-exercises">
+<h2>9. Mini-exercises<a class="headerlink" href="#mini-exercises" title="Link to this heading">#</a></h2>
+<p>Try the following small tasks to practice:</p>
+<ol class="arabic simple">
+<li><p><strong>Change the thresholds</strong> for “high-income” and “low-income” and see how your slices change.</p></li>
+<li><p>Compute the <strong>mean CO₂ emissions per capita</strong> for high-income vs low-income countries. Which group emits more?</p></li>
+<li><p>Create a new indicator <code class="docutils literal notranslate"><span class="pre">co2_per_1000usd</span></code> (CO₂ per 1,000 USD of GDP) and compare its mean across groups.</p></li>
+<li><p>Make a scatter plot of <code class="docutils literal notranslate"><span class="pre">energy_per_1000usd</span></code> (x-axis) and <code class="docutils literal notranslate"><span class="pre">co2_per_GJ</span></code> (y-axis). Do countries with more energy-intensive GDP also have more carbon-intensive energy?</p></li>
+</ol>
+<p>Once you are comfortable with this small mock dataset, you can plug in a <strong>real global dataset</strong> and repeat the same analysis.</p>
+<div class="cell tag_hide-cell tag_solution docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solutions for Section 9 mini-exercises</span>
+<span class="c1"># (Hidden in the book via the &#39;hide-cell&#39; tag.)</span>
+
+<span class="c1"># 1. Change thresholds for &quot;high-income&quot; and &quot;low-income&quot;</span>
+<span class="c1"># Example: high-income &gt; 40,000 USD, low-income &lt; 8,000 USD</span>
+<span class="n">high_income_mask_2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_per_capita_USD&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">40000</span>
+<span class="n">low_income_mask_2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_per_capita_USD&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">8000</span>
+
+<span class="n">df_high_income_2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">high_income_mask_2</span><span class="p">]</span>
+<span class="n">df_low_income_2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">low_income_mask_2</span><span class="p">]</span>
+
+<span class="c1"># 2. Mean CO2 emissions per capita for high-income vs low-income countries</span>
+<span class="n">mean_co2_high</span> <span class="o">=</span> <span class="n">df_high_income</span><span class="p">[</span><span class="s2">&quot;co2_tons_per_capita&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_co2_low</span> <span class="o">=</span> <span class="n">df_low_income</span><span class="p">[</span><span class="s2">&quot;co2_tons_per_capita&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean CO2 per capita (high-income):&quot;</span><span class="p">,</span> <span class="n">mean_co2_high</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean CO2 per capita (low-income):&quot;</span><span class="p">,</span> <span class="n">mean_co2_low</span><span class="p">)</span>
+
+<span class="c1"># 3. New indicator: CO2 per 1000 USD of GDP</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;co2_per_1000usd&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;co2_tons_per_capita&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_per_capita_USD&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">co2_indicator</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">high_income_mask</span><span class="p">)[</span><span class="s2">&quot;co2_per_1000usd&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Mean CO2 per 1000 USD of GDP&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;High-income countries:&quot;</span><span class="p">,</span> <span class="n">co2_indicator</span><span class="p">[</span><span class="kc">True</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Other countries:&quot;</span><span class="p">,</span> <span class="n">co2_indicator</span><span class="p">[</span><span class="kc">False</span><span class="p">])</span>
+
+<span class="c1"># 4. Scatter plot: energy_per_1000usd (x-axis) vs co2_per_GJ (y-axis)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_per_1000usd&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;co2_per_GJ&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Energy per 1000 USD of GDP (GJ)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;CO2 per GJ of energy (tons/GJ)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Energy intensity vs emissions intensity&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean CO2 per capita (high-income): 7.75
+Mean CO2 per capita (low-income): 1.35
+
+Mean CO2 per 1000 USD of GDP
+High-income countries: 0.11409090909090909
+Other countries: 0.475
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Energy intensity vs emissions intensity&#39;)
+</pre></div>
+</div>
+<img alt="../_images/d87f855531b92361467419cc9ca59b3d5ecb3213edf0f81094691e809e8e74ab.png" src="../_images/d87f855531b92361467419cc9ca59b3d5ecb3213edf0f81094691e809e8e74ab.png" />
+</div>
+</details>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -465,6 +1809,40 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-import-libraries">1. Setup: import libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-csv-file">2. Loading the CSV file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-a-quick-overview">3. Getting a quick overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-the-dataframe-high-income-and-low-income-countries">4. Slicing the DataFrame: high-income and low-income countries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-statistics-mean-median-mode-standard-deviation">5. Summary statistics: mean, median, mode, standard deviation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whole-sample">5.1 Whole sample</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-income-vs-low-income">5.2 High-income vs low-income</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-distributions">6. Visualising distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-make-your-own-histogram">📝 Exercise: make your own histogram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-chart-of-mean-values">6.1 Bar chart of mean values</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-new-ecological-economic-indicators">7. Creating new ecological-economic indicators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outlook-regressions-and-distributions">8. Outlook: regressions and distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions">Distributions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercises">9. Mini-exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
