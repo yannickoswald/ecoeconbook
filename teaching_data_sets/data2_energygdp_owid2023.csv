@@ -1,4 +1,4 @@
-Entity;Code;Year;Per capita energy consumption;GDP per capita;World region according to OWID
+entity;code;year;energy_pc;gdp_pc;region
 Afghanistan;AFG;2023;990.46967;1983.8126;Asia
 Albania;ALB;2023;8032.0703;19487.71;Europe
 Algeria;DZA;2023;16994.377;15159.324;Africa

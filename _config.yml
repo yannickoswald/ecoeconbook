@@ -10,7 +10,7 @@ description : >-
 
 # --- Launch-button & repository hooks ---------------------------------------
 repository:
-  url: https://github.com/<YOUR-ORG>/<YOUR-REPO>
+  url: https://github.com/yannickoswald/ecoeconbook
   path_to_book: .
   branch: main
 html:
