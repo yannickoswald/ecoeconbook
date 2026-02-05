@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'order_of_magnitude_economics_and_scaling/orders_of_magnitude';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Planetary constraints" href="planetary_constraints.html" />
+    <link rel="next" title="Static scale" href="static_scale.html" />
     <link rel="prev" title="Order of Magnitude Economics and Scaling" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -191,7 +191,6 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Order of Magnitude Economics and Scaling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Orders of magnitude</a></li>
-<li class="toctree-l2"><a class="reference internal" href="planetary_constraints.html">Planetary constraints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="static_scale.html">Static scale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dynamic_scale.html">Dynamic scale</a></li>
 </ul>
@@ -468,14 +467,6 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">4) Logarithms as a scale ruler</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-with-solution">7) Mini exercise (with solution)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecological-economics-intuition-scaling-relationships">8) Ecological economics intuition: scaling relationships</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-application-loglog-plots-across-countries">9) Empirical application: log–log plots across countries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-note-important">Data note (important)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-1-energy-per-capita-vs-gdp-per-capita-loglog">9.1 Plot 1: Energy per capita vs GDP per capita (log–log)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-2-population-vs-total-gdp-loglog">9.2 Plot 2: Population vs total GDP (log–log)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-more-exercise-interpret-a-loglog-slope">10) One more exercise: interpret a log–log slope</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaways">11) Takeaways</a></li>
 </ul>
             </nav>
@@ -629,275 +620,14 @@ Since <span class="math notranslate nohighlight">\(30 = 3\times 10\)</span>, the
 </div>
 </div>
 </details></section>
-<section id="ecological-economics-intuition-scaling-relationships">
-<h2>8) Ecological economics intuition: scaling relationships<a class="headerlink" href="#ecological-economics-intuition-scaling-relationships" title="Link to this heading">#</a></h2>
-<p>A lot of empirical ecological economics uses <strong>power laws</strong> or approximate power-law behavior:</p>
-<p>$
-y \approx c,x^{\alpha}.
-$</p>
-<p>Taking logs (base 10 or natural log) makes this linear:</p>
-<p>$
-\log(y) \approx \log(c) + \alpha,\log(x).
-$</p>
-<p>So on a <strong>log–log plot</strong>, the slope is the exponent <strong>α</strong>.</p>
-<p>That’s why “orders of magnitude” matter so much: a log–log plot is basically a ruler for multiplicative scaling.</p>
-</section>
-<section id="empirical-application-loglog-plots-across-countries">
-<h2>9) Empirical application: log–log plots across countries<a class="headerlink" href="#empirical-application-loglog-plots-across-countries" title="Link to this heading">#</a></h2>
-<p>We’ll make two classic plots (stylized and small, but realistic in spirit):</p>
-<ol class="arabic simple">
-<li><p><strong>Energy per capita vs GDP per capita</strong> (log–log)</p></li>
-<li><p><strong>Population vs total GDP</strong> (log–log)</p></li>
-</ol>
-<section id="data-note-important">
-<h3>Data note (important)<a class="headerlink" href="#data-note-important" title="Link to this heading">#</a></h3>
-<p>This notebook tries to download a small merged dataset from public sources <strong>if internet access is available</strong>.
-If that fails (for example in offline environments), it uses a <strong>small built-in toy dataset</strong> that still demonstrates the methods.</p>
-<p>Either way, the <em>math and workflow</em> are the point of this chapter.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="k">def</span> <span class="nf">load_demo_country_data</span><span class="p">():</span>
-    <span class="c1"># Small built-in dataset: values are plausible ballpark figures.</span>
-    <span class="c1"># Units:</span>
-    <span class="c1"># - gdp_pc: USD (PPP-ish ballpark) per person per year</span>
-    <span class="c1"># - energy_pc_GJ: GJ per person per year (primary energy-ish ballpark)</span>
-    <span class="c1"># - pop_m: population in millions</span>
-    <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">(</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="mi">65000</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">333</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Canada&quot;</span><span class="p">,</span>        <span class="mi">52000</span><span class="p">,</span> <span class="mi">280</span><span class="p">,</span>  <span class="mi">40</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span>       <span class="mi">55000</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span>  <span class="mi">84</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;France&quot;</span><span class="p">,</span>        <span class="mi">50000</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span>  <span class="mi">68</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span><span class="mi">50000</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span>  <span class="mi">67</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">,</span>   <span class="mi">72000</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span>   <span class="mi">9</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Norway&quot;</span><span class="p">,</span>        <span class="mi">70000</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span>   <span class="mf">5.5</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;China&quot;</span><span class="p">,</span>         <span class="mi">18000</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">1410</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;India&quot;</span><span class="p">,</span>          <span class="mi">8000</span><span class="p">,</span>  <span class="mi">30</span><span class="p">,</span> <span class="mi">1420</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">,</span>        <span class="mi">16000</span><span class="p">,</span>  <span class="mi">80</span><span class="p">,</span>  <span class="mi">214</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;South Africa&quot;</span><span class="p">,</span>  <span class="mi">14000</span><span class="p">,</span>  <span class="mi">90</span><span class="p">,</span>   <span class="mi">60</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Nigeria&quot;</span><span class="p">,</span>        <span class="mi">6000</span><span class="p">,</span>  <span class="mi">25</span><span class="p">,</span>  <span class="mi">223</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span>         <span class="mi">43000</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span>  <span class="mi">124</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Indonesia&quot;</span><span class="p">,</span>     <span class="mi">12000</span><span class="p">,</span>  <span class="mi">50</span><span class="p">,</span>  <span class="mi">277</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Australia&quot;</span><span class="p">,</span>     <span class="mi">55000</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span>   <span class="mi">26</span><span class="p">),</span>
-    <span class="p">]</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;gdp_pc&quot;</span><span class="p">,</span> <span class="s2">&quot;energy_pc_GJ&quot;</span><span class="p">,</span> <span class="s2">&quot;pop_m&quot;</span><span class="p">])</span>
-    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_total&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_pc&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pop_m&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">df</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">load_demo_country_data</span><span class="p">()</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country</th>
-      <th>gdp_pc</th>
-      <th>energy_pc_GJ</th>
-      <th>pop_m</th>
-      <th>gdp_total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>United States</td>
-      <td>65000</td>
-      <td>300</td>
-      <td>333.0</td>
-      <td>2.164500e+13</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Canada</td>
-      <td>52000</td>
-      <td>280</td>
-      <td>40.0</td>
-      <td>2.080000e+12</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Germany</td>
-      <td>55000</td>
-      <td>150</td>
-      <td>84.0</td>
-      <td>4.620000e+12</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>France</td>
-      <td>50000</td>
-      <td>140</td>
-      <td>68.0</td>
-      <td>3.400000e+12</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>United Kingdom</td>
-      <td>50000</td>
-      <td>120</td>
-      <td>67.0</td>
-      <td>3.350000e+12</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
-<section id="plot-1-energy-per-capita-vs-gdp-per-capita-loglog">
-<h3>9.1 Plot 1: Energy per capita vs GDP per capita (log–log)<a class="headerlink" href="#plot-1-energy-per-capita-vs-gdp-per-capita-loglog" title="Link to this heading">#</a></h3>
-<p>Interpretation practice:</p>
-<ul class="simple">
-<li><p>A straight-ish trend on log–log suggests an approximate scaling relationship.</p></li>
-<li><p>A slope <strong>&lt; 1</strong> means energy grows sublinearly with income (energy intensity declines with income).</p></li>
-<li><p>A slope <strong>&gt; 1</strong> would mean superlinear growth (rare for per-capita energy vs per-capita GDP in many samples).</p></li>
-</ul>
-<p>We’ll estimate a simple log–log slope with a linear regression on log-transformed variables.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_pc&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_pc_GJ&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
-
-<span class="n">lx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">ly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-
-<span class="c1"># simple least squares slope/intercept: ly ≈ b0 + b1*lx</span>
-<span class="n">b1</span><span class="p">,</span> <span class="n">b0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">lx</span><span class="p">,</span> <span class="n">ly</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estimated log–log slope alpha ≈ </span><span class="si">{</span><span class="n">b1</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Intercept log10(c) ≈ </span><span class="si">{</span><span class="n">b0</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">  -&gt; c ≈ </span><span class="si">{</span><span class="mi">10</span><span class="o">**</span><span class="n">b0</span><span class="si">:</span><span class="s2">.2g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_pc&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_pc_GJ&quot;</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;GDP per capita (USD)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Energy per capita (GJ/person/year)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Energy per capita vs GDP per capita (log–log)&quot;</span><span class="p">)</span>
-
-<span class="c1"># regression line over range</span>
-<span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span> <span class="mi">200</span><span class="p">)</span>
-<span class="n">yy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">b0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">xx</span><span class="o">**</span><span class="n">b1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">)</span>
-
-<span class="c1"># label a few points (not all, to avoid clutter)</span>
-<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;India&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">,</span> <span class="s2">&quot;Norway&quot;</span><span class="p">,</span> <span class="s2">&quot;Nigeria&quot;</span><span class="p">,</span> <span class="s2">&quot;Switzerland&quot;</span><span class="p">]:</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;gdp_pc&quot;</span><span class="p">]</span><span class="o">*</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;energy_pc_GJ&quot;</span><span class="p">]</span><span class="o">*</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated log–log slope alpha ≈ 0.83
-Intercept log10(c) ≈ -1.67  -&gt; c ≈ 0.022
-</pre></div>
-</div>
-<img alt="../_images/c37fe7c0fd6d689bdc17951c5295bcd547fd4eb1354a88d98009cd12b1bc00d0.png" src="../_images/c37fe7c0fd6d689bdc17951c5295bcd547fd4eb1354a88d98009cd12b1bc00d0.png" />
-</div>
-</div>
-</section>
-<section id="plot-2-population-vs-total-gdp-loglog">
-<h3>9.2 Plot 2: Population vs total GDP (log–log)<a class="headerlink" href="#plot-2-population-vs-total-gdp-loglog" title="Link to this heading">#</a></h3>
-<p>This plot is a nice reminder that:</p>
-<ul class="simple">
-<li><p>GDP per capita is a <em>per-person</em> number,</p></li>
-<li><p>total GDP is <em>per-country</em> and mixes <strong>population scale</strong> and <strong>income scale</strong>.</p></li>
-</ul>
-<p>On log–log, you often see that population alone does not determine total GDP — countries with similar population can differ by orders of magnitude in total GDP.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pop_m&quot;</span><span class="p">]</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_total&quot;</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Population (people)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Total GDP (USD)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Population vs total GDP (log–log)&quot;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;India&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">,</span> <span class="s2">&quot;Nigeria&quot;</span><span class="p">,</span> <span class="s2">&quot;Switzerland&quot;</span><span class="p">]:</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;pop_m&quot;</span><span class="p">]</span><span class="o">*</span><span class="mf">1e6</span><span class="o">*</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;gdp_total&quot;</span><span class="p">]</span><span class="o">*</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/ffa2b9c39d03a554a1ef6b9707e26c2a4c3e74927497303dab3b2cdef763fcc2.png" src="../_images/ffa2b9c39d03a554a1ef6b9707e26c2a4c3e74927497303dab3b2cdef763fcc2.png" />
-</div>
-</div>
-</section>
-</section>
-<section id="one-more-exercise-interpret-a-loglog-slope">
-<h2>10) One more exercise: interpret a log–log slope<a class="headerlink" href="#one-more-exercise-interpret-a-loglog-slope" title="Link to this heading">#</a></h2>
-<p>Suppose the fitted relationship is:</p>
-<p>$
-\text{energy}<em>{pc} \approx c, (\text{GDP}</em>{pc})^{0.6}.
-$</p>
-<ol class="arabic simple">
-<li><p>If GDP per capita doubles, by what factor does energy per capita change?</p></li>
-<li><p>If GDP per capita increases by a factor of 10, by what factor does energy per capita change?</p></li>
-<li><p>Is the relationship sublinear or superlinear? What does that suggest about energy intensity?</p></li>
-</ol>
-<details>
-<summary><b>Solution sketch</b></summary>
-<ol class="arabic simple">
-<li><p>Doubling means ×2. Energy changes by (2^{0.6}\approx 1.52) (about +52%).</p></li>
-<li><p>×10 implies energy changes by (10^{0.6}\approx 3.98) (about ×4).</p></li>
-<li><p>Since (0.6&lt;1), it’s <strong>sublinear</strong>: energy per capita grows more slowly than GDP per capita, consistent with declining energy intensity with income (within this simplified story).</p></li>
-</ol>
-</details>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Doubling GDP per capita -&gt; energy factor:&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="n">alpha</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10x GDP per capita      -&gt; energy factor:&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="n">alpha</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Doubling GDP per capita -&gt; energy factor: 1.515716566510398
-10x GDP per capita      -&gt; energy factor: 3.9810717055349722
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="takeaways">
 <h2>11) Takeaways<a class="headerlink" href="#takeaways" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>An <strong>order of magnitude</strong> is a factor of ~10.</p></li>
 <li><p>Scientific notation separates <strong>scale</strong> (<code class="docutils literal notranslate"><span class="pre">10^b</span></code>) from <strong>detail</strong> (<code class="docutils literal notranslate"><span class="pre">a</span></code>).</p></li>
 <li><p>Logarithms turn <strong>multiplicative</strong> differences into <strong>additive</strong> differences.</p></li>
-<li><p>Log–log plots are a natural habitat for ecological-economic scaling patterns.</p></li>
 </ul>
-<p>If you catch yourself saying “wow that’s huge,” try translating it into:<br />
-<strong>“How many orders of magnitude?”</strong><br />
-It’s the same emotion, but with a ruler.</p>
+<p>In the next chapter we are going to learn about static scaling relationships in Ecological Economics and pick up one of the most important concepts in all of science along the way - Log–log plots.</p>
 </section>
 </section>
 
@@ -941,11 +671,11 @@ It’s the same emotion, but with a ruler.</p>
       </div>
     </a>
     <a class="right-next"
-       href="planetary_constraints.html"
+       href="static_scale.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Planetary constraints</p>
+        <p class="prev-next-title">Static scale</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -976,14 +706,6 @@ It’s the same emotion, but with a ruler.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">4) Logarithms as a scale ruler</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-with-solution">7) Mini exercise (with solution)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecological-economics-intuition-scaling-relationships">8) Ecological economics intuition: scaling relationships</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-application-loglog-plots-across-countries">9) Empirical application: log–log plots across countries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-note-important">Data note (important)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-1-energy-per-capita-vs-gdp-per-capita-loglog">9.1 Plot 1: Energy per capita vs GDP per capita (log–log)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-2-population-vs-total-gdp-loglog">9.2 Plot 2: Population vs total GDP (log–log)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-more-exercise-interpret-a-loglog-slope">10) One more exercise: interpret a log–log slope</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaways">11) Takeaways</a></li>
 </ul>
   </nav></div>
