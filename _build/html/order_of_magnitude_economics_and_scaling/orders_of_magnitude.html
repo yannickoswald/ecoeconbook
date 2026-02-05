@@ -467,17 +467,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">4) Logarithms as a scale ruler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-order-of-magnitude-of-a-number-rounding-on-a-log-scale">5) “The order of magnitude of a number” (rounding on a log scale)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-nearest-power-of-ten">A) Nearest power of ten</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-floor-power-of-ten">B) Floor power of ten</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-approximation-tricks-a-mini-toolbox">6) Quick approximation tricks (a mini toolbox)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiply-by-splitting-into-mantissa-exponent">Multiply by splitting into mantissa + exponent</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#divide-similarly">Divide similarly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-subtract-dominated-by-the-bigger-order">Add / subtract: dominated by the bigger order</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercises-with-solutions">7) Mini exercises (with solutions)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecological-economics-intuition-scaling-relationships">8) Ecological economics intuition: scaling relationships</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-application-loglog-plots-across-countries">9) Empirical application: log–log plots across countries</a><ul class="nav section-nav flex-column">
@@ -527,19 +516,23 @@ A <strong>logarithmic scale</strong> fixes this by turning multiplicative gaps (
 <h2>2) Scientific notation<a class="headerlink" href="#scientific-notation" title="Link to this heading">#</a></h2>
 <p>Any positive number can be written as</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}n = a\times 10^b,\\where:
-- the exponent **`b`** is an integer, and
-- the mantissa **`a`** is a number around 1 (for example between 1 and 10).\\Examples:
-- 3,200 = 3.2 × 10³  
-- 0.007 = 7 × 10⁻³  
-- 81,000,000 = 8.1 × 10⁷\\This representation makes scale comparisons easy: the exponent `b` tells you roughly “how many zeros.”\end{aligned}\end{align} \]</div>
+\[n = a\times 10^b,\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p>the exponent <strong><code class="docutils literal notranslate"><span class="pre">b</span></code></strong> is an integer, and</p></li>
+<li><p>the mantissa <strong><code class="docutils literal notranslate"><span class="pre">a</span></code></strong> is a number around 1 (for example between 1 and 10).</p></li>
+</ul>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>3,200 = 3.2 × 10³</p></li>
+<li><p>0.007 = 7 × 10⁻³</p></li>
+<li><p>81,000,000 = 8.1 × 10⁷</p></li>
+</ul>
+<p>This representation makes scale comparisons easy: the exponent <code class="docutils literal notranslate"><span class="pre">b</span></code> tells you roughly “how many zeros.”</p>
 </section>
 <section id="within-an-order-of-magnitude-within-a-factor-of-10">
 <h2>3) “Within an order of magnitude” = “within a factor of 10”<a class="headerlink" href="#within-an-order-of-magnitude-within-a-factor-of-10" title="Link to this heading">#</a></h2>
 <p>Two positive numbers <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are <strong>within an order of magnitude</strong> if the larger is <strong>less than 10 times</strong> the smaller:</p>
-<p>$
-\frac{\max(x,y)}{\min(x,y)} &lt; 10.
-$</p>
 <p>So:</p>
 <ul class="simple">
 <li><p>2 and 9 are within an order of magnitude (9/2 = 4.5),</p></li>
@@ -598,118 +591,15 @@ Since (30 = 3\times 10), the difference is <strong>a bit more than one order of 
 <blockquote>
 <div><p>“What power of 10 gives this number?”</p>
 </div></blockquote>
-<p>$
-\log_{10}(10^b)=b.
-$</p>
+<div class="math notranslate nohighlight">
+\[\log_{10}(10^b)=b.\]</div>
 <p>And the key identity:</p>
-<p>$
-\log_{10}(x/y)=\log_{10}(x)-\log_{10}(y).
-$</p>
+<div class="math notranslate nohighlight">
+\[\log_{10}(x/y)=\log_{10}(x)-\log_{10}(y).\]</div>
 <p>So the <strong>difference in orders of magnitude</strong> between <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> is basically:</p>
-<p>$
-\Delta \text{orders} \approx \log_{10}(x) - \log_{10}(y) = \log_{10}(x/y).
-$</p>
+<div class="math notranslate nohighlight">
+\[\Delta \text{orders} \approx \log_{10}(x) - \log_{10}(y) = \log_{10}(x/y).\]</div>
 <p>Example: if <code class="docutils literal notranslate"><span class="pre">x/y</span> <span class="pre">=</span> <span class="pre">1000</span></code>, then <code class="docutils literal notranslate"><span class="pre">log10(1000)</span> <span class="pre">=</span> <span class="pre">3</span></code> → a <strong>3-order-of-magnitude</strong> difference.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">orders_apart</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Use positive numbers.&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">200</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x=</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">&gt;5g</span><span class="si">}</span><span class="s2">, y=</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">&gt;5g</span><span class="si">}</span><span class="s2"> -&gt; log10(x/y) = </span><span class="si">{</span><span class="n">orders_apart</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="si">:</span><span class="s2"> .3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">200</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)]:</span>
-<span class="ne">---&gt; </span><span class="mi">10</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x=</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">&gt;5g</span><span class="si">}</span><span class="s2">, y=</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">&gt;5g</span><span class="si">}</span><span class="s2"> -&gt; log10(x/y) = </span><span class="si">{</span><span class="n">orders_apart</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="si">:</span><span class="s2"> .3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nn">Cell In[1], line 7,</span> in <span class="ni">orders_apart</span><span class="nt">(x, y)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Use positive numbers.&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;math&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="the-order-of-magnitude-of-a-number-rounding-on-a-log-scale">
-<h2>5) “The order of magnitude of a number” (rounding on a log scale)<a class="headerlink" href="#the-order-of-magnitude-of-a-number-rounding-on-a-log-scale" title="Link to this heading">#</a></h2>
-<p>There are two common, reasonable ideas:</p>
-<section id="a-nearest-power-of-ten">
-<h3>A) Nearest power of ten<a class="headerlink" href="#a-nearest-power-of-ten" title="Link to this heading">#</a></h3>
-<p>Pick the <code class="docutils literal notranslate"><span class="pre">10^b</span></code> that is <em>closest</em> to the number on a multiplicative (ratio) scale.</p>
-<p>A clean way to do this is:</p>
-<ul class="simple">
-<li><p>compute <code class="docutils literal notranslate"><span class="pre">log10(n)</span></code>,</p></li>
-<li><p>round it to the nearest integer,</p></li>
-<li><p>and use that integer as the “order”.</p></li>
-</ul>
-</section>
-<section id="b-floor-power-of-ten">
-<h3>B) Floor power of ten<a class="headerlink" href="#b-floor-power-of-ten" title="Link to this heading">#</a></h3>
-<p>Pick the largest <code class="docutils literal notranslate"><span class="pre">10^b</span></code> that is <em>not bigger</em> than the number.
-This is like counting digits: <code class="docutils literal notranslate"><span class="pre">floor(log10(n))</span></code>.</p>
-<p>Both can be useful — <strong>just say which one you’re using</strong>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">order_floor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">n</span><span class="p">))))</span>
-
-<span class="k">def</span> <span class="nf">order_nearest</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">n</span><span class="p">))))</span>
-
-<span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2500</span><span class="p">,</span> <span class="mf">0.009</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n=</span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">&gt;7g</span><span class="si">}</span><span class="s2">  floor=</span><span class="si">{</span><span class="n">order_floor</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;3d</span><span class="si">}</span><span class="s2">   nearest=</span><span class="si">{</span><span class="n">order_nearest</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;3d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="quick-approximation-tricks-a-mini-toolbox">
-<h2>6) Quick approximation tricks (a mini toolbox)<a class="headerlink" href="#quick-approximation-tricks-a-mini-toolbox" title="Link to this heading">#</a></h2>
-<section id="multiply-by-splitting-into-mantissa-exponent">
-<h3>Multiply by splitting into mantissa + exponent<a class="headerlink" href="#multiply-by-splitting-into-mantissa-exponent" title="Link to this heading">#</a></h3>
-<p>If
-$
-x = a_x 10^{b_x}, \qquad y = a_y 10^{b_y},
-$
-then
-$
-xy = (a_x a_y) 10^{b_x+b_y}.
-$</p>
-</section>
-<section id="divide-similarly">
-<h3>Divide similarly<a class="headerlink" href="#divide-similarly" title="Link to this heading">#</a></h3>
-<p>$
-\frac{x}{y} = \left(\frac{a_x}{a_y}\right) 10^{b_x-b_y}.
-$</p>
-</section>
-<section id="add-subtract-dominated-by-the-bigger-order">
-<h3>Add / subtract: dominated by the bigger order<a class="headerlink" href="#add-subtract-dominated-by-the-bigger-order" title="Link to this heading">#</a></h3>
-<p>If numbers differ by <strong>2+ orders of magnitude</strong>, the larger term dominates:
-$
-10^6 + 10^3 \approx 10^6.
-$</p>
-<p>(Useful, but use with care: if they’re within the <em>same</em> order, you need actual arithmetic.)</p>
-</section>
 </section>
 <section id="mini-exercises-with-solutions">
 <h2>7) Mini exercises (with solutions)<a class="headerlink" href="#mini-exercises-with-solutions" title="Link to this heading">#</a></h2>
@@ -767,6 +657,28 @@ $</p>
 <span class="n">kwh</span> <span class="o">=</span> <span class="n">E_pc_J</span> <span class="o">/</span> <span class="p">(</span><span class="mf">3.6e6</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Exercise 3:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Energy per person per year ≈ </span><span class="si">{</span><span class="n">E_pc_J</span><span class="si">:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2"> J/person/year ≈ </span><span class="si">{</span><span class="n">kwh</span><span class="si">:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2"> kWh/person/year&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exercise 1:
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exercise 1:&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">ex1</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">sci_str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12s</span><span class="si">}</span><span class="s2"> ; nearest order = 10^</span><span class="si">{</span><span class="n">order_nearest</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># Exercise 2</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">ex2</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span><span class="mi">25</span><span class="p">),(</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">120</span><span class="p">,</span><span class="mi">900</span><span class="p">),(</span><span class="mf">1.2</span><span class="p">,</span><span class="mi">15</span><span class="p">)]</span>
+
+<span class="nn">Cell In[1], line 6,</span> in <span class="ni">sci_str</span><span class="nt">(n)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">sci_str</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sci</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2"> × 10^</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="ne">NameError</span>: name &#39;sci&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1032,17 +944,6 @@ It’s the same emotion, but with a ruler.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">4) Logarithms as a scale ruler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-order-of-magnitude-of-a-number-rounding-on-a-log-scale">5) “The order of magnitude of a number” (rounding on a log scale)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-nearest-power-of-ten">A) Nearest power of ten</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-floor-power-of-ten">B) Floor power of ten</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-approximation-tricks-a-mini-toolbox">6) Quick approximation tricks (a mini toolbox)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiply-by-splitting-into-mantissa-exponent">Multiply by splitting into mantissa + exponent</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#divide-similarly">Divide similarly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-subtract-dominated-by-the-bigger-order">Add / subtract: dominated by the bigger order</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercises-with-solutions">7) Mini exercises (with solutions)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecological-economics-intuition-scaling-relationships">8) Ecological economics intuition: scaling relationships</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-application-loglog-plots-across-countries">9) Empirical application: log–log plots across countries</a><ul class="nav section-nav flex-column">

@@ -18,31 +18,55 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import numpy as np
+# Solutions helper cells
 
-def orders_apart(x, y):
-    x, y = float(x), float(y)
-    if x <= 0 or y <= 0:
-        raise ValueError("Use positive numbers.")
-    return math.log10(x/y)
+import math
 
-for x,y in [(2,20),(2,200),(5,50),(1,0.2)]:
-    print(f"x={x:>5g}, y={y:>5g} -> log10(x/y) = {orders_apart(x,y): .3f}")
+def sci_str(n):
+    a, b = sci(n)
+    return f"{a:.3g} × 10^{b}"
+
+# Exercise 1
+ex1 = [0.00045, 72000, 9.9, 1_200_000]
+print("Exercise 1:")
+for n in ex1:
+    print(f"  {n:g} = {sci_str(n):>12s} ; nearest order = 10^{order_nearest(n)}")
+
+
+# Exercise 2
+ex2 = [(3,25),(0.8,6),(120,900),(1.2,15)]
+print("\nExercise 2:")
+for x,y in ex2:
+    print(f"  ({x:g}, {y:g}) -> within one order? {within_one_order(x,y)}")
+
+
+# Exercise 3
+pop = 8e9
+E = 6e20  # J/year
+E_pc_J = E / pop
+kwh = E_pc_J / (3.6e6)
+print("\nExercise 3:")
+print(f"  Energy per person per year ≈ {E_pc_J:.3g} J/person/year ≈ {kwh:.3g} kWh/person/year")
 
 ------------------
 
+----- stdout -----
+Exercise 1:
+------------------
 
 [1;31m------------------------------------------------------------------[0m
 [1;31mNameError[0m                        Traceback (most recent call last)
-Cell [1;32mIn[1], line 10[0m
-[0;32m      7[0m     [38;5;28;01mreturn[39;00m math[38;5;241m.[39mlog10(x[38;5;241m/[39my)
-[0;32m      9[0m [38;5;28;01mfor[39;00m x,y [38;5;129;01min[39;00m [([38;5;241m2[39m,[38;5;241m20[39m),([38;5;241m2[39m,[38;5;241m200[39m),([38;5;241m5[39m,[38;5;241m50[39m),([38;5;241m1[39m,[38;5;241m0.2[39m)]:
-[1;32m---> 10[0m     [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mx=[39m[38;5;132;01m{[39;00mx[38;5;132;01m:[39;00m[38;5;124m>5g[39m[38;5;132;01m}[39;00m[38;5;124m, y=[39m[38;5;132;01m{[39;00my[38;5;132;01m:[39;00m[38;5;124m>5g[39m[38;5;132;01m}[39;00m[38;5;124m -> log10(x/y) = [39m[38;5;132;01m{[39;00m[43morders_apart[49m[43m([49m[43mx[49m[43m,[49m[43my[49m[43m)[49m[38;5;132;01m:[39;00m[38;5;124m .3f[39m[38;5;132;01m}[39;00m[38;5;124m"[39m)
+Cell [1;32mIn[1], line 13[0m
+[0;32m     11[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mExercise 1:[39m[38;5;124m"[39m)
+[0;32m     12[0m [38;5;28;01mfor[39;00m n [38;5;129;01min[39;00m ex1:
+[1;32m---> 13[0m     [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124m  [39m[38;5;132;01m{[39;00mn[38;5;132;01m:[39;00m[38;5;124mg[39m[38;5;132;01m}[39;00m[38;5;124m = [39m[38;5;132;01m{[39;00m[43msci_str[49m[43m([49m[43mn[49m[43m)[49m[38;5;132;01m:[39;00m[38;5;124m>12s[39m[38;5;132;01m}[39;00m[38;5;124m ; nearest order = 10^[39m[38;5;132;01m{[39;00morder_nearest(n)[38;5;132;01m}[39;00m[38;5;124m"[39m)
+[0;32m     16[0m [38;5;66;03m# Exercise 2[39;00m
+[0;32m     17[0m ex2 [38;5;241m=[39m [([38;5;241m3[39m,[38;5;241m25[39m),([38;5;241m0.8[39m,[38;5;241m6[39m),([38;5;241m120[39m,[38;5;241m900[39m),([38;5;241m1.2[39m,[38;5;241m15[39m)]
 
-Cell [1;32mIn[1], line 7[0m, in [0;36morders_apart[1;34m(x, y)[0m
-[0;32m      5[0m [38;5;28;01mif[39;00m x [38;5;241m<[39m[38;5;241m=[39m [38;5;241m0[39m [38;5;129;01mor[39;00m y [38;5;241m<[39m[38;5;241m=[39m [38;5;241m0[39m:
-[0;32m      6[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mUse positive numbers.[39m[38;5;124m"[39m)
-[1;32m----> 7[0m [38;5;28;01mreturn[39;00m [43mmath[49m[38;5;241m.[39mlog10(x[38;5;241m/[39my)
+Cell [1;32mIn[1], line 6[0m, in [0;36msci_str[1;34m(n)[0m
+[0;32m      5[0m [38;5;28;01mdef[39;00m [38;5;21msci_str[39m(n):
+[1;32m----> 6[0m     a, b [38;5;241m=[39m [43msci[49m(n)
+[0;32m      7[0m     [38;5;28;01mreturn[39;00m [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00ma[38;5;132;01m:[39;00m[38;5;124m.3g[39m[38;5;132;01m}[39;00m[38;5;124m × 10^[39m[38;5;132;01m{[39;00mb[38;5;132;01m}[39;00m[38;5;124m"[39m
 
-[1;31mNameError[0m: name 'math' is not defined
+[1;31mNameError[0m: name 'sci' is not defined
 
