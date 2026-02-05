@@ -1,0 +1,1004 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Orders of magnitude &#8212; Quantitative Ecological Economics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'order_of_magnitude_economics_and_scaling/orders_of_magnitude';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Planetary constraints" href="planetary_constraints.html" />
+    <link rel="prev" title="Order of Magnitude Economics and Scaling" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantitative Ecological Economics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../intro_python/index.html">Introduction to Python and Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/install_python.html">Installing and running Python   <!-- Add this --></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/calculator.html">Python as a calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/variables.html">Variables and basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/ifs_and_loops.html">Control flow: if statements and loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/algorithms.html">Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/classes.html">Classes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/small_programming_project.html">Project 1: Analysing a real-world energy dataframe CSV with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Order of Magnitude Economics and Scaling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Orders of magnitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="planetary_constraints.html">Planetary constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static_scale.html">Static scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_scale.html">Dynamic scale</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/<YOUR-ORG>/<YOUR-REPO>/main?urlpath=lab/tree/./order_of_magnitude_economics_and_scaling/orders_of_magnitude.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/<YOUR-ORG>/<YOUR-REPO>/blob/main/./order_of_magnitude_economics_and_scaling/orders_of_magnitude.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>/edit/main/./order_of_magnitude_economics_and_scaling/orders_of_magnitude.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/<YOUR-ORG>/<YOUR-REPO>/issues/new?title=Issue%20on%20page%20%2Forder_of_magnitude_economics_and_scaling/orders_of_magnitude.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/order_of_magnitude_economics_and_scaling/orders_of_magnitude.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Orders of magnitude</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-orders-of-magnitude">1) Why orders of magnitude?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-notation">2) Scientific notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#within-an-order-of-magnitude-within-a-factor-of-10">3) “Within an order of magnitude” = “within a factor of 10”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-scientific-notation-with-energy-use-usa-vs-nigeria">Mini-exercise: scientific notation with energy use (USA vs Nigeria)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1) Scientific notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-times-larger">2) Ratio (times larger)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#order-of-magnitude-check">3) Order-of-magnitude check</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">4) Logarithms as a scale ruler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercises-with-solutions">7) Mini exercises (with solutions)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecological-economics-intuition-scaling-relationships">8) Ecological economics intuition: scaling relationships</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-application-loglog-plots-across-countries">9) Empirical application: log–log plots across countries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-note-important">Data note (important)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-1-energy-per-capita-vs-gdp-per-capita-loglog">9.1 Plot 1: Energy per capita vs GDP per capita (log–log)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-2-population-vs-total-gdp-loglog">9.2 Plot 2: Population vs total GDP (log–log)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-more-exercise-interpret-a-loglog-slope">10) One more exercise: interpret a log–log slope</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaways">11) Takeaways</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="orders-of-magnitude">
+<h1>Orders of magnitude<a class="headerlink" href="#orders-of-magnitude" title="Link to this heading">#</a></h1>
+<p>This short chapter is about <strong>thinking in scales</strong>.</p>
+<p>You will learn how to:</p>
+<ul class="simple">
+<li><p>write numbers in <strong>scientific notation</strong>,</p></li>
+<li><p>compare quantities by <strong>factors of ten</strong> (“within an order of magnitude”),</p></li>
+<li><p>use <strong>base-10 logarithms</strong> as a <em>scale</em>,</p></li>
+<li><p>do quick back-of-the-envelope computations</p></li>
+<li><p>and apply it to a tiny ecological-economics example with <strong>log–log plots</strong>.</p></li>
+</ul>
+<section id="why-orders-of-magnitude">
+<h2>1) Why orders of magnitude?<a class="headerlink" href="#why-orders-of-magnitude" title="Link to this heading">#</a></h2>
+<p>Many variables in ecological economics and sustainability science span large ranges:</p>
+<ul class="simple">
+<li><p>GDP per capita (thousands to tens of thousands of USD),</p></li>
+<li><p>population (thousands to billions),</p></li>
+<li><p>emissions (per person or per country) (kg to Gt).</p></li>
+<li><p>national energy consumption (PJ/year),</p></li>
+<li><p>national material use (tons/year)</p></li>
+</ul>
+<p>If we plot or compare these values on a normal (linear) scale, the small stuff disappears.
+A <strong>logarithmic scale</strong> fixes this by turning multiplicative gaps (×10, ×100, ×1000) into additive steps (+1, +2, +3).</p>
+</section>
+<section id="scientific-notation">
+<h2>2) Scientific notation<a class="headerlink" href="#scientific-notation" title="Link to this heading">#</a></h2>
+<p>Any positive number can be written as</p>
+<div class="math notranslate nohighlight">
+\[n = a\times 10^b,\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p>the exponent <strong><code class="docutils literal notranslate"><span class="pre">b</span></code></strong> is an integer, and</p></li>
+<li><p>the mantissa <strong><code class="docutils literal notranslate"><span class="pre">a</span></code></strong> is a number around 1 (for example between 1 and 10).</p></li>
+</ul>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>3,200 = 3.2 × 10³</p></li>
+<li><p>0.007 = 7 × 10⁻³</p></li>
+<li><p>81,000,000 = 8.1 × 10⁷</p></li>
+</ul>
+<p>This representation makes scale comparisons easy: the exponent <code class="docutils literal notranslate"><span class="pre">b</span></code> tells you roughly “how many zeros.”</p>
+</section>
+<section id="within-an-order-of-magnitude-within-a-factor-of-10">
+<h2>3) “Within an order of magnitude” = “within a factor of 10”<a class="headerlink" href="#within-an-order-of-magnitude-within-a-factor-of-10" title="Link to this heading">#</a></h2>
+<p>Two positive numbers <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are <strong>within an order of magnitude</strong> if the larger is <strong>less than 10 times</strong> the smaller:</p>
+<p>So:</p>
+<ul class="simple">
+<li><p>2 and 9 are within an order of magnitude (9/2 = 4.5),</p></li>
+<li><p>2 and 200 are <em>not</em> (200/2 = 100).</p></li>
+<li><p>2 and 20 are also not <em>not</em> for the purpose of this book. Some conventions would say this is within one order of magnitude, but we strictly say this only if it is less than a ten times difference.</p></li>
+</ul>
+<p>The exact boundary convention matters less than the <strong>habit</strong>: asking “is this a ×2 difference, ×10, ×100?”.</p>
+</section>
+<section id="mini-exercise-scientific-notation-with-energy-use-usa-vs-nigeria">
+<h2>Mini-exercise: scientific notation with energy use (USA vs Nigeria)<a class="headerlink" href="#mini-exercise-scientific-notation-with-energy-use-usa-vs-nigeria" title="Link to this heading">#</a></h2>
+<p>Suppose (roughly) that annual <strong>energy use per person</strong> is:</p>
+<ul class="simple">
+<li><p>USA: <strong>300 GJ/person/year</strong></p></li>
+<li><p>Nigeria: <strong>10 GJ/person/year</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Write each value in scientific notation  {math}’(a\times 10^b)’ with  {math}’(1 \le a &lt; 10)’.</p></li>
+<li><p>Compare the two values by a <strong>ratio</strong>. About how many “times larger” is the USA value?</p></li>
+<li><p>Is that difference <strong>within one order of magnitude</strong> (a factor of 10), or not?</p></li>
+</ol>
+<details>
+<summary><b>Solution (click to expand)</b></summary>
+<section id="id1">
+<h3>1) Scientific notation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>USA:<br />
+(
+300 = 3.0 \times 10^{2}
+)
+so (a=3.0), (b=2).</p></li>
+<li><p>Nigeria:<br />
+(
+10 = 1.0 \times 10^{1}
+)
+so (a=1.0), (b=1).</p></li>
+</ul>
+</section>
+<section id="ratio-times-larger">
+<h3>2) Ratio (times larger)<a class="headerlink" href="#ratio-times-larger" title="Link to this heading">#</a></h3>
+<p>(
+\frac{300}{10} = 30
+)</p>
+<p>So the USA value is about <strong>30× larger</strong>.</p>
+</section>
+<section id="order-of-magnitude-check">
+<h3>3) Order-of-magnitude check<a class="headerlink" href="#order-of-magnitude-check" title="Link to this heading">#</a></h3>
+<p>A factor of 10 corresponds to <strong>one order of magnitude</strong>.<br />
+Since (30 = 3\times 10), the difference is <strong>a bit more than one order of magnitude</strong><br />
+(about (\log_{10}(30)\approx 1.48) orders of magnitude).</p>
+</details>
+</section>
+</section>
+<section id="logarithms-as-a-scale-ruler">
+<h2>4) Logarithms as a scale ruler<a class="headerlink" href="#logarithms-as-a-scale-ruler" title="Link to this heading">#</a></h2>
+<p>The base-10 logarithm answers:</p>
+<blockquote>
+<div><p>“What power of 10 gives this number?”</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
+\[\log_{10}(10^b)=b.\]</div>
+<p>And the key identity:</p>
+<div class="math notranslate nohighlight">
+\[\log_{10}(x/y)=\log_{10}(x)-\log_{10}(y).\]</div>
+<p>So the <strong>difference in orders of magnitude</strong> between <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> is basically:</p>
+<div class="math notranslate nohighlight">
+\[\Delta \text{orders} \approx \log_{10}(x) - \log_{10}(y) = \log_{10}(x/y).\]</div>
+<p>Example: if <code class="docutils literal notranslate"><span class="pre">x/y</span> <span class="pre">=</span> <span class="pre">1000</span></code>, then <code class="docutils literal notranslate"><span class="pre">log10(1000)</span> <span class="pre">=</span> <span class="pre">3</span></code> → a <strong>3-order-of-magnitude</strong> difference.</p>
+</section>
+<section id="mini-exercises-with-solutions">
+<h2>7) Mini exercises (with solutions)<a class="headerlink" href="#mini-exercises-with-solutions" title="Link to this heading">#</a></h2>
+<p>Try these with pencil-and-brain first, then check with Python.</p>
+<details>
+<summary><b>Exercise 1:</b> Put each number into scientific notation and write its order of magnitude (nearest power of ten).</summary>
+<ol class="arabic simple">
+<li><p>0.00045</p></li>
+<li><p>72,000</p></li>
+<li><p>9.9</p></li>
+<li><p>1,200,000</p></li>
+</ol>
+</details>
+<details>
+<summary><b>Exercise 2:</b> Are the pairs within one order of magnitude? (Use the strict “&lt; 10” rule.)</summary>
+<ol class="arabic simple">
+<li><p>(3, 25)</p></li>
+<li><p>(0.8, 6)</p></li>
+<li><p>(120, 900)</p></li>
+<li><p>(1.2, 15)</p></li>
+</ol>
+</details>
+<details>
+<summary><b>Exercise 3:</b> Quick estimate. Suppose global population is about 8×10⁹ and global primary energy is about 6×10²⁰ J/year. Estimate energy per person per year and express the result in kWh/person/year.</summary>
+<p>Use: 1 kWh = 3.6×10⁶ J.</p>
+</details>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solutions helper cells</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">sci_str</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sci</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2"> × 10^</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Exercise 1</span>
+<span class="n">ex1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.00045</span><span class="p">,</span> <span class="mi">72000</span><span class="p">,</span> <span class="mf">9.9</span><span class="p">,</span> <span class="mi">1_200_000</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exercise 1:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">ex1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">sci_str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12s</span><span class="si">}</span><span class="s2"> ; nearest order = 10^</span><span class="si">{</span><span class="n">order_nearest</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Exercise 2</span>
+<span class="n">ex2</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span><span class="mi">25</span><span class="p">),(</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">120</span><span class="p">,</span><span class="mi">900</span><span class="p">),(</span><span class="mf">1.2</span><span class="p">,</span><span class="mi">15</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Exercise 2:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="n">ex2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  (</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">) -&gt; within one order? </span><span class="si">{</span><span class="n">within_one_order</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Exercise 3</span>
+<span class="n">pop</span> <span class="o">=</span> <span class="mf">8e9</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mf">6e20</span>  <span class="c1"># J/year</span>
+<span class="n">E_pc_J</span> <span class="o">=</span> <span class="n">E</span> <span class="o">/</span> <span class="n">pop</span>
+<span class="n">kwh</span> <span class="o">=</span> <span class="n">E_pc_J</span> <span class="o">/</span> <span class="p">(</span><span class="mf">3.6e6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Exercise 3:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Energy per person per year ≈ </span><span class="si">{</span><span class="n">E_pc_J</span><span class="si">:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2"> J/person/year ≈ </span><span class="si">{</span><span class="n">kwh</span><span class="si">:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2"> kWh/person/year&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exercise 1:
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exercise 1:&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">ex1</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">sci_str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12s</span><span class="si">}</span><span class="s2"> ; nearest order = 10^</span><span class="si">{</span><span class="n">order_nearest</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># Exercise 2</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">ex2</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span><span class="mi">25</span><span class="p">),(</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">120</span><span class="p">,</span><span class="mi">900</span><span class="p">),(</span><span class="mf">1.2</span><span class="p">,</span><span class="mi">15</span><span class="p">)]</span>
+
+<span class="nn">Cell In[1], line 6,</span> in <span class="ni">sci_str</span><span class="nt">(n)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">sci_str</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sci</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2"> × 10^</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="ne">NameError</span>: name &#39;sci&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ecological-economics-intuition-scaling-relationships">
+<h2>8) Ecological economics intuition: scaling relationships<a class="headerlink" href="#ecological-economics-intuition-scaling-relationships" title="Link to this heading">#</a></h2>
+<p>A lot of empirical ecological economics uses <strong>power laws</strong> or approximate power-law behavior:</p>
+<p>$
+y \approx c,x^{\alpha}.
+$</p>
+<p>Taking logs (base 10 or natural log) makes this linear:</p>
+<p>$
+\log(y) \approx \log(c) + \alpha,\log(x).
+$</p>
+<p>So on a <strong>log–log plot</strong>, the slope is the exponent <strong>α</strong>.</p>
+<p>That’s why “orders of magnitude” matter so much: a log–log plot is basically a ruler for multiplicative scaling.</p>
+</section>
+<section id="empirical-application-loglog-plots-across-countries">
+<h2>9) Empirical application: log–log plots across countries<a class="headerlink" href="#empirical-application-loglog-plots-across-countries" title="Link to this heading">#</a></h2>
+<p>We’ll make two classic plots (stylized and small, but realistic in spirit):</p>
+<ol class="arabic simple">
+<li><p><strong>Energy per capita vs GDP per capita</strong> (log–log)</p></li>
+<li><p><strong>Population vs total GDP</strong> (log–log)</p></li>
+</ol>
+<section id="data-note-important">
+<h3>Data note (important)<a class="headerlink" href="#data-note-important" title="Link to this heading">#</a></h3>
+<p>This notebook tries to download a small merged dataset from public sources <strong>if internet access is available</strong>.
+If that fails (for example in offline environments), it uses a <strong>small built-in toy dataset</strong> that still demonstrates the methods.</p>
+<p>Either way, the <em>math and workflow</em> are the point of this chapter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">load_demo_country_data</span><span class="p">():</span>
+    <span class="c1"># Small built-in dataset: values are plausible ballpark figures.</span>
+    <span class="c1"># Units:</span>
+    <span class="c1"># - gdp_pc: USD (PPP-ish ballpark) per person per year</span>
+    <span class="c1"># - energy_pc_GJ: GJ per person per year (primary energy-ish ballpark)</span>
+    <span class="c1"># - pop_m: population in millions</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="mi">65000</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">333</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Canada&quot;</span><span class="p">,</span>        <span class="mi">52000</span><span class="p">,</span> <span class="mi">280</span><span class="p">,</span>  <span class="mi">40</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span>       <span class="mi">55000</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span>  <span class="mi">84</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;France&quot;</span><span class="p">,</span>        <span class="mi">50000</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span>  <span class="mi">68</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span><span class="mi">50000</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span>  <span class="mi">67</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">,</span>   <span class="mi">72000</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span>   <span class="mi">9</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Norway&quot;</span><span class="p">,</span>        <span class="mi">70000</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span>   <span class="mf">5.5</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;China&quot;</span><span class="p">,</span>         <span class="mi">18000</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">1410</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;India&quot;</span><span class="p">,</span>          <span class="mi">8000</span><span class="p">,</span>  <span class="mi">30</span><span class="p">,</span> <span class="mi">1420</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">,</span>        <span class="mi">16000</span><span class="p">,</span>  <span class="mi">80</span><span class="p">,</span>  <span class="mi">214</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;South Africa&quot;</span><span class="p">,</span>  <span class="mi">14000</span><span class="p">,</span>  <span class="mi">90</span><span class="p">,</span>   <span class="mi">60</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Nigeria&quot;</span><span class="p">,</span>        <span class="mi">6000</span><span class="p">,</span>  <span class="mi">25</span><span class="p">,</span>  <span class="mi">223</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span>         <span class="mi">43000</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span>  <span class="mi">124</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Indonesia&quot;</span><span class="p">,</span>     <span class="mi">12000</span><span class="p">,</span>  <span class="mi">50</span><span class="p">,</span>  <span class="mi">277</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Australia&quot;</span><span class="p">,</span>     <span class="mi">55000</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span>   <span class="mi">26</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;gdp_pc&quot;</span><span class="p">,</span> <span class="s2">&quot;energy_pc_GJ&quot;</span><span class="p">,</span> <span class="s2">&quot;pop_m&quot;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_total&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_pc&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pop_m&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">load_demo_country_data</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-1-energy-per-capita-vs-gdp-per-capita-loglog">
+<h3>9.1 Plot 1: Energy per capita vs GDP per capita (log–log)<a class="headerlink" href="#plot-1-energy-per-capita-vs-gdp-per-capita-loglog" title="Link to this heading">#</a></h3>
+<p>Interpretation practice:</p>
+<ul class="simple">
+<li><p>A straight-ish trend on log–log suggests an approximate scaling relationship.</p></li>
+<li><p>A slope <strong>&lt; 1</strong> means energy grows sublinearly with income (energy intensity declines with income).</p></li>
+<li><p>A slope <strong>&gt; 1</strong> would mean superlinear growth (rare for per-capita energy vs per-capita GDP in many samples).</p></li>
+</ul>
+<p>We’ll estimate a simple log–log slope with a linear regression on log-transformed variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_pc&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_pc_GJ&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+<span class="n">lx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># simple least squares slope/intercept: ly ≈ b0 + b1*lx</span>
+<span class="n">b1</span><span class="p">,</span> <span class="n">b0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">lx</span><span class="p">,</span> <span class="n">ly</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estimated log–log slope alpha ≈ </span><span class="si">{</span><span class="n">b1</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Intercept log10(c) ≈ </span><span class="si">{</span><span class="n">b0</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">  -&gt; c ≈ </span><span class="si">{</span><span class="mi">10</span><span class="o">**</span><span class="n">b0</span><span class="si">:</span><span class="s2">.2g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_pc&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_pc_GJ&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;GDP per capita (USD)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Energy per capita (GJ/person/year)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Energy per capita vs GDP per capita (log–log)&quot;</span><span class="p">)</span>
+
+<span class="c1"># regression line over range</span>
+<span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">b0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">xx</span><span class="o">**</span><span class="n">b1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">)</span>
+
+<span class="c1"># label a few points (not all, to avoid clutter)</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;India&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">,</span> <span class="s2">&quot;Norway&quot;</span><span class="p">,</span> <span class="s2">&quot;Nigeria&quot;</span><span class="p">,</span> <span class="s2">&quot;Switzerland&quot;</span><span class="p">]:</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;gdp_pc&quot;</span><span class="p">]</span><span class="o">*</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;energy_pc_GJ&quot;</span><span class="p">]</span><span class="o">*</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-2-population-vs-total-gdp-loglog">
+<h3>9.2 Plot 2: Population vs total GDP (log–log)<a class="headerlink" href="#plot-2-population-vs-total-gdp-loglog" title="Link to this heading">#</a></h3>
+<p>This plot is a nice reminder that:</p>
+<ul class="simple">
+<li><p>GDP per capita is a <em>per-person</em> number,</p></li>
+<li><p>total GDP is <em>per-country</em> and mixes <strong>population scale</strong> and <strong>income scale</strong>.</p></li>
+</ul>
+<p>On log–log, you often see that population alone does not determine total GDP — countries with similar population can differ by orders of magnitude in total GDP.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pop_m&quot;</span><span class="p">]</span><span class="o">*</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_total&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Population (people)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Total GDP (USD)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Population vs total GDP (log–log)&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;India&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">,</span> <span class="s2">&quot;Nigeria&quot;</span><span class="p">,</span> <span class="s2">&quot;Switzerland&quot;</span><span class="p">]:</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;pop_m&quot;</span><span class="p">]</span><span class="o">*</span><span class="mf">1e6</span><span class="o">*</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;gdp_total&quot;</span><span class="p">]</span><span class="o">*</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="one-more-exercise-interpret-a-loglog-slope">
+<h2>10) One more exercise: interpret a log–log slope<a class="headerlink" href="#one-more-exercise-interpret-a-loglog-slope" title="Link to this heading">#</a></h2>
+<p>Suppose the fitted relationship is:</p>
+<p>$
+\text{energy}<em>{pc} \approx c, (\text{GDP}</em>{pc})^{0.6}.
+$</p>
+<ol class="arabic simple">
+<li><p>If GDP per capita doubles, by what factor does energy per capita change?</p></li>
+<li><p>If GDP per capita increases by a factor of 10, by what factor does energy per capita change?</p></li>
+<li><p>Is the relationship sublinear or superlinear? What does that suggest about energy intensity?</p></li>
+</ol>
+<details>
+<summary><b>Solution sketch</b></summary>
+<ol class="arabic simple">
+<li><p>Doubling means ×2. Energy changes by (2^{0.6}\approx 1.52) (about +52%).</p></li>
+<li><p>×10 implies energy changes by (10^{0.6}\approx 3.98) (about ×4).</p></li>
+<li><p>Since (0.6&lt;1), it’s <strong>sublinear</strong>: energy per capita grows more slowly than GDP per capita, consistent with declining energy intensity with income (within this simplified story).</p></li>
+</ol>
+</details>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Doubling GDP per capita -&gt; energy factor:&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="n">alpha</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10x GDP per capita      -&gt; energy factor:&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="n">alpha</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="takeaways">
+<h2>11) Takeaways<a class="headerlink" href="#takeaways" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>An <strong>order of magnitude</strong> is a factor of ~10.</p></li>
+<li><p>Scientific notation separates <strong>scale</strong> (<code class="docutils literal notranslate"><span class="pre">10^b</span></code>) from <strong>detail</strong> (<code class="docutils literal notranslate"><span class="pre">a</span></code>).</p></li>
+<li><p>Logarithms turn <strong>multiplicative</strong> differences into <strong>additive</strong> differences.</p></li>
+<li><p>Log–log plots are a natural habitat for ecological-economic scaling patterns.</p></li>
+</ul>
+<p>If you catch yourself saying “wow that’s huge,” try translating it into:<br />
+<strong>“How many orders of magnitude?”</strong><br />
+It’s the same emotion, but with a ruler.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./order_of_magnitude_economics_and_scaling"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Order of Magnitude Economics and Scaling</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="planetary_constraints.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Planetary constraints</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-orders-of-magnitude">1) Why orders of magnitude?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-notation">2) Scientific notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#within-an-order-of-magnitude-within-a-factor-of-10">3) “Within an order of magnitude” = “within a factor of 10”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-scientific-notation-with-energy-use-usa-vs-nigeria">Mini-exercise: scientific notation with energy use (USA vs Nigeria)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1) Scientific notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-times-larger">2) Ratio (times larger)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#order-of-magnitude-check">3) Order-of-magnitude check</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">4) Logarithms as a scale ruler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercises-with-solutions">7) Mini exercises (with solutions)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecological-economics-intuition-scaling-relationships">8) Ecological economics intuition: scaling relationships</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-application-loglog-plots-across-countries">9) Empirical application: log–log plots across countries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-note-important">Data note (important)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-1-energy-per-capita-vs-gdp-per-capita-loglog">9.1 Plot 1: Energy per capita vs GDP per capita (log–log)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-2-population-vs-total-gdp-loglog">9.2 Plot 2: Population vs total GDP (log–log)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-more-exercise-interpret-a-loglog-slope">10) One more exercise: interpret a log–log slope</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaways">11) Takeaways</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yannick Oswald
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
