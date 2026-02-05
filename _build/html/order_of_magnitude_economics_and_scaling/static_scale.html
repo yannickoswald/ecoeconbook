@@ -515,12 +515,12 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Entity</th>
-      <th>Code</th>
-      <th>Year</th>
-      <th>Per capita energy consumption</th>
-      <th>GDP per capita</th>
-      <th>World region according to OWID</th>
+      <th>entity</th>
+      <th>code</th>
+      <th>year</th>
+      <th>energy_pc</th>
+      <th>gdp_pc</th>
+      <th>region</th>
     </tr>
   </thead>
   <tbody>
@@ -573,6 +573,83 @@ document.write(`
 </table>
 </div></div></div>
 </div>
+<p>First we will plot the data on a linear scale. And what you should see after running this code is a cloud of data points that becomes wider with increasing axes values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="c1"># Plot (linear scale)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_pc&quot;</span><span class="p">],</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_pc&quot;</span><span class="p">],</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">38</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+    <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+    <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Energy per capita vs GDP per capita (linear scale)&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Energy per capita&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.35</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7f9626e8c680761f22795521c63a03930abb14e0a06d2b167287be35131df6ae.png" src="../_images/7f9626e8c680761f22795521c63a03930abb14e0a06d2b167287be35131df6ae.png" />
+</div>
+</div>
+<p>This is what log-log plots are good for. Because the data spans such large ranges it is difficult to visualise all of it on one scale, if we just consider the data values as they are. So let us log transform the values.</p>
+<p>Now to be exact we have two options here:</p>
+<ol class="arabic simple">
+<li><p>We can just tell Python to use log-scale axes in the scatter plot or</p></li>
+<li><p>we could log transform the data ourselves and then plot it.</p></li>
+</ol>
+<p>We take option number 1 because this relates better to what we learned so far in this unit. About log transforms of data, we will learn more later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot (log–log scale)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_pc&quot;</span><span class="p">],</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_pc&quot;</span><span class="p">],</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">38</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+    <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+    <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Energy per capita vs GDP per capita (log–log scale)&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Energy per capita&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.35</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/012580cb07ab3fd9662ab5be3147111af14732725f731db077a1a8c516cda25f.png" src="../_images/012580cb07ab3fd9662ab5be3147111af14732725f731db077a1a8c516cda25f.png" />
+</div>
+</div>
+<p>This also teaches you already one of the most important things to know about as a scientist: Different data visualizations may have different strengths but also weaknesses. Of course you can observe there is a clearly a systematic relationship between the two variables national income (GDP per capita) and energy use. And you also already understand that one order of magnitude in income translates roughly to one order of magnitude increase in energy.</p>
 </section>
 </section>
 
