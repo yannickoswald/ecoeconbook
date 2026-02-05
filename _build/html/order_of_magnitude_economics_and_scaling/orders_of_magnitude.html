@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'order_of_magnitude_economics_and_scaling/orders_of_magnitude';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Static scale" href="static_scale.html" />
+    <link rel="next" title="Static scale: scaling relationships in data" href="static_scale.html" />
     <link rel="prev" title="Order of Magnitude Economics and Scaling" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -191,7 +191,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Order of Magnitude Economics and Scaling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Orders of magnitude</a></li>
-<li class="toctree-l2"><a class="reference internal" href="static_scale.html">Static scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static_scale.html">Static scale: scaling relationships in data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dynamic_scale.html">Dynamic scale</a></li>
 </ul>
 </details></li>
@@ -540,7 +540,7 @@ A <strong>logarithmic scale</strong> fixes this by turning multiplicative gaps (
 <li><p>Nigeria: <strong>10 GJ/person/year</strong></p></li>
 </ul>
 <ol class="arabic simple">
-<li><p>Write each value in scientific notation  <span class="math notranslate nohighlight">\(\(a\times 10^b\)\)</span> with  <span class="math notranslate nohighlight">\(\(1 \le a &lt; 10\)\)</span>.</p></li>
+<li><p>Write each value in scientific notation  <span class="math notranslate nohighlight">\(a\times 10^b\)</span> with  <span class="math notranslate nohighlight">\(1 \le a &lt; 10\)</span>.</p></li>
 <li><p>Compare the two values by a <strong>ratio</strong>. About how many “times larger” is the USA value?</p></li>
 <li><p>Is that difference <strong>within one order of magnitude</strong> (a factor of 10), or not?</p></li>
 </ol>
@@ -590,16 +590,17 @@ Since <span class="math notranslate nohighlight">\(30 = 3\times 10\)</span>, the
 <p>To remain and get more and more into coding habits. Try to write a python function that conducts the above scale ruler computation. This is not super important for our proceeding chapters but practice is never mistaken.</p>
 <p>For this you also need to import the math package. Just do so via</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-
-<span class="err">```</span><span class="p">{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Hints</span>
-<span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">tip</span>
-
-<span class="o">-</span> <span class="o">**</span><span class="n">Logarithms</span> <span class="n">need</span> <span class="n">positive</span> <span class="n">inputs</span><span class="o">**</span><span class="p">:</span> <span class="n">before</span> <span class="n">computing</span> <span class="n">anything</span><span class="p">,</span> <span class="n">check</span> <span class="n">that</span> <span class="err">`</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="err">`</span><span class="o">.</span>
-  <span class="n">If</span> <span class="ow">not</span><span class="p">,</span> <span class="k">raise</span> <span class="n">a</span> <span class="err">`</span><span class="ne">ValueError</span><span class="err">`</span> <span class="k">with</span> <span class="n">a</span> <span class="n">helpful</span> <span class="n">message</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">Convert</span> <span class="n">inputs</span> <span class="n">to</span> <span class="n">numbers</span> <span class="n">you</span> <span class="n">can</span> <span class="n">safely</span> <span class="n">divide</span><span class="p">:</span> <span class="n">use</span> <span class="err">`</span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="err">`</span><span class="o">.</span>
-  <span class="n">This</span> <span class="n">also</span> <span class="n">helps</span> <span class="k">if</span> <span class="n">someone</span> <span class="n">passes</span> <span class="n">strings</span> <span class="n">like</span> <span class="err">`</span><span class="s2">&quot;300&quot;</span><span class="err">`</span> <span class="ow">or</span> <span class="n">integers</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">The</span> <span class="n">core</span> <span class="n">computation</span> <span class="ow">is</span> <span class="n">just</span><span class="p">:</span> <span class="err">`</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span><span class="err">`</span><span class="o">.</span>
 </pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Hints</p>
+<ul class="simple">
+<li><p><strong>Logarithms need positive inputs</strong>: before computing anything, check that <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>.
+If not, raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> with a helpful message.</p></li>
+<li><p>Convert inputs to numbers you can safely divide: use <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">float(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">float(y)</span></code>.
+This also helps if someone passes strings like <code class="docutils literal notranslate"><span class="pre">&quot;300&quot;</span></code> or integers.</p></li>
+<li><p>The core computation is just: <code class="docutils literal notranslate"><span class="pre">math.log10(x</span> <span class="pre">/</span> <span class="pre">y)</span></code>.</p></li>
+</ul>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -627,7 +628,7 @@ Since <span class="math notranslate nohighlight">\(30 = 3\times 10\)</span>, the
 <li><p>Scientific notation separates <strong>scale</strong> (<code class="docutils literal notranslate"><span class="pre">10^b</span></code>) from <strong>detail</strong> (<code class="docutils literal notranslate"><span class="pre">a</span></code>).</p></li>
 <li><p>Logarithms turn <strong>multiplicative</strong> differences into <strong>additive</strong> differences.</p></li>
 </ul>
-<p>In the next chapter we are going to learn about static scaling relationships in Ecological Economics and pick up one of the most important concepts in all of science along the way - Log–log plots.</p>
+<p>In the next chapter we are going to learn about static scaling relationships in Ecological Economics and pick up some of the most important concepts in all of ecological economics (and sometimes all of science) along the way - Log–log plots, A first look at basic regression analysis and elasticities.</p>
 </section>
 </section>
 
@@ -675,7 +676,7 @@ Since <span class="math notranslate nohighlight">\(30 = 3\times 10\)</span>, the
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Static scale</p>
+        <p class="prev-next-title">Static scale: scaling relationships in data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
