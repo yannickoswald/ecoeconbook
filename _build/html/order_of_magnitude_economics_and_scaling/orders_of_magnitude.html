@@ -467,7 +467,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">4) Logarithms as a scale ruler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercises-with-solutions">7) Mini exercises (with solutions)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-with-solution">7) Mini exercise (with solution)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecological-economics-intuition-scaling-relationships">8) Ecological economics intuition: scaling relationships</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-application-loglog-plots-across-countries">9) Empirical application: log–log plots across countries</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-note-important">Data note (important)</a></li>
@@ -549,7 +549,7 @@ A <strong>logarithmic scale</strong> fixes this by turning multiplicative gaps (
 <li><p>Nigeria: <strong>10 GJ/person/year</strong></p></li>
 </ul>
 <ol class="arabic simple">
-<li><p>Write each value in scientific notation  {math}’(a\times 10^b)’ with  {math}’(1 \le a &lt; 10)’.</p></li>
+<li><p>Write each value in scientific notation  <span class="math notranslate nohighlight">\(\(a\times 10^b\)\)</span> with  <span class="math notranslate nohighlight">\(\(1 \le a &lt; 10\)\)</span>.</p></li>
 <li><p>Compare the two values by a <strong>ratio</strong>. About how many “times larger” is the USA value?</p></li>
 <li><p>Is that difference <strong>within one order of magnitude</strong> (a factor of 10), or not?</p></li>
 </ol>
@@ -576,16 +576,14 @@ so (a=1.0), (b=1).</p></li>
 <h3>3) Order-of-magnitude check<a class="headerlink" href="#order-of-magnitude-check" title="Link to this heading">#</a></h3>
 <p>A factor of 10 corresponds to <strong>one order of magnitude</strong>.<br />
 Since <span class="math notranslate nohighlight">\(30 = 3\times 10\)</span>, the difference is <strong>a bit more than one order of magnitude</strong><br />
-(about <span class="math notranslate nohighlight">\(\(\\log_{10}(30)\approx 1.48\)\)</span> orders of magnitude).</p>
+(about <span class="math notranslate nohighlight">\((\log_{10}(30)\approx 1.48\)\)</span> orders of magnitude).</p>
 </details>
 </section>
 </section>
 <section id="logarithms-as-a-scale-ruler">
 <h2>4) Logarithms as a scale ruler<a class="headerlink" href="#logarithms-as-a-scale-ruler" title="Link to this heading">#</a></h2>
 <p>The base-10 logarithm answers:</p>
-<blockquote>
-<div><p>“What power of 10 gives this number?”</p>
-</div></blockquote>
+<p>“What power of 10 gives this number?”</p>
 <div class="math notranslate nohighlight">
 \[\log_{10}(10^b)=b.\]</div>
 <p>And the key identity:</p>
@@ -596,89 +594,41 @@ Since <span class="math notranslate nohighlight">\(30 = 3\times 10\)</span>, the
 \[\Delta \text{orders} \approx \log_{10}(x) - \log_{10}(y) = \log_{10}(x/y).\]</div>
 <p>Example: if <code class="docutils literal notranslate"><span class="pre">x/y</span> <span class="pre">=</span> <span class="pre">1000</span></code>, then <code class="docutils literal notranslate"><span class="pre">log10(1000)</span> <span class="pre">=</span> <span class="pre">3</span></code> → a <strong>3-order-of-magnitude</strong> difference.</p>
 </section>
-<section id="mini-exercises-with-solutions">
-<h2>7) Mini exercises (with solutions)<a class="headerlink" href="#mini-exercises-with-solutions" title="Link to this heading">#</a></h2>
-<p>Try these with pencil-and-brain first, then check with Python.</p>
-<details>
-<summary><b>Exercise 1:</b> Put each number into scientific notation and write its order of magnitude (nearest power of ten).</summary>
-<ol class="arabic simple">
-<li><p>0.00045</p></li>
-<li><p>72,000</p></li>
-<li><p>9.9</p></li>
-<li><p>1,200,000</p></li>
-</ol>
-</details>
-<details>
-<summary><b>Exercise 2:</b> Are the pairs within one order of magnitude? (Use the strict “&lt; 10” rule.)</summary>
-<ol class="arabic simple">
-<li><p>(3, 25)</p></li>
-<li><p>(0.8, 6)</p></li>
-<li><p>(120, 900)</p></li>
-<li><p>(1.2, 15)</p></li>
-</ol>
-</details>
-<details>
-<summary><b>Exercise 3:</b> Quick estimate. Suppose global population is about 8×10⁹ and global primary energy is about 6×10²⁰ J/year. Estimate energy per person per year and express the result in kWh/person/year.</summary>
-<p>Use: 1 kWh = 3.6×10⁶ J.</p>
-</details>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solutions helper cells</span>
+<section id="mini-exercise-with-solution">
+<h2>7) Mini exercise (with solution)<a class="headerlink" href="#mini-exercise-with-solution" title="Link to this heading">#</a></h2>
+<p>To remain and get more and more into coding habits. Try to write a python function that conducts the above scale ruler computation. This is not super important for our proceeding chapters but practice is never mistaken.</p>
+<p>For this you also need to import the math package. Just do so via</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
-<span class="kn">import</span> <span class="nn">math</span>
+<span class="err">```</span><span class="p">{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Hints</span>
+<span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">tip</span>
 
-<span class="k">def</span> <span class="nf">sci_str</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sci</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2"> × 10^</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="o">-</span> <span class="o">**</span><span class="n">Logarithms</span> <span class="n">need</span> <span class="n">positive</span> <span class="n">inputs</span><span class="o">**</span><span class="p">:</span> <span class="n">before</span> <span class="n">computing</span> <span class="n">anything</span><span class="p">,</span> <span class="n">check</span> <span class="n">that</span> <span class="err">`</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="err">`</span><span class="o">.</span>
+  <span class="n">If</span> <span class="ow">not</span><span class="p">,</span> <span class="k">raise</span> <span class="n">a</span> <span class="err">`</span><span class="ne">ValueError</span><span class="err">`</span> <span class="k">with</span> <span class="n">a</span> <span class="n">helpful</span> <span class="n">message</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">Convert</span> <span class="n">inputs</span> <span class="n">to</span> <span class="n">numbers</span> <span class="n">you</span> <span class="n">can</span> <span class="n">safely</span> <span class="n">divide</span><span class="p">:</span> <span class="n">use</span> <span class="err">`</span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="err">`</span><span class="o">.</span>
+  <span class="n">This</span> <span class="n">also</span> <span class="n">helps</span> <span class="k">if</span> <span class="n">someone</span> <span class="n">passes</span> <span class="n">strings</span> <span class="n">like</span> <span class="err">`</span><span class="s2">&quot;300&quot;</span><span class="err">`</span> <span class="ow">or</span> <span class="n">integers</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">The</span> <span class="n">core</span> <span class="n">computation</span> <span class="ow">is</span> <span class="n">just</span><span class="p">:</span> <span class="err">`</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span><span class="err">`</span><span class="o">.</span>
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution (Python)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
-<span class="c1"># Exercise 1</span>
-<span class="n">ex1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.00045</span><span class="p">,</span> <span class="mi">72000</span><span class="p">,</span> <span class="mf">9.9</span><span class="p">,</span> <span class="mi">1_200_000</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exercise 1:&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">ex1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">sci_str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12s</span><span class="si">}</span><span class="s2"> ; nearest order = 10^</span><span class="si">{</span><span class="n">order_nearest</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-
-<span class="c1"># Exercise 2</span>
-<span class="n">ex2</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span><span class="mi">25</span><span class="p">),(</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">120</span><span class="p">,</span><span class="mi">900</span><span class="p">),(</span><span class="mf">1.2</span><span class="p">,</span><span class="mi">15</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Exercise 2:&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="n">ex2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  (</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">) -&gt; within one order? </span><span class="si">{</span><span class="n">within_one_order</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-
-<span class="c1"># Exercise 3</span>
-<span class="n">pop</span> <span class="o">=</span> <span class="mf">8e9</span>
-<span class="n">E</span> <span class="o">=</span> <span class="mf">6e20</span>  <span class="c1"># J/year</span>
-<span class="n">E_pc_J</span> <span class="o">=</span> <span class="n">E</span> <span class="o">/</span> <span class="n">pop</span>
-<span class="n">kwh</span> <span class="o">=</span> <span class="n">E_pc_J</span> <span class="o">/</span> <span class="p">(</span><span class="mf">3.6e6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Exercise 3:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Energy per person per year ≈ </span><span class="si">{</span><span class="n">E_pc_J</span><span class="si">:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2"> J/person/year ≈ </span><span class="si">{</span><span class="n">kwh</span><span class="si">:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2"> kWh/person/year&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">orders_apart</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the difference in orders of magnitude between x and y:</span>
+<span class="sd">    log10(x/y). Requires x&gt;0 and y&gt;0.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;orders_apart requires positive x and y.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exercise 1:
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exercise 1:&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">ex1</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">sci_str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;12s</span><span class="si">}</span><span class="s2"> ; nearest order = 10^</span><span class="si">{</span><span class="n">order_nearest</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># Exercise 2</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">ex2</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span><span class="mi">25</span><span class="p">),(</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">120</span><span class="p">,</span><span class="mi">900</span><span class="p">),(</span><span class="mf">1.2</span><span class="p">,</span><span class="mi">15</span><span class="p">)]</span>
-
-<span class="nn">Cell In[1], line 6,</span> in <span class="ni">sci_str</span><span class="nt">(n)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">sci_str</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sci</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.3g</span><span class="si">}</span><span class="s2"> × 10^</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span>
-
-<span class="ne">NameError</span>: name &#39;sci&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-</section>
+</details></section>
 <section id="ecological-economics-intuition-scaling-relationships">
 <h2>8) Ecological economics intuition: scaling relationships<a class="headerlink" href="#ecological-economics-intuition-scaling-relationships" title="Link to this heading">#</a></h2>
 <p>A lot of empirical ecological economics uses <strong>power laws</strong> or approximate power-law behavior:</p>
@@ -742,6 +692,76 @@ If that fails (for example in offline environments), it uses a <strong>small bui
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>gdp_pc</th>
+      <th>energy_pc_GJ</th>
+      <th>pop_m</th>
+      <th>gdp_total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>United States</td>
+      <td>65000</td>
+      <td>300</td>
+      <td>333.0</td>
+      <td>2.164500e+13</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Canada</td>
+      <td>52000</td>
+      <td>280</td>
+      <td>40.0</td>
+      <td>2.080000e+12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Germany</td>
+      <td>55000</td>
+      <td>150</td>
+      <td>84.0</td>
+      <td>4.620000e+12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>France</td>
+      <td>50000</td>
+      <td>140</td>
+      <td>68.0</td>
+      <td>3.400000e+12</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>United Kingdom</td>
+      <td>50000</td>
+      <td>120</td>
+      <td>67.0</td>
+      <td>3.350000e+12</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="plot-1-energy-per-capita-vs-gdp-per-capita-loglog">
@@ -791,6 +811,13 @@ If that fails (for example in offline environments), it uses a <strong>small bui
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated log–log slope alpha ≈ 0.83
+Intercept log10(c) ≈ -1.67  -&gt; c ≈ 0.022
+</pre></div>
+</div>
+<img alt="../_images/c37fe7c0fd6d689bdc17951c5295bcd547fd4eb1354a88d98009cd12b1bc00d0.png" src="../_images/c37fe7c0fd6d689bdc17951c5295bcd547fd4eb1354a88d98009cd12b1bc00d0.png" />
+</div>
 </div>
 </section>
 <section id="plot-2-population-vs-total-gdp-loglog">
@@ -819,6 +846,9 @@ If that fails (for example in offline environments), it uses a <strong>small bui
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/ffa2b9c39d03a554a1ef6b9707e26c2a4c3e74927497303dab3b2cdef763fcc2.png" src="../_images/ffa2b9c39d03a554a1ef6b9707e26c2a4c3e74927497303dab3b2cdef763fcc2.png" />
+</div>
 </div>
 </section>
 </section>
@@ -846,6 +876,12 @@ $</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Doubling GDP per capita -&gt; energy factor:&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="n">alpha</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10x GDP per capita      -&gt; energy factor:&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="n">alpha</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Doubling GDP per capita -&gt; energy factor: 1.515716566510398
+10x GDP per capita      -&gt; energy factor: 3.9810717055349722
 </pre></div>
 </div>
 </div>
@@ -939,7 +975,7 @@ It’s the same emotion, but with a ruler.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">4) Logarithms as a scale ruler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercises-with-solutions">7) Mini exercises (with solutions)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-with-solution">7) Mini exercise (with solution)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecological-economics-intuition-scaling-relationships">8) Ecological economics intuition: scaling relationships</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-application-loglog-plots-across-countries">9) Empirical application: log–log plots across countries</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-note-important">Data note (important)</a></li>

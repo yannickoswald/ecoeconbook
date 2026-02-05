@@ -25,7 +25,6 @@ chapters:
     title: Order of Magnitude Economics and Scaling
     sections:
       - file: order_of_magnitude_economics_and_scaling/orders_of_magnitude
-      - file: order_of_magnitude_economics_and_scaling/planetary_constraints
       - file: order_of_magnitude_economics_and_scaling/static_scale
       - file: order_of_magnitude_economics_and_scaling/dynamic_scale
     
