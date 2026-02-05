@@ -9,27 +9,34 @@ description : >-
   fully-fledged empirical models.
 
 # --- Launch-button & repository hooks ---------------------------------------
+# 1. Define the repository details clearly at the root
 repository:
   url: https://github.com/yannickoswald/ecoeconbook
-  path_to_book: .
+  path_to_book: ""  # Use empty quotes if the book is at the root, or "content/" etc.
   branch: main
-html:
-  use_repository_button : true   # “GitHub” link
-  use_issues_button      : true   # “Open issue” link
-  use_edit_page_button   : true   # “Suggest edit” link
-  favicon                : images/favicon.ico   # optional
-  logo                   : images/logo.png      # optional
 
+# 2. Configure the HTML theme options (buttons, logo, etc.)
+html:
+  use_issues_button    : true
+  use_repository_button: true
+  use_edit_page_button : true
+  favicon              : images/favicon.ico
+  logo                 : images/logo.png
+  
+  # IMPORTANT: In some versions/themes, launch buttons are toggled here too. 
+  # If the block below doesn't work, ensure your theme supports them.
+
+# 3. Explicitly configure the launch buttons at the ROOT level
 launch_buttons:
-  notebook_interface : "jupyterlab"
-  binderhub_url      : "https://mybinder.org"
-  colab_url          : "https://colab.research.google.com"
-  notebook_download: true
+  notebook_interface: "jupyterlab"
+  binderhub_url: "https://mybinder.org"
+  colab_url: "https://colab.research.google.com"
+  # notebook_download: true # NOTE: 'notebook_download' is NOT a launch button sub-key in all versions. It often lives under 'html'.
 
 # --- Execution & parsing defaults ------------------------------------------
 execute:
-  execute_notebooks : auto          # run only if outputs missing / stale
-  timeout           : 240           # seconds
+  execute_notebooks : auto
+  timeout           : 240
 
 parse:
   myst_enable_extensions:
@@ -42,5 +49,5 @@ parse:
 # --- Sphinx build tweaks ----------------------------------------------------
 sphinx:
   config:
-    html_show_copyright : false     # already covered in the footer
+    html_show_copyright : false
     nb_merge_streams    : true
