@@ -465,9 +465,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#order-of-magnitude-check">3) Order-of-magnitude check</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms">3.1) Logarithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-the-notation-so-it-stops-looking-like-alien-poetry">A note on the notation (so it stops looking like alien poetry)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-logs-are-perfect-for-orders-of-magnitude">Why logs are perfect for “orders of magnitude”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">4) Logarithms as a scale ruler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-with-solution">7) Mini exercise (with solution)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaways">11) Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-with-solution">5) Mini exercise (with solution)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaways">6) Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extras-a-little-more-math">6) Extras - a little more math</a></li>
 </ul>
             </nav>
         </div>
@@ -488,7 +495,6 @@ document.write(`
 <li><p>compare quantities by <strong>factors of ten</strong> (“within an order of magnitude”),</p></li>
 <li><p>use <strong>base-10 logarithms</strong> as a <em>scale</em>,</p></li>
 <li><p>do quick back-of-the-envelope computations</p></li>
-<li><p>and apply it to a tiny ecological-economics example with <strong>log–log plots</strong>.</p></li>
 </ul>
 <section id="why-orders-of-magnitude">
 <h2>1) Why orders of magnitude?<a class="headerlink" href="#why-orders-of-magnitude" title="Link to this heading">#</a></h2>
@@ -571,6 +577,70 @@ Since <span class="math notranslate nohighlight">\(30 = 3\times 10\)</span>, the
 </details>
 </section>
 </section>
+<section id="logarithms">
+<h2>3.1) Logarithms<a class="headerlink" href="#logarithms" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Logarithms for dummies (base 10)</p>
+<p>A <strong>logarithm</strong> is just the <em>inverse</em> of exponentiation.</p>
+<h3 class="rubric" id="what-does-log-10-x-mean">What does <span class="math notranslate nohighlight">\(\log_{10}(x)\)</span> mean?</h3>
+<p>It answers:</p>
+<blockquote>
+<div><p><strong>“Which power of 10 gives me <code class="docutils literal notranslate"><span class="pre">x</span></code>?”</strong></p>
+</div></blockquote>
+<p>So if <span class="math notranslate nohighlight">\(10^b = x\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\log_{10}(x) = b.\]</div>
+</div>
+<section id="a-note-on-the-notation-so-it-stops-looking-like-alien-poetry">
+<h3>A note on the notation (so it stops looking like alien poetry)<a class="headerlink" href="#a-note-on-the-notation-so-it-stops-looking-like-alien-poetry" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The subscript <strong>10</strong> in <span class="math notranslate nohighlight">\(\log_{10}\)</span> tells you the <strong>base</strong>.<br />
+So <span class="math notranslate nohighlight">\(\log_{10}\)</span> means “log base 10”.</p></li>
+<li><p>The input in parentheses, the <strong>argument</strong> <span class="math notranslate nohighlight">\(x\)</span>, is the number you’re taking the log of.</p></li>
+<li><p>In many books you’ll also see:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\ln(x)\)</span> which means the <strong>natural log</strong> (base <span class="math notranslate nohighlight">\(e \approx 2.718\)</span>)</p></li>
+<li><p>sometimes just <span class="math notranslate nohighlight">\(\log(x)\)</span> with the base left implicit (annoying, but common).</p></li>
+</ul>
+</li>
+<li><p>In this chapter, we use <strong>base 10</strong> because it matches “orders of magnitude” (powers of ten).</p></li>
+</ul>
+<p>Equivalently, this is the key “inverse” relationship:</p>
+<div class="math notranslate nohighlight">
+\[\log_{10}(10^b)=b.\]</div>
+<p>Quick examples:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\log_{10}(1)=0\)</span> because <span class="math notranslate nohighlight">\(10^0=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\log_{10}(10)=1\)</span> because <span class="math notranslate nohighlight">\(10^1=10\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\log_{10}(1000)=3\)</span> because <span class="math notranslate nohighlight">\(10^3=1000\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\log_{10}(0.01)=-2\)</span> because <span class="math notranslate nohighlight">\(10^{-2}=0.01\)</span></p></li>
+</ul>
+</section>
+<section id="why-logs-are-perfect-for-orders-of-magnitude">
+<h3>Why logs are perfect for “orders of magnitude”<a class="headerlink" href="#why-logs-are-perfect-for-orders-of-magnitude" title="Link to this heading">#</a></h3>
+<p>A factor of 10 becomes “+1” on the log scale:</p>
+<ul class="simple">
+<li><p>multiplying by 10 adds 1 to <span class="math notranslate nohighlight">\(\log_{10}\)</span></p></li>
+<li><p>dividing by 10 subtracts 1</p></li>
+</ul>
+<p>That’s why this identity is so useful:</p>
+<div class="math notranslate nohighlight">
+\[\log_{10}(x/y)=\log_{10}(x)-\log_{10}(y).\]</div>
+<p>So the “scale ruler” for orders of magnitude is:</p>
+<div class="math notranslate nohighlight">
+\[\Delta \text{orders} \approx \log_{10}(x) - \log_{10}(y) = \log_{10}(x/y).\]</div>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p>If <span class="math notranslate nohighlight">\(x/y = 1000\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\log_{10}(1000)=3,\]</div>
+<p>so <code class="docutils literal notranslate"><span class="pre">x</span></code> is <strong>3 orders of magnitude</strong> larger than <code class="docutils literal notranslate"><span class="pre">y</span></code> (i.e., about <strong>1000×</strong>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
 <section id="logarithms-as-a-scale-ruler">
 <h2>4) Logarithms as a scale ruler<a class="headerlink" href="#logarithms-as-a-scale-ruler" title="Link to this heading">#</a></h2>
 <p>The base-10 logarithm answers:</p>
@@ -586,7 +656,7 @@ Since <span class="math notranslate nohighlight">\(30 = 3\times 10\)</span>, the
 <p>Example: if <code class="docutils literal notranslate"><span class="pre">x/y</span> <span class="pre">=</span> <span class="pre">1000</span></code>, then <code class="docutils literal notranslate"><span class="pre">log10(1000)</span> <span class="pre">=</span> <span class="pre">3</span></code> → a <strong>3-order-of-magnitude</strong> difference.</p>
 </section>
 <section id="mini-exercise-with-solution">
-<h2>7) Mini exercise (with solution)<a class="headerlink" href="#mini-exercise-with-solution" title="Link to this heading">#</a></h2>
+<h2>5) Mini exercise (with solution)<a class="headerlink" href="#mini-exercise-with-solution" title="Link to this heading">#</a></h2>
 <p>To remain and get more and more into coding habits. Try to write a python function that conducts the above scale ruler computation. This is not super important for our proceeding chapters but practice is never mistaken.</p>
 <p>For this you also need to import the math package. Just do so via</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -622,13 +692,19 @@ This also helps if someone passes strings like <code class="docutils literal not
 </div>
 </details></section>
 <section id="takeaways">
-<h2>11) Takeaways<a class="headerlink" href="#takeaways" title="Link to this heading">#</a></h2>
+<h2>6) Takeaways<a class="headerlink" href="#takeaways" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>An <strong>order of magnitude</strong> is a factor of ~10.</p></li>
 <li><p>Scientific notation separates <strong>scale</strong> (<code class="docutils literal notranslate"><span class="pre">10^b</span></code>) from <strong>detail</strong> (<code class="docutils literal notranslate"><span class="pre">a</span></code>).</p></li>
 <li><p>Logarithms turn <strong>multiplicative</strong> differences into <strong>additive</strong> differences.</p></li>
 </ul>
 <p>In the next chapter we are going to learn about static scaling relationships in Ecological Economics and pick up some of the most important concepts in all of ecological economics (and sometimes all of science) along the way - Log–log plots, A first look at basic regression analysis and elasticities.</p>
+</section>
+<section id="extras-a-little-more-math">
+<h2>6) Extras - a little more math<a class="headerlink" href="#extras-a-little-more-math" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>include extra math view points on orders of magnitude specifically the geometric mean that defines the boundary between two</p></li>
+</ul>
 </section>
 </section>
 
@@ -705,9 +781,16 @@ This also helps if someone passes strings like <code class="docutils literal not
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#order-of-magnitude-check">3) Order-of-magnitude check</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms">3.1) Logarithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-the-notation-so-it-stops-looking-like-alien-poetry">A note on the notation (so it stops looking like alien poetry)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-logs-are-perfect-for-orders-of-magnitude">Why logs are perfect for “orders of magnitude”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">4) Logarithms as a scale ruler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-with-solution">7) Mini exercise (with solution)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaways">11) Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-with-solution">5) Mini exercise (with solution)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaways">6) Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extras-a-little-more-math">6) Extras - a little more math</a></li>
 </ul>
   </nav></div>
 
