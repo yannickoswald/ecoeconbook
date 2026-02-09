@@ -626,7 +626,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7f9626e8c680761f22795521c63a03930abb14e0a06d2b167287be35131df6ae.png" src="../_images/7f9626e8c680761f22795521c63a03930abb14e0a06d2b167287be35131df6ae.png" />
+<img alt="../_images/41f3f682de48df779af90d03ce9018cc962a150d8f4ae58bdf264373a33728d0.png" src="../_images/41f3f682de48df779af90d03ce9018cc962a150d8f4ae58bdf264373a33728d0.png" />
 </div>
 </div>
 <p>This is what log-log plots are good for. Because the data spans such large ranges it is difficult to visualise all of it on one scale, if we just consider the data values as they are. So let us log transform the values.</p>
@@ -722,7 +722,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bc9cb250194b6887614db04f95619384f2088ad667519f8b01f220faaeddfc90.png" src="../_images/bc9cb250194b6887614db04f95619384f2088ad667519f8b01f220faaeddfc90.png" />
+<img alt="../_images/f010ec28ef52e806f079b9056c67e391f6001e525dd0e5825fcd7d427352951e.png" src="../_images/f010ec28ef52e806f079b9056c67e391f6001e525dd0e5825fcd7d427352951e.png" />
 </div>
 </div>
 <p>This also teaches you already one of the most important things to know about as a scientist: Different data visualizations may have different strengths but also weaknesses. Of course you can observe that there is a clearly a systematic relationship between the two variables national income (GDP per capita) and energy use. And you also already understand that one order of magnitude in income translates roughly to one order of magnitude increase in energy.</p>
@@ -924,7 +924,12 @@ document.write(`
 </div></div></div>
 </div>
 <p>Now let us redo the plotting exercise. Below you see the plot (this time with the code hidden)</p>
-<div class="cell tag_hide_input docutils container">
+<div class="cell tag_hide_input tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -991,8 +996,17 @@ document.write(`
 <div class="cell_output docutils container">
 <img alt="../_images/d9648f75261044ecd5b9ae8456364bf041a48661bfa027b8e5d719fedaa2b18c.png" src="../_images/d9648f75261044ecd5b9ae8456364bf041a48661bfa027b8e5d719fedaa2b18c.png" />
 </div>
+</details>
 </div>
-<p>We just converted our energy data from kWh to Gigajoules (multiplying by 0.0036).You might notice that the regression line looks exactly the same, but the numbers defining it are different.A. What Changes? (The Coefficients)The coefficients (<span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span>) are Unit-Dependent. They are like price tags—if you change the currency, the number changes, even if the value of the item is the same.The Slope (<span class="math notranslate nohighlight">\(\beta_1\)</span>):Old Slope: ~0.92 (kWh per Dollar)New Slope: ~0.0033 (GJ per Dollar)Why? Since a Gigajoule is a much “larger” unit than a kWh, we need fewer of them to describe the same increase.The Math: <span class="math notranslate nohighlight">\(0.92 \times 0.0036 \approx 0.0033\)</span>. The slope scaled exactly by our conversion factor.The Intercept (<span class="math notranslate nohighlight">\(\beta_0\)</span>):Old Intercept: ~300 (kWh)New Intercept: ~1.1 (GJ)Why? The “base level” of energy is still the same physical amount of heat/electricity, just expressed in a different language.B. What is Invariant? (The Quality of the Model)Some things never change, no matter what units you use (Joules, BTUs, Calories, or kWh). These are the “invariants.”The <span class="math notranslate nohighlight">\(R^2\)</span> (Goodness of Fit):Look at the plot: The points are scattered around the line in exactly the same pattern.<span class="math notranslate nohighlight">\(R^2\)</span> measures how well the line fits the data relative to the variance. Changing the units scales the variance and the error by the same amount, so they cancel out.Lesson: You cannot “cheat” and get a better <span class="math notranslate nohighlight">\(R^2\)</span> just by changing units (e.g., measuring GDP in cents instead of dollars).The Correlation (<span class="math notranslate nohighlight">\(r\)</span>):The strength of the relationship is identical. If GDP and Energy are strongly linked in kWh, they are equally strongly linked in Gigajoules.Statistical Significance (P-values):If the relationship was statistically significant before, it is still significant now. The t-statistic remains the same because both the coefficient and its standard error scale by the same factor.</p>
+<p>We just converted our energy data from kWh to Gigajoules (multiplying by 0.0036).</p>
+<p>You might notice that the regression line looks exactly the same, but the numbers defining it are different.</p>
+<p>What Changes? (The Coefficients)The coefficients (<span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span>) are Unit-Dependent.</p>
+<p>They are like price tags—if you change the currency, the number changes, even if the value of the item is the same.</p>
+<p>The slope scaled exactly by our conversion factor.</p>
+<p>What is Unchanged?</p>
+<p>The Quality of the Model: “The <span class="math notranslate nohighlight">\(R^2\)</span> (Goodness of Fit). Look at the plot: The points are scattered around the line in exactly the same pattern. <span class="math notranslate nohighlight">\(R^2\)</span> measures how well the line fits the data relative to the variance. Changing the units scales the variance and the error by the same amount, so they cancel out.</p>
+<p>Lesson: You cannot “cheat” and get a better <span class="math notranslate nohighlight">\(R^2\)</span> just by changing units (e.g., measuring GDP in cents instead of dollars).</p>
+<p>The Correlation (<span class="math notranslate nohighlight">\(r\)</span>):The strength of the relationship is identical. If GDP and Energy are strongly linked in kWh, they are equally strongly linked in Gigajoules.</p>
 </section>
 </section>
 </section>
