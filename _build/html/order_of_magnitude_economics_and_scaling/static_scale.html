@@ -488,7 +488,6 @@ document.write(`
 <p>Below you see a typical log-log plot from ecological economics - the cross-country relationship between energy and GDP per capita.</p>
 <p>First we have to load some real dataset.</p>
 <p>We will take data from here OurWorldinData here <a class="reference external" href="https://ourworldindata.org/grapher/energy-use-per-person-vs-gdp-per-capita">https://ourworldindata.org/grapher/energy-use-per-person-vs-gdp-per-capita</a>.</p>
-<p>(COMMENT FOR WORK! PROBABLY NEED TO DO A SHAREPOINT HASH SOMEHOW)</p>
 <p>Run the following code, do not worry if you do not understand everything just yet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -741,8 +740,6 @@ document.write(`
 <li><p><strong><span class="math notranslate nohighlight">\(\beta_0\)</span> (Intercept):</strong> Where the line crosses the y-axis (when <span class="math notranslate nohighlight">\(x=0\)</span>).</p></li>
 <li><p><strong><span class="math notranslate nohighlight">\(\beta_1\)</span> (Slope):</strong> How steep the line is.</p></li>
 </ul>
-<p>The slope tells us about Change:</p>
-<p>If GDP (<span class="math notranslate nohighlight">\(x\)</span>) increases by <strong>1 unit</strong> (e.g., <span class="math notranslate nohighlight">\(1 USD), Energy (\)</span>y<span class="math notranslate nohighlight">\() increases by **\)</span>\beta_1$ units**.</p>
 <p>Next, we first a model like this through the linearly organized data above. For this, without understanding how it actually works, we just use the numpy package and the function np.polyfit(x, y, 1). Note there are several packages and functions that you could do this with. You could even write your own. And we will do so in a later chapter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -991,8 +988,8 @@ document.write(`
 </div>
 <p>We just converted our energy data from kWh to Gigajoules (multiplying by 0.0036).</p>
 <p>You might notice that the regression line looks exactly the same, but the numbers defining it are different.</p>
-<p>What Changes? (The Coefficients)The coefficients (<span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span>) are Unit-Dependent.</p>
-<p>They are like price tags—if you change the currency, the number changes, even if the value of the item is the same.</p>
+<p>What Changes?</p>
+<p>The coefficients (<span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span>) are Unit-Dependent.</p>
 <p>The slope scaled exactly by our conversion factor.</p>
 <p>What is Unchanged?</p>
 <p>The Quality of the Model: “The <span class="math notranslate nohighlight">\(R^2\)</span> (Goodness of Fit). Look at the plot: The points are scattered around the line in exactly the same pattern. <span class="math notranslate nohighlight">\(R^2\)</span> measures how well the line fits the data relative to the variance. Changing the units scales the variance and the error by the same amount, so they cancel out.</p>
