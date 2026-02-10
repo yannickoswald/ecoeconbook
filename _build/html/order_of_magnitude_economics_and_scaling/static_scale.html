@@ -461,7 +461,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-the-linear-model-linear-scale">A. The Linear Model (Linear Scale)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-log-mathematics-elasticity-and-power-laws">3) Log-log mathematics, elasticity and power-laws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-log-mathematics">3. Log-log mathematics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-log-transform">The log transform</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-loglog-regression">3. The log–log regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-logs-get-rid-of-units">4. Why logs “get rid of units”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rescale-by-a-constant">Rescale by a constant</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -1020,11 +1028,11 @@ document.write(`
 <p>The Solution: We switch to thinking in percentages and orders of magnitude instead of absolute numbers.</p>
 <p>Let first just have a look at what happens when we log-transform the data with both units, before we dive deep into understanding what is going on here.</p>
 <p>The code for the plot below should run. Copy or use it right here. Do not worry if you do not understand all the details of the log transformation and regression line fit with this data yet.</p>
-<div class="cell tag_hide-cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell content</p>
-<p class="expanded admonition-title">Hide code cell content</p>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1104,17 +1112,52 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="../_images/98174c29eedf3b7a6938f543d6bc4adc3be61a13a637caeb69a2a6d7c17213d1.png" src="../_images/98174c29eedf3b7a6938f543d6bc4adc3be61a13a637caeb69a2a6d7c17213d1.png" />
 </div>
-</details>
 </div>
 </section>
 </section>
-<section id="log-log-mathematics-elasticity-and-power-laws">
-<h2>3) Log-log mathematics, elasticity and power-laws<a class="headerlink" href="#log-log-mathematics-elasticity-and-power-laws" title="Link to this heading">#</a></h2>
-<p>This seems kind of magical, or at least powerful. We have now discovered that a log-log and order of magnitude graph gives a universal - unit-independent number to describe the scaling pattern between GDP and energy.</p>
-<p>And now we dive deep into our first quite technical section. Do not worry. We do it slowly. However this is quantitative ecological economics, - so a quantitative science. The maths is part of the job. Remember all mathematics that we do is supposed to help you understand the world around you, understand patterns and make judgements about sustainability, global challenges and solutions.</p>
+<section id="log-log-mathematics">
+<h2>3. Log-log mathematics<a class="headerlink" href="#log-log-mathematics" title="Link to this heading">#</a></h2>
+<p>This seems kind of magical. Or at least powerful. We have now discovered that a log-log and an order of magnitude graph gives a universal and unit-independent number to describe the scaling pattern between GDP and energy.</p>
+<p>And now we dive deep into our first quite technical section. Do not worry. We do it slowly. However this is quantitative ecological economics, - so a quantitative science. The maths is part of the job. Remember, all mathematics that we do is supposed to help you understand the world around you, understand patterns and make judgements about sustainability, global challenges and solutions. Also afterwards we will have a look at many different empirical scaling relationships.</p>
+<p>Suppose we study the relationship between an outcome (y) and a predictor (x), like energy per person and gdp per person above (we ignore error terms by the way and only introduce them later on in a statistics chapter):</p>
+<div class="math notranslate nohighlight">
+\[y = \beta_1x + \beta_0\]</div>
+<section id="the-log-transform">
+<h3>The log transform<a class="headerlink" href="#the-log-transform" title="Link to this heading">#</a></h3>
+<p>Instead of modeling additive changes, we sometimes care about multiplicative or proportional changes.
+The natural move is to take logarithms. This also direclty relates to orders of magnitude because an order of magnitude is a simply a large multiplicative change (x10).</p>
+</section>
+</section>
+<section id="the-loglog-regression">
+<h2>3. The log–log regression<a class="headerlink" href="#the-loglog-regression" title="Link to this heading">#</a></h2>
+<p>Taking the log both sides we get the <strong>log–log</strong> specification is:</p>
+<div class="math notranslate nohighlight">
+\[\[
+\log y = \alpha + \beta \log x + \varepsilon.
+\]\]</div>
+</section>
+<section id="why-logs-get-rid-of-units">
+<h2>4. Why logs “get rid of units”<a class="headerlink" href="#why-logs-get-rid-of-units" title="Link to this heading">#</a></h2>
+<p>Logs are only defined for <strong>positive</strong> quantities, and strictly speaking you shouldn’t take the log of something with physical units without choosing a reference scale. But in applied regression, what matters is that <strong>unit changes become additive constants</strong>.</p>
+<section id="rescale-by-a-constant">
+<h3>Rescale by a constant<a class="headerlink" href="#rescale-by-a-constant" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(\(x' = c x\)\)</span> where <span class="math notranslate nohighlight">\(\(c&gt;0\)\)</span> is a unit conversion factor (e.g., kWh → Gigajoule).
+Then:</p>
+<p><span class="math notranslate nohighlight">\(\[
+\log x' = \log(cx)=\log c + \log x.
+\]\)</span></p>
+<p>Plug into the log–log model:</p>
+<p><span class="math notranslate nohighlight">\(\[
+\log y = \alpha + \beta(\log c + \log x) + \varepsilon
+       = (\alpha + \beta \log c) + \beta \log x + \varepsilon.
+\]\)</span></p>
+<p>So the <strong>slope (\beta) does not change</strong>. Only the intercept shifts.</p>
+<p>That’s what we mean (informally) when we say logs “remove units.” A better phrase if you want to stay fully technically correct if mathematicians or other scientists bother you: the slope becomes dimensionless and robust to unit conversions.</p>
+</section>
 </section>
 </section>
 
@@ -1187,7 +1230,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-the-linear-model-linear-scale">A. The Linear Model (Linear Scale)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-log-mathematics-elasticity-and-power-laws">3) Log-log mathematics, elasticity and power-laws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-log-mathematics">3. Log-log mathematics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-log-transform">The log transform</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-loglog-regression">3. The log–log regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-logs-get-rid-of-units">4. Why logs “get rid of units”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rescale-by-a-constant">Rescale by a constant</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
