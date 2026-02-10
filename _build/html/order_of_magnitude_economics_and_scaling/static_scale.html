@@ -461,6 +461,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-the-linear-model-linear-scale">A. The Linear Model (Linear Scale)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-log-mathematics-elasticity-and-power-laws">3) Log-log mathematics, elasticity and power-laws</a></li>
 </ul>
             </nav>
         </div>
@@ -738,10 +739,29 @@ document.write(`
 <li><p><strong><span class="math notranslate nohighlight">\(y\)</span> (Dependent Variable):</strong> The thing we want to predict (e.g., Energy per capita).</p></li>
 <li><p><strong><span class="math notranslate nohighlight">\(x\)</span> (Independent Variable):</strong> The thing we are using to predict (e.g., GDP per capita).</p></li>
 <li><p><strong><span class="math notranslate nohighlight">\(\beta_0\)</span> (Intercept):</strong> Where the line crosses the y-axis (when <span class="math notranslate nohighlight">\(x=0\)</span>).</p></li>
-<li><p><strong><span class="math notranslate nohighlight">\(\beta_1\)</span> (Slope):</strong> How steep the line is.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\beta_1\)</span> (Slope of the line):</strong> How steep the line is.</p></li>
 </ul>
 <p>Next, we first a model like this through the linearly organized data above. For this, without understanding how it actually works, we just use the numpy package and the function np.polyfit(x, y, 1). Note there are several packages and functions that you could do this with. You could even write your own. And we will do so in a later chapter.</p>
-<div class="cell docutils container">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">💡 <em>Explanation/Revision slope of a line</em></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">The coefficient <span class="math notranslate nohighlight">\(beta_1\)</span> is the <strong>slope</strong> of a straight line graph</p></li>
+</ul>
+<p class="sd-card-text">In mathematics, the slope (often denoted by the letter <span class="math notranslate nohighlight">\(m\)</span>) measures the “steepness” and direction of a line. Think of it as the ratio of how much a line goes up (or down) versus how much it goes right.</p>
+<h3 class="rubric" id="the-formula">The Formula</h3>
+<p class="sd-card-text">If you have two points on a graph, <span class="math notranslate nohighlight">\((x_1, y_1)\)</span> and <span class="math notranslate nohighlight">\((x_2, y_2)\)</span>, the slope is calculated as:</p>
+<div class="math notranslate nohighlight">
+\[m = \frac{\text{rise}}{\text{run}} = \frac{y_2 - y_1}{x_2 - x_1}\]</div>
+<h3 class="rubric" id="how-to-interpret-the-number">How to Interpret the Number:</h3>
+<ul class="simple">
+<li><p class="sd-card-text">Positive Slope (<span class="math notranslate nohighlight">\(m &gt; 0\)</span>): The line goes <strong>up</strong> as you move from left to right.</p></li>
+<li><p class="sd-card-text">Negative Slope (<span class="math notranslate nohighlight">\(m &lt; 0\)</span>): The line goes <strong>down</strong> as you move from left to right.</p></li>
+<li><p class="sd-card-text">Zero Slope (<span class="math notranslate nohighlight">\(m = 0\)</span>): The line is perfectly <strong>horizontal</strong> (a flat floor).</p></li>
+<li><p class="sd-card-text">Undefined Slope: The line is perfectly <strong>vertical</strong> (a wall).</p></li>
+</ul>
+</div>
+</details><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -989,13 +1009,111 @@ document.write(`
 <p>We just converted our energy data from kWh to Gigajoules (multiplying by 0.0036).</p>
 <p>You might notice that the regression line looks exactly the same, but the numbers defining it are different.</p>
 <p>What Changes?</p>
-<p>The coefficients (<span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span>) are Unit-Dependent.</p>
+<p>The coefficients (<span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span>) are unit-dependent.</p>
 <p>The slope scaled exactly by our conversion factor.</p>
-<p>What is Unchanged?</p>
-<p>The Quality of the Model: “The <span class="math notranslate nohighlight">\(R^2\)</span> (Goodness of Fit). Look at the plot: The points are scattered around the line in exactly the same pattern. <span class="math notranslate nohighlight">\(R^2\)</span> measures how well the line fits the data relative to the variance. Changing the units scales the variance and the error by the same amount, so they cancel out.</p>
-<p>Lesson: You cannot “cheat” and get a better <span class="math notranslate nohighlight">\(R^2\)</span> just by changing units (e.g., measuring GDP in cents instead of dollars).</p>
-<p>The Correlation (<span class="math notranslate nohighlight">\(r\)</span>):The strength of the relationship is identical. If GDP and Energy are strongly linked in kWh, they are equally strongly linked in Gigajoules.</p>
+<p>What is unchanged?</p>
+<p>The model quality: The correlation and the  <span class="math notranslate nohighlight">\(R^2\)</span> (Goodness of Fit). Look at the plot: The points are scattered around the line in exactly the same pattern. <span class="math notranslate nohighlight">\(R^2\)</span> measures how well the line fits the data. This should stay the same (more on this measure later).</p>
+<p>Lesson: You cannot “cheat” and get a better just by changing units but you also must be careful in interpreting your coefficients based on units of the data.</p>
+<p>So far so good.</p>
+<p>But our slope changed just because we switched units? That’s annoying. Would a general universal number not be cooler?</p>
+<p>Also look closely at the linear plot. The red line assumes a constant increase. But the data looks messy. The low-value countries are bunched-up and the high-value countries scatter out crazily, not really fitting anymore this linear line. It almost seems like the linear line is not such a good fit.</p>
+<p>The Solution: We switch to thinking in percentages and orders of magnitude instead of absolute numbers.</p>
+<p>Let first just have a look at what happens when we log-transform the data with both units, before we dive deep into understanding what is going on here.</p>
+<p>The code for the plot below should run. Copy or use it right here. Do not worry if you do not understand all the details of the log transformation and regression line fit with this data yet.</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Ensure the GJ column exists</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_pc_gj&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_pc&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.0036</span>
+
+<span class="c1"># Setup the figure with 2 panels side-by-side</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+
+<span class="c1"># -------------------------------------------------------------------------</span>
+<span class="c1"># HELPER FUNCTION to plot data and fit line</span>
+<span class="c1"># -------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">plot_log_fit</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">,</span> <span class="n">unit_name</span><span class="p">):</span>
+    <span class="c1"># 1. Clean Data </span>
+    <span class="c1"># We must ensure x and y are strictly POSITIVE (&gt; 0) because log(0) is undefined</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_data</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_data</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">x_data</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">y_data</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x_data</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y_data</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+    
+    <span class="c1"># 2. Scatter Plot</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    
+    <span class="c1"># 3. Log-Log Regression Math (This transforms the data to log-log space, fits a line, and then transforms back to get a power law)</span>
+    <span class="n">log_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">log_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    
+    <span class="c1"># Fit line: log(y) = beta * log(x) + alpha</span>
+    <span class="n">beta</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">log_x</span><span class="p">,</span> <span class="n">log_y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Create line for plotting (y = A * x^beta)</span>
+    <span class="c1"># We create a range of X values for the line</span>
+    <span class="n">x_line</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+    <span class="n">y_line</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="p">(</span><span class="n">x_line</span> <span class="o">**</span> <span class="n">beta</span><span class="p">)</span>
+    
+    <span class="c1"># 4. Plot Regression Line</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_line</span><span class="p">,</span> <span class="n">y_line</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#D32F2F&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Slope ($</span><span class="se">\\</span><span class="s2">beta_1$) = </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># 5. Aesthetics</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energy in </span><span class="si">{</span><span class="n">unit_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;GDP per capita (Log Scale)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energy (</span><span class="si">{</span><span class="n">unit_name</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="c1"># Remove top/right spines</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="c1"># Add Legend</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">beta</span>
+
+<span class="c1"># -------------------------------------------------------------------------</span>
+<span class="c1"># DRAW THE PLOTS</span>
+<span class="c1"># -------------------------------------------------------------------------</span>
+
+<span class="c1"># Panel 1: Original Units (kWh)</span>
+<span class="n">beta_kwh</span> <span class="o">=</span> <span class="n">plot_log_fit</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_pc&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_pc&quot;</span><span class="p">],</span> <span class="s2">&quot;kWh&quot;</span><span class="p">)</span>
+
+<span class="c1"># Panel 2: New Units (Gigajoules)</span>
+<span class="n">beta_gj</span> <span class="o">=</span> <span class="n">plot_log_fit</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp_pc&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_pc_gj&quot;</span><span class="p">],</span> <span class="s2">&quot;Gigajoules&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add a big title across the top</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Log-Log Regression: Unit Invariance</span><span class="se">\n</span><span class="s2">(Note: Slopes are identical: </span><span class="si">{</span><span class="n">beta_kwh</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> vs </span><span class="si">{</span><span class="n">beta_gj</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> 
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.98</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/98174c29eedf3b7a6938f543d6bc4adc3be61a13a637caeb69a2a6d7c17213d1.png" src="../_images/98174c29eedf3b7a6938f543d6bc4adc3be61a13a637caeb69a2a6d7c17213d1.png" />
+</div>
+</details>
+</div>
 </section>
+</section>
+<section id="log-log-mathematics-elasticity-and-power-laws">
+<h2>3) Log-log mathematics, elasticity and power-laws<a class="headerlink" href="#log-log-mathematics-elasticity-and-power-laws" title="Link to this heading">#</a></h2>
+<p>This seems kind of magical, or at least powerful. And now we dive deep into our first quite technical section. Do not worry. We do it slowly. However this is quantitative ecological economics, - so a quantitative science. The maths is part of the job. Remember all mathematics that we do is supposed to help you understand the world around you, understand patterns and make judgements about sustainability, global challenges and solutions.</p>
 </section>
 </section>
 
@@ -1068,6 +1186,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-the-linear-model-linear-scale">A. The Linear Model (Linear Scale)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-log-mathematics-elasticity-and-power-laws">3) Log-log mathematics, elasticity and power-laws</a></li>
 </ul>
   </nav></div>
 
