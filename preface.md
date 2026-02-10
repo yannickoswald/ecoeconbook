@@ -26,4 +26,41 @@ In that regard, this book might seem rather positivist but I encourage educators
 ## 3. Didactic Approach
 
 
+.. loading 
+
+
+## 4. Licensing 
+
+Attribution-NonCommercial-ShareAlike 4.0 International
+
+For further information:
+
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+## 4. Acknowledgment of AI use and contributions
+
+This is an open-access, open-source online resource. Different AI models, such as ChatGPT or Gemini have assissted in drafting code sections, equation typsetting and layout of the book. They also sometimes have been used to draft structure of text sections (because it goes together with the layout), but heavy human re-editing and didactic quality insurance is applied at all times. The overall text and didactic flow is fully human-controlled. Feedback, also on this is welcome, if you see anything that is wrongly depicted, hints at intellectual property theft or alike let us know at y-oswald@web.de or raise an issue on https://yannickoswald.github.io/ecoeconbook.
+
+
+## 5. History of the project
+
+This elementary idea, accessible Quantitative Ecological Economics (with a complexity and system science perspective too), has long been a dream of Yannick Oswald and then found a first home together with the Pedagogical Impulse Fund (FIP) at the University of Lausanne under the lead of Prof. Julia Steinberger and her wish to modernize and improve the Sustainability curriculum at the University of Lausanne (and world-wide :P). 
+
+
+## 6. Inspiration for the project
+
+Tools and Techniques course at the University of Leeds
+Tom Beucler environmental science and AI courses at the University of Lausanne 
+
+Yannick Oswald was first inspried to teach this way by the great quantitative economics books by Thomas J. Sargent and John Stachurski https://quantecon.org/lectures/
+
+
+## 7. Contributors 
+
+Lead and content lead: Dr. Yannick Oswald leads the development of this book and course material project. 
+
+
+
+
+
 [← Back to Book Outline](index.md)

@@ -9,6 +9,9 @@ chapters:
   - file: preface
     title: Preface
 
+  - file: resources
+    title: Additional learning resources
+
   - file: intro_python/index
     title: Introduction to Python and Programming
     sections:
