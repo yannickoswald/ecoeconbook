@@ -24,7 +24,7 @@ Only if you approach it this way, you will later on benefit from the synergies y
 :::{admonition} TL;DR — pick one
 
 - **OPTION A No install**: Use **Google Colab** in the browser. But requires google account.
-- **OPTION B Beginner desktop**: Install **Anaconda** and use **Spyder** as an integrated development environment (IDE).
+- **OPTION B Beginner desktop**: Install **Anaconda** and use **Jupyter Lab** as an integrated development environment (IDE).
 - **OPTION C Power users**: Install **Anaconda** and use **VS Code** (flexible, extensible).
   :::
 
@@ -70,12 +70,14 @@ IMPORTANT! Colab sessions are temporary. Save your work to **Drive** or **downlo
 
 ---
 
-## Option B — Anaconda + Spyder (beginner‑friendly)
+## Option B — Anaconda + Jupyter Lab (beginner‑friendly)
 
-Why Spyder?
+Why Jupyter Lab?
 
-- Simple, MATLAB‑style interface: **editor + console + variable viewer**.
-- Great for learning basics without lots of tooling.
+- Shows algorithm execution step by step, with explanations between code blocks.
+- Encourages working with small, focused code samples that are easy to rewrite and explain.
+- Displays text, images, and plots immediately below the corresponding code cell.
+- Excellent for learning fundamentals with minimal tooling and setup.
 
 1. Install Anaconda
 
@@ -91,15 +93,15 @@ conda activate ecoecon
 conda install numpy pandas matplotlib jupyterlab -y
 ```
 
-Launch Spyder
+Launch Jupyter Lab
 
-- Open **Anaconda Navigator** ▸ **Spyder** (choose env `ecoecon` if asked),  
+- Open **Anaconda Navigator** ▸ **Jupyter Lab** (choose env `ecoecon` if asked),  
   **or** from terminal:
   ```bash
   conda activate ecoecon
-  spyder
+  jupyter lab
   ```
-- In the editor, open/create `hello.py`, paste the test code, press **Run** (▶).
+- In the editor, create a **Notebook** ▸ **Python** file, paste the test code, press **Run** (▶).
 
 ---
 
@@ -134,6 +136,10 @@ conda install numpy pandas matplotlib jupyterlab -y
 
 4. Run Python
 
+- **Script**: create `hello.py`, run with the **▶ Run** button or right‑click ▸ **Run Python File**.
+- **Notebook**: create a new **Jupyter Notebook** (`.ipynb`) and run cells.
+- **Cell mode in .py**: use `# %%` to define cells, then click **Run Cell** above each cell.
+
 - **Notebook**: create a new **Jupyter Notebook** (`.ipynb`), paste the test code, press **Run** (▶).
 
 You may be asked to choose a Python kernel. Choose **Python Environments** then `ecoecon`.
@@ -155,7 +161,7 @@ Common fix: If VS Code doesn’t “see” conda, set
 ## Choosing your path
 
 - **Colab**: zero setup, great for quick labs and sharing; requires internet.
-- **Spyder**: gentle desktop start; good for learning and small analyses.
+- **Jupyter Lab**: gentle desktop start; good for learning and small analyses.
 - **VS Code**: most powerful and extensible; ideal as you scale up.
 
 :::{tip}

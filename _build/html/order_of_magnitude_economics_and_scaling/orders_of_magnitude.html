@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Orders of magnitude &#8212; Quantitative Ecological Economics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'order_of_magnitude_economics_and_scaling/orders_of_magnitude';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Static scale" href="static_scale.html" />
+    <link rel="prev" title="Order of Magnitude Economics and Scaling" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Quantitative Ecological Economics</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../intro_python/index.html">Introduction to Python and Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/install_python.html">Installing and running Python   <!-- Add this --></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/calculator.html">Python as a calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/variables.html">Variables and basic data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/ifs_and_loops.html">Control flow: if statements and loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/algorithms.html">Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/classes.html">Classes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/small_programming_project.html">Project 1: Analysing a real-world energy dataframe CSV with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Order of Magnitude Economics and Scaling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Orders of magnitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static_scale.html">Static scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_scale.html">Dynamic scale</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/yannickoswald/ecoeconbook/main?urlpath=lab/tree/order_of_magnitude_economics_and_scaling/orders_of_magnitude.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/yannickoswald/ecoeconbook/blob/main/order_of_magnitude_economics_and_scaling/orders_of_magnitude.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/yannickoswald/ecoeconbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/yannickoswald/ecoeconbook/edit/main/order_of_magnitude_economics_and_scaling/orders_of_magnitude.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/yannickoswald/ecoeconbook/issues/new?title=Issue%20on%20page%20%2Forder_of_magnitude_economics_and_scaling/orders_of_magnitude.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/order_of_magnitude_economics_and_scaling/orders_of_magnitude.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Orders of magnitude</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-orders-of-magnitude">1) Why orders of magnitude?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-notation">2) Scientific notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#within-an-order-of-magnitude-within-a-factor-of-10">3) “Within an order of magnitude” = “within a factor of 10”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-scientific-notation-with-energy-use">Mini-exercise: scientific notation with energy use</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1) Scientific notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-times-larger">2) Ratio (times larger)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#order-of-magnitude-check">3) Order-of-magnitude check</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms">4) Logarithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-the-notation">A note on the notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">5) Logarithms as a scale ruler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-with-solution">6) Mini exercise (with solution)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaways">7) Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extras-a-little-more-math">8) Extras - a little more math</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="orders-of-magnitude">
+<h1>Orders of magnitude<a class="headerlink" href="#orders-of-magnitude" title="Link to this heading">#</a></h1>
+<p>This short chapter is about <strong>thinking in scales</strong>.</p>
+<p>You will learn how to:</p>
+<ul class="simple">
+<li><p>write numbers in <strong>scientific notation</strong>,</p></li>
+<li><p>compare quantities by <strong>factors of ten</strong> (“within an order of magnitude”),</p></li>
+<li><p>use <strong>base-10 logarithms</strong> as a <em>scale</em>,</p></li>
+<li><p>do quick back-of-the-envelope computations</p></li>
+</ul>
+<section id="why-orders-of-magnitude">
+<h2>1) Why orders of magnitude?<a class="headerlink" href="#why-orders-of-magnitude" title="Link to this heading">#</a></h2>
+<p>Many variables in ecological economics and sustainability science span large ranges:</p>
+<ul class="simple">
+<li><p>GDP per capita (thousands to tens of thousands of USD),</p></li>
+<li><p>population (thousands to billions),</p></li>
+<li><p>emissions (per person or per country) (kg to Gt).</p></li>
+<li><p>national energy consumption (PJ/year),</p></li>
+<li><p>national material use (tons/year)</p></li>
+</ul>
+<p>If we plot or compare these values on a normal (linear) scale, the small stuff disappears.
+A <strong>logarithmic scale</strong> fixes this by turning multiplicative gaps (×10, ×100, ×1000) into additive steps (+1, +2, +3).</p>
+</section>
+<section id="scientific-notation">
+<h2>2) Scientific notation<a class="headerlink" href="#scientific-notation" title="Link to this heading">#</a></h2>
+<p>Any positive number can be written as</p>
+<div class="math notranslate nohighlight">
+\[n = a\times 10^b,\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p>the exponent <strong><code class="docutils literal notranslate"><span class="pre">b</span></code></strong> is an integer, and</p></li>
+<li><p>the mantissa <strong><code class="docutils literal notranslate"><span class="pre">a</span></code></strong> is a number around 1 (for example between 1 and 10).</p></li>
+</ul>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>3,200 = 3.2 × 10³</p></li>
+<li><p>0.007 = 7 × 10⁻³</p></li>
+<li><p>81,000,000 = 8.1 × 10⁷</p></li>
+</ul>
+<p>This representation makes scale comparisons easy: the exponent <code class="docutils literal notranslate"><span class="pre">b</span></code> tells you roughly “how many zeros.”</p>
+</section>
+<section id="within-an-order-of-magnitude-within-a-factor-of-10">
+<h2>3) “Within an order of magnitude” = “within a factor of 10”<a class="headerlink" href="#within-an-order-of-magnitude-within-a-factor-of-10" title="Link to this heading">#</a></h2>
+<p>Two positive numbers <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are <strong>within an order of magnitude</strong> if the larger is <strong>less than 10 times</strong> the smaller:</p>
+<p>So:</p>
+<ul class="simple">
+<li><p>2 and 9 are within an order of magnitude (9/2 = 4.5),</p></li>
+<li><p>2 and 200 are <em>not</em> (200/2 = 100).</p></li>
+<li><p>2 and 20 are also not <em>not</em> for the purpose of this book. Some conventions would say this is within one order of magnitude, but we strictly say this only if it is less than a ten times difference.</p></li>
+</ul>
+<p>The exact boundary convention matters less than the <strong>habit</strong>: asking “is this a ×2 difference, ×10, ×100?”.</p>
+</section>
+<section id="mini-exercise-scientific-notation-with-energy-use">
+<h2>Mini-exercise: scientific notation with energy use<a class="headerlink" href="#mini-exercise-scientific-notation-with-energy-use" title="Link to this heading">#</a></h2>
+<p>Suppose (roughly) that annual <strong>energy use per person</strong> is:</p>
+<ul class="simple">
+<li><p>USA: <strong>300 GJ/person/year</strong></p></li>
+<li><p>Nigeria: <strong>10 GJ/person/year</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Write each value in scientific notation  <span class="math notranslate nohighlight">\(a\times 10^b\)</span> with  <span class="math notranslate nohighlight">\(1 \le a &lt; 10\)</span>.</p></li>
+<li><p>Compare the two values by a <strong>ratio</strong>. About how many “times larger” is the USA value?</p></li>
+<li><p>Is that difference <strong>within one order of magnitude</strong> (a factor of 10), or not?</p></li>
+</ol>
+<details>
+<summary><b>Solution (click to expand)</b></summary>
+<section id="id1">
+<h3>1) Scientific notation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>USA:<br />
+<span class="math notranslate nohighlight">\(300 = 3.0 \times 10^{2}\)</span></p>
+<p>so (a=3.0), (b=2).</p>
+</li>
+<li><p>Nigeria:<br />
+<span class="math notranslate nohighlight">\(10 = 1.0 \times 10^{1}\)</span>
+so (a=1.0), (b=1).</p></li>
+</ul>
+</section>
+<section id="ratio-times-larger">
+<h3>2) Ratio (times larger)<a class="headerlink" href="#ratio-times-larger" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\frac{300}{10} = 30\)</span></p>
+<p>So the USA value is about <strong>30× larger</strong>.</p>
+</section>
+<section id="order-of-magnitude-check">
+<h3>3) Order-of-magnitude check<a class="headerlink" href="#order-of-magnitude-check" title="Link to this heading">#</a></h3>
+<p>A factor of 10 corresponds to <strong>one order of magnitude</strong>.<br />
+Since <span class="math notranslate nohighlight">\(30 = 3\times 10\)</span>, the difference is <strong>a bit more than one order of magnitude</strong><br />
+(about <span class="math notranslate nohighlight">\((\log_{10}(30)\approx 1.48\)\)</span> orders of magnitude).</p>
+</details>
+</section>
+</section>
+<section id="logarithms">
+<h2>4) Logarithms<a class="headerlink" href="#logarithms" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Logarithms for dummies (base 10)</p>
+<p>A <strong>logarithm</strong> is just the <em>inverse</em> of exponentiation.</p>
+<h3 class="rubric" id="what-does-log-10-x-mean">What does <span class="math notranslate nohighlight">\(\log_{10}(x)\)</span> mean?</h3>
+<p>It answers:</p>
+<blockquote>
+<div><p><strong>“Which power of 10 gives me <code class="docutils literal notranslate"><span class="pre">x</span></code>?”</strong></p>
+</div></blockquote>
+<p>So if <span class="math notranslate nohighlight">\(10^b = x\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\log_{10}(x) = b.\]</div>
+</div>
+<section id="a-note-on-the-notation">
+<h3>A note on the notation<a class="headerlink" href="#a-note-on-the-notation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The subscript <strong>10</strong> in <span class="math notranslate nohighlight">\(\log_{10}\)</span> tells you the <strong>base</strong>.<br />
+So <span class="math notranslate nohighlight">\(\log_{10}\)</span> means “log base 10”.</p></li>
+<li><p>The input in parentheses, the <strong>argument</strong> <span class="math notranslate nohighlight">\(x\)</span>, is the number you’re taking the log of.</p></li>
+<li><p>In many books you’ll also see:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\ln(x)\)</span> which means the <strong>natural log</strong> (base <span class="math notranslate nohighlight">\(e \approx 2.718\)</span>)</p></li>
+<li><p>sometimes just <span class="math notranslate nohighlight">\(\log(x)\)</span> with the base left implicit (annoying, but common).</p></li>
+</ul>
+</li>
+<li><p>In this chapter, we use <strong>base 10</strong> because it matches “orders of magnitude” (powers of ten).</p></li>
+</ul>
+<p>Equivalently, this is the key “inverse” relationship:</p>
+<div class="math notranslate nohighlight">
+\[\log_{10}(10^b)=b.\]</div>
+<p>Quick examples:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\log_{10}(1)=0\)</span> because <span class="math notranslate nohighlight">\(10^0=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\log_{10}(10)=1\)</span> because <span class="math notranslate nohighlight">\(10^1=10\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\log_{10}(1000)=3\)</span> because <span class="math notranslate nohighlight">\(10^3=1000\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\log_{10}(0.01)=-2\)</span> because <span class="math notranslate nohighlight">\(10^{-2}=0.01\)</span></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="logarithms-as-a-scale-ruler">
+<h2>5) Logarithms as a scale ruler<a class="headerlink" href="#logarithms-as-a-scale-ruler" title="Link to this heading">#</a></h2>
+<p>The base-10 logarithm answers:</p>
+<p>“What power of 10 gives this number?”</p>
+<div class="math notranslate nohighlight">
+\[\log_{10}(10^b)=b.\]</div>
+<p>And the key identity:</p>
+<div class="math notranslate nohighlight">
+\[\log_{10}(x/y)=\log_{10}(x)-\log_{10}(y).\]</div>
+<p>So the <strong>difference in orders of magnitude</strong> between <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> is basically:</p>
+<div class="math notranslate nohighlight">
+\[\Delta \text{orders} \approx \log_{10}(x) - \log_{10}(y) = \log_{10}(x/y).\]</div>
+<p>Example: if <code class="docutils literal notranslate"><span class="pre">x/y</span> <span class="pre">=</span> <span class="pre">1000</span></code>, then <code class="docutils literal notranslate"><span class="pre">log10(1000)</span> <span class="pre">=</span> <span class="pre">3</span></code> → a <strong>3-order-of-magnitude</strong> difference.</p>
+</section>
+<section id="mini-exercise-with-solution">
+<h2>6) Mini exercise (with solution)<a class="headerlink" href="#mini-exercise-with-solution" title="Link to this heading">#</a></h2>
+<p>To remain and get more and more into coding habits. Try to write a python function that conducts the above scale ruler computation. This is not super important for our proceeding chapters but practice is never mistaken.</p>
+<p>For this you also need to import the math package. Just do so via</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Hints</p>
+<ul class="simple">
+<li><p><strong>Logarithms need positive inputs</strong>: before computing anything, check that <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>.
+If not, raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> with a helpful message.</p></li>
+<li><p>Convert inputs to numbers you can safely divide: use <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">float(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">float(y)</span></code>.
+This also helps if someone passes strings like <code class="docutils literal notranslate"><span class="pre">&quot;300&quot;</span></code> or integers.</p></li>
+<li><p>The core computation is just: <code class="docutils literal notranslate"><span class="pre">math.log10(x</span> <span class="pre">/</span> <span class="pre">y)</span></code>.</p></li>
+</ul>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution (Python)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">orders_apart</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the difference in orders of magnitude between x and y:</span>
+<span class="sd">    log10(x/y). Requires x&gt;0 and y&gt;0.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;orders_apart requires positive x and y.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="takeaways">
+<h2>7) Takeaways<a class="headerlink" href="#takeaways" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>An <strong>order of magnitude</strong> is a factor of ~10.</p></li>
+<li><p>Scientific notation separates <strong>scale</strong> (<code class="docutils literal notranslate"><span class="pre">10^b</span></code>) from <strong>detail</strong> (<code class="docutils literal notranslate"><span class="pre">a</span></code>).</p></li>
+<li><p>Logarithms turn <strong>multiplicative</strong> differences into <strong>additive</strong> differences.</p></li>
+</ul>
+<p>In the next chapter we are going to learn about static scaling relationships in Ecological Economics and pick up some of the most important concepts in all of ecological economics (and sometimes all of science) along the way - Log–log plots, A first look at basic regression analysis and elasticities.</p>
+</section>
+<section id="extras-a-little-more-math">
+<h2>8) Extras - a little more math<a class="headerlink" href="#extras-a-little-more-math" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>include extra math view points on orders of magnitude specifically the geometric mean that defines the boundary between two</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./order_of_magnitude_economics_and_scaling"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Order of Magnitude Economics and Scaling</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="static_scale.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Static scale</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-orders-of-magnitude">1) Why orders of magnitude?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-notation">2) Scientific notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#within-an-order-of-magnitude-within-a-factor-of-10">3) “Within an order of magnitude” = “within a factor of 10”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-scientific-notation-with-energy-use">Mini-exercise: scientific notation with energy use</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1) Scientific notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-times-larger">2) Ratio (times larger)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#order-of-magnitude-check">3) Order-of-magnitude check</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms">4) Logarithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-the-notation">A note on the notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">5) Logarithms as a scale ruler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-with-solution">6) Mini exercise (with solution)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaways">7) Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extras-a-little-more-math">8) Extras - a little more math</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yannick Oswald
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
