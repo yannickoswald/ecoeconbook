@@ -140,16 +140,12 @@ conda install numpy pandas matplotlib jupyterlab -y
 - **Notebook**: create a new **Jupyter Notebook** (`.ipynb`) and run cells.
 - **Cell mode in .py**: use `# %%` to define cells, then click **Run Cell** above each cell.
 
-```python
-# %% first cell
-print("Hello from a VS Code cell!")
+- **Notebook**: create a new **Jupyter Notebook** (`.ipynb`), paste the test code, press **Run** (▶).
 
-# %% second cell
-import numpy as np
-np.arange(5)
-```
+You may be asked to choose a Python kernel. Choose **Python Environments** then `ecoecon`.
 
 ```{dropdown} Debugging quick start
+**What is Debugging ?** It's a _very useful_ feature that allows a program to stop temporarily anywhere you want while executing. It allows to follow step by step a program execution in order to detect where a mistake has been made, a program starts behaving unexpectedly, etc.
 - Set a **breakpoint** (click the gutter).
 - Press **F5** (Run and Debug) ▸ choose **Python File**.
 - Inspect variables in the **Run and Debug** panel.
