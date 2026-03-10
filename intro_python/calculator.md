@@ -1,29 +1,37 @@
 (basics-calculator)=
+
 # Python as a calculator
 
-The first thing we learn is just that you can use a programming language like a pocket calculator. 
+The first thing we learn is just that you can use a programming language like a pocket calculator.
 
 This is more important than you think, as there are lots of multiplications throughout all of ecological economics.
 
 In brief, python has all the standard operations that you know since primary school
 
 :::{admonition} Basic operations
+
 - addition +
 - subtraction -
 - divison /
-- multiplication *
-- raising a number to an exponent **
-:::
+- multiplication \*
+- raising a number to an exponent \*\*
+- remaining part of the division %
+  :::
 
-you can multiply numbers like in the following code box. 
+you can multiply numbers like in the following code box.
 
 ```python
 2 + 2, 10 - 3, 6 * 7, 22 / 7, 22 // 7, 22 % 7, 2 ** 10
 ```
 
-The ** is raising a number to a power.  So 2*2 = 4 could also be 2**2 because 2 squared is 4. Got it? With this one you need to become really familiar.
+The ** is raising a number to a power. So 2\*2 = 4 could also be 2**2 because 2 squared is 4.
 
-Instead of boring stuff like this, let us do some interesting thought experiments to get into the groove: 
+The % operator returns the remainder of a division. For example, 7 % 2 = 1 because dividing 7 by 2 gives 3 with a remainder of 1 (since
+2\*3+1=5).
+
+Got it? With this one you need to become really familiar.
+
+Instead of boring stuff like this, let us do some interesting thought experiments to get into the groove:
 
 The US has a approximately a total primary energy consumption of 100 Exajoule in 2024. This is a unit of energy. A very big unit of energy.
 
@@ -31,9 +39,10 @@ We learn more about this later. If the USA has 340 million inhabitants that same
 (run the following in your Python environment or Notebook)
 
 ```python
-100 / (340 * 10**6) 
+100 / (340 * 10**6)
 ```
-Exajoule per person. Since this is a bit cumbersome to read let us convert to Gigajoule (same thing, just smaller unit) for which we multiply by 10**9 
+
+Exajoule per person. Since this is a bit cumbersome to read let us convert to Gigajoule (same thing, just smaller unit) for which we multiply by 10\*\*9
 
 ```python
 100 / (340 * 10**6) * 10**9
@@ -42,10 +51,10 @@ Exajoule per person. Since this is a bit cumbersome to read let us convert to Gi
 Wow, the average American consumes roughly 300 GJ energy per person! The global average is only around
 
 ```python
-592/(8.2*10**9) * 10**9 
+592/(8.2*10**9) * 10**9
 ```
 
-~72Gigajoule per person. 
+~72Gigajoule per person.
 
 First exercise, clarify the above calculation with its respective units. Hint the denominator is global population.
 
