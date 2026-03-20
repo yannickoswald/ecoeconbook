@@ -241,6 +241,55 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/yannickoswald/ecoeconbook/main?urlpath=lab/tree/intro_python/calculator.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/yannickoswald/ecoeconbook/blob/main/intro_python/calculator.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -266,7 +315,7 @@
       
       
       
-      <li><a href="https://github.com/yannickoswald/ecoeconbook/edit/main/intro_python/calculator.md" target="_blank"
+      <li><a href="https://github.com/yannickoswald/ecoeconbook/edit/main/intro_python/calculator.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -313,7 +362,7 @@
       
       
       
-      <li><a href="../_sources/intro_python/calculator.md" target="_blank"
+      <li><a href="../_sources/intro_python/calculator.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -323,7 +372,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -426,30 +475,81 @@ document.write(`
 </ul>
 </div>
 <p>you can multiply numbers like in the following code box.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span> <span class="o">/</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span> <span class="o">//</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span> <span class="o">%</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">10</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span> <span class="o">/</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span> <span class="o">//</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span> <span class="o">%</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">10</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 7, 42, 3.142857142857143, 3, 1, 1024)
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is shown below in the brackets is the output for each calculation separated by commata.</p>
 <p>The ** is raising a number to a power. So 2*2 = 4 could also be 2**2 because 2 squared is 4.</p>
 <p>The % operator returns the remainder of a division. For example, 7 % 2 = 1 because dividing 7 by 2 gives 3 with a remainder of 1 (since
 2*3+1=5).</p>
 <p>Got it? With this one you need to become really familiar.</p>
 <p>Instead of boring stuff like this, let us do some interesting thought experiments to get into the groove:</p>
-<p>The US has a approximately a total primary energy consumption of 100 Exajoule in 2024. This is a unit of energy. A very big unit of energy.</p>
+<p>The US has a approximately a total primary energy consumption of 100 Exajoule in 2024. This is a unit of energy. A very big unit of energy. Do not worry about the details for now.</p>
 <p>We learn more about this later. If the USA has 340 million inhabitants that same year we have
 (run the following in your Python environment or Notebook)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">/</span> <span class="p">(</span><span class="mi">340</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">/</span> <span class="p">(</span><span class="mi">340</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Exajoule per person. Since this is a bit cumbersome to read let us convert to Gigajoule (same thing, just smaller unit) for which we multiply by 10**9</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">/</span> <span class="p">(</span><span class="mi">340</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.941176470588235e-07
 </pre></div>
+</div>
+</div>
+</div>
+<p>Exajoule per person. Since this is a bit cumbersome to read, it is way to small and written in a scientific notation with this e-07 thing, let us convert to Gigajoule (same thing, just smaller unit) for which we multiply by 10**9</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">/</span> <span class="p">(</span><span class="mi">340</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span> <span class="c1">### this will come out with way too many decimal places, so we can round it to 2 decimal places</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>294.1176470588235
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### for good practice, usually you would want to round to 2 decimal places, so we can use the round() function to do that</span>
+<span class="c1">### do not worry about the details what a function is for now, we will cover that in the next section, but the syntax of the round() function is round(number, number_of_decimal_places)</span>
+<span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">/</span> <span class="p">(</span><span class="mi">340</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># this is the same as the previous line, but rounded to 2 decimal places</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>294.12
+</pre></div>
+</div>
+</div>
 </div>
 <p>Wow, the average American consumes roughly 300 GJ energy per person! The global average is only around</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">592</span><span class="o">/</span><span class="p">(</span><span class="mf">8.2</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">592</span><span class="o">/</span><span class="p">(</span><span class="mf">8.2</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span> <span class="c1">### this is the total world energy consumption in exajoule (EJ) (592) divided by the total world population of 8.2 billion people, multiplied by 10^9 to convert from EJ to GJ, which is a more manageable unit for per capita energy consumption </span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>72.19512195121952
+</pre></div>
+</div>
+</div>
+</div>
 <p>~72Gigajoule per person.</p>
-<p>First exercise, clarify the above calculation with its respective units. Hint the denominator is global population.</p>
+<p>First exercise, clarify the above calculation with its respective units. Hint the denominator is global population and the numerator is in a big energy unit called Exajoule.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">

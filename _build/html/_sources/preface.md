@@ -17,11 +17,11 @@ Ecological economics is a very varied field and there also different approaches 
 
 For example, some researchers and educators might miss qualitative methods. This is correct and can (and should) be found in other books but will not constitute a major part of this book.
 
-This book also cuts short on many normative ideas from ecological economics. For example the distinction between environmental economics and ecological economics is often drawn along the lines of weak and strong sustainability. Whereby strong sustainability stands for the viewpoint that nature is non-substitutable and cannot be transformed into economic goods of equal value. This is important for understanding the history and many contemporary viewpoints in Ecological Economics. 
+This book also cuts short on many normative ideas from ecological economics. For example the distinction between environmental economics and ecological economics is often drawn along the lines of weak and strong sustainability. Whereby strong sustainability stands for the viewpoint that nature is non-substitutable and cannot be transformed into economic goods of equal value. This is important for understanding the history and many contemporary viewpoints in Ecological Economics. And indeed using biophysical units as a quantity to be measured might be interpreted as leaning towards strong sustainability, but again the important distinction here would be a normative one - measuring alone does not suffice for a world-view that is algined with strong non-substitutability between the natural and the human-made environment
 
-However, my interests lie primarily in developing tools for thinking rigorously and efficiently about global, national and regional problems and provide students with such tools of mind. 
+However, my interests lie primarily in developing tools for thinking rigorously and efficiently about global, national and regional problems and provide students with such tools of mind. Another pespective is that this book is about "methods to investigate coupled society-environment interactions more broadly".
 
-In that regard, this book might seem rather positivist but I encourage educators to complement this book with other teaching materials if they feel so.
+In that regard, this book might seem rather positivist, but I encourage educators to complement this book with other teaching materials if they feel so.
 
 ## 3. Didactic Approach
 
@@ -41,17 +41,21 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 This is an open-access, open-source online resource. Different AI models, such as ChatGPT or Gemini have assissted in drafting code sections, equation typsetting and layout of the book. They also sometimes have been used to draft structure of text sections (because it goes together with the layout), but heavy human re-editing and didactic quality insurance is applied at all times. The overall text and didactic flow is fully human-controlled. Feedback, also on this is welcome, if you see anything that is wrongly depicted, hints at intellectual property theft or alike let us know at y-oswald@web.de or raise an issue on https://yannickoswald.github.io/ecoeconbook.
 
+Some ecological economists and sustainability-minded people also now are against using Generative AI at all, either for environmental footprint reasons or as a collective effort against hyper-capitialist tech corporations. This is not my personal philosophy (Yannick Oswald), but I encourage you to make your own mind up and I am also monitoring what we know about AI resource footprints closely and indeed this would be one important research frontier in ecological economics. 
+
+A critical piece on AI use and resource footprints in the Guardian:
+https://www.theguardian.com/australia-news/2026/mar/13/ai-datacentres-environmental-impacts
 
 ## 5. History of the project
 
-This elementary idea, accessible Quantitative Ecological Economics (with a complexity and system science perspective too), has long been a dream of Yannick Oswald and then found a first home together with the Pedagogical Impulse Fund (FIP) at the University of Lausanne under the lead of Prof. Julia Steinberger and her wish to modernize and improve the Sustainability curriculum at the University of Lausanne. 
+This elementary idea, accessible Quantitative Ecological Economics (with a complexity economics and system science perspective too), has long been a dream of Yannick Oswald and then found a first home together with the Pedagogical Impulse Fund (FIP) at the University of Lausanne under the lead of Prof. Julia Steinberger and her wish to modernize and improve the Sustainability curriculum at the University of Lausanne. 
 
 
 ## 6. Inspiration for the project
 
 Over time, there were several key inspirations for this book and the course. 
 
-1) Yannick Oswald was first inspried, and continues to be, to teach this way by the great quantitative economics books by Thomas J. Sargent and John Stachurski https://quantecon.org/lectures/
+1) Yannick Oswald was first inspried, and continues to be by the great quantitative economics books by Thomas J. Sargent and John Stachurski https://quantecon.org/lectures/
 2) A lot of the course design is inspired by a course taught at the University of Leeds, UK in tools and techniques course at the University of Leeds. Mainly the fact that scaling, input-output analysis, agent-based modelling and system dynamics are all part of the course book.
 3) In design and accessibility further Tom Beucler's environmental science and AI courses at the University of Lausanne 
 
