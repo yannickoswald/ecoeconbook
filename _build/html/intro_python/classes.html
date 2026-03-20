@@ -532,10 +532,10 @@ and later possibly <strong>agents</strong> in a model, it’s easy to lose track
 <li><p>a <strong>country</strong> as an <em>object</em>,</p></li>
 <li><p>a <strong>class</strong> as the <em>blueprint</em> or <em>template</em> for those objects.</p></li>
 </ul>
-<blockquote>
-<div><p>A <strong>class</strong> defines what <em>data</em> an object has (attributes)<br />
-and what it can <em>do</em> (methods).</p>
-</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>A <strong>class</strong> defines what <em>data</em> an object has (attributes) and what it can <em>do</em> (methods).</p>
+</div>
 </section>
 <section id="a-first-mini-example-not-yet-ecological">
 <h2>2. A first mini-example (not yet ecological)<a class="headerlink" href="#a-first-mini-example-not-yet-ecological" title="Link to this heading">#</a></h2>
@@ -579,7 +579,7 @@ Dog1 age: 3
 <section id="what-did-we-just-do">
 <h3>2.1 What did we just do?<a class="headerlink" href="#what-did-we-just-do" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Dog:</span></code> defines a <strong>class</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Dog:</span></code> defines a <strong>class</strong>. <code class="docutils literal notranslate"><span class="pre">Dog</span></code>is now a (custom) data type, just as a <code class="docutils literal notranslate"><span class="pre">String</span></code> or an <code class="docutils literal notranslate"><span class="pre">Integer</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">__init__(self,</span> <span class="pre">name,</span> <span class="pre">age)</span></code> is the <strong>constructor</strong>.</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">self</span></code> refers to <em>this particular object</em>.</p></li>
@@ -771,7 +771,7 @@ The main workhorse for us for now are <strong>instance methods</strong>.</p>
 </pre></div>
 </div>
 <p>They operate on one particular object (one country).</p>
-<p>They can access attributes via self.attribute.</p>
+<p>They can access attributes via <code class="docutils literal notranslate"><span class="pre">self.attribute</span></code>.</p>
 <p>In our class, all the methods we wrote are instance methods.</p>
 </section>
 <section id="class-attributes-and-class-methods-light-version">

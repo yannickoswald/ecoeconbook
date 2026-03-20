@@ -12,6 +12,11 @@ chapters:
   - file: resources
     title: Additional learning resources
 
+  - file: navigating_the_book/index
+    title: Navigating the book
+    sections:
+      - file: navigating_the_book/navigation
+   
   - file: intro_python/index
     title: Introduction to Python and Programming
     sections:
