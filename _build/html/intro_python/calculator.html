@@ -178,7 +178,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Introduction to Python and Programming</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="install_python.html">Installing and running Python   <!-- Add this --></a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_python.html">Installing and running Python <!-- Add this --></a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Python as a calculator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables and basic data types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ifs_and_loops.html">Control flow: if statements and loops</a></li>
@@ -422,18 +422,22 @@ document.write(`
 <li><p>divison /</p></li>
 <li><p>multiplication *</p></li>
 <li><p>raising a number to an exponent **</p></li>
+<li><p>remaining part of the division %</p></li>
 </ul>
 </div>
 <p>you can multiply numbers like in the following code box.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span> <span class="o">/</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span> <span class="o">//</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">22</span> <span class="o">%</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">10</span>
 </pre></div>
 </div>
-<p>The ** is raising a number to a power.  So 2*2 = 4 could also be 2**2 because 2 squared is 4. Got it? With this one you need to become really familiar.</p>
+<p>The ** is raising a number to a power. So 2*2 = 4 could also be 2**2 because 2 squared is 4.</p>
+<p>The % operator returns the remainder of a division. For example, 7 % 2 = 1 because dividing 7 by 2 gives 3 with a remainder of 1 (since
+2*3+1=5).</p>
+<p>Got it? With this one you need to become really familiar.</p>
 <p>Instead of boring stuff like this, let us do some interesting thought experiments to get into the groove:</p>
 <p>The US has a approximately a total primary energy consumption of 100 Exajoule in 2024. This is a unit of energy. A very big unit of energy.</p>
 <p>We learn more about this later. If the USA has 340 million inhabitants that same year we have
 (run the following in your Python environment or Notebook)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">/</span> <span class="p">(</span><span class="mi">340</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">/</span> <span class="p">(</span><span class="mi">340</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Exajoule per person. Since this is a bit cumbersome to read let us convert to Gigajoule (same thing, just smaller unit) for which we multiply by 10**9</p>
@@ -441,7 +445,7 @@ document.write(`
 </pre></div>
 </div>
 <p>Wow, the average American consumes roughly 300 GJ energy per person! The global average is only around</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">592</span><span class="o">/</span><span class="p">(</span><span class="mf">8.2</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">592</span><span class="o">/</span><span class="p">(</span><span class="mf">8.2</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span>
 </pre></div>
 </div>
 <p>~72Gigajoule per person.</p>
@@ -528,7 +532,7 @@ Ratio = <span class="math notranslate nohighlight">\(\frac{2412 \text{ EJ}}{592 
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Installing and running Python   <!-- Add this --></p>
+        <p class="prev-next-title">Installing and running Python <!-- Add this --></p>
       </div>
     </a>
     <a class="right-next"

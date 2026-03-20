@@ -176,7 +176,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Introduction to Python and Programming</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Installing and running Python   <!-- Add this --></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Installing and running Python <!-- Add this --></a></li>
 <li class="toctree-l2"><a class="reference internal" href="calculator.html">Python as a calculator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables and basic data types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ifs_and_loops.html">Control flow: if statements and loops</a></li>
@@ -395,7 +395,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Installing and running Python   <!-- Add this --></h1>
+    <h1>Installing and running Python <!-- Add this --></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -408,7 +408,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-learning-to-code-programming">A note on learning to code/programming</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-python-set-up-3-easy-paths">Getting Python set up (3 easy paths)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-google-colab-browser-zero-install">Option A — Google Colab (browser, zero install)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-anaconda-spyder-beginnerfriendly">Option B — Anaconda + Spyder (beginner‑friendly)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-anaconda-jupyter-lab-beginnerfriendly">Option B — Anaconda + Jupyter Lab (beginner‑friendly)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-c-anaconda-vs-code-flexible-not-so-beginner">Option C — Anaconda + VS Code (flexible, not-so-beginner)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-your-path">Choosing your path</a></li>
 </ul>
@@ -423,7 +423,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installing-and-running-python">
-<span id="basics-install"></span><h1>Installing and running Python   <!-- Add this --><a class="headerlink" href="#installing-and-running-python" title="Link to this heading">#</a></h1>
+<span id="basics-install"></span><h1>Installing and running Python <!-- Add this --><a class="headerlink" href="#installing-and-running-python" title="Link to this heading">#</a></h1>
 <section id="a-note-on-learning-to-code-programming">
 <h2>A note on learning to code/programming<a class="headerlink" href="#a-note-on-learning-to-code-programming" title="Link to this heading">#</a></h2>
 <p>Coding is omnipresent in today’s world. Computer code runs your phones, laptops and every AI you ever interact with.
@@ -445,7 +445,7 @@ But coding is even more than that. Coding is a tool to find efficient solutions 
 <p class="admonition-title">TL;DR — pick one</p>
 <ul class="simple">
 <li><p><strong>OPTION A No install</strong>: Use <strong>Google Colab</strong> in the browser. But requires google account.</p></li>
-<li><p><strong>OPTION B Beginner desktop</strong>: Install <strong>Anaconda</strong> and use <strong>Spyder</strong> as an integrated development environment (IDE).</p></li>
+<li><p><strong>OPTION B Beginner desktop</strong>: Install <strong>Anaconda</strong> and use <strong>Jupyter Lab</strong> as an integrated development environment (IDE).</p></li>
 <li><p><strong>OPTION C Power users</strong>: Install <strong>Anaconda</strong> and use <strong>VS Code</strong> (flexible, extensible).</p></li>
 </ul>
 </div>
@@ -489,12 +489,14 @@ Colab comes with many packages preinstalled. For others post the following in a 
 </div>
 </details></section>
 <hr class="docutils" />
-<section id="option-b-anaconda-spyder-beginnerfriendly">
-<h2>Option B — Anaconda + Spyder (beginner‑friendly)<a class="headerlink" href="#option-b-anaconda-spyder-beginnerfriendly" title="Link to this heading">#</a></h2>
-<p>Why Spyder?</p>
+<section id="option-b-anaconda-jupyter-lab-beginnerfriendly">
+<h2>Option B — Anaconda + Jupyter Lab (beginner‑friendly)<a class="headerlink" href="#option-b-anaconda-jupyter-lab-beginnerfriendly" title="Link to this heading">#</a></h2>
+<p>Why Jupyter Lab?</p>
 <ul class="simple">
-<li><p>Simple, MATLAB‑style interface: <strong>editor + console + variable viewer</strong>.</p></li>
-<li><p>Great for learning basics without lots of tooling.</p></li>
+<li><p>Shows algorithm execution step by step, with explanations between code blocks.</p></li>
+<li><p>Encourages working with small, focused code samples that are easy to rewrite and explain.</p></li>
+<li><p>Displays text, images, and plots immediately below the corresponding code cell.</p></li>
+<li><p>Excellent for learning fundamentals with minimal tooling and setup.</p></li>
 </ul>
 <ol class="arabic simple">
 <li><p>Install Anaconda</p></li>
@@ -512,16 +514,16 @@ conda<span class="w"> </span>activate<span class="w"> </span>ecoecon
 conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyterlab<span class="w"> </span>-y
 </pre></div>
 </div>
-<p>Launch Spyder</p>
+<p>Launch Jupyter Lab</p>
 <ul>
-<li><p>Open <strong>Anaconda Navigator</strong> ▸ <strong>Spyder</strong> (choose env <code class="docutils literal notranslate"><span class="pre">ecoecon</span></code> if asked),<br />
+<li><p>Open <strong>Anaconda Navigator</strong> ▸ <strong>Jupyter Lab</strong> (choose env <code class="docutils literal notranslate"><span class="pre">ecoecon</span></code> if asked),<br />
 <strong>or</strong> from terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>ecoecon
-spyder
+jupyter<span class="w"> </span>lab
 </pre></div>
 </div>
 </li>
-<li><p>In the editor, open/create <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, paste the test code, press <strong>Run</strong> (▶).</p></li>
+<li><p>In the editor, create a <strong>Notebook</strong> ▸ <strong>Python</strong> file, paste the test code, press <strong>Run</strong> (▶).</p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -568,18 +570,13 @@ conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"
 <li><p><strong>Script</strong>: create <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, run with the <strong>▶ Run</strong> button or right‑click ▸ <strong>Run Python File</strong>.</p></li>
 <li><p><strong>Notebook</strong>: create a new <strong>Jupyter Notebook</strong> (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) and run cells.</p></li>
 <li><p><strong>Cell mode in .py</strong>: use <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">%%</span></code> to define cells, then click <strong>Run Cell</strong> above each cell.</p></li>
+<li><p><strong>Notebook</strong>: create a new <strong>Jupyter Notebook</strong> (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>), paste the test code, press <strong>Run</strong> (▶).</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># %% first cell</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello from a VS Code cell!&quot;</span><span class="p">)</span>
-
-<span class="c1"># %% second cell</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
+<p>You may be asked to choose a Python kernel. Choose <strong>Python Environments</strong> then <code class="docutils literal notranslate"><span class="pre">ecoecon</span></code>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Debugging quick start</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>What is Debugging ?</strong> It’s a <em>very useful</em> feature that allows a program to stop temporarily anywhere you want while executing. It allows to follow step by step a program execution in order to detect where a mistake has been made, a program starts behaving unexpectedly, etc.</p>
 <ul class="simple">
 <li><p class="sd-card-text">Set a <strong>breakpoint</strong> (click the gutter).</p></li>
 <li><p class="sd-card-text">Press <strong>F5</strong> (Run and Debug) ▸ choose <strong>Python File</strong>.</p></li>
@@ -597,7 +594,7 @@ conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"
 <h2>Choosing your path<a class="headerlink" href="#choosing-your-path" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Colab</strong>: zero setup, great for quick labs and sharing; requires internet.</p></li>
-<li><p><strong>Spyder</strong>: gentle desktop start; good for learning and small analyses.</p></li>
+<li><p><strong>Jupyter Lab</strong>: gentle desktop start; good for learning and small analyses.</p></li>
 <li><p><strong>VS Code</strong>: most powerful and extensible; ideal as you scale up.</p></li>
 </ul>
 <div class="admonition tip">
@@ -684,7 +681,7 @@ conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-learning-to-code-programming">A note on learning to code/programming</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-python-set-up-3-easy-paths">Getting Python set up (3 easy paths)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-google-colab-browser-zero-install">Option A — Google Colab (browser, zero install)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-anaconda-spyder-beginnerfriendly">Option B — Anaconda + Spyder (beginner‑friendly)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-anaconda-jupyter-lab-beginnerfriendly">Option B — Anaconda + Jupyter Lab (beginner‑friendly)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-c-anaconda-vs-code-flexible-not-so-beginner">Option C — Anaconda + VS Code (flexible, not-so-beginner)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-your-path">Choosing your path</a></li>
 </ul>

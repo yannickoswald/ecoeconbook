@@ -178,7 +178,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Introduction to Python and Programming</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="install_python.html">Installing and running Python   <!-- Add this --></a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_python.html">Installing and running Python <!-- Add this --></a></li>
 <li class="toctree-l2"><a class="reference internal" href="calculator.html">Python as a calculator</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Variables and basic data types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ifs_and_loops.html">Control flow: if statements and loops</a></li>
@@ -457,8 +457,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-basic-data-types">Combining basic data types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excerise">Excerise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-look-at-pandas-dataframes">A first look at <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrames</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-small-dataframe">1. Creating a small DataFrame</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-column">2. Accessing a column</a></li>
@@ -501,12 +503,19 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tpec_USA</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># unit is Exajoule (EJ)</span>
 </pre></div>
 </div>
-<p>And you just learned another very very important fact-of-life about programming: COMMENT YOUR CODE. A comment in python is the annotation after the symbol #. This is written into your code cell but not interpreted by the computer as code. It is very important however that others, and even yourself, can understand your own code. You will notice in time, when you come back a week later, to code you have previously written, you will be grateful to your past self for commenting adequately.</p>
+<p>And you just learned another very very important fact-of-life about programming: <strong>COMMENT YOUR CODE</strong>.</p>
+<div class="attention admonition">
+<p class="admonition-title">What’s commenting ? And why is is super important ?</p>
+<p>A comment in Python is the annotation after the symbol #, intended to make the code easier for a programmer to understand. This is written into your code cell but not interpreted by the computer as code. It is very important however that others, and even yourself, can understand your own code. You will notice in time, when you come back a week later, to code you have previously written, you will be grateful to your past self for commenting adequately.</p>
+</div>
+</section>
+<section id="basic-data-types">
+<h2>Basic data types<a class="headerlink" href="#basic-data-types" title="Link to this heading">#</a></h2>
 <p>So before going through lots of different variables and data types to clarify what is “variable” about the tpec_USA above: We could theoretically do some computation with it say this is again the USA energy consumption for 2024 and we know this grows by 0.5% per year. Then we could make the following calculation to know about 2025.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tpec_USA</span> <span class="o">=</span> <span class="n">tpec_USA</span> <span class="o">*</span> <span class="mf">1.005</span> 
 </pre></div>
 </div>
-<p>So we just used the variable tpec_USA to compute a new instance of itself. This is the kind of thing that really makes it “variable”.</p>
+<p>So we just used the variable tpec_USA to compute a new instance of itself. The previous value has been replaced by the newer value. This is the kind of thing that really makes it “variable”.</p>
 <p>Here is a list of the most common variable types</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span><span class="p">,</span>                        <span class="c1"># int: number of households sampled</span>
 <span class="mf">36.5</span><span class="p">,</span>                      <span class="c1"># float: emissions in MtCO₂    </span>
@@ -530,6 +539,9 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section id="combining-basic-data-types">
+<h2>Combining basic data types<a class="headerlink" href="#combining-basic-data-types" title="Link to this heading">#</a></h2>
 <p>Now we are moving to more complex data types. This means we will now treat tuples, lists, sets and dictionaries.</p>
 <p>Tuples are fixed-size records. For typical use cases: coordinates, any immutable bundle.</p>
 <div class="cell docutils container">
@@ -574,7 +586,10 @@ document.write(`
 <p class="admonition-title">Indexing the first element in a list (or any data structure)</p>
 <p>As noted from above the first element of a datastructure is always indexed 0 in Python. Be aware of this.</p>
 </div>
-<p>As noted from above the first element of a datastructure is always indexed 0 in Python. Be aware of this.</p>
+<div class="tip admonition">
+<p class="admonition-title">More commands for lists</p>
+<p>Apart from those mentioned above, several other exist, making Python lists very useful ! You can for instance reverse the list, sort the list in ascending / descending order or find the index (starting at 0, don’t forget !) of a specific value. You can find all of these on <a class="reference external" href="https://www.geeksforgeeks.org/python/list-methods-python/">geekforgeeks</a>.</p>
+</div>
 <p>Here are two exercises for you:</p>
 <ol class="arabic simple">
 <li><p>What is the average energy consumption of the USA based on the list above? And how do you calculate this with some of the code from above? Only use commands that appear above.</p></li>
@@ -622,8 +637,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">          </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">energy_per_capita</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
@@ -687,8 +702,8 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="excerise">
-<h2>Excerise<a class="headerlink" href="#excerise" title="Link to this heading">#</a></h2>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
 <p>Now given what you have learned in the previous two sections conduct the following exercises:</p>
 <ol class="arabic simple">
 <li><p>Transform 1 million kWH and 1000 MWh to Terajoule and store the conversion factors as variables.</p></li>
@@ -786,6 +801,16 @@ In real data work, we often want to handle <strong>tables</strong>: rows and col
 </div>
 <p>Each row is a country, each column is a variable.</p>
 <p>Now it is important that you understand that dataframes are efficient because you subset and slice data, that is find it and take it out - even when dataframes are very large. Later you might work with dataframes that have thousands or even millions of rows.</p>
+<div class="note admonition">
+<p class="admonition-title">A word on <code class="docutils literal notranslate"><span class="pre">import</span></code></p>
+<p>You may have noticed at the beginning of the code above, the presence of this line of code :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+<p>If this sounds to you completely unfamiliar, that’s completely normal, no need to panic. Python (as all languages) is built with several functionalities, that you can imagine as <em>simple Lego bricks</em>, so that every programmer can use. And so do you. But, most of the time, this isn’t enough for a non-basic usage. So people have developed more advanced functions, using these simple bricks, while also being easy-to-use for everyone.</p>
+<p>This is what we called earlier a <strong>library</strong>, and this is exactly what Pandas is. But Python needs to know that you want to use a library for this task, and which one.</p>
+<p>This is the job of the word <code class="docutils literal notranslate"><span class="pre">import</span></code> that notifies Python of this, as they are not included by default.</p>
+</div>
 </section>
 <section id="accessing-a-column">
 <h3>2. Accessing a column<a class="headerlink" href="#accessing-a-column" title="Link to this heading">#</a></h3>
@@ -1085,8 +1110,10 @@ Use</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-basic-data-types">Combining basic data types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excerise">Excerise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-look-at-pandas-dataframes">A first look at <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrames</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-small-dataframe">1. Creating a small DataFrame</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-column">2. Accessing a column</a></li>

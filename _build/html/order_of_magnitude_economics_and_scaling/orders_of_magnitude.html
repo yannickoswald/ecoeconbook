@@ -178,7 +178,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../intro_python/index.html">Introduction to Python and Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../intro_python/install_python.html">Installing and running Python   <!-- Add this --></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro_python/install_python.html">Installing and running Python <!-- Add this --></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro_python/calculator.html">Python as a calculator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro_python/variables.html">Variables and basic data types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro_python/ifs_and_loops.html">Control flow: if statements and loops</a></li>
@@ -472,7 +472,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">5) Logarithms as a scale ruler</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-with-solution">6) Mini exercise (with solution)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaways">7) Takeaways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extras-a-little-more-math">8) Extras - a little more math</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extras-a-little-more-math">8) Extras – a little more math</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-key-idea-the-geometric-mean">8.1) The key idea: the geometric mean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">8.2) Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-interpretation">8.3) Logarithmic interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-example">8.4) Mini example</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -678,10 +684,70 @@ This also helps if someone passes strings like <code class="docutils literal not
 <p>In the next chapter we are going to learn about static scaling relationships in Ecological Economics and pick up some of the most important concepts in all of ecological economics (and sometimes all of science) along the way - Log–log plots, A first look at basic regression analysis and elasticities.</p>
 </section>
 <section id="extras-a-little-more-math">
-<h2>8) Extras - a little more math<a class="headerlink" href="#extras-a-little-more-math" title="Link to this heading">#</a></h2>
+<h2>8) Extras – a little more math<a class="headerlink" href="#extras-a-little-more-math" title="Link to this heading">#</a></h2>
+<p>So far, we used a simple rule:</p>
+<blockquote>
+<div><p>Numbers are <strong>within one order of magnitude</strong> if they differ by <strong>less than a factor of 10</strong>.</p>
+</div></blockquote>
+<p>That rule is practical and easy. But there is also a more mathematical way to think about <em>which power of 10 a number is closest to</em>.</p>
+<section id="the-key-idea-the-geometric-mean">
+<h3>8.1) The key idea: the geometric mean<a class="headerlink" href="#the-key-idea-the-geometric-mean" title="Link to this heading">#</a></h3>
+<p>Suppose we want to know whether a number is closer to:</p>
 <ul class="simple">
-<li><p>include extra math view points on orders of magnitude specifically the geometric mean that defines the boundary between two</p></li>
+<li><p><span class="math notranslate nohighlight">\(10^k\)</span>, or</p></li>
+<li><p><span class="math notranslate nohighlight">\(10^{(k+1)}\)</span></p></li>
 </ul>
+<p>On a logarithmic scale, the midpoint between them is the <strong>geometric mean</strong>:</p>
+<p><span class="math notranslate nohighlight">\(sqrt(10^k * 10^{(k+1)}) = 10^{(k + 0.5)}\)</span></p>
+<p>Since:</p>
+<p><span class="math notranslate nohighlight">\(sqrt(10) ≈ 3.16\)</span></p>
+<p>this means:</p>
+<ul class="simple">
+<li><p>values up to about <span class="math notranslate nohighlight">\(3.16 × 10^k\)</span> are closer to <span class="math notranslate nohighlight">\(10^k\)</span></p></li>
+<li><p>values above that are closer to <span class="math notranslate nohighlight">\(10^{(k+1)}\)</span></p></li>
+</ul>
+</section>
+<section id="example">
+<h3>8.2) Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p>Consider:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(10^2 = 100\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(10^3 = 1000\)</span></p></li>
+</ul>
+<p>Their geometric mean is:</p>
+<p><span class="math notranslate nohighlight">\(sqrt(100 × 1000) ≈ 316\)</span></p>
+<p>So:</p>
+<ul class="simple">
+<li><p>200 is closer to 100</p></li>
+<li><p>500 is closer to 1000</p></li>
+</ul>
+<p>On a logarithmic scale, 316 is exactly halfway between 100 and 1000.</p>
+</section>
+<section id="logarithmic-interpretation">
+<h3>8.3) Logarithmic interpretation<a class="headerlink" href="#logarithmic-interpretation" title="Link to this heading">#</a></h3>
+<p>On a log scale:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(log_10(10^k) = k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(log_10(10^{(k+1)}) = k + 1\)</span></p></li>
+</ul>
+<p>The midpoint is:</p>
+<p><span class="math notranslate nohighlight">\(k + 0.5\)</span></p>
+<p>Converting back:</p>
+<p><span class="math notranslate nohighlight">\(10^{(k + 0.5)}\)</span></p>
+<p>So the geometric mean is simply the midpoint in logarithmic space.</p>
+</section>
+<section id="mini-example">
+<h3>8.4) Mini example<a class="headerlink" href="#mini-example" title="Link to this heading">#</a></h3>
+<p>Suppose a system uses about 500 tons per year.</p>
+<p>Compare:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(10^2 = 100\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(10^3 = 1000\)</span></p></li>
+</ul>
+<p>Since 500 &gt; 316, it is closer to 1000.</p>
+<p>So we say it is roughly on the scale of:</p>
+<p><span class="math notranslate nohighlight">\(10^3\)</span> tons/year.</p>
+</section>
 </section>
 </section>
 
@@ -765,7 +831,13 @@ This also helps if someone passes strings like <code class="docutils literal not
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithms-as-a-scale-ruler">5) Logarithms as a scale ruler</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-exercise-with-solution">6) Mini exercise (with solution)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#takeaways">7) Takeaways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extras-a-little-more-math">8) Extras - a little more math</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extras-a-little-more-math">8) Extras – a little more math</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-key-idea-the-geometric-mean">8.1) The key idea: the geometric mean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">8.2) Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-interpretation">8.3) Logarithmic interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-example">8.4) Mini example</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
