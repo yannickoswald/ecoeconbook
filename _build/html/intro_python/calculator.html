@@ -437,7 +437,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -453,6 +455,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">📝 Solutions</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -475,6 +485,7 @@ document.write(`
 <li><p>divison /</p></li>
 <li><p>multiplication *</p></li>
 <li><p>raising a number to an exponent **</p></li>
+<li><p>how often does a number fit into another number but not considering remainder //</p></li>
 <li><p>remaining part of the division %</p></li>
 </ul>
 </div>
@@ -494,7 +505,7 @@ document.write(`
 <p>What is shown below in the brackets is the output for each calculation separated by commata.</p>
 <p>The ** is raising a number to a power. So 2*2 = 4 could also be 2**2 because 2 squared is 4.</p>
 <p>The % operator returns the remainder of a division. For example, 7 % 2 = 1 because dividing 7 by 2 gives 3 with a remainder of 1 (since
-2*3+1=5).</p>
+2*3+1=7).</p>
 <p>Got it? With this one you need to become really familiar.</p>
 <p>Instead of boring stuff like this, let us do some interesting thought experiments to get into the groove:</p>
 <p>The US has a approximately a total primary energy consumption of 100 Exajoule in 2024. This is a unit of energy. A very big unit of energy. Do not worry about the details for now.</p>
@@ -525,6 +536,30 @@ document.write(`
 </div>
 </div>
 </div>
+<p><strong>On scientific notation</strong>.</p>
+<p>Scientific notation is just a lazy (and smart) way to write massive numbers without having to count a blurry string of zeros.</p>
+<p>In Python, the letter e simply stands for “times 10 to the power of.”</p>
+<p>The Basic Rule: [Number]e[Number of decimal places to move right]</p>
+<p>Examples:</p>
+<p>1e6 means 1 followed by 6 zeros (1,000,000).</p>
+<p>2.5e9 means 2.5 with the decimal moved 9 places to the right (2,500,000,000).</p>
+<p><strong>On use of commata and full stops</strong></p>
+<p>When transitioning from French to English, especially in mathematics, economics, and programming, the rules for commas and full stops with numbers (periods) swap completely.</p>
+<ol class="arabic simple">
+<li><p>The Number Rule (Crucial for Coding)
+In French, you use a comma for decimals and spaces for thousands.
+In English, you use a <strong>full stop (period)</strong> for decimals and <strong>commas</strong> for thousands.</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>French Format:</strong> <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">000</span> <span class="pre">000,50</span></code> <em>(Un million virgule cinquante)</em></p></li>
+<li><p><strong>English Format:</strong> <code class="docutils literal notranslate"><span class="pre">1,000,000.50</span></code> <em>(One million point fifty)</em></p></li>
+</ul>
+<p>Why this matters in Python:
+Python uses the English system. If you try to write Pi using a French decimal format (<code class="docutils literal notranslate"><span class="pre">pi</span> <span class="pre">=</span> <span class="pre">3,14</span></code>), Python does not see a math number. Instead, the comma tells Python to create a data structure containing two separate numbers: a 3 and a 14.</p>
+<ul class="simple">
+<li><p><strong>Wrong (Causes Errors):</strong> <code class="docutils literal notranslate"><span class="pre">price</span> <span class="pre">=</span> <span class="pre">10,50</span></code></p></li>
+<li><p><strong>Correct (Math Decimal):</strong> <code class="docutils literal notranslate"><span class="pre">price</span> <span class="pre">=</span> <span class="pre">10.50</span></code></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### for good practice, usually you would want to round to 2 decimal places, so we can use the round() function to do that</span>
@@ -539,7 +574,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Wow, the average American consumes roughly 300 GJ energy per person! The global average is only around</p>
+<p>Now getting back to the number we calculated above 294.something. Wow, the average American consumes roughly 300 GJ energy per person! (we rounded up generously). The global average is only around</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">592</span><span class="o">/</span><span class="p">(</span><span class="mf">8.2</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span> <span class="c1">### this is the total world energy consumption in exajoule (EJ) (592) divided by the total world population of 8.2 billion people, multiplied by 10^9 to convert from EJ to GJ, which is a more manageable unit for per capita energy consumption </span>
@@ -553,10 +588,10 @@ document.write(`
 </div>
 </div>
 <p>~72Gigajoule per person.</p>
-<p>First exercise, clarify the above calculation with its respective units. Hint the denominator is global population and the numerator is in a big energy unit called Exajoule.</p>
+<p>First exercise, clarify the above calculation with its respective units. Hint the denominator is global population and the numerator is in a big energy unit called Exajoule. Clarify here means, write down in words what units are in the calculations so for instance if the units were breads baked per kilo of dough, it would be “number of breads / 1 kg of dough”. This is supposed help you start right away with thinking quantitatively.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Solution explained in words</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The numerator, <code class="docutils literal notranslate"><span class="pre">592</span></code>, represents the total global primary energy consumption in Exajoules (EJ). The denominator, <code class="docutils literal notranslate"><span class="pre">8.2</span> <span class="pre">*</span> <span class="pre">10**9</span></code>, is the global population.</p>
 <p class="sd-card-text">So, the expression <code class="docutils literal notranslate"><span class="pre">592</span> <span class="pre">/</span> <span class="pre">(8.2</span> <span class="pre">*</span> <span class="pre">10**9)</span></code> is calculating <code class="docutils literal notranslate"><span class="pre">(Total</span> <span class="pre">Global</span> <span class="pre">EJ)</span> <span class="pre">/</span> <span class="pre">(Global</span> <span class="pre">Population)</span> <span class="pre">=</span> <span class="pre">EJ</span> <span class="pre">per</span> <span class="pre">person</span></code>.</p>
 <p class="sd-card-text">To convert this result from Exajoules to Gigajoules, you multiply by <span class="math notranslate nohighlight">\(10^9\)</span>, because <span class="math notranslate nohighlight">\(1 \text{ Exajoule} = 10^9 \text{ Gigajoules}\)</span>.</p>
@@ -567,13 +602,46 @@ document.write(`
 <li><p>How much larger would be the total yearly global primary consumption, if everyone lived an American livestyle?</p></li>
 <li><p>How much larger would total yearly <span class="math notranslate nohighlight">\(CO_2\)</span> emissions be assuming current average <span class="math notranslate nohighlight">\(CO_2\)</span> - intensity of energy (that is the quantity of <span class="math notranslate nohighlight">\(CO_2\)</span> emitted per unit of energy - more on this later)?</p></li>
 </ol>
+<p>You may use, or should use, Python as a calculator to help you solve this.</p>
+<p>Think about what numbers to multiply or divide and use commenting to clarify what you are doing. A comment line is started with the symbol #.</p>
 <div class="important admonition">
 <p class="admonition-title">Exercises notebook setup</p>
 <p>From now on for this and all following exercise you should create a Jupyter notebook entitled “exercises_intro” in which you will solve the exercises in the chapter “Introduction to Python and Programming” by yourself. You can also download the Jupyter notebooks in the chapter pressing the download button in the upper right corner. But please try to solve all exercises yourself and no use of AI.</p>
 </div>
+<section id="solutions">
+<h2>📝 Solutions<a class="headerlink" href="#solutions" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python solution for Exercise 1</span>
+
+<span class="c1"># Step 1: Calculate US per capita energy consumption</span>
+<span class="c1"># 100 EJ divided by 340 million people</span>
+<span class="mi">100</span> <span class="o">/</span> <span class="mf">340e6</span>
+<span class="c1"># Step 2: Calculate New Global Energy Consumption </span>
+<span class="c1"># Global population (8.2 billion) multiplied by US per capita consumption</span>
+<span class="mf">8.2e9</span> <span class="o">*</span> <span class="p">(</span><span class="mi">100</span> <span class="o">/</span> <span class="mf">340e6</span><span class="p">)</span>
+<span class="c1"># Step 3: Calculate the ratio by dividing the new consumption by the current global consumption (592 EJ)</span>
+<span class="p">(</span><span class="mf">8.2e9</span> <span class="o">*</span> <span class="p">(</span><span class="mi">100</span> <span class="o">/</span> <span class="mf">340e6</span><span class="p">))</span> <span class="o">/</span> <span class="mi">592</span>
+
+<span class="c1"># Python demonstration for Exercise 2</span>
+
+<span class="c1"># We can prove the math by using a dummy CO2 intensity of 1.0 for both calculations.</span>
+<span class="c1"># New Emissions divided by Current Emissions:</span>
+<span class="c1"># [New Energy * 1.0] / [Current Energy * 1.0]</span>
+<span class="p">((</span><span class="mf">8.2e9</span> <span class="o">*</span> <span class="p">(</span><span class="mi">100</span> <span class="o">/</span> <span class="mf">340e6</span><span class="p">))</span> <span class="o">*</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">592</span> <span class="o">*</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="c1"># The result is mathematically identical to Exercise 1!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.073926868044515
+</pre></div>
+</div>
+</div>
+</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Solutions</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Solutions explained in words</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><strong>Exercise 1: Global Energy Consumption with American Lifestyle</strong></p>
 <p class="sd-card-text">To solve this, we need to calculate the total energy if the entire global population had the US per capita energy consumption.</p>
 <ul class="simple">
@@ -599,6 +667,7 @@ Ratio = <span class="math notranslate nohighlight">\(\frac{2412 \text{ EJ}}{592 
 <p class="sd-card-text">Based on the calculation from Exercise 1, this ratio is approximately <strong>4.1</strong>. Therefore, total global <span class="math notranslate nohighlight">\(CO_2\)</span> emissions would also be about <strong>4.1 times larger</strong>.</p>
 </div>
 </details></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -654,6 +723,21 @@ Ratio = <span class="math notranslate nohighlight">\(\frac{2412 \text{ EJ}}{592 
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">📝 Solutions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
