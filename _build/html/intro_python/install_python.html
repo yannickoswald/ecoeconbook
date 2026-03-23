@@ -243,6 +243,55 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/yannickoswald/ecoeconbook/main?urlpath=lab/tree/intro_python/install_python.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/yannickoswald/ecoeconbook/blob/main/intro_python/install_python.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -268,7 +317,7 @@
       
       
       
-      <li><a href="https://github.com/yannickoswald/ecoeconbook/edit/main/intro_python/install_python.md" target="_blank"
+      <li><a href="https://github.com/yannickoswald/ecoeconbook/edit/main/intro_python/install_python.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -315,7 +364,7 @@
       
       
       
-      <li><a href="../_sources/intro_python/install_python.md" target="_blank"
+      <li><a href="../_sources/intro_python/install_python.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +374,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -413,8 +462,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-python-set-up-3-easy-paths">Getting Python set up (3 easy paths)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-google-colab-browser-zero-install">Option A — Google Colab (browser, zero install)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-anaconda-jupyter-lab-beginnerfriendly">Option B — Anaconda + Jupyter Lab (beginner‑friendly)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-c-anaconda-vs-code-flexible-not-so-beginner">Option C — Anaconda + VS Code (flexible, not-so-beginner)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-your-path">Choosing your path</a></li>
 </ul>
             </nav>
         </div>
@@ -442,29 +489,18 @@ But coding is even more than that. Coding is a tool to find efficient solutions 
 <p class="admonition-title">What you’ll learn</p>
 <ul class="simple">
 <li><p>How to install and use Python</p></li>
-<li><p>How to run code cells in this book</p></li>
+<li><p>How to run code cells in your local programming environment and, if necessary, in this book or rather from out of this book.</p></li>
 </ul>
 </div>
 <div class="admonition-tl-dr-pick-one admonition">
 <p class="admonition-title">TL;DR — pick one</p>
 <ul class="simple">
-<li><p><strong>OPTION A No install</strong>: Use <strong>Google Colab</strong> in the browser. But requires google account.</p></li>
-<li><p><strong>OPTION B Beginner desktop</strong>: Install <strong>Anaconda</strong> and use <strong>Jupyter Lab</strong> as an integrated development environment (IDE).</p></li>
+<li><p><strong>OPTION A No install</strong>: Use <strong>Google Colab</strong> in the browser. But requires google account (recommended).</p></li>
+<li><p><strong>OPTION B Beginner desktop</strong>: Install <strong>Anaconda</strong> and use <strong>Jupyter Lab</strong> as an integrated development environment (IDE) (recommended if no google account).</p></li>
 <li><p><strong>OPTION C Power users</strong>: Install <strong>Anaconda</strong> and use <strong>VS Code</strong> (flexible, extensible).</p></li>
 </ul>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>No matter which route you choose, test your setup by running:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python is ready 🎉&quot;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NumPy:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 </section>
-<hr class="docutils" />
 <section id="option-a-google-colab-browser-zero-install">
 <h2>Option A — Google Colab (browser, zero install)<a class="headerlink" href="#option-a-google-colab-browser-zero-install" title="Link to this heading">#</a></h2>
 <p>Why Colab?</p>
@@ -480,8 +516,35 @@ But coding is even more than that. Coding is a tool to find efficient solutions 
 </ol>
 <p>Install extra packages
 Colab comes with many packages preinstalled. For others post the following in a code cell.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">yourpackage</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### matplotlib is just an example package to demonstrate how to install a package in a Jupyter notebook. You can replace it with any package you want to install.</span>
+<span class="o">%</span><span class="k">pip</span> install matplotlib
+
+<span class="c1">### in my case the output is that the requirement is already satisfied. </span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in c:\users\yoswald\appdata\local\programs\python\python311\lib\site-packages (3.8.2)
+Requirement already satisfied: contourpy&gt;=1.0.1 in c:\users\yoswald\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (1.2.0)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\yoswald\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in c:\users\yoswald\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (4.47.2)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in c:\users\yoswald\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (1.4.5)
+Requirement already satisfied: numpy&lt;2,&gt;=1.21 in c:\users\yoswald\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (1.26.3)
+Requirement already satisfied: packaging&gt;=20.0 in c:\users\yoswald\appdata\roaming\python\python311\site-packages (from matplotlib) (23.2)
+Requirement already satisfied: pillow&gt;=8 in c:\users\yoswald\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (10.2.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in c:\users\yoswald\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (3.1.1)
+Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\yoswald\appdata\roaming\python\python311\site-packages (from matplotlib) (2.8.2)
+Requirement already satisfied: six&gt;=1.5 in c:\users\yoswald\appdata\roaming\python\python311\site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.16.0)
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 25.3 -&gt; 26.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+</pre></div>
+</div>
+</div>
 </div>
 <p>IMPORTANT! Colab sessions are temporary. Save your work to <strong>Drive</strong> or <strong>download</strong> important files.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -492,7 +555,6 @@ Colab comes with many packages preinstalled. For others post the following in a 
 </ul>
 </div>
 </details></section>
-<hr class="docutils" />
 <section id="option-b-anaconda-jupyter-lab-beginnerfriendly">
 <h2>Option B — Anaconda + Jupyter Lab (beginner‑friendly)<a class="headerlink" href="#option-b-anaconda-jupyter-lab-beginnerfriendly" title="Link to this heading">#</a></h2>
 <p>Why Jupyter Lab?</p>
@@ -512,109 +574,6 @@ Colab comes with many packages preinstalled. For others post the following in a 
 <ol class="arabic simple" start="2">
 <li><p>Create a clean environment (recommended)</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Windows (Anaconda Prompt) / macOS / Linux (Terminal)</span>
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ecoecon<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>-y
-conda<span class="w"> </span>activate<span class="w"> </span>ecoecon
-conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyterlab<span class="w"> </span>-y
-</pre></div>
-</div>
-<p>Launch Jupyter Lab</p>
-<ul>
-<li><p>Open <strong>Anaconda Navigator</strong> ▸ <strong>Jupyter Lab</strong> (choose env <code class="docutils literal notranslate"><span class="pre">ecoecon</span></code> if asked),<br />
-<strong>or</strong> from terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>ecoecon
-jupyter<span class="w"> </span>lab
-</pre></div>
-</div>
-</li>
-<li><p>In the editor, create a <strong>Notebook</strong> ▸ <strong>Python</strong> file, paste the test code, press <strong>Run</strong> (▶).</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="option-c-anaconda-vs-code-flexible-not-so-beginner">
-<h2>Option C — Anaconda + VS Code (flexible, not-so-beginner)<a class="headerlink" href="#option-c-anaconda-vs-code-flexible-not-so-beginner" title="Link to this heading">#</a></h2>
-<p>Why VS Code?</p>
-<ul class="simple">
-<li><p>Excellent editor, <strong>Python</strong> and <strong>Jupyter</strong> extensions, debugging, terminals, Git.</p></li>
-<li><p>Works with both scripts (<code class="docutils literal notranslate"><span class="pre">.py</span></code>) and notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>), and “cell” style <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">%%</span></code>.</p></li>
-</ul>
-<ol class="arabic simple">
-<li><p>Install prerequisites</p></li>
-</ol>
-<ul class="simple">
-<li><p>Install <strong>Anaconda</strong> (as above).</p></li>
-<li><p>Install <strong>VS Code</strong> from <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>.</p></li>
-<li><p>In VS Code, install extensions:</p>
-<ul>
-<li><p><strong>Python</strong> (Microsoft)</p></li>
-<li><p><strong>Jupyter</strong> (Microsoft)</p></li>
-</ul>
-</li>
-</ul>
-<ol class="arabic simple" start="2">
-<li><p>Create/select your conda environment</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ecoecon<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>-y
-conda<span class="w"> </span>activate<span class="w"> </span>ecoecon
-conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>jupyterlab<span class="w"> </span>-y
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Tell VS Code which Python to use</p></li>
-</ol>
-<ul class="simple">
-<li><p>Open your project folder in VS Code.</p></li>
-<li><p><strong>Command Palette</strong> (Ctrl/Cmd+Shift+P) ▸ <strong>Python: Select Interpreter</strong> ▸ choose the <code class="docutils literal notranslate"><span class="pre">ecoecon</span></code> env.</p></li>
-<li><p>Open a terminal in VS Code (<strong>Terminal ▸ New Terminal</strong>) — it should show <code class="docutils literal notranslate"><span class="pre">(ecoecon)</span></code>.</p></li>
-</ul>
-<ol class="arabic simple" start="4">
-<li><p>Run Python</p></li>
-</ol>
-<ul class="simple">
-<li><p><strong>Script</strong>: create <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, run with the <strong>▶ Run</strong> button or right‑click ▸ <strong>Run Python File</strong>.</p></li>
-<li><p><strong>Notebook</strong>: create a new <strong>Jupyter Notebook</strong> (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) and run cells.</p></li>
-<li><p><strong>Cell mode in .py</strong>: use <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">%%</span></code> to define cells, then click <strong>Run Cell</strong> above each cell.</p></li>
-<li><p><strong>Notebook</strong>: create a new <strong>Jupyter Notebook</strong> (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>), paste the test code, press <strong>Run</strong> (▶).</p></li>
-</ul>
-<p>You may be asked to choose a Python kernel. Choose <strong>Python Environments</strong> then <code class="docutils literal notranslate"><span class="pre">ecoecon</span></code>.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Debugging quick start</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><strong>What is Debugging ?</strong> It’s a <em>very useful</em> feature that allows a program to stop temporarily anywhere you want while executing. It allows to follow step by step a program execution in order to detect where a mistake has been made, a program starts behaving unexpectedly, etc.</p>
-<ul class="simple">
-<li><p class="sd-card-text">Set a <strong>breakpoint</strong> (click the gutter).</p></li>
-<li><p class="sd-card-text">Press <strong>F5</strong> (Run and Debug) ▸ choose <strong>Python File</strong>.</p></li>
-<li><p class="sd-card-text">Inspect variables in the <strong>Run and Debug</strong> panel.</p></li>
-</ul>
-</div>
-</details><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Common fix: If VS Code doesn’t “see” conda, set<br />
-<strong>Settings ▸ Python › Conda Path</strong> to your <code class="docutils literal notranslate"><span class="pre">conda</span></code> executable, or launch VS Code from an <strong>Anaconda Prompt</strong>.</p>
-</div>
-</section>
-<hr class="docutils" />
-<section id="choosing-your-path">
-<h2>Choosing your path<a class="headerlink" href="#choosing-your-path" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Colab</strong>: zero setup, great for quick labs and sharing; requires internet.</p></li>
-<li><p><strong>Jupyter Lab</strong>: gentle desktop start; good for learning and small analyses.</p></li>
-<li><p><strong>VS Code</strong>: most powerful and extensible; ideal as you scale up.</p></li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><strong>For detailed tutorials to install Python and get started with programming</strong></p>
-<ul class="simple">
-<li><p>You can also have a look at Prof. Tom Beucler’s ebooks (who teaches environmental machine learning at UNIL).</p></li>
-<li><p>However, we will dive into everything we need in the next chapter, too.</p></li>
-<li><p>Here is <a class="reference external" href="https://tbeucler.github.io/2024_MLEES_Ebook/Milton/00_Running_Python_Scripts.html">Tom’s intro to running Python scripts</a></p></li>
-<li><p>Here is <a class="reference external" href="https://tbeucler.github.io/2024_MLEES_Ebook/IP/intro_python.html">an introduction to Python by Tom</a></p></li>
-</ul>
-</div>
-<div class="admonition-pro-tip admonition">
-<p class="admonition-title">Pro tip</p>
-<p>Whichever path you pick, keep your work in <strong>project folders</strong> and use <strong>environments</strong> (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">…</span></code>) to avoid dependency conflicts.</p>
-</div>
 </section>
 </section>
 
@@ -686,8 +645,6 @@ conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-python-set-up-3-easy-paths">Getting Python set up (3 easy paths)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-google-colab-browser-zero-install">Option A — Google Colab (browser, zero install)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-anaconda-jupyter-lab-beginnerfriendly">Option B — Anaconda + Jupyter Lab (beginner‑friendly)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-c-anaconda-vs-code-flexible-not-so-beginner">Option C — Anaconda + VS Code (flexible, not-so-beginner)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-your-path">Choosing your path</a></li>
 </ul>
   </nav></div>
 
