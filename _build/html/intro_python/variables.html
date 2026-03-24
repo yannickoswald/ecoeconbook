@@ -462,7 +462,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic data types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-growth-factor-logic">The “Growth Factor” Logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-add-a-few-numbers-with-the-help-of-variables">🧩 Exercise: Add a few numbers with the help of variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-basic-data-types">Combining basic data types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
@@ -515,13 +515,8 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tpec_USA</span> <span class="o">=</span> <span class="n">tpec_USA</span> <span class="o">*</span> <span class="mf">1.005</span> 
 </pre></div>
 </div>
-<details>
-<summary><b>▶ Click here to see why we multiply by 1.005</b></summary>
-<div style="padding: 10px; background-color: #f9f9f9; border-left: 5px solid #2ecc71;">
-</section>
-<section id="the-growth-factor-logic">
-<h2>The “Growth Factor” Logic<a class="headerlink" href="#the-growth-factor-logic" title="Link to this heading">#</a></h2>
-<p>Multiplying by <strong>1.005</strong> is the same as a <strong>0.5% increase</strong> because you are adding the growth to the original amount:</p>
+<p>A note on the “Growth Factor” logic
+Multiplying by <strong>1.005</strong> is the same as a <strong>0.5% increase</strong> because you are adding the growth to the original amount:</p>
 <ol class="arabic simple">
 <li><p>The Original (100%): Represented as 1.0.</p></li>
 <li><p>The Growth (0.5%): Represented as 0.005 (moving the decimal two places left).</p></li>
@@ -535,8 +530,7 @@ document.write(`
 </ul>
 <p>Think of the ‘1’ as the anchor that keeps your current value, and everything after the decimal as the extra bit growing on top.</p>
 <p>We will learn more about this later.</p>
-</div>
-</details><p>So we just used the variable tpec_USA to compute a new instance of itself. The previous value has been replaced by the newer value. This is the kind of thing that really makes it “variable”.</p>
+<p>So we just used the variable tpec_USA to compute a new instance of itself. The previous value has been replaced by the newer value. This is the kind of thing that really makes it “variable”.</p>
 <p>We could also have an additive process which might be easier for now such as</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tpec_USA</span> <span class="o">=</span> <span class="n">tpec_USA</span> <span class="o">+</span> <span class="mi">5</span>
 </pre></div>
@@ -563,6 +557,40 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</div>
+</section>
+<section id="exercise-add-a-few-numbers-with-the-help-of-variables">
+<h2>🧩 Exercise: Add a few numbers with the help of variables<a class="headerlink" href="#exercise-add-a-few-numbers-with-the-help-of-variables" title="Link to this heading">#</a></h2>
+<p>Add these three numbers together to find tpec_North_America</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tpec_USA</span> <span class="o">=</span> <span class="mf">94.0</span>    
+<span class="n">tpec_Canada</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">tpec_Mexico</span> <span class="o">=</span> <span class="mi">8</span>
+</pre></div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### 📝 Solution</span>
+
+<span class="n">tpec_USA</span> <span class="o">=</span> <span class="mf">94.0</span>    
+<span class="n">tpec_Canada</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">tpec_Mexico</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="n">tpec_North_America</span> <span class="o">=</span> <span class="n">tpec_USA</span> <span class="o">+</span> <span class="n">tpec_Canada</span> <span class="o">+</span> <span class="n">tpec_Mexico</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tpec_North_America</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>116.0
+</pre></div>
+</div>
+</div>
+</details>
 </div>
 </section>
 <section id="combining-basic-data-types">
@@ -686,7 +714,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">             </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">energy_per_capita</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="ne">KeyError</span>: 0
@@ -1158,7 +1186,7 @@ Use</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic data types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-growth-factor-logic">The “Growth Factor” Logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-add-a-few-numbers-with-the-help-of-variables">🧩 Exercise: Add a few numbers with the help of variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-basic-data-types">Combining basic data types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
