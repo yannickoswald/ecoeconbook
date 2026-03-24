@@ -465,6 +465,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-add-a-few-numbers-with-the-help-of-variables">🧩 Exercise: Add a few numbers with the help of variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">📝 Solution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-basic-data-types">Combining basic data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">🧩 Exercise: Add a few numbers with the help of variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-look-at-pandas-dataframes">A first look at <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrames</a><ul class="nav section-nav flex-column">
@@ -474,7 +475,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-single-value">4. Accessing a single value</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-rows-with-conditions">5. Filtering rows with conditions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-find-the-minimum-energy-user">🧩 Exercise: Find the minimum energy user</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">📝 Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">📝 Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -516,14 +517,14 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tpec_USA</span> <span class="o">=</span> <span class="n">tpec_USA</span> <span class="o">*</span> <span class="mf">1.005</span> 
 </pre></div>
 </div>
-<p>A note on the “Growth Factor” logic
-Multiplying by <strong>1.005</strong> is the same as a <strong>0.5% increase</strong> because you are adding the growth to the original amount:</p>
+<p>A note on the “Growth Factor” logic.
+Multiplying by 1.005 is the same as a 0.5% increase because you are adding the growth to the original amount:</p>
 <ol class="arabic simple">
 <li><p>The Original (100%): Represented as 1.0.</p></li>
 <li><p>The Growth (0.5%): Represented as 0.005 (moving the decimal two places left).</p></li>
 <li><p>The Result: <span class="math notranslate nohighlight">\(1.0 + 0.005 = 1.005\)</span>.</p></li>
 </ol>
-<p><strong>Quick Reference:</strong></p>
+<p>Quick Reference:</p>
 <ul class="simple">
 <li><p>1.05 = 5% growth</p></li>
 <li><p>1.005 = 0.5% growth</p></li>
@@ -601,7 +602,7 @@ Multiplying by <strong>1.005</strong> is the same as a <strong>0.5% increase</st
 <p>Tuples are fixed-size records. For typical use cases: coordinates, which is admittedly less important throughout this course but still really good to know about this data type!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span> <span class="o">=</span> <span class="p">(</span><span class="mf">47.3769</span><span class="p">,</span> <span class="mf">8.5417</span><span class="p">)</span>  <span class="c1"># Zurich lat, lon</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span> <span class="o">=</span> <span class="p">(</span><span class="mf">47.3769</span><span class="p">,</span> <span class="mf">8.5417</span><span class="p">)</span>  <span class="c1"># Zurich latitude, longitude    </span>
 <span class="n">policy_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;carbon_tax&quot;</span><span class="p">,</span> <span class="mf">85.0</span><span class="p">,</span> <span class="s2">&quot;EUR_per_tCO2&quot;</span><span class="p">)</span> <span class="c1"># description of a fixed climate policy</span>
 </pre></div>
 </div>
@@ -630,7 +631,7 @@ Multiplying by <strong>1.005</strong> is the same as a <strong>0.5% increase</st
 </div>
 </div>
 </div>
-<p>There are many standard commands in Python that often come when analysing or using lists. Please make sure you reproduce all these in your local environments! Read the comment bbehind the line to understand what is happening.</p>
+<p>There are many standard commands in Python that often come when analysing or using lists. Please make sure you reproduce all these in your local environments! Read the comment bbehind the line to understand what is happening. Even though it is less important that you remember all the details right now.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_consumption_over_years_USA</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># this adds the year 2020 with 90 EJ consumption</span>
@@ -667,6 +668,9 @@ Multiplying by <strong>1.005</strong> is the same as a <strong>0.5% increase</st
 <p class="admonition-title">More commands for lists</p>
 <p>Apart from those mentioned above, several other exist, making Python lists very useful ! You can for instance reverse the list, sort the list in ascending / descending order or find the index (starting at 0, don’t forget !) of a specific value. You can find all of these on <a class="reference external" href="https://www.geeksforgeeks.org/python/list-methods-python/">geekforgeeks</a>.</p>
 </div>
+</section>
+<section id="id1">
+<h2>🧩 Exercise: Add a few numbers with the help of variables<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Here are two exercises for you:</p>
 <ol class="arabic simple">
 <li><p>What is the average energy consumption of the USA based on the list above? And how do you calculate this with some of the code from above? Only use commands that appear above.</p></li>
@@ -674,15 +678,32 @@ Multiplying by <strong>1.005</strong> is the same as a <strong>0.5% increase</st
 </ol>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">average_energy_consumption</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span>
+<span class="sd-summary-text">Hint</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Hint: To compute an average you sum all value in the list and divide by the length of the list.</p>
+</div>
+</details><div class="cell tag_hide-cell docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">average_energy_consumption</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average energy consumption USA 2010-2020:&quot;</span><span class="p">,</span> <span class="n">average_energy_consumption</span><span class="p">,</span> <span class="s2">&quot;EJ&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="c1">## second to last leaving the space after the : empty </span>
 </pre></div>
 </div>
 </div>
-</details><p>Another very important data structure is the dictionary (often abbreviated dict). A dictionary is a bit like list but the key difference (you will see this is a pun) here is that its structure does not derive from the order of elements within but from the fact that every element can be found by its <em>key</em> which you can freely choose. Technically in a list also every element has a key but they are just the number indices of its position and you cannot define them. If you are interested in going a bit deeper into the differences and commonalities you always can find cool programming knowledge on <a class="reference external" href="https://www.geeksforgeeks.org/python/difference-between-list-and-dictionary-in-python/">geekforgeeks</a>.</p>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average energy consumption USA 2010-2020: 83.5 EJ
+[82, 86, 87, 89, 75, 80, 82, 84, 90]
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Another very important data structure is the dictionary (often abbreviated dict). A dictionary is a bit like list but the key difference (you will see this is a pun) here is that its structure does not derive from the order of elements within but from the fact that every element can be found by its <em>key</em> which you can freely choose. Technically in a list also every element has a key but they are just the number indices of its position and you cannot define them. If you are interested in going a bit deeper into the differences and commonalities you always can find cool programming knowledge on <a class="reference external" href="https://www.geeksforgeeks.org/python/difference-between-list-and-dictionary-in-python/">geekforgeeks</a>.</p>
 <p>An example dictionary holding energy consumption per person could look like the following for example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -716,7 +737,7 @@ Multiplying by <strong>1.005</strong> is the same as a <strong>0.5% increase</st
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">             </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">energy_per_capita</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="ne">KeyError</span>: 0
@@ -1098,8 +1119,8 @@ Use</p>
 </pre></div>
 </div>
 </section>
-<section id="id1">
-<h3>📝 Solution<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>📝 Solution<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="cell tag_hide-cell docutils container">
 <details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1191,6 +1212,7 @@ Use</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-add-a-few-numbers-with-the-help-of-variables">🧩 Exercise: Add a few numbers with the help of variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">📝 Solution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-basic-data-types">Combining basic data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">🧩 Exercise: Add a few numbers with the help of variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-look-at-pandas-dataframes">A first look at <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrames</a><ul class="nav section-nav flex-column">
@@ -1200,7 +1222,7 @@ Use</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-single-value">4. Accessing a single value</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-rows-with-conditions">5. Filtering rows with conditions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-find-the-minimum-energy-user">🧩 Exercise: Find the minimum energy user</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">📝 Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">📝 Solution</a></li>
 </ul>
 </li>
 </ul>
