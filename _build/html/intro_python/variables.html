@@ -462,6 +462,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-growth-factor-logic">The “Growth Factor” Logic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-basic-data-types">Combining basic data types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
@@ -507,19 +508,39 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tpec_USA</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># unit is Exajoule (EJ)</span>
 </pre></div>
 </div>
-<p>And you just learned another very very important fact-of-life about programming: <strong>COMMENT YOUR CODE</strong>.</p>
-<div class="attention admonition">
-<p class="admonition-title">What’s commenting ? And why is is super important ?</p>
-<p>A comment in Python is the annotation after the symbol #, intended to make the code easier for a programmer to understand. This is written into your code cell but not interpreted by the computer as code. It is very important however that others, and even yourself, can understand your own code. You will notice in time, when you come back a week later, to code you have previously written, you will be grateful to your past self for commenting adequately.</p>
-</div>
 </section>
 <section id="basic-data-types">
 <h2>Basic data types<a class="headerlink" href="#basic-data-types" title="Link to this heading">#</a></h2>
-<p>So before going through lots of different variables and data types to clarify what is “variable” about the tpec_USA above: We could theoretically do some computation with it say this is again the USA energy consumption for 2024 and we know this grows by 0.5% per year. Then we could make the following calculation to know about 2025.</p>
+<p>So before going through lots of different variables and data types to clarify what is “variable/can change” about the tpec_USA above: We could theoretically do some computation with it, say this is the USA energy consumption for 2024 and we know this grows by 0.5% per year. Then we could make the following calculation to infer about 2025.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tpec_USA</span> <span class="o">=</span> <span class="n">tpec_USA</span> <span class="o">*</span> <span class="mf">1.005</span> 
 </pre></div>
 </div>
-<p>So we just used the variable tpec_USA to compute a new instance of itself. The previous value has been replaced by the newer value. This is the kind of thing that really makes it “variable”.</p>
+<details>
+<summary><b>▶ Click here to see why we multiply by 1.005</b></summary>
+<div style="padding: 10px; background-color: #f9f9f9; border-left: 5px solid #2ecc71;">
+</section>
+<section id="the-growth-factor-logic">
+<h2>The “Growth Factor” Logic<a class="headerlink" href="#the-growth-factor-logic" title="Link to this heading">#</a></h2>
+<p>Multiplying by <strong>1.005</strong> is the same as a <strong>0.5% increase</strong> because you are adding the growth to the original amount:</p>
+<ol class="arabic simple">
+<li><p>The Original (100%): Represented as 1.0.</p></li>
+<li><p>The Growth (0.5%): Represented as 0.005 (moving the decimal two places left).</p></li>
+<li><p>The Result: <span class="math notranslate nohighlight">\(1.0 + 0.005 = 1.005\)</span>.</p></li>
+</ol>
+<p><strong>Quick Reference:</strong></p>
+<ul class="simple">
+<li><p>1.05 = 5% growth</p></li>
+<li><p>1.005 = 0.5% growth</p></li>
+<li><p>1.0005 = 0.05% growth</p></li>
+</ul>
+<p>Think of the ‘1’ as the anchor that keeps your current value, and everything after the decimal as the extra bit growing on top.</p>
+<p>We will learn more about this later.</p>
+</div>
+</details><p>So we just used the variable tpec_USA to compute a new instance of itself. The previous value has been replaced by the newer value. This is the kind of thing that really makes it “variable”.</p>
+<p>We could also have an additive process which might be easier for now such as</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tpec_USA</span> <span class="o">=</span> <span class="n">tpec_USA</span> <span class="o">+</span> <span class="mi">5</span>
+</pre></div>
+</div>
 <p>Here is a list of the most common variable types</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span><span class="p">,</span>                        <span class="c1"># int: number of households sampled</span>
 <span class="mf">36.5</span><span class="p">,</span>                      <span class="c1"># float: emissions in MtCO₂    </span>
@@ -529,7 +550,7 @@ document.write(`
 </div>
 <p>What other value can the variable is_active assume?</p>
 <p>The int type is an integer, the float type is number that goes with decimal places, the boolean value stores a binary truth value and the string variable stores text basically.</p>
-<p>You can always check the type of variable this way</p>
+<p>You can always check the type of variable this way with the type function (we learn what a function is later).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_active</span> <span class="o">=</span> <span class="kc">True</span>
@@ -547,7 +568,7 @@ document.write(`
 <section id="combining-basic-data-types">
 <h2>Combining basic data types<a class="headerlink" href="#combining-basic-data-types" title="Link to this heading">#</a></h2>
 <p>Now we are moving to more complex data types. This means we will now treat tuples, lists, sets and dictionaries.</p>
-<p>Tuples are fixed-size records. For typical use cases: coordinates, any immutable bundle.</p>
+<p>Tuples are fixed-size records. For typical use cases: coordinates, which is admittedly less important throughout this course but still really good to know about this data type!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span> <span class="o">=</span> <span class="p">(</span><span class="mf">47.3769</span><span class="p">,</span> <span class="mf">8.5417</span><span class="p">)</span>  <span class="c1"># Zurich lat, lon</span>
@@ -556,21 +577,41 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Lists are ordered collections of all kinds of objects or variables and, in my experience, one of the or maybe the most important datatype for you to understand very well.</p>
-<p>A typical example list would be for instance as follows. At the same time we go over some standard commands in Python that often come when analysing or using lists. Please make sure you reproduce all these in your local environments!</p>
+<p>Lists are ordered collections of all kinds of objects or variables and, in my experience, one of the or maybe the most important basic datatype for you to understand very well.</p>
+<p>A typical example list would be for instance as follows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">2020</span><span class="p">))</span> <span class="c1"># 2010..2020, this command creates a list of integers in the range from 2010 to 2019</span>
-<span class="n">energy_consumption_over_years_USA</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">84</span><span class="p">]</span> <span class="c1"># in EJ, numbers only illustrative</span>
-<span class="n">energy_consumption_over_years_USA</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># this adds the year 2020 with 90 EJ consumption</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">years</span><span class="p">)</span> <span class="c1"># this will print the list of years to the console</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We could also have created a list more directly ourselves, like this one below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_consumption_over_years_USA</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">84</span><span class="p">]</span> <span class="c1"># in EJ, numbers only illustrative</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many standard commands in Python that often come when analysing or using lists. Please make sure you reproduce all these in your local environments! Read the comment bbehind the line to understand what is happening.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_consumption_over_years_USA</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># this adds the year 2020 with 90 EJ consumption</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span> <span class="c1"># this tells how many entries in the list?</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span> <span class="c1"># print the list</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># first entry of the list   </span>
 <span class="nb">print</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># last entry of the list</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># first three entries of the list</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span> <span class="c1"># entries 3 to 5 of the list</span>
-<span class="nb">sum</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span> <span class="c1"># sum of all entries in the list</span>
-<span class="nb">min</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">)</span> <span class="c1"># minimum value in the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">))</span> <span class="c1"># sum of all entries in the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">))</span> <span class="c1"># minimum value in the list</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">energy_consumption_over_years_USA</span><span class="p">))</span> <span class="c1"># maximum value in the list</span>
 </pre></div>
 </div>
@@ -581,6 +622,8 @@ document.write(`
 90
 [80, 82, 86]
 [87, 89, 75]
+835
+75
 90
 </pre></div>
 </div>
@@ -641,9 +684,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">-----------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">             </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">energy_per_capita</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="ne">KeyError</span>: 0
@@ -1115,6 +1158,7 @@ Use</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-growth-factor-logic">The “Growth Factor” Logic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-basic-data-types">Combining basic data types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
