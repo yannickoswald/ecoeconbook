@@ -466,8 +466,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">📝 Solution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-basic-data-types">Combining basic data types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">🧩 Exercise: Add a few numbers with the help of variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">📝 Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">🧩 Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units-list">Common energy units list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">📝 Solution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-look-at-pandas-dataframes">A first look at <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrames</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-small-dataframe">1. Creating a small DataFrame</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-column">2. Accessing a column</a></li>
@@ -475,7 +478,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-single-value">4. Accessing a single value</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-rows-with-conditions">5. Filtering rows with conditions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-find-the-minimum-energy-user">🧩 Exercise: Find the minimum energy user</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">📝 Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">📝 Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -681,7 +684,10 @@ Multiplying by 1.005 is the same as a 0.5% increase because you are adding the g
 <span class="sd-summary-text">Hint</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Hint: To compute an average you sum all value in the list and divide by the length of the list.</p>
 </div>
-</details><div class="cell tag_hide-cell docutils container">
+</details></section>
+<section id="id2">
+<h2>📝 Solution<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="cell tag_hide-cell docutils container">
 <details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
 <p class="collapsed admonition-title">Show code cell content</p>
@@ -703,7 +709,10 @@ Multiplying by 1.005 is the same as a 0.5% increase because you are adding the g
 </div>
 </details>
 </div>
-<p>Another very important data structure is the dictionary (often abbreviated dict). A dictionary is a bit like list but the key difference (you will see this is a pun) here is that its structure does not derive from the order of elements within but from the fact that every element can be found by its <em>key</em> which you can freely choose. Technically in a list also every element has a key but they are just the number indices of its position and you cannot define them. If you are interested in going a bit deeper into the differences and commonalities you always can find cool programming knowledge on <a class="reference external" href="https://www.geeksforgeeks.org/python/difference-between-list-and-dictionary-in-python/">geekforgeeks</a>.</p>
+</section>
+<section id="dictionaries">
+<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h2>
+<p>Another very important data structure is the dictionary (often abbreviated dict). A dictionary is a bit like a list but the key difference (you will see this is a pun) here is that its structure does not derive from the order of elements within, but from the fact that every element can be found by its <em>key</em> which you can freely choose. Technically, in a list also every element has a key but they are just the number indices of its position and you cannot define them. If you are interested in going a bit deeper into the differences and commonalities you always can find cool programming knowledge on <a class="reference external" href="https://www.geeksforgeeks.org/python/difference-between-list-and-dictionary-in-python/">geekforgeeks</a>.</p>
 <p>An example dictionary holding energy consumption per person could look like the following for example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -727,7 +736,7 @@ Multiplying by 1.005 is the same as a 0.5% increase because you are adding the g
 </div>
 </div>
 </div>
-<p>You cannot select element any longer in the familiar way like in a list. You can see in the following. This will throw an error message - another fact-of-life in programming you will have to become really familiar with.</p>
+<p>You cannot select element any longer in the familiar way like in a list. You can see this in the following. This will throw an error message - another fact-of-life in programming you will have to become really familiar with.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_per_capita</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -766,11 +775,23 @@ Multiplying by 1.005 is the same as a 0.5% increase because you are adding the g
 <li><p>It is entirely normal - and the process is called debugging (because bug is another word for error).</p></li>
 </ul>
 </div>
-<p>So now we know already everything we wanted to know about variables, datatypes and structures. However, none of this will stick (in your minds) if we do not create better understanding through plenty of exercises. So let us dive right in and learn some more interesting things alongside.</p>
-<p>A typology of energy units used in ecological economics and energy economics could be for example:</p>
+<p>So now, we know already everything we wanted to know about variables, datatypes and structures. However, none of this will stick (in your minds), if we do not create better understanding through plenty of exercises. So let us dive right in and learn some more interesting things alongside.</p>
 </section>
-<section id="common-energy-units">
-<h2>Common energy units<a class="headerlink" href="#common-energy-units" title="Link to this heading">#</a></h2>
+<section id="exercise">
+<h2>🧩 Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<p>Now, given what you have learned in the previous two sections conduct the following exercises with the help of the list of the common energy units below:</p>
+<ol class="arabic simple">
+<li><p>Transform 1 million kWH and 1000 MWh to Terajoule and store the conversion factors as variables.</p></li>
+</ol>
+<p>HINT: You might need some time to search together from the list all the factors you require. Remember 10 to the power of 3 can be represented as 10e3. Start to carefully right everything you need e.g. start with 1*10e6 for one kWh and the 1 for one kWh (it does not change the calculation but helps for clarity). Break down steps e.g. first transform 1 million kWh to Joule, then only to Terajoule.</p>
+<p>The conversion factors you can find by summing all the e-numbers, so the powers of ten and everything you multiply you sum the power of ten number and everything you divide, you would subtract.</p>
+<ol class="arabic simple" start="2">
+<li><p>Make a dictionary that holds the conversion factors with appropriate keys.</p></li>
+<li><p>Print the entries from the dictionary and store the numeric values in a list instead.</p></li>
+</ol>
+</section>
+<section id="common-energy-units-list">
+<h2>Common energy units list<a class="headerlink" href="#common-energy-units-list" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Joule (J)</strong>: SI base unit of energy.</p>
 <ul>
@@ -800,14 +821,8 @@ Multiplying by 1.005 is the same as a 0.5% increase because you are adding the g
 </li>
 </ul>
 </section>
-<section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
-<p>Now given what you have learned in the previous two sections conduct the following exercises:</p>
-<ol class="arabic simple">
-<li><p>Transform 1 million kWH and 1000 MWh to Terajoule and store the conversion factors as variables.</p></li>
-<li><p>Make a dictionary that holds the conversion factors with appropriate keys.</p></li>
-<li><p>Print the entries from the dictionary and store the numeric values in a list instead.</p></li>
-</ol>
+<section id="id3">
+<h2>📝 Solution<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <div class="cell tag_hide-cell docutils container">
 <details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -819,22 +834,25 @@ Multiplying by 1.005 is the same as a 0.5% increase because you are adding the g
 <span class="c1"># Energy unit conversions: kWh / MWh → TJ</span>
 <span class="c1"># ==============================================</span>
 
-<span class="c1"># Conversion factors (basic)</span>
-<span class="n">KWH_TO_TJ</span> <span class="o">=</span> <span class="mf">3.6e-9</span>   <span class="c1"># 1 kWh = 3.6 × 10⁻⁹ TJ</span>
-<span class="n">MWH_TO_TJ</span> <span class="o">=</span> <span class="mf">3.6e-6</span>   <span class="c1"># 1 MWh = 3.6 × 10⁻⁶ TJ</span>
+<span class="c1"># 1) Calculate conversion factors (basic)</span>
 
-<span class="c1"># 1) Transform given values</span>
-<span class="n">value_kwh</span> <span class="o">=</span> <span class="mi">1_000_000</span> <span class="o">*</span> <span class="n">KWH_TO_TJ</span>   <span class="c1"># 1 million kWh to TJ</span>
-<span class="n">value_mwh</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">MWH_TO_TJ</span>        <span class="c1"># 1000 MWh to TJ</span>
+<span class="n">one_million_kWh_in_joule</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">10e6</span> <span class="o">*</span> <span class="mf">10e3</span> <span class="o">*</span> <span class="mf">3.6</span> <span class="o">*</span> <span class="mf">10e6</span> 
+<span class="n">one_million_kWh_in_terajoule</span> <span class="o">=</span> <span class="n">one_million_kWh_in_joule</span> <span class="o">/</span> <span class="mf">10e12</span>
 
-<span class="c1"># 2) Dictionary with conversion factors</span>
+<span class="n">one_thousand_MWh_in_joule</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="mf">10e6</span> <span class="o">*</span> <span class="mf">3.6</span> <span class="o">*</span> <span class="mf">10e6</span>
+<span class="n">one_thousand_MWh_in_terajoule</span> <span class="o">=</span> <span class="n">one_thousand_MWh_in_joule</span> <span class="o">/</span> <span class="mf">10e12</span>
+
+<span class="n">KWH_TO_TJ</span> <span class="o">=</span> <span class="mf">3.6</span> <span class="o">*</span> <span class="mf">10e-9</span>  <span class="c1"># 1 kWh in TJ, explanation: 1 kWh = 3.6 MJ = 3.6 * 10e6 J, and 1 TJ = 10e12 J, so 1 kWh in TJ is (3.6 * 10e6) / (10e12) = 3.6 * 10e-9</span>
+<span class="n">MWH_TO_TJ</span> <span class="o">=</span> <span class="mf">3.6</span> <span class="o">*</span> <span class="mf">10e-6</span>  <span class="c1"># 1 MWh in TJ, explanation: 1 MWh = 3.6 GJ = 3.6 * 10e9 J, and 1 TJ = 10e12 J, so 1 MWh in TJ is (3.6 * 10e9) / (10e12) = 3.6 * 10e-6  </span>
+
+<span class="c1"># 2) Store conversion factors in a dictionary</span>
+
 <span class="n">conversion_dict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;kWh_to_TJ&quot;</span><span class="p">:</span> <span class="n">KWH_TO_TJ</span><span class="p">,</span>
     <span class="s2">&quot;MWh_to_TJ&quot;</span><span class="p">:</span> <span class="n">MWH_TO_TJ</span>
 <span class="p">}</span>
 
 <span class="c1"># 3) Print results directly</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conversion factors dictionary:&quot;</span><span class="p">,</span> <span class="n">conversion_dict</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is conversion factor 1: &quot;</span><span class="p">,</span> <span class="n">conversion_dict</span><span class="p">[</span><span class="s2">&quot;kWh_to_TJ&quot;</span><span class="p">],</span> <span class="s2">&quot;TJ per kWh&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is conversion factor 1: &quot;</span><span class="p">,</span> <span class="n">conversion_dict</span><span class="p">[</span><span class="s2">&quot;MWh_to_TJ&quot;</span><span class="p">],</span> <span class="s2">&quot;TJ per MWh&quot;</span><span class="p">)</span>
 
@@ -854,6 +872,9 @@ Numeric values list: [0.0036, 0.0036]
 </div>
 </details>
 </div>
+<p>‘’’{dropdown} Solution in words
+Scenario A: 1 Million kWh to TerajoulesLet’s break this down step-by-step. To keep things clear, we will start with the 1 from our 1 million kWh and separate our base numbers from our powers of ten.Step 1: Convert to JoulesMultiply the amount (1 million) by the prefix (kilo) and the Wh-to-Joule conversion.$<span class="math notranslate nohighlight">\(1 \times 10^6 \times 10^3 \times (3.6 \times 10^3)\)</span><span class="math notranslate nohighlight">\(Group the base numbers (\)</span>1 \times 3.6<span class="math notranslate nohighlight">\() and simply add the exponents (\)</span>6 + 3 + 3 = 12<span class="math notranslate nohighlight">\():\)</span><span class="math notranslate nohighlight">\(3.6 \times 10^{12} \text{ Joules}\)</span><span class="math notranslate nohighlight">\(Step 2: Convert to TerajoulesTo go from Joules to Terajoules, divide by the Tera factor (\)</span>10^{12}<span class="math notranslate nohighlight">\(). Dividing means we subtract 12 from our exponent:\)</span><span class="math notranslate nohighlight">\(3.6 \times 10^{(12 - 12)} = 3.6 \times 10^0\)</span><span class="math notranslate nohighlight">\(Since \)</span>10^0<span class="math notranslate nohighlight">\( is exactly 1, our final answer is 3.6 TJ.Scenario B: 1000 MWh to TerajoulesWe will follow the exact same logic. First, let's write our starting amount of 1000 as \)</span>1 \times 10^3<span class="math notranslate nohighlight">\(.Step 1: Convert to JoulesMultiply the amount (1000) by the prefix (Mega) and the Wh-to-Joule conversion.\)</span><span class="math notranslate nohighlight">\(1 \times 10^3 \times 10^6 \times (3.6 \times 10^3)\)</span><span class="math notranslate nohighlight">\(Group the base numbers (\)</span>1 \times 3.6<span class="math notranslate nohighlight">\() and add the exponents (\)</span>3 + 6 + 3 = 12<span class="math notranslate nohighlight">\():\)</span><span class="math notranslate nohighlight">\(3.6 \times 10^{12} \text{ Joules}\)</span><span class="math notranslate nohighlight">\(Step 2: Convert to TerajoulesJust like before, divide by the Tera factor by subtracting 12 from the exponent:\)</span><span class="math notranslate nohighlight">\(3.6 \times 10^{(12 - 12)} = 3.6 \times 10^0\)</span>$Our final answer is 3.6 TJ.Notice how adding the exponents proves that 1 million kWh and 1000 MWh represent the exact same amount of energy!
+‘’’</p>
 </section>
 <section id="a-first-look-at-pandas-dataframes">
 <h2>A first look at <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrames<a class="headerlink" href="#a-first-look-at-pandas-dataframes" title="Link to this heading">#</a></h2>
@@ -1119,8 +1140,8 @@ Use</p>
 </pre></div>
 </div>
 </section>
-<section id="id2">
-<h3>📝 Solution<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3>📝 Solution<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <div class="cell tag_hide-cell docutils container">
 <details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1213,8 +1234,11 @@ Use</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">📝 Solution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-basic-data-types">Combining basic data types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">🧩 Exercise: Add a few numbers with the help of variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units">Common energy units</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">📝 Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">🧩 Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-energy-units-list">Common energy units list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">📝 Solution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-look-at-pandas-dataframes">A first look at <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrames</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-small-dataframe">1. Creating a small DataFrame</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-column">2. Accessing a column</a></li>
@@ -1222,7 +1246,7 @@ Use</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-single-value">4. Accessing a single value</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-rows-with-conditions">5. Filtering rows with conditions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-find-the-minimum-energy-user">🧩 Exercise: Find the minimum energy user</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">📝 Solution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">📝 Solution</a></li>
 </ul>
 </li>
 </ul>
