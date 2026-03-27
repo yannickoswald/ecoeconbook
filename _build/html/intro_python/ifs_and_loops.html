@@ -511,9 +511,52 @@ document.write(`
 <hr class="docutils" />
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>In programming, <strong>control flow</strong> is the order in which instructions are executed. Up to now, Python has simply followed your code line by line.  But programs need to make <strong>decisions</strong> and <strong>repeat actions</strong> themselves. For example, a program might need to check which countries exceed a CO₂ threshold or calculate average growth for many countries at once.</p>
+<p>In programming, <strong>control flow</strong> is the order in which instructions are executed and it is the specification of <strong>conditions</strong> that enable, or disable, specific actions and pathways.</p>
+<p>Up to now, Python has simply followed your code line by line.  But programs need to make <strong>decisions</strong> and <strong>repeat actions</strong> themselves. For example, a program might need to check which countries exceed a CO₂ threshold or calculate average growth for many countries at once.</p>
+<p>This is what control flow is for and what we mostly use if and else statements for.</p>
+<p>To really understand control flow, let us really try to understand what coding is about on a conceptual level. What a coded program really does is taking a certain number of inputs, or in other words ingredients, and makes them undergo a step-wise procedure with a final output or end result so to speak.</p>
+<p>Take the below example with ingredients for making dough and the subsequent steps of transforming the ingredients and dough further and further until at the end of the process there is a finished bread.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+
+<span class="c1"># This renders the file directly without loading it as a PIL object first</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;pictures/programming_recipe_picture1.png&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/fc0d2a9df57206ccb4773a8b24849e08a43e20c7382b8ad8048db05aea466fed.png" src="../_images/fc0d2a9df57206ccb4773a8b24849e08a43e20c7382b8ad8048db05aea466fed.png" />
+</div>
+</div>
+<p>I hope this is clear? We do not have to worry too much yet about the things that are in the boxes which define each step. Say like the step Knead(Dough) — such a step could be called function and we will do this in the next chapter. But for now we want to focus on the <strong>arrows</strong> that define the flow in between. This is simply an analogy but I think a helpful one.</p>
+<p>Say for instance you want to do the first step in the second row, Shape(Dough), but you can only do this <strong>IF</strong> beforehand you actually rested the dough for two hours. Have a look at the adjusted chart below.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+
+<span class="c1"># This renders the file directly without loading it as a PIL object first</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;pictures/programming_recipe_picture2.png&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/93b13154be942b2f19779aa220d1388f862143ff48a271707e4fa03a70df6962.png" src="../_images/93b13154be942b2f19779aa220d1388f862143ff48a271707e4fa03a70df6962.png" />
+</div>
+</div>
 </section>
-<hr class="docutils" />
 <section id="conditional-statements-if-elif-else">
 <h2>1. Conditional statements: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#conditional-statements-if-elif-else" title="Link to this heading">#</a></h2>
 <p>Sometimes, you only want certain code to run <em>if</em> a condition is true.</p>
