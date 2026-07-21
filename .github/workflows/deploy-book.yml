@@ -1,7 +1,8 @@
 name: deploy-book
 on:
   push:
-    branches: [ main ]   # change to 'master' if that's your default branch
+    branches: [main, mikhail]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -17,18 +18,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+      - uses: actions/checkout@v4
+        with:
+          ref: mikhail
+          path: mikhail
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install -U jupyter-book
-      # If your book root is the REPO ROOT (has _config.yml and _toc.yml):
-      - run: jupyter-book build .
-      # If your book is in a subfolder (e.g., mynewbook), replace with:
-      # - run: jupyter-book build mynewbook
+      - run: jupyter-book build main
+      - run: jupyter-book build mikhail
+      - name: Assemble combined site
+        run: |
+          mkdir -p site
+          cp -r main/_build/html/. site/
+          mkdir -p site/mikhail
+          cp -r mikhail/_build/html/. site/mikhail/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _build/html
-          # If you built a subfolder, use: path: mynewbook/_build/html
+          path: site
 
   deploy:
     environment:
