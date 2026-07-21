@@ -28,9 +28,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -U jupyter-book
-      - run: jupyter-book build main
-      - run: jupyter-book build mikhail
+      - run: pip install "jupyter-book==1.0.4.post1"
+      - name: Build main
+        run: |
+          jupyter-book build main
+          test -f main/_build/html/index.html || { echo "::error::main build produced no index.html"; exit 1; }
+      - name: Build mikhail
+        run: |
+          jupyter-book build mikhail
+          test -f mikhail/_build/html/index.html || { echo "::error::mikhail build produced no index.html"; exit 1; }
       - name: Assemble combined site
         run: |
           mkdir -p site
