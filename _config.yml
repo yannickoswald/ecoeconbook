@@ -22,8 +22,8 @@ html:
   use_issues_button    : true
   use_repository_button: true
   use_edit_page_button : true
-  favicon              : images/favicon.ico
-  logo                 : images/logo.png
+  favicon              : logo.png
+  logo                 : logo.png
   
   # IMPORTANT: In some versions/themes, launch buttons are toggled here too. 
   # If the block below doesn't work, ensure your theme supports them.

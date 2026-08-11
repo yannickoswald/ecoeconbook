@@ -9,9 +9,6 @@ chapters:
   - file: chapters/preface
     title: Preface
 
-  - file: chapters/resources
-    title: Additional learning resources
-
   - file: chapters/navigating_the_book/index
     title: Navigating the book
     sections:
