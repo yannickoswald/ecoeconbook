@@ -8,6 +8,8 @@ description : >-
   notebook-first textbook that moves from back-of-the-envelope scaling to
   fully-fledged empirical models.
 
+exclude_patterns: ["docs/superpowers/**", ".superpowers/**"]
+
 # --- Launch-button & repository hooks ---------------------------------------
 # 1. Define the repository details clearly at the root
 repository:
