@@ -16,7 +16,10 @@ chapters:
     title: Navigating the book
     sections:
       - file: navigating_the_book/navigation
-   
+
+  - file: what_is_ecological_economics/index
+    title: What Is Ecological Economics?
+
   - file: intro_python/index
     title: Introduction to Python and Programming
     sections:
