@@ -6,36 +6,35 @@ format: jb-book
 root: intro ## landing page
 
 chapters:
-  - file: preface
+  - file: chapters/preface
     title: Preface
 
-  - file: resources
+  - file: chapters/resources
     title: Additional learning resources
 
-  - file: navigating_the_book/index
+  - file: chapters/navigating_the_book/index
     title: Navigating the book
     sections:
-      - file: navigating_the_book/navigation
+      - file: chapters/navigating_the_book/navigation
 
-  - file: what_is_ecological_economics/index
+  - file: chapters/what_is_ecological_economics/index
     title: What Is Ecological Economics?
 
-  - file: intro_python/index
+  - file: chapters/intro_python/index
     title: Introduction to Python and Programming
     sections:
-      - file: intro_python/install_python
-      - file: intro_python/calculator
-      - file: intro_python/variables
-      - file: intro_python/ifs_and_loops
-      - file: intro_python/functions
-      - file: intro_python/algorithms
-      - file: intro_python/classes
-      - file: intro_python/small_programming_project
+      - file: chapters/intro_python/install_python
+      - file: chapters/intro_python/calculator
+      - file: chapters/intro_python/variables
+      - file: chapters/intro_python/ifs_and_loops
+      - file: chapters/intro_python/functions
+      - file: chapters/intro_python/algorithms
+      - file: chapters/intro_python/classes
+      - file: chapters/intro_python/small_programming_project
 
-  - file: order_of_magnitude_economics_and_scaling/index
+  - file: chapters/order_of_magnitude_economics_and_scaling/index
     title: Order of Magnitude Economics and Scaling
     sections:
-      - file: order_of_magnitude_economics_and_scaling/orders_of_magnitude
-      - file: order_of_magnitude_economics_and_scaling/static_scale
-      - file: order_of_magnitude_economics_and_scaling/dynamic_scale
-    
+      - file: chapters/order_of_magnitude_economics_and_scaling/orders_of_magnitude
+      - file: chapters/order_of_magnitude_economics_and_scaling/static_scale
+      - file: chapters/order_of_magnitude_economics_and_scaling/dynamic_scale
